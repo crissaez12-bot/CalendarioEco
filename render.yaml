@@ -13,7 +13,7 @@ services:
   - type: cron
     name: update-calendar
     runtime: node
-    plan: free
+    plan: starter
     schedule: "0 9 * * 1"
     buildCommand: npm install
     startCommand: npm run update-calendar
