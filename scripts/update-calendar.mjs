@@ -169,7 +169,10 @@ ${daysTs}
       console.log('Nada nuevo para commitear, o el push fallo:', e.message)
     }
   } else {
-    console.log('GITHUB_TOKEN / GIT_REPO no seteados — solo se actualizo el archivo local, sin commit.')
+    const missing = []
+    if (!process.env.GITHUB_TOKEN) missing.push('GITHUB_TOKEN')
+    if (!process.env.GIT_REPO) missing.push('GIT_REPO')
+    console.log(`Falta(n) seteadas: ${missing.join(', ')} — solo se actualizo el archivo local, sin commit.`)
   }
 }
 
