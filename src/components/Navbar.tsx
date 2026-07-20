@@ -23,7 +23,7 @@ export default function Navbar() {
             key={link.to}
             to={link.to}
             className={({ isActive }) =>
-              `transition-colors ${isActive ? 'text-ivory' : 'text-beige/60 hover:text-beige'}`
+              `transition-colors ${isActive ? 'text-ivory' : 'text-ivory/70 hover:text-ivory'}`
             }
           >
             {link.label}
