@@ -100,9 +100,13 @@ async function translate(text) {
   }
 }
 
+// Farside solo trackea ETF spot de BTC, ETH y SOL por ahora — es la lista
+// completa de "top 10 crypto" con ETF spot aprobado que tienen datos reales
+// disponibles (XRP, DOGE, ADA, etc. no tienen ETF spot trackeado aca todavia).
 const FARSIDE_ASSETS = [
   { asset: 'BTC', url: 'https://farside.co.uk/btc/' },
   { asset: 'ETH', url: 'https://farside.co.uk/eth/' },
+  { asset: 'SOL', url: 'https://farside.co.uk/sol/' },
 ]
 
 function parseFarsideCell(raw) {

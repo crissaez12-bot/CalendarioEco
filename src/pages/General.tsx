@@ -304,7 +304,7 @@ export default function General() {
 
         <div className="liquid-glass rounded-xl px-5 py-4">
           <h2 className="mb-4 font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
-            ETF Flows &middot; BTC / ETH
+            ETF Flows &middot; BTC / ETH / SOL
           </h2>
           <div className="flex flex-col gap-4">
             {etfFlowsData.flows.map((f) => {

@@ -13,6 +13,12 @@
       "netFlow": 120900000,
       "days": 5,
       "through": "20 Jul 2026"
+    },
+    {
+      "asset": "SOL",
+      "netFlow": 1000000,
+      "days": 5,
+      "through": "20 Jul 2026"
     }
   ]
 }
