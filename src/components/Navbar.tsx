@@ -23,7 +23,7 @@ const SESSION_WINDOWS: SessionWindow[] = [
   { startHour: 16, endHour: 17, countryCode: 'us', label: 'NY After-Market' },
   { startHour: 17, endHour: 18, label: 'Close Market' },
   { startHour: 18, endHour: 20, countryCode: 'nz', label: 'Nueva Zelanda Open' },
-  { startHour: 20, endHour: 21.5, countryCode: 'au', label: 'Japón Open' },
+  { startHour: 20, endHour: 21.5, countryCode: 'jp', label: 'Japón Open' },
   { startHour: 21.5, endHour: 4, countryCode: 'cn', label: 'China Open' },
   { startHour: 4, endHour: 9.5, countryCode: 'gb', label: 'Londres Open' },
   { startHour: 9.5, endHour: 16, countryCode: 'us', label: 'NY Open' },
