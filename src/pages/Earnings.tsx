@@ -2,9 +2,11 @@ import { useMemo, useState } from 'react'
 import PageShell from '../components/PageShell'
 import earningsData from '../data/earningsData.json'
 import tokenUnlocksData from '../data/tokenUnlocksData.json'
+import { isMag7 } from '../data/mag7'
 
 type Tab = 'earnings' | 'unlocks'
 type UnlockType = 'Cliff' | 'Lineal' | 'Team / Investors' | 'Staking rewards'
+const GOLD = '#D4AF37'
 
 const money = (n: number) => {
   const abs = Math.abs(n)
@@ -126,36 +128,58 @@ export default function Earnings() {
                       </tr>
                     </thead>
                     <tbody>
-                      {day.events.map((e, i) => (
-                        <tr key={i} className="border-b border-beige/5 last:border-b-0 hover:bg-beige/5">
-                          <td className="px-4 py-3">
-                            <span
-                              className={`rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
-                                e.time === 'BMO'
-                                  ? 'bg-moss/15 text-moss'
-                                  : e.time === 'AMC'
-                                    ? 'bg-beige/10 text-beige/70'
-                                    : 'bg-beige/5 text-beige/40'
-                              }`}
+                      {day.events.map((e, i) => {
+                        const mag7 = isMag7(e.ticker)
+                        return (
+                          <tr
+                            key={i}
+                            className="border-b border-beige/5 last:border-b-0 hover:bg-beige/5"
+                            style={mag7 ? { background: 'rgba(212,175,55,0.08)' } : undefined}
+                          >
+                            <td className="px-4 py-3">
+                              <span
+                                className={`rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
+                                  e.time === 'BMO'
+                                    ? 'bg-moss/15 text-moss'
+                                    : e.time === 'AMC'
+                                      ? 'bg-beige/10 text-beige/70'
+                                      : 'bg-beige/5 text-beige/40'
+                                }`}
+                              >
+                                {e.time}
+                              </span>
+                            </td>
+                            <td className="px-4 py-3">
+                              <div className="flex items-center gap-2">
+                                <span className="text-sm font-semibold" style={{ color: mag7 ? GOLD : '#F2FBF7' }}>
+                                  {e.name}
+                                </span>
+                                {mag7 && (
+                                  <span
+                                    className="rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+                                    style={{ background: 'rgba(212,175,55,0.18)', color: GOLD }}
+                                  >
+                                    Mag 7
+                                  </span>
+                                )}
+                              </div>
+                              <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
+                            </td>
+                            <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
+                              {money(e.marketCap)}
+                            </td>
+                            <td
+                              className="px-4 py-3 text-right font-mono text-sm font-semibold tabular-nums"
+                              style={{ color: mag7 ? GOLD : '#F2FBF7' }}
                             >
-                              {e.time}
-                            </span>
-                          </td>
-                          <td className="px-4 py-3">
-                            <div className="text-sm font-semibold text-ivory">{e.name}</div>
-                            <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
-                          </td>
-                          <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
-                            {money(e.marketCap)}
-                          </td>
-                          <td className="px-4 py-3 text-right font-mono text-sm font-semibold tabular-nums text-ivory">
-                            {e.epsEst}
-                          </td>
-                          <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
-                            {e.epsLastYear}
-                          </td>
-                        </tr>
-                      ))}
+                              {e.epsEst}
+                            </td>
+                            <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
+                              {e.epsLastYear}
+                            </td>
+                          </tr>
+                        )
+                      })}
                     </tbody>
                   </table>
                 </div>

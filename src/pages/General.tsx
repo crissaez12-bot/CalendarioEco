@@ -6,6 +6,10 @@ import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
 import { FEAR_GREED } from '../data/generalData'
 import newsData from '../data/newsData.json'
 import etfFlowsData from '../data/etfFlowsData.json'
+import earningsData from '../data/earningsData.json'
+import { isMag7 } from '../data/mag7'
+
+const GOLD = '#D4AF37'
 
 interface SessionDef {
   countryCode: string
@@ -168,7 +172,26 @@ export default function General() {
     .slice(0, 5)
 
   const todayChile = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(now)
-  const upcomingDays = CALENDAR_WEEK.filter((d) => d.date >= todayChile).slice(0, 4)
+
+  const mag7ByDate = new Map(
+    earningsData.days
+      .map((day) => [day.date, day.events.filter((e) => isMag7(e.ticker))] as const)
+      .filter(([, events]) => events.length > 0),
+  )
+  const calendarByDate = new Map(CALENDAR_WEEK.map((d) => [d.date, d]))
+  const earningsLabelByDate = new Map(earningsData.days.map((d) => [d.date, d.label]))
+
+  const upcomingDates = [...new Set([...CALENDAR_WEEK.map((d) => d.date), ...mag7ByDate.keys()])]
+    .filter((d) => d >= todayChile)
+    .sort()
+    .slice(0, 4)
+
+  const upcomingDays = upcomingDates.map((date) => ({
+    date,
+    label: calendarByDate.get(date)?.label ?? earningsLabelByDate.get(date) ?? date,
+    events: calendarByDate.get(date)?.events ?? [],
+    mag7: mag7ByDate.get(date) ?? [],
+  }))
 
   return (
     <PageShell>
@@ -395,6 +418,32 @@ export default function General() {
                           </span>
                         </div>
                         <span className="whitespace-nowrap font-mono text-[11px] text-beige/40">prev {event.previous}</span>
+                      </div>
+                    ))}
+                    {day.mag7.map((e, i) => (
+                      <div
+                        key={`mag7-${i}`}
+                        className="flex items-start justify-between gap-3 rounded-md px-2 py-1.5 -mx-2 border-b border-beige/5 last:border-b-0 last:pb-0"
+                        style={{ background: 'rgba(212,175,55,0.08)' }}
+                      >
+                        <div className="flex items-start gap-2">
+                          <span
+                            className="mt-0.5 rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+                            style={{ background: 'rgba(212,175,55,0.18)', color: GOLD }}
+                          >
+                            {e.time}
+                          </span>
+                          <span className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: GOLD }}>
+                            {e.name}
+                            <span className="font-mono text-[10px] text-beige/50">{e.ticker}</span>
+                          </span>
+                        </div>
+                        <span
+                          className="whitespace-nowrap rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+                          style={{ background: 'rgba(212,175,55,0.18)', color: GOLD }}
+                        >
+                          Mag 7
+                        </span>
                       </div>
                     ))}
                   </div>
