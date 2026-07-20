@@ -34,7 +34,7 @@ export default function Hero() {
           <div>
             <AnimatedHeading
               text={'Transformar la Información\nen Dominio Estratégico'}
-              className="mb-4 font-display text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl"
+              className="mb-4 font-display text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl"
               style={{ letterSpacing: '-0.02em' }}
               initialDelay={200}
             />
