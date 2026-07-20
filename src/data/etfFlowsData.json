@@ -1,0 +1,18 @@
+{
+  "updatedAt": "2026-07-20",
+  "windowDays": 5,
+  "flows": [
+    {
+      "asset": "BTC",
+      "netFlow": 500200000,
+      "days": 5,
+      "through": "20 Jul 2026"
+    },
+    {
+      "asset": "ETH",
+      "netFlow": 120900000,
+      "days": 5,
+      "through": "20 Jul 2026"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "date": "2026-07-20",
-  "updatedAt": "12:12",
+  "updatedAt": "12:35",
   "categories": {
     "finanzas": [
       {
@@ -112,6 +112,11 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "Boeing adopta el enfoque correcto en los nuevos aviones. Además, una palabra de precaución esta temporada de ganancias",
+        "url": "https://www.cnbc.com/2026/07/20/boeing-takes-the-right-approach-on-new-planes-plus-a-word-of-caution-this-earnings-season.html",
+        "source": "CNBC"
+      },
       {
         "title": "La chaqueta de cuero usada por el CEO de Nvidia cuesta poco menos de $ 1 millón en una subasta de Sotheby's",
         "url": "https://www.cnbc.com/2026/07/17/leather-jacket-worn-by-nvidia-ceo-goes-for-just-under-1-million-at-sothebys-auction-.html",

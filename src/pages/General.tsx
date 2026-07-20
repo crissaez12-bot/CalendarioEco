@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import { ASSET_ICON, DATA, isReady } from '../data/monteCarloData'
 import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
-import { ETF_FLOWS, FEAR_GREED } from '../data/generalData'
+import { FEAR_GREED } from '../data/generalData'
 import newsData from '../data/newsData.json'
+import etfFlowsData from '../data/etfFlowsData.json'
 
 interface SessionDef {
   countryCode: string
@@ -166,7 +167,8 @@ export default function General() {
     .sort((a, b) => Number(isReady(b)) - Number(isReady(a)))
     .slice(0, 5)
 
-  const agendaDay = CALENDAR_WEEK[0]
+  const todayChile = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(now)
+  const upcomingDays = CALENDAR_WEEK.filter((d) => d.date >= todayChile).slice(0, 4)
 
   return (
     <PageShell>
@@ -241,7 +243,7 @@ export default function General() {
         <p className="mt-1 text-sm text-beige/70">Resumen del mercado &middot; sesiones, señales, agenda y flujos en un solo vistazo</p>
       </div>
 
-      {/* Zona central: Monte Carlo (70%) + Hoy (30%) */}
+      {/* Zona central: Monte Carlo (70%) + ETF Flows (30%) */}
       <div className="mb-6 grid grid-cols-1 gap-6 lg:grid-cols-[7fr_3fr]">
         <div className="liquid-glass rounded-xl px-5 py-4">
           <div className="mb-4 flex items-center justify-between">
@@ -301,35 +303,38 @@ export default function General() {
         </div>
 
         <div className="liquid-glass rounded-xl px-5 py-4">
-          <div className="mb-4 flex items-center justify-between">
-            <h2 className="font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
-              Agenda macro
-            </h2>
-            <Link to="/calendario" className="text-xs font-medium text-beige/60 transition-colors hover:text-ivory">
-              Ver todo &rarr;
-            </Link>
-          </div>
-          <p className="mb-3 text-[11px] text-beige/40">{agendaDay.label}</p>
-          <div className="flex flex-col gap-3">
-            {agendaDay.events.slice(0, 5).map((event, i) => (
-              <div key={i} className="flex items-start justify-between gap-3 border-b border-beige/5 pb-3 last:border-b-0 last:pb-0">
-                <div className="flex items-start gap-2">
-                  <span className="mt-0.5 font-mono text-[11px] text-beige/50">{event.time}</span>
-                  <div>
-                    <div className="flex items-center gap-1.5 text-xs font-medium text-ivory">
-                      <span>{event.countryFlag}</span>
-                      {event.name}
-                    </div>
+          <h2 className="mb-4 font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
+            ETF Flows &middot; BTC / ETH
+          </h2>
+          <div className="flex flex-col gap-4">
+            {etfFlowsData.flows.map((f) => {
+              const positive = f.netFlow >= 0
+              const width = Math.min(100, (Math.abs(f.netFlow) / 1_000_000_000) * 100)
+              return (
+                <div key={f.asset}>
+                  <div className="mb-1.5 flex items-center justify-between">
+                    <span className="text-sm font-semibold text-ivory">{f.asset}</span>
+                    <span className={`font-mono text-sm font-semibold tabular-nums ${positive ? 'text-moss' : 'text-clay'}`}>
+                      {moneyShort(f.netFlow)}
+                    </span>
+                  </div>
+                  <div className="h-1.5 rounded-full bg-beige/10">
+                    <div
+                      className="h-1.5 rounded-full"
+                      style={{ width: `${width}%`, background: positive ? '#5FE6AE' : '#FF6B6B' }}
+                    />
                   </div>
                 </div>
-                <span className="whitespace-nowrap font-mono text-[11px] text-beige/40">prev {event.previous}</span>
-              </div>
-            ))}
+              )
+            })}
           </div>
+          <p className="mt-4 text-[11px] text-beige/40">
+            Flujo neto de los últimos {etfFlowsData.windowDays} días hábiles &middot; actualizado {etfFlowsData.updatedAt}
+          </p>
         </div>
       </div>
 
-      {/* Zona inferior: Noticias (50%) + ETF Flows (50%) */}
+      {/* Zona inferior: Noticias (50%) + Agenda macro (50%) */}
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="liquid-glass rounded-xl px-5 py-4">
           <div className="mb-4 flex items-center justify-between">
@@ -361,39 +366,49 @@ export default function General() {
         </div>
 
         <div className="liquid-glass rounded-xl px-5 py-4">
-          <h2 className="mb-4 font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
-            ETF Flows &middot; BTC / ETH
-          </h2>
-          <div className="flex flex-col gap-4">
-            {ETF_FLOWS.map((f) => {
-              const positive = f.netFlow >= 0
-              const width = Math.min(100, (Math.abs(f.netFlow) / 300_000_000) * 100)
-              return (
-                <div key={f.asset}>
-                  <div className="mb-1.5 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-ivory">{f.asset}</span>
-                    <span className={`font-mono text-sm font-semibold tabular-nums ${positive ? 'text-moss' : 'text-clay'}`}>
-                      {moneyShort(f.netFlow)}
-                    </span>
-                  </div>
-                  <div className="h-1.5 rounded-full bg-beige/10">
-                    <div
-                      className="h-1.5 rounded-full"
-                      style={{ width: `${width}%`, background: positive ? '#5FE6AE' : '#FF6B6B' }}
-                    />
+          <div className="mb-4 flex items-center justify-between">
+            <h2 className="font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
+              Agenda macro
+            </h2>
+            <Link to="/calendario" className="text-xs font-medium text-beige/60 transition-colors hover:text-ivory">
+              Ver todo &rarr;
+            </Link>
+          </div>
+          {upcomingDays.length === 0 ? (
+            <p className="py-6 text-center text-sm text-beige/50">Sin eventos de alto impacto el resto de la semana.</p>
+          ) : (
+            <div className="flex flex-col gap-4">
+              {upcomingDays.map((day) => (
+                <div key={day.date}>
+                  <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-beige/40">{day.label}</p>
+                  <div className="flex flex-col gap-2">
+                    {day.events.slice(0, 3).map((event, i) => (
+                      <div
+                        key={i}
+                        className="flex items-start justify-between gap-3 border-b border-beige/5 pb-2 last:border-b-0 last:pb-0"
+                      >
+                        <div className="flex items-start gap-2">
+                          <span className="mt-0.5 font-mono text-[11px] text-beige/50">{event.time}</span>
+                          <span className="flex items-center gap-1.5 text-xs font-medium text-ivory">
+                            <span>{event.countryFlag}</span>
+                            {event.name}
+                          </span>
+                        </div>
+                        <span className="whitespace-nowrap font-mono text-[11px] text-beige/40">prev {event.previous}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              )
-            })}
-          </div>
-          <p className="mt-4 text-[11px] text-beige/40">Flujo neto diario &middot; datos ilustrativos al {ETF_FLOWS[0].updated}</p>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
       <p className="mt-6 text-[11px] text-beige/40">
-        Sesiones, Fear &amp; Greed Crypto (alternative.me), WS (proxy VIXY vs. rango 52 semanas, Twelve Data) y noticias
-        (CNBC / Cointelegraph, actualizado {newsData.updatedAt} hrs Chile) en tiempo real &middot; ETF flows son datos
-        ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda macro con fuente {CALENDAR_SOURCE.provider}
+        Sesiones, Fear &amp; Greed Crypto (alternative.me), WS (proxy VIXY vs. rango 52 semanas, Twelve Data), noticias
+        (CNBC / Cointelegraph, actualizado {newsData.updatedAt} hrs Chile) y ETF flows (Farside Investors, actualizado{' '}
+        {etfFlowsData.updatedAt}) en tiempo real &middot; agenda macro con fuente {CALENDAR_SOURCE.provider}
       </p>
     </PageShell>
   )
