@@ -1,6 +1,6 @@
 {
   "date": "2026-07-20",
-  "updatedAt": "12:44",
+  "updatedAt": "12:54",
   "categories": {
     "finanzas": [
       {
@@ -112,6 +112,11 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "El CEO de Archer reafirma el \"ambicioso\" objetivo de vuelo para 2028 a medida que la compañía presenta naves militares con Anduril",
+        "url": "https://www.cnbc.com/2026/07/20/archer-thunder-military-craft-anduril.html",
+        "source": "CNBC"
+      },
       {
         "title": "Boeing adopta el enfoque correcto en los nuevos aviones. Además, una palabra de precaución esta temporada de ganancias",
         "url": "https://www.cnbc.com/2026/07/20/boeing-takes-the-right-approach-on-new-planes-plus-a-word-of-caution-this-earnings-season.html",

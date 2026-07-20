@@ -1,14 +1,10 @@
 import { useMemo, useState } from 'react'
 import PageShell from '../components/PageShell'
-import {
-  EARNINGS_SOURCE,
-  EARNINGS_WEEK,
-  TOKEN_UNLOCKS_WEEK,
-  UNLOCKS_SOURCE,
-  type UnlockType,
-} from '../data/earningsData'
+import earningsData from '../data/earningsData.json'
+import tokenUnlocksData from '../data/tokenUnlocksData.json'
 
 type Tab = 'earnings' | 'unlocks'
+type UnlockType = 'Cliff' | 'Lineal' | 'Team / Investors' | 'Staking rewards'
 
 const money = (n: number) => {
   const abs = Math.abs(n)
@@ -35,7 +31,7 @@ export default function Earnings() {
   const [tab, setTab] = useState<Tab>('earnings')
 
   const earningsStats = useMemo(() => {
-    const all = EARNINGS_WEEK.flatMap((d) => d.events)
+    const all = earningsData.days.flatMap((d) => d.events)
     return {
       total: all.length,
       bmo: all.filter((e) => e.time === 'BMO').length,
@@ -44,7 +40,7 @@ export default function Earnings() {
   }, [])
 
   const unlockStats = useMemo(() => {
-    const all = TOKEN_UNLOCKS_WEEK.flatMap((d) => d.events)
+    const all = tokenUnlocksData.days.flatMap((d) => d.events)
     return {
       totalUsd: all.reduce((sum, e) => sum + e.unlockUsd, 0),
       highImpact: all.filter((e) => e.pctSupply >= 3).length,
@@ -60,8 +56,8 @@ export default function Earnings() {
             Earnings
           </h1>
           <p className="mt-1 text-sm text-beige/70">
-            Resultados corporativos y desbloqueo de tokens del top 100 crypto &middot; datos ilustrativos, aún no
-            conectado a un feed en vivo.
+            Resultados corporativos y desbloqueo de tokens del top 100 crypto &middot; datos reales, actualizados
+            automáticamente cada día a las 8:00 (Chile).
           </p>
         </div>
 
@@ -105,7 +101,7 @@ export default function Earnings() {
           </div>
 
           <div className="flex flex-col gap-6">
-            {EARNINGS_WEEK.map((day) => (
+            {earningsData.days.map((day) => (
               <section key={day.date}>
                 <h2 className="mb-2 text-sm font-semibold text-ivory">{day.label}</h2>
                 <div className="liquid-glass overflow-x-auto rounded-xl">
@@ -119,16 +115,13 @@ export default function Earnings() {
                           Empresa
                         </th>
                         <th className="whitespace-nowrap px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider text-beige/50">
+                          Cap. mercado
+                        </th>
+                        <th className="whitespace-nowrap px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider text-beige/50">
                           EPS est.
                         </th>
                         <th className="whitespace-nowrap px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider text-beige/50">
-                          EPS actual
-                        </th>
-                        <th className="whitespace-nowrap px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider text-beige/50">
-                          Rev. est.
-                        </th>
-                        <th className="whitespace-nowrap px-4 py-2.5 text-right text-[11px] font-semibold uppercase tracking-wider text-beige/50">
-                          Rev. actual
+                          EPS año anterior
                         </th>
                       </tr>
                     </thead>
@@ -138,7 +131,11 @@ export default function Earnings() {
                           <td className="px-4 py-3">
                             <span
                               className={`rounded px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
-                                e.time === 'BMO' ? 'bg-moss/15 text-moss' : 'bg-beige/10 text-beige/70'
+                                e.time === 'BMO'
+                                  ? 'bg-moss/15 text-moss'
+                                  : e.time === 'AMC'
+                                    ? 'bg-beige/10 text-beige/70'
+                                    : 'bg-beige/5 text-beige/40'
                               }`}
                             >
                               {e.time}
@@ -149,16 +146,13 @@ export default function Earnings() {
                             <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
                           </td>
                           <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
+                            {money(e.marketCap)}
+                          </td>
+                          <td className="px-4 py-3 text-right font-mono text-sm font-semibold tabular-nums text-ivory">
                             {e.epsEst}
                           </td>
-                          <td className="px-4 py-3 text-right font-mono text-sm font-semibold tabular-nums text-ivory">
-                            {e.epsActual}
-                          </td>
                           <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
-                            {e.revEst}
-                          </td>
-                          <td className="px-4 py-3 text-right font-mono text-sm font-semibold tabular-nums text-ivory">
-                            {e.revActual}
+                            {e.epsLastYear}
                           </td>
                         </tr>
                       ))}
@@ -170,8 +164,9 @@ export default function Earnings() {
           </div>
 
           <p className="mt-6 text-[11px] text-beige/40">
-            BMO = Before Market Open &middot; AMC = After Market Close &middot; fuente: {EARNINGS_SOURCE.provider},
-            capturado el {EARNINGS_SOURCE.capturedAt}
+            BMO = Before Market Open &middot; AMC = After Market Close &middot; N/D = horario no informado &middot;
+            EPS estimado = consenso de analistas &middot; fuente: {earningsData.source}, actualizado{' '}
+            {earningsData.capturedAt}
           </p>
         </>
       ) : (
@@ -192,7 +187,7 @@ export default function Earnings() {
           </div>
 
           <div className="flex flex-col gap-6">
-            {TOKEN_UNLOCKS_WEEK.map((day) => (
+            {tokenUnlocksData.days.map((day) => (
               <section key={day.date}>
                 <h2 className="mb-2 text-sm font-semibold text-ivory">{day.label}</h2>
                 <div className="liquid-glass overflow-x-auto rounded-xl">
@@ -225,7 +220,9 @@ export default function Earnings() {
                           </td>
                           <td className="px-4 py-3">
                             <span
-                              className={`rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${UNLOCK_TYPE_STYLES[e.type]}`}
+                              className={`rounded border px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wide ${
+                                UNLOCK_TYPE_STYLES[e.type as UnlockType] ?? 'border-beige/25 text-beige/70'
+                              }`}
                             >
                               {e.type}
                             </span>
@@ -255,8 +252,8 @@ export default function Earnings() {
           </div>
 
           <p className="mt-6 text-[11px] text-beige/40">
-            % supply = porcentaje del supply circulante liberado en ese evento &middot; fuente: {UNLOCKS_SOURCE.provider},
-            capturado el {UNLOCKS_SOURCE.capturedAt}
+            % supply = porcentaje del supply circulante liberado en ese evento &middot; ventana de los próximos 10 días
+            &middot; fuente: {tokenUnlocksData.source}, actualizado {tokenUnlocksData.capturedAt}
           </p>
         </>
       )}

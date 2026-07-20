@@ -3,10 +3,12 @@
 // (crypto), los traduce al espanol y los acumula en src/data/newsData.json
 // durante el dia. Al detectar un dia nuevo (hora Chile), vacia todo antes de
 // sumar los nuevos — asi el archivo nunca crece sin limite. En la corrida de
-// las 8am tambien actualiza src/data/etfFlowsData.json (flujo semanal de los
-// ETF spot de BTC/ETH desde Farside) — reusa este mismo cron para no pagar
-// un segundo servicio en Render. Si GITHUB_TOKEN esta seteado, commitea y
-// pushea para que Render redespliegue el sitio.
+// las 8am tambien actualiza (reusando este mismo cron, sin pagar un segundo
+// servicio en Render):
+//   - src/data/etfFlowsData.json  — flujo neto semanal ETF spot BTC/ETH/SOL (Farside)
+//   - src/data/earningsData.json  — calendario de resultados corporativos (NASDAQ)
+//   - src/data/tokenUnlocksData.json — desbloqueos de tokens top 100 mkt cap (DefiLlama)
+// Si GITHUB_TOKEN esta seteado, commitea y pushea para que Render redespliegue el sitio.
 
 import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
@@ -16,8 +18,16 @@ import { dirname, join } from 'node:path'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'newsData.json')
 const ETF_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'etfFlowsData.json')
+const EARNINGS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'earningsData.json')
+const UNLOCKS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tokenUnlocksData.json')
 const ETF_FLOW_HOUR = 8
 const ETF_WINDOW_DAYS = 5
+const EARNINGS_BUSINESS_DAYS = 5
+const EARNINGS_MIN_MARKETCAP = 5_000_000_000 // solo empresas grandes/mid-cap, no toda la lista de NASDAQ
+const EARNINGS_MAX_PER_DAY = 8
+const UNLOCKS_TOP_N_MCAP = 100
+const UNLOCKS_WINDOW_DAYS = 10
+const UNLOCKS_MAX_EVENTS = 30
 
 const TARGET_HOURS = [8, 12, 16]
 const MAX_ITEMS_PER_CATEGORY = 24
@@ -177,6 +187,130 @@ async function updateEtfFlows(now) {
   console.log('Escrito:', ETF_OUTPUT_PATH)
 }
 
+const WEEKDAY_LABEL = new Intl.DateTimeFormat('es-AR', {
+  weekday: 'long',
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+  timeZone: 'UTC',
+})
+
+function fmtDayLabel(dateStr) {
+  const d = new Date(`${dateStr}T00:00:00Z`)
+  const label = WEEKDAY_LABEL.format(d)
+  return label.charAt(0).toUpperCase() + label.slice(1)
+}
+
+function parseMoneyString(s) {
+  if (!s) return 0
+  const n = Number(String(s).replace(/[$,]/g, ''))
+  return Number.isNaN(n) ? 0 : n
+}
+
+async function fetchEarningsDay(dateStr) {
+  const res = await fetch(`https://api.nasdaq.com/api/calendar/earnings?date=${dateStr}`, { headers: FETCH_HEADERS })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const json = await res.json()
+  const rows = json?.data?.rows ?? []
+  return rows
+    .map((r) => ({
+      ticker: r.symbol,
+      name: r.name,
+      marketCap: parseMoneyString(r.marketCap),
+      time: r.time === 'time-pre-market' ? 'BMO' : r.time === 'time-after-hours' ? 'AMC' : 'N/D',
+      epsEst: r.epsForecast ? r.epsForecast.replace('$', '') : '-',
+      epsLastYear: r.lastYearEPS ? r.lastYearEPS.replace('$', '') : '-',
+    }))
+    .filter((r) => r.marketCap >= EARNINGS_MIN_MARKETCAP)
+    .sort((a, b) => b.marketCap - a.marketCap)
+    .slice(0, EARNINGS_MAX_PER_DAY)
+}
+
+async function updateEarnings(now) {
+  const days = []
+  const d = new Date(`${now.date}T12:00:00Z`) // mediodia UTC — evita corrimiento de dia por DST/redondeo
+  let collected = 0
+  let guard = 0
+  while (collected < EARNINGS_BUSINESS_DAYS && guard < 14) {
+    const dow = d.getUTCDay() // 0 = domingo, 6 = sabado
+    if (dow !== 0 && dow !== 6) {
+      const dateStr = d.toISOString().slice(0, 10)
+      try {
+        console.log(`Scrapeando earnings ${dateStr}...`)
+        const events = await fetchEarningsDay(dateStr)
+        if (events.length > 0) days.push({ date: dateStr, label: fmtDayLabel(dateStr), events })
+      } catch (err) {
+        console.log(`  Fallo earnings ${dateStr}: ${err.message}`)
+      }
+      collected++
+    }
+    d.setUTCDate(d.getUTCDate() + 1)
+    guard++
+  }
+  if (days.length === 0) {
+    console.log('No se pudo obtener earnings de ningun dia — se mantiene el archivo anterior.')
+    return
+  }
+  const output = { source: 'NASDAQ', capturedAt: now.date, days }
+  writeFileSync(EARNINGS_OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
+  console.log('Escrito:', EARNINGS_OUTPUT_PATH)
+}
+
+function mapUnlockType(ev) {
+  const cat = (ev?.category ?? '').toLowerCase()
+  if (cat.includes('team') || cat.includes('investor')) return 'Team / Investors'
+  if (cat.includes('staking')) return 'Staking rewards'
+  return ev?.unlockType === 'cliff' ? 'Cliff' : 'Lineal'
+}
+
+async function updateTokenUnlocks(now) {
+  // defillama.com esta detras del mismo tipo de proteccion que Farside — usa curl.
+  // La API paga (api.llama.fi/emissions) ya no es gratis, pero la data que alimenta
+  // la pagina publica /unlocks sigue viniendo embebida en el HTML (__NEXT_DATA__),
+  // que es exactamente lo que ve cualquier visitante sin loguearse.
+  const html = curlFetch('https://defillama.com/unlocks')
+  if (!html || html.length < 100_000) throw new Error('respuesta vacia o demasiado corta (posible bloqueo)')
+  const m = html.match(/<script id="__NEXT_DATA__" type="application\/json">([\s\S]*?)<\/script>/)
+  if (!m) throw new Error('no se encontro __NEXT_DATA__ en la pagina de unlocks')
+  const list = JSON.parse(m[1])?.props?.pageProps?.data ?? []
+
+  const byMcap = list
+    .filter((t) => t.mcap)
+    .sort((a, b) => b.mcap - a.mcap)
+    .slice(0, UNLOCKS_TOP_N_MCAP)
+
+  const nowSec = Date.now() / 1000
+  const windowEnd = nowSec + UNLOCKS_WINDOW_DAYS * 86400
+
+  const events = []
+  for (const t of byMcap) {
+    const ev = t.nextEvent
+    if (!ev?.date || ev.date <= nowSec || ev.date > windowEnd) continue
+    const tokens = ev.toUnlock ?? 0
+    events.push({
+      date: new Date(ev.date * 1000).toISOString().slice(0, 10),
+      ticker: t.tSymbol || '-',
+      name: t.name,
+      type: mapUnlockType(t.upcomingEvent?.[0]),
+      unlockTokens: Math.round(tokens),
+      unlockUsd: Math.round(tokens * (t.tPrice || 0)),
+      pctSupply: Math.round((ev.proportion ?? 0) * 100 * 1000) / 1000,
+    })
+  }
+  events.sort((a, b) => a.date.localeCompare(b.date))
+
+  const byDay = new Map()
+  for (const { date, ...e } of events.slice(0, UNLOCKS_MAX_EVENTS)) {
+    if (!byDay.has(date)) byDay.set(date, [])
+    byDay.get(date).push(e)
+  }
+  const days = [...byDay.entries()].map(([date, evs]) => ({ date, label: fmtDayLabel(date), events: evs }))
+
+  const output = { source: 'DefiLlama (top 100 mkt cap)', capturedAt: now.date, days }
+  writeFileSync(UNLOCKS_OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
+  console.log('Escrito:', UNLOCKS_OUTPUT_PATH)
+}
+
 function chileNow() {
   const parts = new Intl.DateTimeFormat('en-CA', {
     timeZone: 'America/Santiago',
@@ -253,9 +387,15 @@ async function main() {
   writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
   console.log('Escrito:', OUTPUT_PATH)
 
-  const updatingEtf = forced || now.hour === ETF_FLOW_HOUR
-  if (updatingEtf) {
+  const updatingDaily = forced || now.hour === ETF_FLOW_HOUR
+  if (updatingDaily) {
     await updateEtfFlows(now)
+    await updateEarnings(now)
+    try {
+      await updateTokenUnlocks(now)
+    } catch (err) {
+      console.log(`Fallo token unlocks: ${err.message} — se mantiene el archivo anterior.`)
+    }
   }
 
   if (process.env.GITHUB_TOKEN && process.env.GIT_REPO) {
@@ -264,13 +404,16 @@ async function main() {
     execSync(`git config user.email "cron@empire-session.local"`, { stdio: 'inherit' })
     execSync(`git config user.name "Empire Session Cron"`, { stdio: 'inherit' })
     execSync(`git add src/data/newsData.json`, { stdio: 'inherit' })
-    if (updatingEtf && existsSync(ETF_OUTPUT_PATH)) {
-      execSync(`git add src/data/etfFlowsData.json`, { stdio: 'inherit' })
+    if (updatingDaily) {
+      for (const p of [ETF_OUTPUT_PATH, EARNINGS_OUTPUT_PATH, UNLOCKS_OUTPUT_PATH]) {
+        if (existsSync(p)) execSync(`git add "${p}"`, { stdio: 'inherit' })
+      }
     }
     try {
-      execSync(`git commit -m "chore: actualizar noticias${updatingEtf ? ' y etf flows' : ''} (${now.date} ${now.time} CLT)"`, {
-        stdio: 'inherit',
-      })
+      execSync(
+        `git commit -m "chore: actualizar noticias${updatingDaily ? ', etf flows, earnings y unlocks' : ''} (${now.date} ${now.time} CLT)"`,
+        { stdio: 'inherit' },
+      )
       execSync(`git push ${remote} HEAD:main`, { stdio: 'inherit' })
       console.log('Commit y push OK.')
     } catch (e) {

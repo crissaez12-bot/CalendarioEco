@@ -1,0 +1,356 @@
+{
+  "source": "NASDAQ",
+  "capturedAt": "2026-07-20",
+  "days": [
+    {
+      "date": "2026-07-20",
+      "label": "Lunes, 20 de julio de 2026",
+      "events": [
+        {
+          "ticker": "STLD",
+          "name": "Steel Dynamics, Inc.",
+          "marketCap": 33963552053,
+          "time": "AMC",
+          "epsEst": "3.66",
+          "epsLastYear": "2.01"
+        },
+        {
+          "ticker": "RYAAY",
+          "name": "Ryanair Holdings plc",
+          "marketCap": 30706650992,
+          "time": "BMO",
+          "epsEst": "1.25",
+          "epsLastYear": "1.74"
+        },
+        {
+          "ticker": "WRB",
+          "name": "W.R. Berkley Corporation",
+          "marketCap": 26658736779,
+          "time": "AMC",
+          "epsEst": "1.09",
+          "epsLastYear": "1.05"
+        },
+        {
+          "ticker": "CCK",
+          "name": "Crown Holdings, Inc.",
+          "marketCap": 13097820979,
+          "time": "AMC",
+          "epsEst": "2.15",
+          "epsLastYear": "2.15"
+        },
+        {
+          "ticker": "AGNC",
+          "name": "AGNC Investment Corp.",
+          "marketCap": 12879766432,
+          "time": "AMC",
+          "epsEst": "0.38",
+          "epsLastYear": "0.38"
+        },
+        {
+          "ticker": "WTFC",
+          "name": "Wintrust Financial Corporation",
+          "marketCap": 11081666311,
+          "time": "AMC",
+          "epsEst": "3.15",
+          "epsLastYear": "2.78"
+        },
+        {
+          "ticker": "DPZ",
+          "name": "Domino's Pizza Inc",
+          "marketCap": 10716309277,
+          "time": "BMO",
+          "epsEst": "4.11",
+          "epsLastYear": "3.81"
+        },
+        {
+          "ticker": "ZION",
+          "name": "Zions Bancorporation N.A.",
+          "marketCap": 10630325615,
+          "time": "AMC",
+          "epsEst": "1.57",
+          "epsLastYear": "1.58"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-21",
+      "label": "Martes, 21 de julio de 2026",
+      "events": [
+        {
+          "ticker": "NVS",
+          "name": "Novartis AG",
+          "marketCap": 293397402163,
+          "time": "BMO",
+          "epsEst": "2.20",
+          "epsLastYear": "2.42"
+        },
+        {
+          "ticker": "SCHW",
+          "name": "The Charles Schwab Corporation",
+          "marketCap": 176626602091,
+          "time": "BMO",
+          "epsEst": "1.53",
+          "epsLastYear": "1.14"
+        },
+        {
+          "ticker": "IBKR",
+          "name": "Interactive Brokers Group, Inc.",
+          "marketCap": 153570904263,
+          "time": "AMC",
+          "epsEst": "0.63",
+          "epsLastYear": "0.51"
+        },
+        {
+          "ticker": "DHR",
+          "name": "Danaher Corporation",
+          "marketCap": 144264886901,
+          "time": "BMO",
+          "epsEst": "1.84",
+          "epsLastYear": "1.80"
+        },
+        {
+          "ticker": "CB",
+          "name": "Chubb Limited",
+          "marketCap": 136588814929,
+          "time": "AMC",
+          "epsEst": "6.60",
+          "epsLastYear": "6.14"
+        },
+        {
+          "ticker": "COF",
+          "name": "Capital One Financial Corporation",
+          "marketCap": 128150532632,
+          "time": "AMC",
+          "epsEst": "4.88",
+          "epsLastYear": "5.48"
+        },
+        {
+          "ticker": "MRSH",
+          "name": "Marsh",
+          "marketCap": 87773322192,
+          "time": "BMO",
+          "epsEst": "2.88",
+          "epsLastYear": "2.72"
+        },
+        {
+          "ticker": "MMM",
+          "name": "3M Company",
+          "marketCap": 83367310998,
+          "time": "BMO",
+          "epsEst": "2.27",
+          "epsLastYear": "2.16"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-22",
+      "label": "Miércoles, 22 de julio de 2026",
+      "events": [
+        {
+          "ticker": "GOOG",
+          "name": "Alphabet Inc.",
+          "marketCap": 4201465320000,
+          "time": "AMC",
+          "epsEst": "2.87",
+          "epsLastYear": "2.31"
+        },
+        {
+          "ticker": "GOOGL",
+          "name": "Alphabet Inc.",
+          "marketCap": 4201465320000,
+          "time": "AMC",
+          "epsEst": "2.87",
+          "epsLastYear": "2.31"
+        },
+        {
+          "ticker": "TSLA",
+          "name": "Tesla, Inc. ",
+          "marketCap": 1430329879032,
+          "time": "AMC",
+          "epsEst": "0.31",
+          "epsLastYear": "0.27"
+        },
+        {
+          "ticker": "PM",
+          "name": "Philip Morris International Inc",
+          "marketCap": 300770686101,
+          "time": "BMO",
+          "epsEst": "2.04",
+          "epsLastYear": "1.91"
+        },
+        {
+          "ticker": "GEV",
+          "name": "GE Vernova Inc.",
+          "marketCap": 284262759511,
+          "time": "BMO",
+          "epsEst": "3.16",
+          "epsLastYear": "1.86"
+        },
+        {
+          "ticker": "TXN",
+          "name": "Texas Instruments Incorporated",
+          "marketCap": 258484554500,
+          "time": "AMC",
+          "epsEst": "1.91",
+          "epsLastYear": "1.41"
+        },
+        {
+          "ticker": "IBM",
+          "name": "International Business Machines Corporation",
+          "marketCap": 199885402498,
+          "time": "AMC",
+          "epsEst": "3",
+          "epsLastYear": "2.80"
+        },
+        {
+          "ticker": "T",
+          "name": "AT&T Inc.",
+          "marketCap": 151543269991,
+          "time": "BMO",
+          "epsEst": "0.59",
+          "epsLastYear": "0.54"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-23",
+      "label": "Jueves, 23 de julio de 2026",
+      "events": [
+        {
+          "ticker": "INTC",
+          "name": "Intel Corporation",
+          "marketCap": 477671040000,
+          "time": "AMC",
+          "epsEst": "0.10",
+          "epsLastYear": "(0.26)"
+        },
+        {
+          "ticker": "RTX",
+          "name": "RTX Corporation",
+          "marketCap": 260596710152,
+          "time": "BMO",
+          "epsEst": "1.66",
+          "epsLastYear": "1.56"
+        },
+        {
+          "ticker": "TMUS",
+          "name": "T-Mobile US, Inc.",
+          "marketCap": 208248653692,
+          "time": "BMO",
+          "epsEst": "2.52",
+          "epsLastYear": "2.84"
+        },
+        {
+          "ticker": "TMO",
+          "name": "Thermo Fisher Scientific Inc",
+          "marketCap": 197880997683,
+          "time": "BMO",
+          "epsEst": "5.71",
+          "epsLastYear": "5.36"
+        },
+        {
+          "ticker": "SAP",
+          "name": "SAP SE",
+          "marketCap": 195381313057,
+          "time": "AMC",
+          "epsEst": "2",
+          "epsLastYear": "1.70"
+        },
+        {
+          "ticker": "UNP",
+          "name": "Union Pacific Corporation",
+          "marketCap": 179152962023,
+          "time": "BMO",
+          "epsEst": "3.20",
+          "epsLastYear": "3.03"
+        },
+        {
+          "ticker": "TTE",
+          "name": "TotalEnergies SE",
+          "marketCap": 175940753965,
+          "time": "BMO",
+          "epsEst": "3.07",
+          "epsLastYear": "1.57"
+        },
+        {
+          "ticker": "LMT",
+          "name": "Lockheed Martin Corporation",
+          "marketCap": 117303846842,
+          "time": "BMO",
+          "epsEst": "7.28",
+          "epsLastYear": "7.29"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-24",
+      "label": "Viernes, 24 de julio de 2026",
+      "events": [
+        {
+          "ticker": "AXP",
+          "name": "American Express Company",
+          "marketCap": 242464701520,
+          "time": "BMO",
+          "epsEst": "4.40",
+          "epsLastYear": "4.08"
+        },
+        {
+          "ticker": "NEE",
+          "name": "NextEra Energy, Inc.",
+          "marketCap": 185178321293,
+          "time": "BMO",
+          "epsEst": "1.08",
+          "epsLastYear": "1.05"
+        },
+        {
+          "ticker": "VZ",
+          "name": "Verizon Communications Inc.",
+          "marketCap": 182012612887,
+          "time": "BMO",
+          "epsEst": "1.27",
+          "epsLastYear": "1.22"
+        },
+        {
+          "ticker": "HCA",
+          "name": "HCA Healthcare, Inc.",
+          "marketCap": 82342496964,
+          "time": "BMO",
+          "epsEst": "7.57",
+          "epsLastYear": "6.84"
+        },
+        {
+          "ticker": "CNI",
+          "name": "Canadian National Railway Company",
+          "marketCap": 78374894483,
+          "time": "BMO",
+          "epsEst": "1.39",
+          "epsLastYear": "1.35"
+        },
+        {
+          "ticker": "E",
+          "name": "ENI S.p.A.",
+          "marketCap": 78307249862,
+          "time": "N/D",
+          "epsEst": "1.90",
+          "epsLastYear": "0.79"
+        },
+        {
+          "ticker": "SLB",
+          "name": "SLB Limited",
+          "marketCap": 70252759490,
+          "time": "BMO",
+          "epsEst": "0.51",
+          "epsLastYear": "0.74"
+        },
+        {
+          "ticker": "CHTR",
+          "name": "Charter Communications, Inc.",
+          "marketCap": 18258398626,
+          "time": "BMO",
+          "epsEst": "10.17",
+          "epsLastYear": "9.18"
+        }
+      ]
+    }
+  ]
+}
