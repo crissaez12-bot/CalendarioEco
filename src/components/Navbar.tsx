@@ -11,8 +11,8 @@ const NAV_LINKS = [
 
 export default function Navbar() {
   return (
-    <nav className="liquid-glass flex items-center justify-between rounded-xl px-4 py-2">
-      <Link to="/" className="flex items-center gap-2.5">
+    <nav className="liquid-glass grid grid-cols-[1fr_auto_1fr] items-center rounded-xl px-4 py-2">
+      <Link to="/" className="flex items-center justify-self-start gap-2.5">
         <img src={logo} alt="" className="h-12 w-auto flex-shrink-0 md:h-14" />
         <span className="whitespace-nowrap font-logo text-lg font-medium tracking-tight text-ivory md:text-2xl">
           The Empire Session
@@ -32,6 +32,8 @@ export default function Navbar() {
           </NavLink>
         ))}
       </div>
+
+      <div />
     </nav>
   )
 }
