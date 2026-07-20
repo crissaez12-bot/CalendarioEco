@@ -33,15 +33,15 @@ export default function Hero() {
         <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:grid lg:grid-cols-2 lg:items-end lg:px-16 lg:pb-16">
           <div>
             <AnimatedHeading
-              text={'Mastering Markets\nwith Uncompromising Precision.'}
-              className="mb-4 text-4xl font-normal md:text-5xl lg:text-6xl xl:text-7xl"
-              style={{ letterSpacing: '-0.04em' }}
+              text={'Transformar la Información\nen Dominio Estratégico'}
+              className="mb-4 font-display text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl"
+              style={{ letterSpacing: '-0.02em' }}
               initialDelay={200}
             />
 
             <FadeIn delay={800} duration={1000}>
-              <p className="mb-5 text-base text-beige md:text-lg">
-                Advanced analytics, quantitative edge, and market structure tailored for high-performance execution.
+              <p className="mb-5 text-base font-sans text-ivory md:text-lg">
+                Herramientas cuantitativas y lectura de mercado en tiempo real para impulsar tu ejecución financiera.
               </p>
             </FadeIn>
 

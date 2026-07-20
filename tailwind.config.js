@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         logo: ['Lora', 'serif'],
+        display: ['Playfair Display', 'serif'],
       },
       colors: {
         ivory: '#F2FBF7',
