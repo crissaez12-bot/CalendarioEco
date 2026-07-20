@@ -1,8 +1,13 @@
 {
   "date": "2026-07-20",
-  "updatedAt": "11:55",
+  "updatedAt": "12:12",
   "categories": {
     "finanzas": [
+      {
+        "title": "Las acciones hacen los movimientos más grandes al mediodía: AMD, Archer Aviation, SpaceX, Iren y más",
+        "url": "https://www.cnbc.com/2026/07/20/stocks-making-the-biggest-moves-midday-amd-achr-spcx-iren.html",
+        "source": "CNBC"
+      },
       {
         "title": "Los vendedores en corto se cargan contra SpaceX a medida que las acciones caen por debajo del precio de la OPI",
         "url": "https://www.cnbc.com/2026/07/16/short-sellers-load-up-against-spacex-as-stock-retreats-back-to-ipo-price.html",
