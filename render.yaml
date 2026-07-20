@@ -22,3 +22,20 @@ services:
         sync: false
       - key: GIT_REPO
         sync: false
+
+  # Corre 3x/dia (8/12/16 hora Chile). Cron usa UTC fijo, no seno DST:
+  # horario actual = invierno CLT (UTC-4) -> 12/16/20 UTC. Cuando Chile
+  # entre en horario de verano (UTC-3, ~septiembre), hay que restar 1h
+  # a cada valor (11/15/19 UTC) para que siga cayendo a las 8/12/16 reales.
+  - type: cron
+    name: update-news
+    runtime: node
+    plan: starter
+    schedule: "0 12,16,20 * * *"
+    buildCommand: npm install
+    startCommand: npm run update-news
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GIT_REPO
+        sync: false
