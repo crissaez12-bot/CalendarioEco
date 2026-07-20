@@ -78,6 +78,56 @@ function useCryptoFearGreed(fallback: LiveSentiment) {
   return { data, live }
 }
 
+function scoreToLabel(score: number) {
+  if (score >= 80) return 'Extreme Greed'
+  if (score >= 60) return 'Greed'
+  if (score >= 40) return 'Neutral'
+  if (score >= 20) return 'Fear'
+  return 'Extreme Fear'
+}
+
+const TWELVEDATA_API_KEY = import.meta.env.VITE_TWELVEDATA_API_KEY as string | undefined
+
+function useWallStreetSentiment(fallback: LiveSentiment) {
+  const [data, setData] = useState<LiveSentiment>(fallback)
+  const [live, setLive] = useState(false)
+
+  useEffect(() => {
+    if (!TWELVEDATA_API_KEY) return
+    let cancelled = false
+
+    async function load() {
+      try {
+        // VIXY (ETF de futuros VIX corto plazo) como proxy de volatilidad — la Basic plan de
+        // Twelve Data no incluye el índice VIX directo. Score = posición del precio actual dentro
+        // de su rango de 52 semanas (cerca del mínimo = calma/greed, cerca del máximo = pánico/fear).
+        const res = await fetch(`https://api.twelvedata.com/quote?symbol=VIXY&apikey=${TWELVEDATA_API_KEY}`)
+        const json = await res.json()
+        const close = Number(json?.close)
+        const low = Number(json?.fifty_two_week?.low)
+        const high = Number(json?.fifty_two_week?.high)
+        if (!cancelled && Number.isFinite(close) && Number.isFinite(low) && Number.isFinite(high) && high > low) {
+          const position = (close - low) / (high - low)
+          const score = Math.round(Math.max(0, Math.min(1, 1 - position)) * 100)
+          setData({ value: score, label: scoreToLabel(score) })
+          setLive(true)
+        }
+      } catch {
+        // se mantiene el ultimo valor conocido (fallback ilustrativo si nunca cargó)
+      }
+    }
+
+    load()
+    const id = setInterval(load, 15 * 60 * 1000)
+    return () => {
+      cancelled = true
+      clearInterval(id)
+    }
+  }, [])
+
+  return { data, live }
+}
+
 function sentimentStyle(label: string) {
   if (label.includes('Extreme Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.18)', border: 'rgba(95,230,174,0.45)' }
   if (label.includes('Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.10)', border: 'rgba(95,230,174,0.28)' }
@@ -101,6 +151,7 @@ export default function General() {
   }, [])
 
   const { data: cryptoFng, live: cryptoLive } = useCryptoFearGreed(FEAR_GREED.crypto)
+  const { data: wsSentiment, live: wsLive } = useWallStreetSentiment(FEAR_GREED.traditional)
 
   const activeSignals = DATA['1h']
     .filter((r) => r.signal !== 'none')
@@ -142,7 +193,7 @@ export default function General() {
         <div className="ml-auto flex flex-wrap items-center gap-3">
           {(
             [
-              { key: 'WS', ...FEAR_GREED.traditional, live: false },
+              { key: 'WS', ...wsSentiment, live: wsLive },
               { key: 'Crypto', ...cryptoFng, live: cryptoLive },
             ] as const
           ).map((s) => {
@@ -329,9 +380,9 @@ export default function General() {
       </div>
 
       <p className="mt-6 text-[11px] text-beige/40">
-        Sesiones y Fear &amp; Greed Crypto en tiempo real (fuente: alternative.me) &middot; Fear &amp; Greed WS, noticias
-        y ETF flows son datos ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda macro con fuente{' '}
-        {CALENDAR_SOURCE.provider}
+        Sesiones, Fear &amp; Greed Crypto (alternative.me) y WS (proxy VIXY vs. rango 52 semanas, Twelve Data) en tiempo
+        real &middot; noticias y ETF flows son datos ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda
+        macro con fuente {CALENDAR_SOURCE.provider}
       </p>
     </PageShell>
   )
