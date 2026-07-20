@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "update-calendar": "node scripts/update-calendar.mjs"
+    "update-calendar": "node scripts/update-calendar.mjs",
+    "update-news": "node scripts/update-news.mjs"
   },
   "dependencies": {
     "react": "^19.2.7",

@@ -1,0 +1,236 @@
+{
+  "date": "2026-07-20",
+  "updatedAt": "11:55",
+  "categories": {
+    "finanzas": [
+      {
+        "title": "Los vendedores en corto se cargan contra SpaceX a medida que las acciones caen por debajo del precio de la OPI",
+        "url": "https://www.cnbc.com/2026/07/16/short-sellers-load-up-against-spacex-as-stock-retreats-back-to-ipo-price.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Acciones que hacen los movimientos más grandes al mediodía: UnitedHealth, TSMC, J.B. Hunt y más",
+        "url": "https://www.cnbc.com/2026/07/16/stocks-making-the-biggest-moves-midday-man-abt-unh-tsm-more.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El presidente de la Fed de Dallas, Logan, pide tasas de interés \"modestamente\" más altas",
+        "url": "https://www.cnbc.com/2026/07/16/dallas-fed-president-logan-calls-for-modestly-higher-interest-rates.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La OPI más grande de la India este año recauda ofertas por valor de $ 31 mil millones, impulsada por el frenesí institucional",
+        "url": "https://www.cnbc.com/2026/07/17/indias-biggest-ipo-this-year-rakes-in-bids-worth-31-billion-powered-by-institutional-frenzy.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones que hacen los movimientos más grandes antes del mercado: Netflix, SpaceX, Alphabet y más",
+        "url": "https://www.cnbc.com/2026/07/17/stocks-making-the-biggest-moves-premarket-nflx-spcx-googl-and-more.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "'WarshGPT': Wall Street se adapta a la nueva era de las comunicaciones de la Reserva Federal",
+        "url": "https://www.cnbc.com/2026/07/18/warshgpt-federal-reserve-communications-task-force-warsh.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Kalshi suma 3 millones de nuevos usuarios a medida que el mercado de predicción capitaliza la Copa del Mundo",
+        "url": "https://www.cnbc.com/2026/07/19/kalshi-adds-3-million-new-users-as-company-capitalizes-on-world-cup.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El mercado de automóviles de China se encamina a su peor año desde 2021, ya que las ventas caen un 20%",
+        "url": "https://www.cnbc.com/2026/07/20/china-automotive-car-worst-year-sales-fall-20percent.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones hacen los movimientos más grandes antes del mercado: AMD, SpaceX, Domino's y más",
+        "url": "https://www.cnbc.com/2026/07/20/stocks-making-the-biggest-moves-premarket-amd-spcx-dpz.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los resultados de trading de Coinbase pueden estar por debajo de las expectativas, según los mercados de predicción",
+        "url": "https://www.cnbc.com/2026/07/20/kalshi-traders-think-coinbases-trading-volume-will-fall-again.html",
+        "source": "CNBC"
+      }
+    ],
+    "economia": [
+      {
+        "title": "Christine Lagarde deja la puerta abierta a una salida anticipada del BCE",
+        "url": "https://www.cnbc.com/2026/07/03/christine-lagarde-ecb-france-election.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios al consumidor de China se debilitan mientras la inflación del productor se acel",
+        "url": "https://www.cnbc.com/2026/07/09/china-cpi-ppi-june-inflation-iran-war-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "'Funflation' está de vuelta y llega a los servicios de juegos y streaming",
+        "url": "https://www.cnbc.com/2026/07/11/funflation-streaming-video-games-xbox-apple-disney-netflix.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La inflación de India se acelera hasta el 4,38% en junio, superando las previsiones",
+        "url": "https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios al consumidor aumentaron un 3,5% anual en junio, menos de lo esperado a medida que disminuyeron los precios de la energía",
+        "url": "https://www.cnbc.com/2026/07/14/consumer-price-index-inflation-report-june-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "China registra el crecimiento del PIB más lento desde 2022, avivando las llamadas de estímulo",
+        "url": "https://www.cnbc.com/2026/07/15/china-gdp-retail-sales-investment-june-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La reanudación de las hostilidades en Ormuz hace que los tipos del BCE se replanteen en medio de unas perspectivas \"extremadamente volátiles\"",
+        "url": "https://www.cnbc.com/2026/07/15/ecb-interest-rates-outlook-iran-war-hormuz.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Se esperaba que el índice de precios al productor se mantuviera sin cambios en junio, según el pronóstico de consenso del Dow Jones.",
+        "url": "https://www.cnbc.com/2026/07/15/wholesale-inflation-june-2026-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las fiestas de vigilancia de la Copa Mundial dieron a los bares y restaurantes un impulso necesario, dice la Fed",
+        "url": "https://www.cnbc.com/2026/07/15/world-cup-economy-spending-alcohol-hotels-fed.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios de las importaciones registran un aumento sorpresivo a medida que los costes de los productos procedentes de China alcanzan su nivel",
+        "url": "https://www.cnbc.com/2026/07/17/import-prices-post-surprise-gain-as-costs-of-goods-from-china-hit-highest-since-2008.html",
+        "source": "CNBC"
+      }
+    ],
+    "tecnologia": [
+      {
+        "title": "La chaqueta de cuero usada por el CEO de Nvidia cuesta poco menos de $ 1 millón en una subasta de Sotheby's",
+        "url": "https://www.cnbc.com/2026/07/17/leather-jacket-worn-by-nvidia-ceo-goes-for-just-under-1-million-at-sothebys-auction-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La rotación de IA se robó el centro de atención desde un buen comienzo de la temporada de ganancias",
+        "url": "https://www.cnbc.com/2026/07/18/the-ai-rotation-stole-the-spotlight-from-a-strong-start-to-earnings-season-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los analistas están preocupados por los riesgos de ciberseguridad que plantea la tecnología inalámbrica en los automóviles",
+        "url": "https://www.cnbc.com/2026/07/18/over-the-air-tech-in-vehicles-poses-cybersecurity-risks.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "TSMC está acelerando la construcción de fábricas en Arizona para capitalizar la 'megatendencia' de la IA: CFO",
+        "url": "https://www.cnbc.com/2026/07/20/tsmc-arizona-fab-capacity-ai-chip-demand.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones de la empresa china Zhongji Innolight aumentan tras la aprobación de su cotización en Hong Kong",
+        "url": "https://www.cnbc.com/2026/07/20/-chinas-zhongji-innolight-sees-shares-surge-after-hong-kong-listing-approval-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Bezos respalda a CuspAI en la búsqueda de nuevos materiales para chips con Nvidia",
+        "url": "https://www.cnbc.com/2026/07/20/bezos-cuspai-new-chip-materials-nvidia.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los estadounidenses desconfían de la propiedad gubernamental de empresas por parte de Trump: encuesta de CNBC",
+        "url": "https://www.cnbc.com/2026/07/20/trump-government-company-ownership-americans-wary-cnbc-poll.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El número de muertos en Estados Unidos, la taquilla de 'The Odyssey' y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/20/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "AMD consigue Microsoft para Helios, su primer sistema de IA para rack que rivaliza con Nvidia",
+        "url": "https://www.cnbc.com/2026/07/20/amd-helios-microsoft-ai-nvidia.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Aparece la acción de Alphabet en el informe de que está desarrollando un chip de IA más eficiente",
+        "url": "https://www.cnbc.com/2026/07/20/alphabet-googl-stock-ai-chip-report.html",
+        "source": "CNBC"
+      }
+    ],
+    "politica": [
+      {
+        "title": "Andrew y Tristan Tate, influencers de las redes sociales, arrestados en Miami",
+        "url": "https://www.cnbc.com/2026/07/19/social-media-influencers-andrew-and-tristan-tate-arrested-in-miami.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los costos de vivienda son el principal problema político para los votantes jóvenes, según una encuesta de CNBC",
+        "url": "https://www.cnbc.com/2026/07/19/housing-costs-election-young-voters-cnbc-survey-finds.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Según los informes, el FBI ya no investigará los enfrentamientos DE ICE",
+        "url": "https://www.cnbc.com/2026/07/19/ice-assault-claims-fbi.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El Departamento de Justicia activa un tribunal no probado para las deportaciones de \"terroristas extranjeros\"",
+        "url": "https://www.cnbc.com/2026/07/19/justice-department-activates-court-for-alien-terrorist-deportations.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El vicepresidente JD Vance anuncia el nacimiento de su hijo",
+        "url": "https://www.cnbc.com/2026/07/19/vice-president-jd-vance-announces-birth-of-son.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Estados Unidos golpea a Irán por novena noche consecutiva después de que aumenten las bajas durante el fin de semana",
+        "url": "https://www.cnbc.com/2026/07/20/us-iran-strait-of-hormuz-hostilities-casualties-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Andy Burnham del Reino Unido se convierte en primer ministro mientras Trump critica a Gran Bretaña como un \"desastre azotado por la pobreza\"",
+        "url": "https://www.cnbc.com/2026/07/20/uk-prime-minister-burnham-trump-poverty-stricken-disaster.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los estadounidenses desconfían de la propiedad gubernamental de empresas por parte de Trump: encuesta de CNBC",
+        "url": "https://www.cnbc.com/2026/07/20/trump-government-company-ownership-americans-wary-cnbc-poll.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Hombre con rifles de airsoft encendió fuegos artificiales fuera de la corte de inmigración de Nueva York: MS NOW",
+        "url": "https://www.cnbc.com/2026/07/20/new-york-nyc-fbi-incendiary-device.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los republicanos de Carolina del Sur se reúnen para suceder al senador Lindsey Graham",
+        "url": "https://www.cnbc.com/2026/07/20/south-carolina-election-republicans-lindsey-graham.html",
+        "source": "CNBC"
+      }
+    ],
+    "crypto": [
+      {
+        "title": "Vietnam establece multas por el comercio de criptomonedas sin licencia antes de la implementación de la regulación",
+        "url": "https://cointelegraph.com/news/vietnam-crypto-traders-unlicensed-platforms-fines",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Hyperliquid establece una apuesta EXAGERADA de 500.000 para los implementadores del mercado de predicción sin permiso",
+        "url": "https://cointelegraph.com/news/hyperliquid-hype-stake-permissionless-prediction-markets",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "IREN aumenta un 16% después de elevar el objetivo de ingresos de la nube de IA por encima de $ 4B",
+        "url": "https://cointelegraph.com/news/iren-jumps-16-after-raising-ai-cloud-revenue-target-above-4b",
+        "source": "Cointelegraph"
+      }
+    ]
+  }
+}
