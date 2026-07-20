@@ -30,48 +30,19 @@ export default function Hero() {
           <Navbar />
         </div>
 
-        <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:grid lg:grid-cols-2 lg:items-end lg:px-16 lg:pb-16">
-          <div>
-            <AnimatedHeading
-              text={'Transformar la Información\nen Dominio Estratégico'}
-              className="mb-4 font-display text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl"
-              style={{ letterSpacing: '-0.02em' }}
-              initialDelay={200}
-            />
+        <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:px-16 lg:pb-16">
+          <AnimatedHeading
+            text={'Transformar la Información\nen Dominio Estratégico'}
+            className="mb-4 font-display text-2xl font-bold md:text-3xl lg:text-4xl xl:text-5xl"
+            style={{ letterSpacing: '-0.02em' }}
+            initialDelay={200}
+          />
 
-            <FadeIn delay={800} duration={1000}>
-              <p className="mb-5 text-base font-sans text-ivory md:text-lg">
-                Herramientas cuantitativas y lectura de mercado en tiempo real para impulsar tu ejecución financiera.
-              </p>
-            </FadeIn>
-
-            <FadeIn delay={1200} duration={1000}>
-              <div className="flex flex-wrap gap-4">
-                <button
-                  type="button"
-                  className="rounded-lg bg-ivory px-8 py-3 font-medium text-navy transition-colors hover:bg-beige"
-                >
-                  Start a Chat
-                </button>
-                <button
-                  type="button"
-                  className="liquid-glass rounded-lg border border-beige/30 px-8 py-3 font-medium text-ivory transition-colors hover:bg-ivory hover:text-navy"
-                >
-                  Explore Now
-                </button>
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="mt-10 flex items-end justify-start lg:mt-0 lg:justify-end">
-            <FadeIn delay={1400} duration={1000}>
-              <div className="liquid-glass rounded-xl border border-beige/30 px-6 py-3">
-                <span className="text-lg font-light text-ivory md:text-xl lg:text-2xl">
-                  Monte Carlo. News. Calendario.
-                </span>
-              </div>
-            </FadeIn>
-          </div>
+          <FadeIn delay={800} duration={1000}>
+            <p className="max-w-2xl text-base font-sans text-ivory md:text-lg">
+              Herramientas cuantitativas y lectura de mercado en tiempo real para impulsar tu ejecución financiera.
+            </p>
+          </FadeIn>
         </div>
       </div>
     </section>
