@@ -6,7 +6,7 @@ import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
 import { ETF_FLOWS, FEAR_GREED, NEWS_HEADLINES } from '../data/generalData'
 
 interface SessionDef {
-  code: string
+  countryCode: string
   label: string
   tz: string
   openUTC: number
@@ -14,9 +14,9 @@ interface SessionDef {
 }
 
 const SESSIONS: SessionDef[] = [
-  { code: 'NY', label: 'Nueva York', tz: 'America/New_York', openUTC: 13, closeUTC: 21 },
-  { code: 'LDN', label: 'Londres', tz: 'Europe/London', openUTC: 8, closeUTC: 16 },
-  { code: 'ASIA', label: 'Tokio', tz: 'Asia/Tokyo', openUTC: 0, closeUTC: 9 },
+  { countryCode: 'us', label: 'Nueva York', tz: 'America/New_York', openUTC: 13, closeUTC: 21 },
+  { countryCode: 'gb', label: 'Londres', tz: 'Europe/London', openUTC: 8, closeUTC: 16 },
+  { countryCode: 'cn', label: 'China', tz: 'Asia/Shanghai', openUTC: 0, closeUTC: 9 },
 ]
 
 function isSessionOpen(now: Date, s: SessionDef) {
@@ -28,6 +28,14 @@ const moneyShort = (n: number) => {
   const abs = Math.abs(n)
   const val = abs >= 1e9 ? `${(abs / 1e9).toFixed(2)}B` : `${(abs / 1e6).toFixed(0)}M`
   return `${n >= 0 ? '+' : '-'}$${val}`
+}
+
+function sentimentStyle(label: string) {
+  if (label.includes('Extreme Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.18)', border: 'rgba(95,230,174,0.45)' }
+  if (label.includes('Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.10)', border: 'rgba(95,230,174,0.28)' }
+  if (label.includes('Extreme Fear')) return { text: '#FF6B6B', bg: 'rgba(255,107,107,0.18)', border: 'rgba(255,107,107,0.45)' }
+  if (label.includes('Fear')) return { text: '#FF6B6B', bg: 'rgba(255,107,107,0.10)', border: 'rgba(255,107,107,0.28)' }
+  return { text: '#F2FBF7', bg: 'rgba(127,163,150,0.10)', border: 'rgba(127,163,150,0.28)' }
 }
 
 const TAG_STYLES: Record<string, string> = {
@@ -54,12 +62,12 @@ export default function General() {
   return (
     <PageShell>
       {/* Barra de sesiones + sentimiento */}
-      <div className="liquid-glass mb-6 flex flex-wrap items-center gap-x-8 gap-y-3 rounded-xl px-5 py-3">
+      <div className="liquid-glass mb-6 flex flex-wrap items-center gap-x-8 gap-y-3 rounded-xl px-5 py-3.5">
         <div className="flex flex-wrap items-center gap-5">
           {SESSIONS.map((s) => {
             const open = isSessionOpen(now, s)
             return (
-              <div key={s.code} className="flex items-center gap-2">
+              <div key={s.label} className="flex items-center gap-2">
                 <span
                   className="h-2 w-2 flex-shrink-0 rounded-full"
                   style={{
@@ -67,7 +75,12 @@ export default function General() {
                     boxShadow: open ? '0 0 6px 1px rgba(95,230,174,0.7)' : 'none',
                   }}
                 />
-                <span className="font-mono text-xs font-semibold uppercase tracking-wide text-ivory">{s.code}</span>
+                <img
+                  src={`https://flagcdn.com/w40/${s.countryCode}.png`}
+                  alt={s.label}
+                  title={s.label}
+                  className="h-3.5 w-5 flex-shrink-0 rounded-[2px] object-cover"
+                />
                 <span className="font-mono text-xs tabular-nums text-beige/60">
                   {now.toLocaleTimeString('es-CL', { timeZone: s.tz, hour: '2-digit', minute: '2-digit' })}
                 </span>
@@ -76,17 +89,30 @@ export default function General() {
           })}
         </div>
 
-        <div className="ml-auto flex flex-wrap items-center gap-5 text-xs">
-          <div className="flex items-center gap-1.5">
-            <span className="uppercase tracking-wide text-beige/50">Trad:</span>
-            <span className="font-mono font-semibold text-ivory">{FEAR_GREED.traditional.value}</span>
-            <span className="text-beige/60">{FEAR_GREED.traditional.label}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <span className="uppercase tracking-wide text-beige/50">Cripto:</span>
-            <span className="font-mono font-semibold text-moss">{FEAR_GREED.crypto.value}</span>
-            <span className="text-beige/60">{FEAR_GREED.crypto.label}</span>
-          </div>
+        <div className="ml-auto flex flex-wrap items-center gap-3">
+          {(
+            [
+              { key: 'WS', ...FEAR_GREED.traditional },
+              { key: 'Crypto', ...FEAR_GREED.crypto },
+            ] as const
+          ).map((s) => {
+            const c = sentimentStyle(s.label)
+            return (
+              <div
+                key={s.key}
+                className="flex items-center gap-2.5 rounded-lg px-4 py-2"
+                style={{ background: c.bg, border: `1px solid ${c.border}` }}
+              >
+                <span className="text-[11px] font-semibold uppercase tracking-wide text-beige/60">{s.key}</span>
+                <span className="font-mono text-xl font-bold tabular-nums" style={{ color: c.text }}>
+                  {s.value}
+                </span>
+                <span className="text-xs font-semibold" style={{ color: c.text }}>
+                  {s.label}
+                </span>
+              </div>
+            )
+          })}
         </div>
       </div>
 
