@@ -32,13 +32,6 @@ export default function Navbar() {
           </NavLink>
         ))}
       </div>
-
-      <button
-        type="button"
-        className="rounded-lg bg-ivory px-6 py-2 text-sm font-medium text-navy transition-colors hover:bg-beige"
-      >
-        Start a Chat
-      </button>
     </nav>
   )
 }
