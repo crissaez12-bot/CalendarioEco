@@ -13,7 +13,7 @@ export default function Navbar() {
       <Link to="/" className="flex items-center gap-2.5">
         <img src={logo} alt="" className="h-12 w-auto flex-shrink-0 md:h-14" />
         <span className="whitespace-nowrap text-lg font-semibold tracking-tight text-ivory md:text-2xl">
-          The Empire Session
+          The Empire <span className="italic">Session</span>
         </span>
       </Link>
 

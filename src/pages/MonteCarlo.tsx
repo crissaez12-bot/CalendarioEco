@@ -143,7 +143,7 @@ export default function MonteCarlo() {
               const ready = isReady(row)
               const p = Math.max(0, Math.min(1, pctB(row)))
               const atrOk = row.atr >= ATR_THRESHOLD
-              const dotColor = row.signal === 'bull' ? '#7FBF6A' : row.signal === 'bear' ? '#F0574E' : '#D9C7A3'
+              const dotColor = row.signal === 'bull' ? '#5FE6AE' : row.signal === 'bear' ? '#FF6B6B' : '#7FA396'
               const sigLabel = row.signal === 'bull' ? 'TouchBull' : row.signal === 'bear' ? 'TouchBear' : 'Sin señal'
 
               return (
@@ -211,10 +211,10 @@ export default function MonteCarlo() {
                       style={{
                         background:
                           row.signal === 'bull'
-                            ? 'rgba(127,191,106,0.18)'
+                            ? 'rgba(95,230,174,0.18)'
                             : row.signal === 'bear'
-                              ? 'rgba(240,87,78,0.15)'
-                              : 'rgba(217,199,163,0.12)',
+                              ? 'rgba(255,107,107,0.15)'
+                              : 'rgba(127,163,150,0.12)',
                         color: dotColor,
                       }}
                     >
