@@ -1,8 +1,13 @@
 {
   "date": "2026-07-20",
-  "updatedAt": "12:54",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Capital One apuesta fuerte en Discover. Ahora debe demostrar que la apuesta valió la pena",
+        "url": "https://www.cnbc.com/2026/07/20/capital-one-bet-big-on-discover-now-it-must-prove-the-gamble-was-worth-it-.html",
+        "source": "CNBC"
+      },
       {
         "title": "Las acciones hacen los movimientos más grandes al mediodía: AMD, Archer Aviation, SpaceX, Iren y más",
         "url": "https://www.cnbc.com/2026/07/20/stocks-making-the-biggest-moves-midday-amd-achr-spcx-iren.html",
@@ -113,6 +118,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Renuncia el jefe de la agencia de seguridad de IA de la administración Trump después de 3 meses en el trabajo",
+        "url": "https://www.cnbc.com/2026/07/20/trumps-head-of-ai-safety-agency-caisi-resigns-after-months-on-job.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El CEO de Archer reafirma el \"ambicioso\" objetivo de vuelo para 2028 a medida que la compañía presenta naves militares con Anduril",
         "url": "https://www.cnbc.com/2026/07/20/archer-thunder-military-craft-anduril.html",
         "source": "CNBC"
@@ -175,6 +185,11 @@
     ],
     "politica": [
       {
+        "title": "Trump dice que Netanyahu no será arrestado en Nueva York, rechazando a Mamdani",
+        "url": "https://www.cnbc.com/2026/07/20/trump-netanyahu-arrest-mamdani-new-york-israel.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Andrew y Tristan Tate, influencers de las redes sociales, arrestados en Miami",
         "url": "https://www.cnbc.com/2026/07/19/social-media-influencers-andrew-and-tristan-tate-arrested-in-miami.html",
         "source": "CNBC"
@@ -226,6 +241,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Bernstein eleva el precio objetivo de Robinhood, cita la tokenización y los mercados de predicción",
+        "url": "https://cointelegraph.com/news/bernstein-raises-robinhood-price-target-cites-tokenization-and-prediction-markets",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "El presidente nigeriano firma una orden sobre el enfoque de la regulación de las criptomonedas y los impuestos",
+        "url": "https://cointelegraph.com/news/nigeria-order-crypto-regulatory-framework",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Las ofertas de Hut 8, IREN elevan las acciones mineras de Bitcoin centradas en la IA",
+        "url": "https://cointelegraph.com/news/hut-8-iren-deals-lift-ai-focused-bitcoin-mining-stocks",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Éxodo para recortar el 25% del personal en la reorganización de la empresa",
+        "url": "https://cointelegraph.com/news/crypto-wallet-exodus-cut-staff-company-reorganization",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Vietnam establece multas por el comercio de criptomonedas sin licencia antes de la implementación de la regulación",
         "url": "https://cointelegraph.com/news/vietnam-crypto-traders-unlicensed-platforms-fines",
