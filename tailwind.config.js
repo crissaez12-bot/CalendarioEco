@@ -5,6 +5,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
+        logo: ['Lora', 'serif'],
       },
       colors: {
         ivory: '#F2FBF7',

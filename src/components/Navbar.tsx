@@ -12,8 +12,8 @@ export default function Navbar() {
     <nav className="liquid-glass flex items-center justify-between rounded-xl px-4 py-2">
       <Link to="/" className="flex items-center gap-2.5">
         <img src={logo} alt="" className="h-12 w-auto flex-shrink-0 md:h-14" />
-        <span className="whitespace-nowrap text-lg font-semibold tracking-tight text-ivory md:text-2xl">
-          The Empire <span className="italic">Session</span>
+        <span className="whitespace-nowrap font-logo text-lg font-medium tracking-tight text-ivory md:text-2xl">
+          The Empire Session
         </span>
       </Link>
 
