@@ -33,7 +33,7 @@ export default function Hero() {
         <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:grid lg:grid-cols-2 lg:items-end lg:px-16 lg:pb-16">
           <div>
             <AnimatedHeading
-              text={'Shaping tomorrow\nwith vision and action.'}
+              text={'Mastering Markets\nwith Uncompromising Precision.'}
               className="mb-4 text-4xl font-normal md:text-5xl lg:text-6xl xl:text-7xl"
               style={{ letterSpacing: '-0.04em' }}
               initialDelay={200}
@@ -41,7 +41,7 @@ export default function Hero() {
 
             <FadeIn delay={800} duration={1000}>
               <p className="mb-5 text-base text-beige md:text-lg">
-                We back visionaries and craft ventures that define what comes next.
+                Advanced analytics, quantitative edge, and market structure tailored for high-performance execution.
               </p>
             </FadeIn>
 
