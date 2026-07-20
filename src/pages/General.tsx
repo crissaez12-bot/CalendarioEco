@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import { ASSET_ICON, DATA, isReady } from '../data/monteCarloData'
 import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
-import { ETF_FLOWS, FEAR_GREED, NEWS_HEADLINES } from '../data/generalData'
+import { ETF_FLOWS, FEAR_GREED } from '../data/generalData'
+import newsData from '../data/newsData.json'
 
 interface SessionDef {
   countryCode: string
@@ -136,11 +137,18 @@ function sentimentStyle(label: string) {
   return { text: '#F2FBF7', bg: 'rgba(127,163,150,0.10)', border: 'rgba(127,163,150,0.28)' }
 }
 
-const TAG_STYLES: Record<string, string> = {
-  Política: 'border-beige/25 text-beige/70',
-  Bolsa: 'border-ivory/25 text-ivory/80',
-  Cripto: 'border-moss/40 text-moss',
-}
+const NEWS_CATEGORIES: { key: 'finanzas' | 'economia' | 'tecnologia' | 'politica' | 'crypto'; label: string; style: string }[] = [
+  { key: 'finanzas', label: 'Finanzas', style: 'border-ivory/25 text-ivory/80' },
+  { key: 'economia', label: 'Economía', style: 'border-beige/30 text-beige/80' },
+  { key: 'tecnologia', label: 'Tecnología', style: 'border-beige/20 text-beige/60' },
+  { key: 'politica', label: 'Política', style: 'border-beige/15 text-beige/45' },
+  { key: 'crypto', label: 'Crypto', style: 'border-moss/40 text-moss' },
+]
+
+const latestHeadlines = NEWS_CATEGORIES.map((c) => {
+  const item = (newsData.categories as Record<string, { title: string; url: string }[]>)[c.key]?.[0]
+  return item ? { ...item, category: c } : null
+}).filter((x): x is { title: string; url: string; category: (typeof NEWS_CATEGORIES)[number] } => x !== null)
 
 export default function General() {
   const [now, setNow] = useState(new Date())
@@ -333,18 +341,21 @@ export default function General() {
             </Link>
           </div>
           <div className="flex flex-col gap-3">
-            {NEWS_HEADLINES.map((n, i) => (
-              <div key={i} className="border-b border-beige/5 pb-3 last:border-b-0 last:pb-0">
-                <div className="flex items-center gap-2">
-                  <span className={`rounded border px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${TAG_STYLES[n.tag]}`}>
-                    {n.tag}
-                  </span>
-                  <span className="text-[11px] text-beige/40">
-                    {n.source} &middot; {n.timeAgo}
-                  </span>
-                </div>
+            {latestHeadlines.map((n) => (
+              <a
+                key={n.category.key}
+                href={n.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block border-b border-beige/5 pb-3 transition-colors last:border-b-0 last:pb-0 hover:bg-beige/5"
+              >
+                <span
+                  className={`rounded border px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${n.category.style}`}
+                >
+                  {n.category.label}
+                </span>
                 <p className="mt-1 text-sm font-medium text-ivory">{n.title}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -380,9 +391,9 @@ export default function General() {
       </div>
 
       <p className="mt-6 text-[11px] text-beige/40">
-        Sesiones, Fear &amp; Greed Crypto (alternative.me) y WS (proxy VIXY vs. rango 52 semanas, Twelve Data) en tiempo
-        real &middot; noticias y ETF flows son datos ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda
-        macro con fuente {CALENDAR_SOURCE.provider}
+        Sesiones, Fear &amp; Greed Crypto (alternative.me), WS (proxy VIXY vs. rango 52 semanas, Twelve Data) y noticias
+        (CNBC / Cointelegraph, actualizado {newsData.updatedAt} hrs Chile) en tiempo real &middot; ETF flows son datos
+        ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda macro con fuente {CALENDAR_SOURCE.provider}
       </p>
     </PageShell>
   )
