@@ -30,6 +30,54 @@ const moneyShort = (n: number) => {
   return `${n >= 0 ? '+' : '-'}$${val}`
 }
 
+interface LiveSentiment {
+  value: number
+  label: string
+}
+
+function classifyFng(label: string) {
+  const map: Record<string, string> = {
+    'Extreme Fear': 'Extreme Fear',
+    Fear: 'Fear',
+    Neutral: 'Neutral',
+    Greed: 'Greed',
+    'Extreme Greed': 'Extreme Greed',
+  }
+  return map[label] ?? label
+}
+
+function useCryptoFearGreed(fallback: LiveSentiment) {
+  const [data, setData] = useState<LiveSentiment>(fallback)
+  const [live, setLive] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+
+    async function load() {
+      try {
+        const res = await fetch('https://api.alternative.me/fng/?limit=1')
+        const json = await res.json()
+        const entry = json?.data?.[0]
+        if (!cancelled && entry) {
+          setData({ value: Number(entry.value), label: classifyFng(entry.value_classification) })
+          setLive(true)
+        }
+      } catch {
+        // se mantiene el ultimo valor conocido (fallback ilustrativo si nunca cargó)
+      }
+    }
+
+    load()
+    const id = setInterval(load, 15 * 60 * 1000)
+    return () => {
+      cancelled = true
+      clearInterval(id)
+    }
+  }, [])
+
+  return { data, live }
+}
+
 function sentimentStyle(label: string) {
   if (label.includes('Extreme Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.18)', border: 'rgba(95,230,174,0.45)' }
   if (label.includes('Greed')) return { text: '#5FE6AE', bg: 'rgba(95,230,174,0.10)', border: 'rgba(95,230,174,0.28)' }
@@ -51,6 +99,8 @@ export default function General() {
     const id = setInterval(() => setNow(new Date()), 1000)
     return () => clearInterval(id)
   }, [])
+
+  const { data: cryptoFng, live: cryptoLive } = useCryptoFearGreed(FEAR_GREED.crypto)
 
   const activeSignals = DATA['1h']
     .filter((r) => r.signal !== 'none')
@@ -92,8 +142,8 @@ export default function General() {
         <div className="ml-auto flex flex-wrap items-center gap-3">
           {(
             [
-              { key: 'WS', ...FEAR_GREED.traditional },
-              { key: 'Crypto', ...FEAR_GREED.crypto },
+              { key: 'WS', ...FEAR_GREED.traditional, live: false },
+              { key: 'Crypto', ...cryptoFng, live: cryptoLive },
             ] as const
           ).map((s) => {
             const c = sentimentStyle(s.label)
@@ -103,7 +153,16 @@ export default function General() {
                 className="flex items-center gap-2.5 rounded-lg px-4 py-2"
                 style={{ background: c.bg, border: `1px solid ${c.border}` }}
               >
-                <span className="text-[11px] font-semibold uppercase tracking-wide text-beige/60">{s.key}</span>
+                <span className="flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wide text-beige/60">
+                  {s.live && (
+                    <span
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{ background: '#5FE6AE', boxShadow: '0 0 5px 1px rgba(95,230,174,0.7)' }}
+                      title="Dato en vivo"
+                    />
+                  )}
+                  {s.key}
+                </span>
                 <span className="font-mono text-xl font-bold tabular-nums" style={{ color: c.text }}>
                   {s.value}
                 </span>
@@ -270,8 +329,9 @@ export default function General() {
       </div>
 
       <p className="mt-6 text-[11px] text-beige/40">
-        Sesiones calculadas en tiempo real &middot; Fear &amp; Greed, noticias y ETF flows son datos ilustrativos capturados el{' '}
-        {FEAR_GREED.capturedAt} &middot; agenda macro con fuente {CALENDAR_SOURCE.provider}
+        Sesiones y Fear &amp; Greed Crypto en tiempo real (fuente: alternative.me) &middot; Fear &amp; Greed WS, noticias
+        y ETF flows son datos ilustrativos capturados el {FEAR_GREED.capturedAt} &middot; agenda macro con fuente{' '}
+        {CALENDAR_SOURCE.provider}
       </p>
     </PageShell>
   )
