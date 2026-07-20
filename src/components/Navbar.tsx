@@ -93,19 +93,6 @@ function classifyAtrPct(atrPct: number): VolLevel {
   return 'High'
 }
 
-function computeAtrPct(candles: number[][], period = 14) {
-  const trs: number[] = []
-  for (let i = 1; i < candles.length; i++) {
-    const [, , high, low] = candles[i]
-    const prevClose = candles[i - 1][4]
-    trs.push(Math.max(high - low, Math.abs(high - prevClose), Math.abs(low - prevClose)))
-  }
-  const lastN = trs.slice(-period)
-  const atr = lastN.reduce((a, b) => a + b, 0) / lastN.length
-  const lastClose = candles.at(-1)?.[4] ?? 1
-  return (atr / lastClose) * 100
-}
-
 function MarketVolBadge() {
   const [level, setLevel] = useState<VolLevel | null>(null)
 
@@ -114,13 +101,13 @@ function MarketVolBadge() {
 
     async function load() {
       try {
-        // No hay OHLC gratis del indice TOTAL (market cap crypto agregado), asi que
-        // se usa BTC como proxy — es el activo de mayor peso y su volatilidad sigue
-        // de cerca a la del mercado agregado.
-        const res = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin/ohlc?vs_currency=usd&days=14')
-        const candles = await res.json()
-        if (!cancelled && Array.isArray(candles) && candles.length > 15) {
-          setLevel(classifyAtrPct(computeAtrPct(candles)))
+        // Alerta de TradingView en CRYPTOCAP:TOTAL (1h, indicador ATR) -> webhook a
+        // signal-desk (/total-atr), que guarda el ultimo valor. Se actualiza sola
+        // cada vez que cierra una vela de 1h (via el cron de la alerta en TV).
+        const res = await fetch('https://signal-desk-j209.onrender.com/total-atr')
+        const data = await res.json()
+        if (!cancelled && typeof data?.atr_pct === 'number') {
+          setLevel(classifyAtrPct(data.atr_pct))
         }
       } catch {
         // se mantiene el ultimo valor conocido (sin badge si nunca cargó)
@@ -128,7 +115,7 @@ function MarketVolBadge() {
     }
 
     load()
-    const id = setInterval(load, 15 * 60 * 1000)
+    const id = setInterval(load, 10 * 60 * 1000)
     return () => {
       cancelled = true
       clearInterval(id)
@@ -142,7 +129,7 @@ function MarketVolBadge() {
     <span
       className="whitespace-nowrap rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
       style={{ background: style.bg, color: style.text }}
-      title="Volatilidad del mercado crypto — proxy ATR(14) de BTC sobre velas de 4h"
+      title="Volatilidad del mercado crypto — ATR(14) real de CRYPTOCAP:TOTAL, 1h, via alerta de TradingView"
     >
       Vol {level}
     </span>
