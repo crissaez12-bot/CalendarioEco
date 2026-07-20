@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: 'Monte Carlo', to: '/monte-carlo' },
   { label: 'News', to: '/news' },
   { label: 'Calendario', to: '/calendario' },
+  { label: 'Earnings', to: '/earnings' },
 ]
 
 export default function Navbar() {

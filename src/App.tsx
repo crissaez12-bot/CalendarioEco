@@ -4,6 +4,7 @@ import General from './pages/General'
 import MonteCarlo from './pages/MonteCarlo'
 import News from './pages/News'
 import Calendario from './pages/Calendario'
+import Earnings from './pages/Earnings'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/monte-carlo" element={<MonteCarlo />} />
         <Route path="/news" element={<News />} />
         <Route path="/calendario" element={<Calendario />} />
+        <Route path="/earnings" element={<Earnings />} />
       </Routes>
     </BrowserRouter>
   )
