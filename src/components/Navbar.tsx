@@ -2,6 +2,7 @@ import { Link, NavLink } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
 const NAV_LINKS = [
+  { label: 'General', to: '/general' },
   { label: 'Monte Carlo', to: '/monte-carlo' },
   { label: 'News', to: '/news' },
   { label: 'Calendario', to: '/calendario' },
