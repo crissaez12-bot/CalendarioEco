@@ -1,6 +1,6 @@
 {
   "source": "DefiLlama (top 100 mkt cap)",
-  "capturedAt": "2026-07-20",
+  "capturedAt": "2026-07-21",
   "days": [
     {
       "date": "2026-07-21",
@@ -11,7 +11,7 @@
           "name": "Celestia",
           "type": "Cliff",
           "unlockTokens": 183562,
-          "unlockUsd": 66297,
+          "unlockUsd": 67179,
           "pctSupply": 0.019
         }
       ]
@@ -39,15 +39,15 @@
           "name": "TON",
           "type": "Cliff",
           "unlockTokens": 36583333,
-          "unlockUsd": 52314167,
-          "pctSupply": 1.339
+          "unlockUsd": 53045833,
+          "pctSupply": 1.34
         },
         {
           "ticker": "WLD",
           "name": "Worldcoin",
           "type": "Lineal",
           "unlockTokens": 11180000,
-          "unlockUsd": 4213664,
+          "unlockUsd": 4273242,
           "pctSupply": 0.315
         }
       ]
@@ -61,8 +61,8 @@
           "name": "Humanity",
           "type": "Cliff",
           "unlockTokens": 105555556,
-          "unlockUsd": 6240339,
-          "pctSupply": 5.297
+          "unlockUsd": 6272006,
+          "pctSupply": 5.3
         }
       ]
     },
@@ -75,7 +75,7 @@
           "name": "Avalanche",
           "type": "Cliff",
           "unlockTokens": 1667000,
-          "unlockUsd": 11002200,
+          "unlockUsd": 11035540,
           "pctSupply": 0.386
         }
       ]
@@ -89,15 +89,15 @@
           "name": "Plasma",
           "type": "Cliff",
           "unlockTokens": 88888889,
-          "unlockUsd": 7638400,
-          "pctSupply": 3.415
+          "unlockUsd": 7577511,
+          "pctSupply": 3.419
         },
         {
           "ticker": "SOSO",
           "name": "SoSoValue",
           "type": "Lineal",
           "unlockTokens": 2108000,
-          "unlockUsd": 600744,
+          "unlockUsd": 601212,
           "pctSupply": 0.616
         },
         {
@@ -105,7 +105,7 @@
           "name": "Walrus Protocol",
           "type": "Cliff",
           "unlockTokens": 7500000,
-          "unlockUsd": 217690,
+          "unlockUsd": 224620,
           "pctSupply": 0.305
         }
       ]
@@ -119,8 +119,8 @@
           "name": "Grass",
           "type": "Cliff",
           "unlockTokens": 10500000,
-          "unlockUsd": 3887237,
-          "pctSupply": 1.661
+          "unlockUsd": 3852986,
+          "pctSupply": 1.66
         }
       ]
     },
@@ -133,7 +133,7 @@
           "name": "Aster",
           "type": "Staking rewards",
           "unlockTokens": 2250000,
-          "unlockUsd": 1405440,
+          "unlockUsd": 1416418,
           "pctSupply": 0.084
         },
         {
@@ -141,7 +141,7 @@
           "name": "Falcon Finance",
           "type": "Cliff",
           "unlockTokens": 75000000,
-          "unlockUsd": 4506900,
+          "unlockUsd": 4516275,
           "pctSupply": 2.525
         }
       ]

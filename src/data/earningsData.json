@@ -79,7 +79,7 @@
         {
           "ticker": "GOOG",
           "name": "Alphabet Inc.",
-          "marketCap": 4201465320000,
+          "marketCap": 4264710840000,
           "time": "AMC",
           "epsEst": "2.87",
           "epsLastYear": "2.31"
@@ -87,7 +87,7 @@
         {
           "ticker": "GOOGL",
           "name": "Alphabet Inc.",
-          "marketCap": 4201465320000,
+          "marketCap": 4264710840000,
           "time": "AMC",
           "epsEst": "2.87",
           "epsLastYear": "2.31"
@@ -95,7 +95,7 @@
         {
           "ticker": "TSLA",
           "name": "Tesla, Inc. ",
-          "marketCap": 1430329879032,
+          "marketCap": 1388002871005,
           "time": "AMC",
           "epsEst": "0.31",
           "epsLastYear": "0.27"
@@ -103,7 +103,7 @@
         {
           "ticker": "PM",
           "name": "Philip Morris International Inc",
-          "marketCap": 300770686101,
+          "marketCap": 300365460801,
           "time": "BMO",
           "epsEst": "2.04",
           "epsLastYear": "1.91"
@@ -111,7 +111,7 @@
         {
           "ticker": "GEV",
           "name": "GE Vernova Inc.",
-          "marketCap": 284262759511,
+          "marketCap": 289997244204,
           "time": "BMO",
           "epsEst": "3.16",
           "epsLastYear": "1.86"
@@ -119,7 +119,7 @@
         {
           "ticker": "TXN",
           "name": "Texas Instruments Incorporated",
-          "marketCap": 258484554500,
+          "marketCap": 258530059139,
           "time": "AMC",
           "epsEst": "1.91",
           "epsLastYear": "1.41"
@@ -127,7 +127,7 @@
         {
           "ticker": "IBM",
           "name": "International Business Machines Corporation",
-          "marketCap": 199885402498,
+          "marketCap": 200195564640,
           "time": "AMC",
           "epsEst": "2.97",
           "epsLastYear": "2.80"
@@ -135,7 +135,7 @@
         {
           "ticker": "T",
           "name": "AT&T Inc.",
-          "marketCap": 151543269991,
+          "marketCap": 152516037428,
           "time": "BMO",
           "epsEst": "0.59",
           "epsLastYear": "0.54"
@@ -149,7 +149,7 @@
         {
           "ticker": "INTC",
           "name": "Intel Corporation",
-          "marketCap": 477671040000,
+          "marketCap": 487823560000,
           "time": "AMC",
           "epsEst": "0.10",
           "epsLastYear": "(0.26)"
@@ -157,7 +157,7 @@
         {
           "ticker": "RTX",
           "name": "RTX Corporation",
-          "marketCap": 260596710152,
+          "marketCap": 261849125740,
           "time": "BMO",
           "epsEst": "1.66",
           "epsLastYear": "1.56"
@@ -165,7 +165,7 @@
         {
           "ticker": "TMUS",
           "name": "T-Mobile US, Inc.",
-          "marketCap": 208248653692,
+          "marketCap": 211722530834,
           "time": "BMO",
           "epsEst": "2.52",
           "epsLastYear": "2.84"
@@ -173,7 +173,7 @@
         {
           "ticker": "TMO",
           "name": "Thermo Fisher Scientific Inc",
-          "marketCap": 197880997683,
+          "marketCap": 195558363527,
           "time": "BMO",
           "epsEst": "5.71",
           "epsLastYear": "5.36"
@@ -181,7 +181,7 @@
         {
           "ticker": "SAP",
           "name": "SAP SE",
-          "marketCap": 195381313057,
+          "marketCap": 194533645137,
           "time": "AMC",
           "epsEst": "2",
           "epsLastYear": "1.70"
@@ -189,7 +189,7 @@
         {
           "ticker": "UNP",
           "name": "Union Pacific Corporation",
-          "marketCap": 179152962023,
+          "marketCap": 175887539351,
           "time": "BMO",
           "epsEst": "3.20",
           "epsLastYear": "3.03"
@@ -197,7 +197,7 @@
         {
           "ticker": "TTE",
           "name": "TotalEnergies SE",
-          "marketCap": 175940753965,
+          "marketCap": 175766166838,
           "time": "BMO",
           "epsEst": "3.07",
           "epsLastYear": "1.57"
@@ -205,7 +205,7 @@
         {
           "ticker": "LMT",
           "name": "Lockheed Martin Corporation",
-          "marketCap": 117303846842,
+          "marketCap": 117481380820,
           "time": "BMO",
           "epsEst": "7.22",
           "epsLastYear": "7.29"

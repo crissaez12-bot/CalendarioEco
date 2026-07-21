@@ -1,8 +1,13 @@
 {
   "date": "2026-07-21",
-  "updatedAt": "08:00",
+  "updatedAt": "09:02",
   "categories": {
     "finanzas": [
+      {
+        "title": "A medida que la guerra entre Estados Unidos e Irán se calienta de nuevo, estas partes del mercado de valores y la economía podrían verse afectadas",
+        "url": "https://www.cnbc.com/2026/07/21/iran-war-economy-markets-trump.html",
+        "source": "CNBC"
+      },
       {
         "title": "Las acciones que hacen los movimientos más grandes antes del mercado: Netflix, SpaceX, Alphabet y más",
         "url": "https://www.cnbc.com/2026/07/17/stocks-making-the-biggest-moves-premarket-nflx-spcx-googl-and-more.html",
@@ -108,6 +113,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Continúan las huelgas en EE. UU., ganancias de GM, lo último sobre ciclosporiasis y más en Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/21/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Bezos respalda a CuspAI en la búsqueda de nuevos materiales para chips con Nvidia",
         "url": "https://www.cnbc.com/2026/07/20/bezos-cuspai-new-chip-materials-nvidia.html",
         "source": "CNBC"
@@ -211,6 +221,16 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Más criptoempresas con licencia MiCA podrían salir del mercado de la UE: CEO de Gate Europe",
+        "url": "https://cointelegraph.com/news/mica-licensed-crypto-firms-eu-market-gate-europe-ceo",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Tether-backed Twenty One, plan de fusión de Strike desechado: Bloomberg",
+        "url": "https://cointelegraph.com/news/tether-twenty-one-strike-merger-plan-scrapped-bloomberg",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",

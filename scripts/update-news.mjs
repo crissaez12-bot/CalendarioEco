@@ -166,22 +166,42 @@ async function fetchWeeklyEtfFlow(asset, url) {
   if (!html || html.length < 1000) throw new Error('respuesta vacia o demasiado corta (posible bloqueo)')
   const days = parseFarsideTable(html)
   const lastDays = days.slice(-ETF_WINDOW_DAYS)
+  if (lastDays.length === 0) throw new Error('tabla sin filas validas (posible challenge de Cloudflare)')
   const netFlow = Math.round(lastDays.reduce((sum, d) => sum + d.total, 0) * 1_000_000) // Farside reporta en millones USD
   return { asset, netFlow, days: lastDays.length, through: lastDays.at(-1)?.date ?? null }
 }
 
+function loadExistingEtfFlows() {
+  if (!existsSync(ETF_OUTPUT_PATH)) return null
+  try {
+    return JSON.parse(readFileSync(ETF_OUTPUT_PATH, 'utf8'))
+  } catch {
+    return null
+  }
+}
+
 async function updateEtfFlows(now) {
+  const existing = loadExistingEtfFlows()
+  const previousByAsset = new Map((existing?.flows ?? []).map((f) => [f.asset, f]))
+
   const flows = []
+  let anyFresh = false
   for (const cfg of FARSIDE_ASSETS) {
     try {
       console.log(`Scrapeando ETF flows ${cfg.asset} (${cfg.url})...`)
       flows.push(await fetchWeeklyEtfFlow(cfg.asset, cfg.url))
+      anyFresh = true
     } catch (err) {
       console.log(`  Fallo el fetch de ETF flows ${cfg.asset}: ${err.message}`)
+      const prev = previousByAsset.get(cfg.asset)
+      if (prev) {
+        console.log(`  Se mantiene el ultimo valor conocido de ${cfg.asset} (${prev.through ?? 'sin fecha'}).`)
+        flows.push(prev)
+      }
     }
   }
-  if (flows.length === 0) {
-    console.log('No se pudo obtener ningun ETF flow — se mantiene el archivo anterior.')
+  if (!anyFresh) {
+    console.log('No se pudo obtener ningun ETF flow nuevo — se mantiene el archivo anterior tal cual.')
     return
   }
   const output = { updatedAt: now.date, windowDays: ETF_WINDOW_DAYS, flows }
