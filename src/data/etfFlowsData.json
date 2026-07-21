@@ -4,19 +4,19 @@
   "flows": [
     {
       "asset": "BTC",
-      "netFlow": 500200000,
+      "netFlow": 610500000,
       "days": 5,
       "through": "20 Jul 2026"
     },
     {
       "asset": "ETH",
-      "netFlow": 120900000,
+      "netFlow": 124600000,
       "days": 5,
       "through": "20 Jul 2026"
     },
     {
       "asset": "SOL",
-      "netFlow": 1000000,
+      "netFlow": 3600000,
       "days": 5,
       "through": "20 Jul 2026"
     }

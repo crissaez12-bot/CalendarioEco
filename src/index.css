@@ -44,6 +44,27 @@ body {
   }
 }
 
+/* Ticker de precios: la lista viene duplicada en el DOM, se traslada -50% para loopear sin corte. */
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 60s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    overflow-x: auto;
+  }
+}
+
 /* Amanecer -> mediodia -> tarde -> atardecer -> noche -> amanecer, en loop continuo. */
 @keyframes day-night-tint {
   0% {

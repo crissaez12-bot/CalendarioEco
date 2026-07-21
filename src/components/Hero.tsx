@@ -1,6 +1,7 @@
 import FadeIn from './FadeIn'
 import AnimatedHeading from './AnimatedHeading'
 import Navbar from './Navbar'
+import TickerBar from './TickerBar'
 
 const VIDEO_URL =
   'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260403_050628_c4e32401-fab4-4a27-b7a8-6e9291cd5959.mp4'
@@ -26,8 +27,9 @@ export default function Hero() {
       />
 
       <div className="relative z-10 flex min-h-screen flex-col text-ivory">
-        <div className="px-6 pt-6 md:px-12 lg:px-16">
+        <div className="flex flex-col gap-3 px-6 pt-6 md:px-12 lg:px-16">
           <Navbar />
+          <TickerBar />
         </div>
 
         <div className="flex flex-1 flex-col justify-end px-6 pb-12 md:px-12 lg:px-16 lg:pb-16">

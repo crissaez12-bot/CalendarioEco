@@ -1,8 +1,13 @@
 {
   "date": "2026-07-20",
-  "updatedAt": "16:00",
+  "updatedAt": "21:11",
   "categories": {
     "finanzas": [
+      {
+        "title": "Jamie Dimon dice que los mercados subestiman los riesgos, no compraría acciones o bonos del Tesoro a los precios actuales",
+        "url": "https://www.cnbc.com/2026/07/20/jpmorgan-chase-ceo-jamie-dimon-market-risk.html",
+        "source": "CNBC"
+      },
       {
         "title": "Capital One apuesta fuerte en Discover. Ahora debe demostrar que la apuesta valió la pena",
         "url": "https://www.cnbc.com/2026/07/20/capital-one-bet-big-on-discover-now-it-must-prove-the-gamble-was-worth-it-.html",
@@ -118,6 +123,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Jim Cramer dice que es hora de mirar más allá de la tecnología mientras la incertidumbre de la IA sacude el mercado",
+        "url": "https://www.cnbc.com/2026/07/20/jim-cramer-look-beyond-tech-ai-uncertainty.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Renuncia el jefe de la agencia de seguridad de IA de la administración Trump después de 3 meses en el trabajo",
         "url": "https://www.cnbc.com/2026/07/20/trumps-head-of-ai-safety-agency-caisi-resigns-after-months-on-job.html",
         "source": "CNBC"
@@ -185,6 +195,11 @@
     ],
     "politica": [
       {
+        "title": "Trump impone aranceles del 50% a ciertos productos canadienses por supuesta discriminación comercial",
+        "url": "https://www.cnbc.com/2026/07/20/trump-tariffs-canada-trade.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Trump dice que Netanyahu no será arrestado en Nueva York, rechazando a Mamdani",
         "url": "https://www.cnbc.com/2026/07/20/trump-netanyahu-arrest-mamdani-new-york-israel.html",
         "source": "CNBC"
@@ -241,6 +256,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "La SEC demanda a Mining Automatic y a su fundador por un supuesto esquema de criptominería de $ 22 MILLONES",
+        "url": "https://cointelegraph.com/news/sec-sues-mining-automatic-and-founder-over-alleged-22m-crypto-mining-scheme",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Tether Gold reconocida como mercancía al contado aceptada en el centro financiero de Abu Dhabi",
+        "url": "https://cointelegraph.com/news/tether-gold-recognized-as-accepted-spot-commodity-in-abu-dhabi-financial-center",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Los demócratas añadieron ciertas reglas de protección al consumidor para MAYOR CLARIDAD: ejecutivo de Coinbase",
+        "url": "https://cointelegraph.com/news/democrats-consumer-protections-clarity-act-ethics-debate",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Bernstein eleva el precio objetivo de Robinhood, cita la tokenización y los mercados de predicción",
         "url": "https://cointelegraph.com/news/bernstein-raises-robinhood-price-target-cites-tokenization-and-prediction-markets",

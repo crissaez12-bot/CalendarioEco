@@ -1,13 +1,14 @@
-// Corre 3 veces al dia (8/12/16 hora Chile) como Render Cron Job. Scrapea
-// titulares de CNBC (finanzas/economia/tecnologia/politica) y Cointelegraph
-// (crypto), los traduce al espanol y los acumula en src/data/newsData.json
-// durante el dia. Al detectar un dia nuevo (hora Chile), vacia todo antes de
-// sumar los nuevos — asi el archivo nunca crece sin limite. En la corrida de
-// las 8am tambien actualiza (reusando este mismo cron, sin pagar un segundo
-// servicio en Render):
-//   - src/data/etfFlowsData.json  — flujo neto semanal ETF spot BTC/ETH/SOL (Farside)
-//   - src/data/earningsData.json  — calendario de resultados corporativos (NASDAQ)
-//   - src/data/tokenUnlocksData.json — desbloqueos de tokens top 100 mkt cap (DefiLlama)
+// Corre cada hora (Render Cron Job). Segun la hora (Chile), hace distintas cosas:
+//   - SIEMPRE (cada hora): src/data/tickerData.json — precio + variacion 24h de
+//     indices/acciones (NASDAQ), para el ticker de la portada y demas paginas.
+//   - Solo a las 8/12/16: scrapea titulares de CNBC/Cointelegraph, los traduce
+//     al espanol y los acumula en src/data/newsData.json durante el dia (se
+//     vacia solo al detectar un dia nuevo, asi nunca crece sin limite).
+//   - Solo a las 8am: ademas actualiza (reusando este mismo cron, sin pagar
+//     servicios extra en Render):
+//       - src/data/etfFlowsData.json  — flujo neto semanal ETF spot BTC/ETH/SOL (Farside)
+//       - src/data/earningsData.json  — calendario de resultados corporativos (NASDAQ)
+//       - src/data/tokenUnlocksData.json — desbloqueos de tokens top 100 mkt cap (DefiLlama)
 // Si GITHUB_TOKEN esta seteado, commitea y pushea para que Render redespliegue el sitio.
 
 import { execSync } from 'node:child_process'
@@ -20,6 +21,7 @@ const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'newsData.json')
 const ETF_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'etfFlowsData.json')
 const EARNINGS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'earningsData.json')
 const UNLOCKS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tokenUnlocksData.json')
+const TICKER_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tickerData.json')
 const ETF_FLOW_HOUR = 8
 const ETF_WINDOW_DAYS = 5
 const EARNINGS_BUSINESS_DAYS = 5
@@ -187,6 +189,63 @@ async function updateEtfFlows(now) {
   console.log('Escrito:', ETF_OUTPUT_PATH)
 }
 
+// Ticker de portada: indices (via ETF proxy) + acciones. SPCX = SpaceX (lista en
+// NASDAQ). Se actualiza TODAS las corridas del cron (cada hora), a diferencia
+// de las demas secciones que solo corren a horas fijas.
+const TICKERS = [
+  { symbol: 'SPY', label: 'S&P 500', assetClass: 'etf' },
+  { symbol: 'QQQ', label: 'Nasdaq 100', assetClass: 'etf' },
+  { symbol: 'DIA', label: 'Dow Jones', assetClass: 'etf' },
+  { symbol: 'AAPL', label: 'Apple', assetClass: 'stocks' },
+  { symbol: 'MSFT', label: 'Microsoft', assetClass: 'stocks' },
+  { symbol: 'GOOGL', label: 'Alphabet', assetClass: 'stocks' },
+  { symbol: 'AMZN', label: 'Amazon', assetClass: 'stocks' },
+  { symbol: 'NVDA', label: 'Nvidia', assetClass: 'stocks' },
+  { symbol: 'META', label: 'Meta', assetClass: 'stocks' },
+  { symbol: 'TSLA', label: 'Tesla', assetClass: 'stocks' },
+  { symbol: 'SPCX', label: 'SpaceX', assetClass: 'stocks' },
+  { symbol: 'ORCL', label: 'Oracle', assetClass: 'stocks' },
+  { symbol: 'PLTR', label: 'Palantir', assetClass: 'stocks' },
+  { symbol: 'IBM', label: 'IBM', assetClass: 'stocks' },
+  { symbol: 'MSTR', label: 'Strategy', assetClass: 'stocks' },
+  { symbol: 'COIN', label: 'Coinbase', assetClass: 'stocks' },
+  { symbol: 'CRCL', label: 'Circle', assetClass: 'stocks' },
+  { symbol: 'HOOD', label: 'Robinhood', assetClass: 'stocks' },
+]
+
+async function fetchQuote(cfg) {
+  const res = await fetch(`https://api.nasdaq.com/api/quote/${cfg.symbol}/info?assetclass=${cfg.assetClass}`, {
+    headers: FETCH_HEADERS,
+  })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const json = await res.json()
+  const d = json?.data?.primaryData
+  if (!d) throw new Error('sin datos')
+  const price = Number(String(d.lastSalePrice).replace(/[$,]/g, ''))
+  const changePct = Number(String(d.percentageChange).replace(/[%,]/g, ''))
+  if (Number.isNaN(price) || Number.isNaN(changePct)) throw new Error('precio/variacion invalido')
+  return { symbol: cfg.symbol, label: cfg.label, price, changePct }
+}
+
+async function updateTickers(now) {
+  const items = []
+  for (const cfg of TICKERS) {
+    try {
+      items.push(await fetchQuote(cfg))
+    } catch (err) {
+      console.log(`  Fallo el fetch de ${cfg.symbol}: ${err.message}`)
+    }
+    await new Promise((r) => setTimeout(r, 200))
+  }
+  if (items.length === 0) {
+    console.log('No se pudo obtener ningun ticker — se mantiene el archivo anterior.')
+    return
+  }
+  const output = { updatedAt: `${now.date} ${now.time}`, items }
+  writeFileSync(TICKER_OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
+  console.log('Escrito:', TICKER_OUTPUT_PATH)
+}
+
 const WEEKDAY_LABEL = new Intl.DateTimeFormat('es-AR', {
   weekday: 'long',
   day: 'numeric',
@@ -341,53 +400,55 @@ function loadExisting() {
 async function main() {
   const now = chileNow()
   const forced = process.env.FORCE_RUN === '1'
-
-  if (!forced && !TARGET_HOURS.includes(now.hour)) {
-    console.log(`Hora Chile: ${now.hour}h — no es horario de actualizacion (8/12/16). Sin cambios.`)
-    return
-  }
-
-  const existing = loadExisting()
-  const isNewDay = !existing || existing.date !== now.date
-
-  const categories = {}
-  for (const cfg of CATEGORY_CONFIG) {
-    categories[cfg.key] = isNewDay ? [] : (existing?.categories?.[cfg.key] ?? [])
-  }
-
-  for (const cfg of CATEGORY_CONFIG) {
-    console.log(`Scrapeando ${cfg.label} (${cfg.url})...`)
-    let fresh = []
-    try {
-      const res = await fetch(cfg.url, { headers: FETCH_HEADERS })
-      if (!res.ok) throw new Error(`HTTP ${res.status}`)
-      const html = await res.text()
-      fresh = cfg.parse(html)
-    } catch (err) {
-      console.log(`  Fallo el fetch de ${cfg.label}: ${err.message} — se mantiene lo que ya habia.`)
-      continue
-    }
-
-    const existingUrls = new Set(categories[cfg.key].map((i) => i.url))
-    const newOnes = fresh.filter((i) => !existingUrls.has(i.url))
-    console.log(`  ${fresh.length} encontrados, ${newOnes.length} nuevos.`)
-
-    for (const item of newOnes) {
-      const titleEs = await translate(item.title)
-      categories[cfg.key].unshift({ title: titleEs, url: item.url, source: cfg.source })
-      await new Promise((r) => setTimeout(r, 250))
-    }
-
-    if (categories[cfg.key].length > MAX_ITEMS_PER_CATEGORY) {
-      categories[cfg.key] = categories[cfg.key].slice(0, MAX_ITEMS_PER_CATEGORY)
-    }
-  }
-
-  const output = { date: now.date, updatedAt: now.time, categories }
-  writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
-  console.log('Escrito:', OUTPUT_PATH)
-
+  const updatingNews = forced || TARGET_HOURS.includes(now.hour)
   const updatingDaily = forced || now.hour === ETF_FLOW_HOUR
+
+  console.log(`Hora Chile: ${now.hour}h — tickers: si, noticias: ${updatingNews ? 'si' : 'no'}, diario: ${updatingDaily ? 'si' : 'no'}`)
+
+  await updateTickers(now)
+
+  if (updatingNews) {
+    const existing = loadExisting()
+    const isNewDay = !existing || existing.date !== now.date
+
+    const categories = {}
+    for (const cfg of CATEGORY_CONFIG) {
+      categories[cfg.key] = isNewDay ? [] : (existing?.categories?.[cfg.key] ?? [])
+    }
+
+    for (const cfg of CATEGORY_CONFIG) {
+      console.log(`Scrapeando ${cfg.label} (${cfg.url})...`)
+      let fresh = []
+      try {
+        const res = await fetch(cfg.url, { headers: FETCH_HEADERS })
+        if (!res.ok) throw new Error(`HTTP ${res.status}`)
+        const html = await res.text()
+        fresh = cfg.parse(html)
+      } catch (err) {
+        console.log(`  Fallo el fetch de ${cfg.label}: ${err.message} — se mantiene lo que ya habia.`)
+        continue
+      }
+
+      const existingUrls = new Set(categories[cfg.key].map((i) => i.url))
+      const newOnes = fresh.filter((i) => !existingUrls.has(i.url))
+      console.log(`  ${fresh.length} encontrados, ${newOnes.length} nuevos.`)
+
+      for (const item of newOnes) {
+        const titleEs = await translate(item.title)
+        categories[cfg.key].unshift({ title: titleEs, url: item.url, source: cfg.source })
+        await new Promise((r) => setTimeout(r, 250))
+      }
+
+      if (categories[cfg.key].length > MAX_ITEMS_PER_CATEGORY) {
+        categories[cfg.key] = categories[cfg.key].slice(0, MAX_ITEMS_PER_CATEGORY)
+      }
+    }
+
+    const output = { date: now.date, updatedAt: now.time, categories }
+    writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
+    console.log('Escrito:', OUTPUT_PATH)
+  }
+
   if (updatingDaily) {
     await updateEtfFlows(now)
     await updateEarnings(now)
@@ -403,17 +464,18 @@ async function main() {
     const remote = `https://x-access-token:${process.env.GITHUB_TOKEN}@${repo}`
     execSync(`git config user.email "cron@empire-session.local"`, { stdio: 'inherit' })
     execSync(`git config user.name "Empire Session Cron"`, { stdio: 'inherit' })
-    execSync(`git add src/data/newsData.json`, { stdio: 'inherit' })
+    if (existsSync(TICKER_OUTPUT_PATH)) execSync(`git add "${TICKER_OUTPUT_PATH}"`, { stdio: 'inherit' })
+    if (updatingNews) execSync(`git add src/data/newsData.json`, { stdio: 'inherit' })
     if (updatingDaily) {
       for (const p of [ETF_OUTPUT_PATH, EARNINGS_OUTPUT_PATH, UNLOCKS_OUTPUT_PATH]) {
         if (existsSync(p)) execSync(`git add "${p}"`, { stdio: 'inherit' })
       }
     }
     try {
-      execSync(
-        `git commit -m "chore: actualizar noticias${updatingDaily ? ', etf flows, earnings y unlocks' : ''} (${now.date} ${now.time} CLT)"`,
-        { stdio: 'inherit' },
-      )
+      const parts = ['tickers']
+      if (updatingNews) parts.push('noticias')
+      if (updatingDaily) parts.push('etf flows, earnings y unlocks')
+      execSync(`git commit -m "chore: actualizar ${parts.join(', ')} (${now.date} ${now.time} CLT)"`, { stdio: 'inherit' })
       execSync(`git push ${remote} HEAD:main`, { stdio: 'inherit' })
       console.log('Commit y push OK.')
     } catch (e) {

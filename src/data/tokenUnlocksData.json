@@ -3,24 +3,16 @@
   "capturedAt": "2026-07-20",
   "days": [
     {
-      "date": "2026-07-20",
-      "label": "Lunes, 20 de julio de 2026",
+      "date": "2026-07-21",
+      "label": "Martes, 21 de julio de 2026",
       "events": [
         {
           "ticker": "TIA",
           "name": "Celestia",
           "type": "Cliff",
           "unlockTokens": 183562,
-          "unlockUsd": 66188,
+          "unlockUsd": 66297,
           "pctSupply": 0.019
-        },
-        {
-          "ticker": "ZRO",
-          "name": "LayerZero",
-          "type": "Cliff",
-          "unlockTokens": 10625000,
-          "unlockUsd": 8171337,
-          "pctSupply": 3.007
         }
       ]
     },
@@ -47,15 +39,15 @@
           "name": "TON",
           "type": "Cliff",
           "unlockTokens": 36583333,
-          "unlockUsd": 51582500,
-          "pctSupply": 1.34
+          "unlockUsd": 52314167,
+          "pctSupply": 1.339
         },
         {
           "ticker": "WLD",
           "name": "Worldcoin",
           "type": "Lineal",
           "unlockTokens": 11180000,
-          "unlockUsd": 4071644,
+          "unlockUsd": 4213664,
           "pctSupply": 0.315
         }
       ]
@@ -69,8 +61,8 @@
           "name": "Humanity",
           "type": "Cliff",
           "unlockTokens": 105555556,
-          "unlockUsd": 6109872,
-          "pctSupply": 5.305
+          "unlockUsd": 6240339,
+          "pctSupply": 5.297
         }
       ]
     },
@@ -83,7 +75,7 @@
           "name": "Avalanche",
           "type": "Cliff",
           "unlockTokens": 1667000,
-          "unlockUsd": 10835500,
+          "unlockUsd": 11002200,
           "pctSupply": 0.386
         }
       ]
@@ -97,15 +89,15 @@
           "name": "Plasma",
           "type": "Cliff",
           "unlockTokens": 88888889,
-          "unlockUsd": 7448356,
-          "pctSupply": 3.419
+          "unlockUsd": 7638400,
+          "pctSupply": 3.415
         },
         {
           "ticker": "SOSO",
           "name": "SoSoValue",
           "type": "Lineal",
           "unlockTokens": 2108000,
-          "unlockUsd": 594637,
+          "unlockUsd": 600744,
           "pctSupply": 0.616
         },
         {
@@ -113,7 +105,7 @@
           "name": "Walrus Protocol",
           "type": "Cliff",
           "unlockTokens": 7500000,
-          "unlockUsd": 217572,
+          "unlockUsd": 217690,
           "pctSupply": 0.305
         }
       ]
@@ -127,7 +119,7 @@
           "name": "Grass",
           "type": "Cliff",
           "unlockTokens": 10500000,
-          "unlockUsd": 3834716,
+          "unlockUsd": 3887237,
           "pctSupply": 1.661
         }
       ]
@@ -137,12 +129,20 @@
       "label": "Jueves, 30 de julio de 2026",
       "events": [
         {
+          "ticker": "ASTER",
+          "name": "Aster",
+          "type": "Staking rewards",
+          "unlockTokens": 2250000,
+          "unlockUsd": 1405440,
+          "pctSupply": 0.084
+        },
+        {
           "ticker": "FF",
           "name": "Falcon Finance",
           "type": "Cliff",
           "unlockTokens": 75000000,
-          "unlockUsd": 4478625,
-          "pctSupply": 2.526
+          "unlockUsd": 4506900,
+          "pctSupply": 2.525
         }
       ]
     }
