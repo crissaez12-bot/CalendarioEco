@@ -32,7 +32,7 @@ export default function AssetDrawer({ ticker, timeframe, onClose }: AssetDrawerP
     return () => document.removeEventListener('keydown', handleKey)
   }, [isOpen, onClose])
 
-  const detail = ticker ? ASSET_DETAIL[ticker] : null
+  const detail = ticker ? ASSET_DETAIL[`${ticker}_${timeframe}`] : null
   const asset = ticker ? DATA[timeframe].find((r) => r.ticker === ticker) : null
 
   const { ratio, avgTrade } = detail ? estimateRR(detail.stats) : { ratio: 0, avgTrade: 0 }
@@ -67,7 +67,7 @@ export default function AssetDrawer({ ticker, timeframe, onClose }: AssetDrawerP
                     {asset.name}
                   </h2>
                   <div className="font-mono text-xs text-beige/50">
-                    {asset.ticker} &middot; Nivel {asset.tier} &middot; backtest 1h
+                    {asset.ticker} &middot; Nivel {asset.tier} &middot; backtest {timeframe}
                   </div>
                 </div>
               </div>
@@ -157,7 +157,10 @@ export default function AssetDrawer({ ticker, timeframe, onClose }: AssetDrawerP
             </div>
 
             <div className="border-t border-beige/10 bg-beige/5 px-6 py-3 text-[11px] text-beige/40">
-              Ficha fija por activo, definida en el backtesting al detalle — no cambia con el timeframe ni se recalcula en vivo.
+              Ficha fija por activo y temporalidad (1h y 15m tienen backtest e instrucciones propias — cambia
+              al tocar 1H/15M arriba), definida en el backtesting sensibilizado v2: TP parcial 1%/2%-o-banda +
+              SL banda opuesta, con protección a mitad de banda si el precio se devuelve antes del primer TP.
+              No se recalcula en vivo. Solo se listan activos con win rate ≥70% en esa temporalidad.
             </div>
           </>
         )}

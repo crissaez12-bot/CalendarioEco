@@ -64,7 +64,9 @@ export default function MonteCarlo() {
             Monte Carlo
           </h1>
           <p className="mt-1 text-sm text-beige/70">
-            BB + PunkAlgo + Oscilador + ATR &middot; datos ilustrativos, aún no conectado al motor CDP/exchange.
+            BB + PunkAlgo + Oscilador + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
+            activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; tabla
+            con datos ilustrativos (aún no conectada al motor CDP/exchange), fichas basadas en backtest real.
           </p>
         </div>
 
