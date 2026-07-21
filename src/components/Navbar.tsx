@@ -22,10 +22,10 @@ interface SessionWindow {
 const SESSION_WINDOWS: SessionWindow[] = [
   { startHour: 16, endHour: 17, countryCode: 'us', label: 'After-Market' },
   { startHour: 17, endHour: 18, label: 'Close Market' },
-  { startHour: 18, endHour: 20, countryCode: 'nz', label: 'Nueva Zelanda Open' },
-  { startHour: 20, endHour: 21.5, countryCode: 'jp', label: 'Japón Open' },
-  { startHour: 21.5, endHour: 4, countryCode: 'cn', label: 'China Open' },
-  { startHour: 4, endHour: 9.5, countryCode: 'gb', label: 'Londres Open' },
+  { startHour: 18, endHour: 20, countryCode: 'nz', label: 'Open' },
+  { startHour: 20, endHour: 21.5, countryCode: 'jp', label: 'Open' },
+  { startHour: 21.5, endHour: 4, countryCode: 'cn', label: 'Open' },
+  { startHour: 4, endHour: 9.5, countryCode: 'gb', label: 'Open' },
   { startHour: 9.5, endHour: 16, countryCode: 'us', label: 'Open' },
 ]
 
@@ -72,7 +72,7 @@ function SessionCycleClock() {
           className="h-3.5 w-5 flex-shrink-0 rounded-[2px] object-cover"
         />
       ) : (
-        <span className="text-sm leading-none">🛑</span>
+        <span className="text-sm leading-none">🔴</span>
       )}
       <span className="whitespace-nowrap text-xs font-medium text-ivory">{session.label}</span>
     </div>
