@@ -43,7 +43,6 @@ export const ASSET_ICON: Record<string, string> = {
   ADA: 'https://coin-images.coingecko.com/coins/images/975/large/cardano.png?1696502090',
   TRX: 'https://coin-images.coingecko.com/coins/images/1094/large/photo_2026-04-13_09-59-16.png?1776048311',
   AVAX: 'https://coin-images.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png?1696512369',
-  XAU: 'https://coin-images.coingecko.com/coins/images/9519/large/paxgold.png?1696509604',
   TAO: 'https://coin-images.coingecko.com/coins/images/28452/large/ARUsPeNQ_400x400.jpeg?1696527447',
   DOT: 'https://coin-images.coingecko.com/coins/images/12171/large/polkadot.jpg?1766533446',
   AAVE: 'https://coin-images.coingecko.com/coins/images/12645/large/aave-token-round.png?1720472354',
@@ -59,10 +58,8 @@ export const ASSET_ICON: Record<string, string> = {
   ARB: 'https://coin-images.coingecko.com/coins/images/16547/large/arb.jpg?1721358242',
   APT: 'https://coin-images.coingecko.com/coins/images/26455/large/Aptos-Network-Symbol-Black-RGB-1x.png?1761789140',
   CAKE: 'https://coin-images.coingecko.com/coins/images/12632/large/pancakeswap-cake-logo_%281%29.png?1696512440',
-  DASH: 'https://coin-images.coingecko.com/coins/images/19/large/dash-logo.png?1696501423',
   AERO: 'https://coin-images.coingecko.com/coins/images/31745/large/token.png?1696530564',
   PENGU: 'https://coin-images.coingecko.com/coins/images/52622/large/PUDGY_PENGUINS_PENGU_PFP.png?1733809110',
-  TON: 'https://coin-images.coingecko.com/coins/images/17980/large/Gram_Circular_Badge.png?1781524778',
   VET: 'https://coin-images.coingecko.com/coins/images/1167/large/VET.png?1742383283',
   TIA: 'https://coin-images.coingecko.com/coins/images/31967/large/tia.jpg?1696530772',
 }
@@ -87,7 +84,6 @@ export const DATA: Record<Timeframe, AssetRow[]> = {
     { name: 'Dogecoin', ticker: 'DOGE', tier: 3, price: 0.2214, basis: 0.2255, upper: 0.237, lower: 0.214, signal: 'bear', osc: 52.0, oscConfirm: false, atr: 0.27, updated: '08:14:10' },
     { name: 'Tron', ticker: 'TRX', tier: 2, price: 0.326680, basis: 0.329947, upper: 0.336876, lower: 0.323018, signal: 'bull', osc: 46.0, oscConfirm: false, atr: 0.23, updated: '08:14:10' },
     { name: 'Avalanche', ticker: 'AVAX', tier: 2, price: 6.5830, basis: 6.5435, upper: 6.8052, lower: 6.2818, signal: 'bear', osc: 60.0, oscConfirm: false, atr: 0.2, updated: '08:14:11' },
-    { name: 'Oro (XAU)', ticker: 'XAU', tier: 2, price: 4007.27, basis: 4011.28, upper: 4091.50, lower: 3931.05, signal: 'bull', osc: 43.0, oscConfirm: true, atr: 0.16, updated: '08:14:12' },
     { name: 'Bittensor', ticker: 'TAO', tier: 1, price: 194.96, basis: 193.79, upper: 201.74, lower: 185.84, signal: 'bear', osc: 53.0, oscConfirm: false, atr: 0.52, updated: '08:14:13' },
     { name: 'Polkadot', ticker: 'DOT', tier: 1, price: 0.827000, basis: 0.822038, upper: 0.856564, lower: 0.787512, signal: 'bear', osc: 65.0, oscConfirm: true, atr: 0.2, updated: '08:14:14' },
     { name: 'Aave', ticker: 'AAVE', tier: 2, price: 89.7100, basis: 90.0688, upper: 92.5908, lower: 87.5469, signal: 'bull', osc: 71.0, oscConfirm: true, atr: 0.72, updated: '08:14:15' },
@@ -103,10 +99,8 @@ export const DATA: Record<Timeframe, AssetRow[]> = {
     { name: 'Arbitrum', ticker: 'ARB', tier: 2, price: 0.090250, basis: 0.089618, upper: 0.093113, lower: 0.086123, signal: 'none', osc: 34.0, oscConfirm: true, atr: 0.29, updated: '08:14:25' },
     { name: 'Aptos', ticker: 'APT', tier: 2, price: 0.604100, basis: 0.601079, upper: 0.622117, lower: 0.580042, signal: 'bull', osc: 36.0, oscConfirm: false, atr: 0.66, updated: '08:14:26' },
     { name: 'PancakeSwap', ticker: 'CAKE', tier: 3, price: 1.3962, basis: 1.4060, upper: 1.4453, lower: 1.3666, signal: 'bull', osc: 74.0, oscConfirm: true, atr: 0.36, updated: '08:14:27' },
-    { name: 'Dash', ticker: 'DASH', tier: 1, price: 34.1200, basis: 33.7788, upper: 34.9611, lower: 32.5965, signal: 'none', osc: 62.0, oscConfirm: true, atr: 0.66, updated: '08:14:28' },
     { name: 'Aerodrome', ticker: 'AERO', tier: 3, price: 0.430900, basis: 0.433485, upper: 0.441288, lower: 0.425683, signal: 'bear', osc: 74.0, oscConfirm: true, atr: 0.73, updated: '08:14:29' },
     { name: 'Pudgy Penguins', ticker: 'PENGU', tier: 1, price: 0.006351, basis: 0.006376, upper: 0.006606, lower: 0.006147, signal: 'bull', osc: 58.0, oscConfirm: false, atr: 0.13, updated: '08:14:30' },
-    { name: 'Toncoin', ticker: 'TON', tier: 2, price: 1.4310, basis: 1.4196, upper: 1.4593, lower: 1.3798, signal: 'bull', osc: 61.0, oscConfirm: true, atr: 0.28, updated: '08:14:31' },
     { name: 'VeChain', ticker: 'VET', tier: 3, price: 0.004717, basis: 0.004675, upper: 0.004782, lower: 0.004567, signal: 'bear', osc: 59.0, oscConfirm: false, atr: 0.76, updated: '08:14:32' },
     { name: 'Celestia', ticker: 'TIA', tier: 1, price: 0.357000, basis: 0.357357, upper: 0.364147, lower: 0.350567, signal: 'bull', osc: 57.0, oscConfirm: false, atr: 0.13, updated: '08:14:33' },
   ],
@@ -119,7 +113,6 @@ export const DATA: Record<Timeframe, AssetRow[]> = {
     { name: 'Dogecoin', ticker: 'DOGE', tier: 3, price: 0.2211, basis: 0.2218, upper: 0.2248, lower: 0.2188, signal: 'none', osc: 48.3, oscConfirm: false, atr: 0.09, updated: '08:14:39' },
     { name: 'Aave', ticker: 'AAVE', tier: 2, price: 89.7100, basis: 89.7997, upper: 91.4161, lower: 88.1833, signal: 'bull', osc: 65.0, oscConfirm: true, atr: 0.52, updated: '08:44:10' },
     { name: 'Aerodrome', ticker: 'AERO', tier: 3, price: 0.431400, basis: 0.431831, upper: 0.448673, lower: 0.414990, signal: 'bull', osc: 68.0, oscConfirm: false, atr: 0.47, updated: '08:44:11' },
-    { name: 'Oro (XAU)', ticker: 'XAU', tier: 2, price: 4007.30, basis: 4043.37, upper: 4201.06, lower: 3885.68, signal: 'bear', osc: 40.0, oscConfirm: false, atr: 0.3, updated: '08:44:12' },
     { name: 'Polkadot', ticker: 'DOT', tier: 1, price: 0.827000, basis: 0.823692, upper: 0.849226, lower: 0.798158, signal: 'none', osc: 64.0, oscConfirm: true, atr: 0.21, updated: '08:44:13' },
     { name: 'Aptos', ticker: 'APT', tier: 2, price: 0.604400, basis: 0.603796, upper: 0.624928, lower: 0.582663, signal: 'none', osc: 70.0, oscConfirm: true, atr: 0.55, updated: '08:44:14' },
     { name: 'Kaspa', ticker: 'KAS', tier: 1, price: 0.028360, basis: 0.028076, upper: 0.028750, lower: 0.027403, signal: 'none', osc: 66.0, oscConfirm: false, atr: 0.3, updated: '08:44:15' },
@@ -392,22 +385,6 @@ export const ASSET_DETAIL: Record<string, AssetDetail> = {
     ],
     stats: { wr: 84.0, n: 131, sumaPct: 104.4 },
   },
-  DASH_1h: {
-    instructions: [
-      'Banda de oscMain: angosta (30-70).',
-      'Filtro de volatilidad: ATR(14)/precio ≥ 0.7%.',
-      'En 15m: WR 65.8% (n=76) — operable, buena muestra.',
-    ],
-    pros: [
-      'Win rate muy alto (82.5%) con retorno total fuerte (+72.7%).',
-      'El short es excelente (WR 87.9%, prom +1.16%/trade) — de los mejores del backtest.',
-    ],
-    cons: [
-      'Solo se consiguió en Binance (no está en Bitunix) — verificar disponibilidad según el bróker/exchange que uses.',
-      'El long, aun siendo bueno (WR 80.0%), rinde menos por trade que el short.',
-    ],
-    stats: { wr: 82.5, n: 103, sumaPct: 72.7 },
-  },
   TIA_1h: {
     instructions: [
       'Banda de oscMain: angosta (30-70).',
@@ -664,22 +641,6 @@ export const ASSET_DETAIL: Record<string, AssetDetail> = {
     ],
     stats: { wr: 78.7, n: 183, sumaPct: 139.6 },
   },
-  TON_1h: {
-    instructions: [
-      'Banda de oscMain: ancha (20-80).',
-      'Filtro de volatilidad: ATR(14)/precio ≥ 0.7%.',
-      'En 15m: WR 65.5% (n=139) — buena muestra, operable.',
-    ],
-    pros: [
-      'Win rate sólido (75.8%) con drawdown muy bajo (1.6%) y racha corta (2).',
-      'Long (WR 75.6%) y short (WR 76.0%) muy parejos.',
-    ],
-    cons: [
-      'No tiene contrato perpetuo en ningún exchange probado — los datos vienen de spot (Coinbase), y la historia real es más corta (~8 meses en 1h).',
-      'Retorno total (+42.0%) modesto frente a otros con win rate similar.',
-    ],
-    stats: { wr: 75.8, n: 66, sumaPct: 42.0 },
-  },
   VET_1h: {
     instructions: [
       'Banda de oscMain: ancha (20-80).',
@@ -711,22 +672,6 @@ export const ASSET_DETAIL: Record<string, AssetDetail> = {
       'El long es más débil que el short (WR 67.9% vs 78.6%).',
     ],
     stats: { wr: 71.6, n: 81, sumaPct: 47.5 },
-  },
-  XAU_1h: {
-    instructions: [
-      'Banda de oscMain: angosta (30-70).',
-      'Filtro de volatilidad: ATR(14)/precio ≥ 0.3%.',
-      'En 15m: WR 74.3% (n=35) — funciona; además el oro SÍ tiene más historia real en 15m (~5.5 meses vs 3.5 de las cripto) porque el feed es de forex/metales (OANDA), no de un exchange cripto.',
-    ],
-    pros: [
-      'El giro más grande del backtest: con protección de media pasa de ser el peor activo (WR 34.3% en v1) a rendir bien (74.0%/74.3%).',
-      'Drawdown bajo (4.1% en 1h, 1.1% en 15m) y comportamiento muy estable.',
-    ],
-    cons: [
-      'Sin la protección de media, el oro NO tiene edge con esta estrategia — depende 100% de esa regla de salida.',
-      'Retorno total (+15.9%) modesto frente a las criptos, por su menor volatilidad relativa.',
-    ],
-    stats: { wr: 74.0, n: 100, sumaPct: 15.9 },
   },
   TRX_1h: {
     instructions: [
@@ -889,22 +834,6 @@ export const ASSET_DETAIL: Record<string, AssetDetail> = {
       'Token relativamente nuevo — menos historia acumulada que otros activos.',
     ],
     stats: { wr: 75.2, n: 101, sumaPct: 40.0 },
-  },
-  XAU_15m: {
-    instructions: [
-      'Banda de oscMain: angosta (30-70).',
-      'Filtro de volatilidad: ATR(14)/precio ≥ 0.3%.',
-      'Priorizar el long (WR 79.3%) — el short es débil acá (WR 50.0%, total negativo).',
-    ],
-    pros: [
-      'El oro tiene más historia real en 15m que las criptos (~5.5 meses vs ~3.5) porque el feed es de forex/metales (OANDA), no de un exchange cripto — dato algo más confiable.',
-      'Drawdown muy bajo (1.1%).',
-    ],
-    cons: [
-      'Retorno total el más bajo de esta lista (+3.1%) — expectancy muy fina.',
-      'El short no tiene edge en 15m — evitarlo, igual que conviene priorizar el long en 1h.',
-    ],
-    stats: { wr: 74.3, n: 35, sumaPct: 3.1 },
   },
   DOT_15m: {
     instructions: [
