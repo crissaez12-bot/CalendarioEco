@@ -1,8 +1,13 @@
 {
   "date": "2026-07-21",
-  "updatedAt": "09:02",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Las apuestas en contra de SpaceX crecen al 32% de la flotación, ya que Elon Musk advierte que los vendedores en corto no sobrevivirán",
+        "url": "https://www.cnbc.com/2026/07/21/bets-against-spacex-grow-to-32percent-of-float-as-elon-musk-warns-short-sellers-wont-survive.html",
+        "source": "CNBC"
+      },
       {
         "title": "A medida que la guerra entre Estados Unidos e Irán se calienta de nuevo, estas partes del mercado de valores y la economía podrían verse afectadas",
         "url": "https://www.cnbc.com/2026/07/21/iran-war-economy-markets-trump.html",
@@ -113,6 +118,31 @@
     ],
     "tecnologia": [
       {
+        "title": "La fundición Intel consigue un cliente clave para el CEO Tan, mientras Fortinet firma para los chips de seguridad",
+        "url": "https://www.cnbc.com/2026/07/21/intel-foundry-lands-fortinet-as-first-customer-for-security-chips.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Bessent dice que Estados Unidos podría sancionar a China por el \"robo\" del modelo de IA",
+        "url": "https://www.cnbc.com/2026/07/21/bessent-china-ai-sanctions.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "SpaceX establece la fecha de ganancias, activando el primer desbloqueo para millones de acciones",
+        "url": "https://www.cnbc.com/2026/07/21/spacex-spcx-earnings-lock-up-expiration.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Nvidia detalla su CPU Vera de próxima generación para IA, en desafío a AMD e Intel",
+        "url": "https://www.cnbc.com/2026/07/21/nvidia-vera-cpu-ai-amd-intel.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Google amplía la gama de Gemini con modelos más baratos y un nuevo rival de Mythos",
+        "url": "https://www.cnbc.com/2026/07/21/google-gemini-flash-ai-mythos-rival.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Continúan las huelgas en EE. UU., ganancias de GM, lo último sobre ciclosporiasis y más en Morning Squawk",
         "url": "https://www.cnbc.com/2026/07/21/5-things-to-know-before-the-stock-market-opens.html",
         "source": "CNBC"
@@ -170,6 +200,11 @@
     ],
     "politica": [
       {
+        "title": "Greer insinúa que se aplicarán nuevos aranceles de Trump a docenas de países: \"Esperen una acción pronto\"",
+        "url": "https://www.cnbc.com/2026/07/21/trump-trade-tariffs-greer-section-301.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Andy Burnham del Reino Unido se convierte en primer ministro mientras Trump critica a Gran Bretaña como un \"desastre azotado por la pobreza\"",
         "url": "https://www.cnbc.com/2026/07/20/uk-prime-minister-burnham-trump-poverty-stricken-disaster.html",
         "source": "CNBC"
@@ -221,6 +256,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Morpho lanza un protocolo de préstamos a tasa fija en Base",
+        "url": "https://cointelegraph.com/news/morpho-midnight-fixed-rate-lending-base",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "DEX ARCUS, respaldado por Robinhood, se expande con activos tokenizados y delincuentes",
+        "url": "https://cointelegraph.com/news/robinhood-backed-dex-arcus-debut-multi-asset-trading",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "CoinShares estrena ETF de minería de Bitcoin en la entrada de Europa",
+        "url": "https://cointelegraph.com/news/coinshares-debuts-bitcoin-mining-ucits-etf-in-europe",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "MEXC añade Bittensor TAO staking para su base de usuarios global",
+        "url": "https://cointelegraph.com/news/mexc-adds-bittensor-tao-staking-for-its-global-user-base",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Más criptoempresas con licencia MiCA podrían salir del mercado de la UE: CEO de Gate Europe",
         "url": "https://cointelegraph.com/news/mica-licensed-crypto-firms-eu-market-gate-europe-ceo",
