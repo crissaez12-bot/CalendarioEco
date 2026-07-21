@@ -16,35 +16,53 @@ const TIER_STYLES: Record<AssetRow['tier'], string> = {
   3: 'bg-clay/25 text-clay',
 }
 
+type RowWithTf = AssetRow & { tf: Timeframe }
+
 export default function MonteCarlo() {
   const [tf, setTf] = useState<Timeframe>('1h')
   const [tier, setTier] = useState<TierFilter>('all')
+  const [operableOnly, setOperableOnly] = useState(false)
   const [sortKey, setSortKey] = useState<SortKey>('name')
   const [sortDir, setSortDir] = useState<1 | -1>(1)
-  const [selectedTicker, setSelectedTicker] = useState<string | null>(null)
+  const [selected, setSelected] = useState<{ ticker: string; tf: Timeframe } | null>(null)
   const { trend: btcTrend, updated: btcTrendUpdated } = useBtcTrend()
   const mcLive = useMcLive()
 
   const rows = useMemo(() => {
-    let list = DATA[tf].filter((r) => tier === 'all' || String(r.tier) === tier)
-    if (mcLive) {
-      list = list.map((r) => {
-        const live = mcLive[tf]?.[r.ticker]
-        if (!live) return r
-        return {
-          ...r,
-          price: live.close,
-          basis: live.basis,
-          upper: live.upper,
-          lower: live.lower,
-          atr: live.atr_pct,
-          signal: live.signal,
-          oscConfirm: live.oscConfirm,
-          osc: NaN, // PunkAlgo Oscillator solo expone eventos de cruce, no el valor continuo de oscMain
-          updated: formatMcUpdated(live.updated),
-        }
+    function mergeLive(list: AssetRow[], t: Timeframe): RowWithTf[] {
+      return list.map((r) => {
+        const live = mcLive?.[t]?.[r.ticker]
+        const merged = live
+          ? {
+              ...r,
+              price: live.close,
+              basis: live.basis,
+              upper: live.upper,
+              lower: live.lower,
+              atr: live.atr_pct,
+              signal: live.signal,
+              oscConfirm: live.oscConfirm,
+              osc: NaN, // PunkAlgo Oscillator solo expone eventos de cruce, no el valor continuo de oscMain
+              updated: formatMcUpdated(live.updated),
+            }
+          : r
+        return { ...merged, tf: t }
       })
     }
+
+    let list: RowWithTf[]
+    if (operableOnly) {
+      // combina 1H y 15M: un mismo activo puede aparecer listo en las dos a la vez
+      list = (['1h', '15m'] as Timeframe[]).flatMap((t) =>
+        mergeLive(
+          DATA[t].filter((r) => tier === 'all' || String(r.tier) === tier),
+          t,
+        ).filter(isReady),
+      )
+    } else {
+      list = mergeLive(DATA[tf].filter((r) => tier === 'all' || String(r.tier) === tier), tf)
+    }
+
     list = [...list].sort((a, b) => {
       let av: string | number = a.name
       let bv: string | number = b.name
@@ -63,7 +81,7 @@ export default function MonteCarlo() {
       return 0
     })
     return list
-  }, [tf, tier, sortKey, sortDir])
+  }, [tf, tier, operableOnly, sortKey, sortDir, mcLive])
 
   const readyRows = rows.filter(isReady)
   const signalOnly = rows.filter((r) => r.signal !== 'none' && !isReady(r))
@@ -130,7 +148,24 @@ export default function MonteCarlo() {
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <div className="liquid-glass flex rounded-lg p-1">
+          <button
+            type="button"
+            onClick={() => setOperableOnly((v) => !v)}
+            title="Muestra, entre 1H y 15M juntos, solo los activos con confluencia completa (LISTO) ahora mismo"
+            className={`rounded-lg border px-4 py-1.5 text-sm font-semibold transition-colors ${
+              operableOnly
+                ? 'border-moss/50 bg-moss/20 text-moss'
+                : 'border-beige/15 text-beige/60 hover:text-ivory'
+            }`}
+          >
+            Operable
+          </button>
+
+          <div
+            className={`liquid-glass flex rounded-lg p-1 transition-opacity ${
+              operableOnly ? 'pointer-events-none opacity-40' : ''
+            }`}
+          >
             {(['1h', '15m'] as Timeframe[]).map((t) => (
               <button
                 key={t}
@@ -209,14 +244,14 @@ export default function MonteCarlo() {
 
               return (
                 <tr
-                  key={row.ticker}
+                  key={`${row.ticker}-${row.tf}`}
                   tabIndex={0}
                   role="button"
-                  onClick={() => setSelectedTicker(row.ticker)}
+                  onClick={() => setSelected({ ticker: row.ticker, tf: row.tf })}
                   onKeyDown={(e) => {
                     if (e.key === 'Enter' || e.key === ' ') {
                       e.preventDefault()
-                      setSelectedTicker(row.ticker)
+                      setSelected({ ticker: row.ticker, tf: row.tf })
                     }
                   }}
                   className={`cursor-pointer border-b border-borderSubtle last:border-b-0 hover:bg-beige/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-beige/60 ${
@@ -247,7 +282,12 @@ export default function MonteCarlo() {
                           >
                             Nivel {row.tier}
                           </span>
-                          {mcLive?.[tf]?.[row.ticker] && (
+                          {operableOnly && (
+                            <span className="rounded border border-beige/20 px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-beige/60">
+                              {row.tf}
+                            </span>
+                          )}
+                          {mcLive?.[row.tf]?.[row.ticker] && (
                             <span
                               className="rounded border border-moss/40 px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-moss"
                               title="Bollinger/ATR calculados en vivo desde klines publicos; señal y oscilador vienen de alertas reales de TradingView"
@@ -326,7 +366,7 @@ export default function MonteCarlo() {
         confirmación de oscilador + ATR suficiente) &middot; click en un activo para ver la ficha
       </p>
 
-      <AssetDrawer ticker={selectedTicker} timeframe={tf} onClose={() => setSelectedTicker(null)} />
+      <AssetDrawer ticker={selected?.ticker ?? null} timeframe={selected?.tf ?? tf} onClose={() => setSelected(null)} />
     </PageShell>
   )
 }
