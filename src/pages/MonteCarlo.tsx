@@ -3,6 +3,7 @@ import PageShell from '../components/PageShell'
 import AssetDrawer from '../components/AssetDrawer'
 import { ASSET_ICON, ATR_THRESHOLD, DATA, isReady, pctB, type AssetRow, type Timeframe } from '../data/monteCarloData'
 import { useBtcTrend, formatUpdated } from '../data/btcTrend'
+import { useMcLive, formatMcUpdated } from '../data/mcLive'
 
 type SortKey = 'name' | 'signal' | 'osc' | 'atr'
 type TierFilter = 'all' | '1' | '2' | '3'
@@ -22,9 +23,28 @@ export default function MonteCarlo() {
   const [sortDir, setSortDir] = useState<1 | -1>(1)
   const [selectedTicker, setSelectedTicker] = useState<string | null>(null)
   const { trend: btcTrend, updated: btcTrendUpdated } = useBtcTrend()
+  const mcLive = useMcLive()
 
   const rows = useMemo(() => {
     let list = DATA[tf].filter((r) => tier === 'all' || String(r.tier) === tier)
+    if (mcLive) {
+      list = list.map((r) => {
+        const live = mcLive[tf]?.[r.ticker]
+        if (!live) return r
+        return {
+          ...r,
+          price: live.close,
+          basis: live.basis,
+          upper: live.upper,
+          lower: live.lower,
+          atr: live.atr_pct,
+          signal: live.signal,
+          oscConfirm: live.oscConfirm,
+          osc: NaN, // PunkAlgo Oscillator solo expone eventos de cruce, no el valor continuo de oscMain
+          updated: formatMcUpdated(live.updated),
+        }
+      })
+    }
     list = [...list].sort((a, b) => {
       let av: string | number = a.name
       let bv: string | number = b.name
@@ -66,8 +86,9 @@ export default function MonteCarlo() {
         </h1>
         <p className="mt-1 text-sm text-beige/70">
           BB + PunkAlgo + Oscilador + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
-          activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; tabla
-          con datos ilustrativos (aún no conectada al motor CDP/exchange), fichas basadas en backtest real.
+          activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; los
+          activos marcados "En vivo" ya corren con datos reales (Bollinger/ATR + alertas de TradingView) en
+          1H y 15M, el resto sigue ilustrativo por ahora &middot; fichas basadas en backtest real.
         </p>
       </div>
 
@@ -226,6 +247,14 @@ export default function MonteCarlo() {
                           >
                             Nivel {row.tier}
                           </span>
+                          {mcLive?.[tf]?.[row.ticker] && (
+                            <span
+                              className="rounded border border-moss/40 px-1.5 py-px text-[9px] font-bold uppercase tracking-wide text-moss"
+                              title="Bollinger/ATR calculados en vivo desde klines publicos; señal y oscilador vienen de alertas reales de TradingView"
+                            >
+                              En vivo
+                            </span>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -264,7 +293,9 @@ export default function MonteCarlo() {
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex min-w-[108px] flex-col gap-0.5">
-                      <span className="font-mono text-sm font-semibold tabular-nums text-ivory">{row.osc.toFixed(1)}</span>
+                      <span className="font-mono text-sm font-semibold tabular-nums text-ivory">
+                        {Number.isNaN(row.osc) ? '—' : row.osc.toFixed(1)}
+                      </span>
                       <span className={`text-[11px] ${row.oscConfirm ? 'text-moss' : 'text-beige/40'}`}>
                         {row.oscConfirm ? '✓ confirma cruce' : 'sin confirmar'}
                       </span>
