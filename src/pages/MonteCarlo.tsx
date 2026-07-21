@@ -158,7 +158,7 @@ export default function MonteCarlo() {
                       setSelectedTicker(row.ticker)
                     }
                   }}
-                  className={`cursor-pointer border-b border-beige/5 last:border-b-0 hover:bg-beige/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-beige/60 ${
+                  className={`cursor-pointer border-b border-borderSubtle last:border-b-0 hover:bg-beige/5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-beige/60 ${
                     ready ? 'bg-moss/[0.08]' : ''
                   }`}
                 >

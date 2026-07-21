@@ -71,7 +71,7 @@ export default function News() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`flex items-start justify-between gap-4 rounded-lg px-3 py-3 transition-colors hover:bg-beige/5 ${
-                  i !== items.length - 1 ? 'border-b border-beige/5' : ''
+                  i !== items.length - 1 ? 'border-b border-borderSubtle' : ''
                 }`}
               >
                 <span className="text-sm font-medium text-ivory">{item.title}</span>

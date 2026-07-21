@@ -88,7 +88,7 @@ export default function Calendario() {
                   {day.events.map((event, i) => {
                     const s = surprise(event)
                     return (
-                      <tr key={i} className="border-b border-beige/5 last:border-b-0 hover:bg-beige/5">
+                      <tr key={i} className="border-b border-borderSubtle last:border-b-0 hover:bg-beige/5">
                         <td className="px-4 py-3 font-mono text-xs text-beige/60">{event.time}</td>
                         <td className="px-4 py-3">
                           <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-beige">

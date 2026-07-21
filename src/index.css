@@ -7,12 +7,12 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #0b1f1a;
+  background: #050b08;
 }
 
 @layer components {
   .liquid-glass {
-    background: rgba(11, 31, 26, 0.55);
+    background: rgba(8, 16, 12, 0.75);
     background-blend-mode: luminosity;
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);

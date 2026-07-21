@@ -7,7 +7,7 @@ interface PageShellProps {
 
 export default function PageShell({ children }: PageShellProps) {
   return (
-    <div className="min-h-screen bg-navy text-ivory">
+    <div className="min-h-screen bg-bgApp text-ivory">
       <div className="px-6 pt-6 md:px-12 lg:px-16">
         <Navbar />
       </div>

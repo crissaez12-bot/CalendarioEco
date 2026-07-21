@@ -289,7 +289,7 @@ export default function General() {
                 return (
                   <div
                     key={row.ticker}
-                    className={`flex items-center justify-between gap-3 rounded-lg px-2.5 py-2 ${ready ? 'bg-moss/[0.08]' : ''}`}
+                    className={`flex items-center justify-between gap-3 rounded-lg px-2.5 py-2 ${ready ? 'bg-moss/[0.08]' : 'bg-bgCard'}`}
                   >
                     <div className="flex items-center gap-2.5">
                       <img
@@ -375,7 +375,7 @@ export default function General() {
                 href={n.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block border-b border-beige/5 pb-3 transition-colors last:border-b-0 last:pb-0 hover:bg-beige/5"
+                className="block border-b border-borderSubtle pb-3 transition-colors last:border-b-0 last:pb-0 hover:bg-beige/5"
               >
                 <span
                   className={`rounded border px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide ${n.category.style}`}
@@ -408,7 +408,7 @@ export default function General() {
                     {day.events.slice(0, 3).map((event, i) => (
                       <div
                         key={i}
-                        className="flex items-start justify-between gap-3 border-b border-beige/5 pb-2 last:border-b-0 last:pb-0"
+                        className="flex items-start justify-between gap-3 border-b border-borderSubtle pb-2 last:border-b-0 last:pb-0"
                       >
                         <div className="flex items-start gap-2">
                           <span className="mt-0.5 font-mono text-[11px] text-beige/50">{event.time}</span>
@@ -423,7 +423,7 @@ export default function General() {
                     {day.mag7.map((e, i) => (
                       <div
                         key={`mag7-${i}`}
-                        className="flex items-start justify-between gap-3 rounded-md px-2 py-1.5 -mx-2 border-b border-beige/5 last:border-b-0 last:pb-0"
+                        className="flex items-start justify-between gap-3 rounded-md px-2 py-1.5 -mx-2 border-b border-borderSubtle last:border-b-0 last:pb-0"
                         style={{ background: 'rgba(212,175,55,0.08)' }}
                       >
                         <div className="flex items-start gap-2">

@@ -133,7 +133,7 @@ export default function Earnings() {
                         return (
                           <tr
                             key={i}
-                            className="border-b border-beige/5 last:border-b-0 hover:bg-beige/5"
+                            className="border-b border-borderSubtle last:border-b-0 hover:bg-beige/5"
                             style={mag7 ? { background: 'rgba(212,175,55,0.08)' } : undefined}
                           >
                             <td className="px-4 py-3">
@@ -237,7 +237,7 @@ export default function Earnings() {
                     </thead>
                     <tbody>
                       {day.events.map((e, i) => (
-                        <tr key={i} className="border-b border-beige/5 last:border-b-0 hover:bg-beige/5">
+                        <tr key={i} className="border-b border-borderSubtle last:border-b-0 hover:bg-beige/5">
                           <td className="px-4 py-3">
                             <div className="text-sm font-semibold text-ivory">{e.name}</div>
                             <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
