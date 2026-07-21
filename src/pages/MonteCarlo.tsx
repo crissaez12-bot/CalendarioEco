@@ -333,10 +333,12 @@ export default function MonteCarlo() {
                   </td>
                   <td className="px-4 py-3">
                     <div className="flex min-w-[108px] flex-col gap-0.5">
-                      <span className="font-mono text-sm font-semibold tabular-nums text-ivory">
-                        {Number.isNaN(row.osc) ? '—' : row.osc.toFixed(1)}
-                      </span>
-                      <span className={`text-[11px] ${row.oscConfirm ? 'text-moss' : 'text-beige/40'}`}>
+                      {!Number.isNaN(row.osc) && (
+                        <span className="font-mono text-sm font-semibold tabular-nums text-ivory">
+                          {row.osc.toFixed(1)}
+                        </span>
+                      )}
+                      <span className={`text-[11px] ${row.oscConfirm ? 'text-moss' : 'text-ivory'}`}>
                         {row.oscConfirm ? '✓ confirma cruce' : 'sin confirmar'}
                       </span>
                     </div>
