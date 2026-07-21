@@ -1,8 +1,13 @@
 {
   "date": "2026-07-21",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Goldman Sachs crea una plataforma de mercados privados mientras los inversores ricos buscan los próximos SpaceX y Stripe",
+        "url": "https://www.cnbc.com/2026/07/21/goldman-sachs-private-markets-platform.html",
+        "source": "CNBC"
+      },
       {
         "title": "Las apuestas en contra de SpaceX crecen al 32% de la flotación, ya que Elon Musk advierte que los vendedores en corto no sobrevivirán",
         "url": "https://www.cnbc.com/2026/07/21/bets-against-spacex-grow-to-32percent-of-float-as-elon-musk-warns-short-sellers-wont-survive.html",
@@ -118,6 +123,21 @@
     ],
     "tecnologia": [
       {
+        "title": "OpenAI, cabildeo de impulso antrópico a medida que se desliza el gasto en tecnología y defensa heredado",
+        "url": "https://www.cnbc.com/2026/07/21/openai-anthropic-ai-lobbying-spending-q2-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Listo para despegar: la próxima pista de crecimiento de esta acción es asegurar la identidad en una era de IA",
+        "url": "https://www.cnbc.com/2026/07/21/ready-for-takeoff-this-stocks-next-growth-runway-is-securing-identity-in-an-ai-age.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Goldman Sachs crea una plataforma de mercados privados mientras los inversores ricos buscan los próximos SpaceX y Stripe",
+        "url": "https://www.cnbc.com/2026/07/21/goldman-sachs-private-markets-platform.html",
+        "source": "CNBC"
+      },
+      {
         "title": "La fundición Intel consigue un cliente clave para el CEO Tan, mientras Fortinet firma para los chips de seguridad",
         "url": "https://www.cnbc.com/2026/07/21/intel-foundry-lands-fortinet-as-first-customer-for-security-chips.html",
         "source": "CNBC"
@@ -200,6 +220,21 @@
     ],
     "politica": [
       {
+        "title": "El jefe del IRS, Frank Bisignano, rechaza las acusaciones de espionaje de JPMorgan",
+        "url": "https://www.cnbc.com/2026/07/21/irs-chief-frank-bisignano-laughs-off-jpmorgan-spying-allegations.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "OpenAI, cabildeo de impulso antrópico a medida que se desliza el gasto en tecnología y defensa heredado",
+        "url": "https://www.cnbc.com/2026/07/21/openai-anthropic-ai-lobbying-spending-q2-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "James Patten, defraudador de charcutería de Nueva Jersey por valor de 100 MILLONES de $, condenado a 21 meses de prisión",
+        "url": "https://www.cnbc.com/2026/07/21/new-jersey-deli-fraud-james-patten-sentenced.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Greer insinúa que se aplicarán nuevos aranceles de Trump a docenas de países: \"Esperen una acción pronto\"",
         "url": "https://www.cnbc.com/2026/07/21/trump-trade-tariffs-greer-section-301.html",
         "source": "CNBC"
@@ -256,6 +291,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "EL BIS advierte que las monedas estables podrían debilitar los controles de capital en los mercados emergentes",
+        "url": "https://cointelegraph.com/news/bis-study-says-stablecoins-bypass-capital-controls-more-easily-than-bank-deposits",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "La Casa Blanca acepta las disposiciones de ética en el proyecto de ley de estructura de mercado",
+        "url": "https://cointelegraph.com/news/white-house-ethics-provisions-crypto-market-structure-bill",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Pavel Durov dice que Telegram lanzará una billetera criptográfica nativa Gram",
+        "url": "https://cointelegraph.com/news/telegram-launch-native-self-custody-gram-wallet-for-over-1-billion-users-durov",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Pakistán intensifica la aplicación de la criptodivisa con una unidad federal dedicada",
+        "url": "https://cointelegraph.com/news/pakistan-crypto-enforcement-dedicated-unit-crimes",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Morpho lanza un protocolo de préstamos a tasa fija en Base",
         "url": "https://cointelegraph.com/news/morpho-midnight-fixed-rate-lending-base",
