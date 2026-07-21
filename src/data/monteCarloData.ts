@@ -23,6 +23,23 @@ export interface AssetDetail {
   stats: { wr: number; n: number; sumaPct: number }
 }
 
+export interface BtcTrendRow {
+  tf: string
+  trend: 'bull' | 'bear'
+}
+
+// Tendencia real de BTC (no ilustrativa): pendiente de la media de Bollinger (SMA20) en las
+// ultimas 3 velas de cada temporalidad — el mismo criterio de contexto que usa la estrategia
+// para habilitar long (media subiendo) o short (media bajando). Sube -> alcista/verde,
+// baja -> bajista/rojo. Extraido de TradingView (BITUNIX:BTCUSDT.P) el 2026-07-21 13:00 UTC —
+// es una foto fija, no se recalcula en vivo (igual que el resto de esta pagina).
+export const BTC_TREND: BtcTrendRow[] = [
+  { tf: '1D', trend: 'bull' },
+  { tf: '4H', trend: 'bull' },
+  { tf: '1H', trend: 'bull' },
+]
+export const BTC_TREND_UPDATED = '2026-07-21 13:00 UTC'
+
 export const ASSET_ICON: Record<string, string> = {
   HYPE: 'https://coin-images.coingecko.com/coins/images/50882/large/hyperliquid.jpg?1729431300',
   ONDO: 'https://coin-images.coingecko.com/coins/images/26580/large/ONDO.png?1696525656',

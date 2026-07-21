@@ -1,7 +1,17 @@
 import { useMemo, useState } from 'react'
 import PageShell from '../components/PageShell'
 import AssetDrawer from '../components/AssetDrawer'
-import { ASSET_ICON, ATR_THRESHOLD, DATA, isReady, pctB, type AssetRow, type Timeframe } from '../data/monteCarloData'
+import {
+  ASSET_ICON,
+  ATR_THRESHOLD,
+  BTC_TREND,
+  BTC_TREND_UPDATED,
+  DATA,
+  isReady,
+  pctB,
+  type AssetRow,
+  type Timeframe,
+} from '../data/monteCarloData'
 
 type SortKey = 'name' | 'signal' | 'osc' | 'atr'
 type TierFilter = 'all' | '1' | '2' | '3'
@@ -58,16 +68,37 @@ export default function MonteCarlo() {
 
   return (
     <PageShell>
+      <div className="mb-6">
+        <h1 className="text-2xl font-normal md:text-3xl" style={{ letterSpacing: '-0.03em' }}>
+          Monte Carlo Strategy V2
+        </h1>
+        <p className="mt-1 text-sm text-beige/70">
+          BB + PunkAlgo + Oscilador + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
+          activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; tabla
+          con datos ilustrativos (aún no conectada al motor CDP/exchange), fichas basadas en backtest real.
+        </p>
+      </div>
+
       <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <div>
-          <h1 className="text-2xl font-normal md:text-3xl" style={{ letterSpacing: '-0.03em' }}>
-            Monte Carlo
-          </h1>
-          <p className="mt-1 text-sm text-beige/70">
-            BB + PunkAlgo + Oscilador + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
-            activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; tabla
-            con datos ilustrativos (aún no conectada al motor CDP/exchange), fichas basadas en backtest real.
-          </p>
+        <div className="liquid-glass flex items-center gap-3 rounded-xl px-4 py-2.5">
+          <img src={ASSET_ICON.BTC} alt="" className="h-6 w-6 flex-shrink-0 rounded-full bg-beige/5 object-cover" />
+          <div>
+            <div className="text-[10px] uppercase tracking-wider text-beige/50">Tendencia BTC</div>
+            <div className="text-[10px] text-beige/30">media (SMA20) 3 velas &middot; {BTC_TREND_UPDATED}</div>
+          </div>
+          <div className="flex gap-1.5">
+            {BTC_TREND.map((row) => (
+              <div
+                key={row.tf}
+                title={row.trend === 'bull' ? 'Media subiendo — contexto alcista' : 'Media bajando — contexto bajista'}
+                className={`rounded-md px-2.5 py-1 text-xs font-bold ${
+                  row.trend === 'bull' ? 'bg-moss/20 text-moss' : 'bg-clay/25 text-clay'
+                }`}
+              >
+                {row.tf}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
