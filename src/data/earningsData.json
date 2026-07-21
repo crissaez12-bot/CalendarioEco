@@ -1,77 +1,7 @@
 {
   "source": "NASDAQ",
-  "capturedAt": "2026-07-20",
+  "capturedAt": "2026-07-21",
   "days": [
-    {
-      "date": "2026-07-20",
-      "label": "Lunes, 20 de julio de 2026",
-      "events": [
-        {
-          "ticker": "STLD",
-          "name": "Steel Dynamics, Inc.",
-          "marketCap": 33963552053,
-          "time": "AMC",
-          "epsEst": "3.66",
-          "epsLastYear": "2.01"
-        },
-        {
-          "ticker": "RYAAY",
-          "name": "Ryanair Holdings plc",
-          "marketCap": 30706650992,
-          "time": "BMO",
-          "epsEst": "1.25",
-          "epsLastYear": "1.74"
-        },
-        {
-          "ticker": "WRB",
-          "name": "W.R. Berkley Corporation",
-          "marketCap": 26658736779,
-          "time": "AMC",
-          "epsEst": "1.09",
-          "epsLastYear": "1.05"
-        },
-        {
-          "ticker": "CCK",
-          "name": "Crown Holdings, Inc.",
-          "marketCap": 13097820979,
-          "time": "AMC",
-          "epsEst": "2.15",
-          "epsLastYear": "2.15"
-        },
-        {
-          "ticker": "AGNC",
-          "name": "AGNC Investment Corp.",
-          "marketCap": 12879766432,
-          "time": "AMC",
-          "epsEst": "0.38",
-          "epsLastYear": "0.38"
-        },
-        {
-          "ticker": "WTFC",
-          "name": "Wintrust Financial Corporation",
-          "marketCap": 11081666311,
-          "time": "AMC",
-          "epsEst": "3.15",
-          "epsLastYear": "2.78"
-        },
-        {
-          "ticker": "DPZ",
-          "name": "Domino's Pizza Inc",
-          "marketCap": 10716309277,
-          "time": "BMO",
-          "epsEst": "4.11",
-          "epsLastYear": "3.81"
-        },
-        {
-          "ticker": "ZION",
-          "name": "Zions Bancorporation N.A.",
-          "marketCap": 10630325615,
-          "time": "AMC",
-          "epsEst": "1.57",
-          "epsLastYear": "1.58"
-        }
-      ]
-    },
     {
       "date": "2026-07-21",
       "label": "Martes, 21 de julio de 2026",
@@ -113,7 +43,7 @@
           "name": "Chubb Limited",
           "marketCap": 136588814929,
           "time": "AMC",
-          "epsEst": "6.60",
+          "epsEst": "6.63",
           "epsLastYear": "6.14"
         },
         {
@@ -121,7 +51,7 @@
           "name": "Capital One Financial Corporation",
           "marketCap": 128150532632,
           "time": "AMC",
-          "epsEst": "4.88",
+          "epsEst": "4.85",
           "epsLastYear": "5.48"
         },
         {
@@ -199,7 +129,7 @@
           "name": "International Business Machines Corporation",
           "marketCap": 199885402498,
           "time": "AMC",
-          "epsEst": "3",
+          "epsEst": "2.97",
           "epsLastYear": "2.80"
         },
         {
@@ -277,7 +207,7 @@
           "name": "Lockheed Martin Corporation",
           "marketCap": 117303846842,
           "time": "BMO",
-          "epsEst": "7.28",
+          "epsEst": "7.22",
           "epsLastYear": "7.29"
         }
       ]
@@ -289,15 +219,15 @@
         {
           "ticker": "AXP",
           "name": "American Express Company",
-          "marketCap": 242464701520,
+          "marketCap": 240131145085,
           "time": "BMO",
-          "epsEst": "4.40",
+          "epsEst": "4.41",
           "epsLastYear": "4.08"
         },
         {
           "ticker": "NEE",
           "name": "NextEra Energy, Inc.",
-          "marketCap": 185178321293,
+          "marketCap": 183510048128,
           "time": "BMO",
           "epsEst": "1.08",
           "epsLastYear": "1.05"
@@ -305,7 +235,7 @@
         {
           "ticker": "VZ",
           "name": "Verizon Communications Inc.",
-          "marketCap": 182012612887,
+          "marketCap": 181636812585,
           "time": "BMO",
           "epsEst": "1.27",
           "epsLastYear": "1.22"
@@ -313,31 +243,31 @@
         {
           "ticker": "HCA",
           "name": "HCA Healthcare, Inc.",
-          "marketCap": 82342496964,
+          "marketCap": 82173898716,
           "time": "BMO",
           "epsEst": "7.57",
           "epsLastYear": "6.84"
         },
         {
-          "ticker": "CNI",
-          "name": "Canadian National Railway Company",
-          "marketCap": 78374894483,
-          "time": "BMO",
-          "epsEst": "1.39",
-          "epsLastYear": "1.35"
-        },
-        {
           "ticker": "E",
           "name": "ENI S.p.A.",
-          "marketCap": 78307249862,
+          "marketCap": 77913904223,
           "time": "N/D",
           "epsEst": "1.90",
           "epsLastYear": "0.79"
         },
         {
+          "ticker": "CNI",
+          "name": "Canadian National Railway Company",
+          "marketCap": 77201738163,
+          "time": "BMO",
+          "epsEst": "1.39",
+          "epsLastYear": "1.35"
+        },
+        {
           "ticker": "SLB",
           "name": "SLB Limited",
-          "marketCap": 70252759490,
+          "marketCap": 69355724894,
           "time": "BMO",
           "epsEst": "0.51",
           "epsLastYear": "0.74"
@@ -345,10 +275,80 @@
         {
           "ticker": "CHTR",
           "name": "Charter Communications, Inc.",
-          "marketCap": 18258398626,
+          "marketCap": 17951242799,
           "time": "BMO",
           "epsEst": "10.17",
           "epsLastYear": "9.18"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-27",
+      "label": "Lunes, 27 de julio de 2026",
+      "events": [
+        {
+          "ticker": "AZN",
+          "name": "AstraZeneca PLC",
+          "marketCap": 262567002329,
+          "time": "BMO",
+          "epsEst": "2.50",
+          "epsLastYear": "2.18"
+        },
+        {
+          "ticker": "WELL",
+          "name": "Welltower Inc.",
+          "marketCap": 172836093938,
+          "time": "AMC",
+          "epsEst": "1.55",
+          "epsLastYear": "1.28"
+        },
+        {
+          "ticker": "CDNS",
+          "name": "Cadence Design Systems, Inc.",
+          "marketCap": 90999972880,
+          "time": "AMC",
+          "epsEst": "1.62",
+          "epsLastYear": "1.22"
+        },
+        {
+          "ticker": "NUE",
+          "name": "Nucor Corporation",
+          "marketCap": 52548946803,
+          "time": "AMC",
+          "epsEst": "4.63",
+          "epsLastYear": "2.60"
+        },
+        {
+          "ticker": "VOD",
+          "name": "Vodafone Group Plc",
+          "marketCap": 37628337125,
+          "time": "BMO",
+          "epsEst": "-",
+          "epsLastYear": "N/A"
+        },
+        {
+          "ticker": "CLS",
+          "name": "Celestica, Inc.",
+          "marketCap": 35414244720,
+          "time": "AMC",
+          "epsEst": "2.12",
+          "epsLastYear": "1.26"
+        },
+        {
+          "ticker": "CINF",
+          "name": "Cincinnati Financial Corporation",
+          "marketCap": 27899300787,
+          "time": "AMC",
+          "epsEst": "1.82",
+          "epsLastYear": "1.97"
+        },
+        {
+          "ticker": "PFG",
+          "name": "Principal Financial Group Inc",
+          "marketCap": 24206347751,
+          "time": "AMC",
+          "epsEst": "2.32",
+          "epsLastYear": "2.16"
         }
       ]
     }
