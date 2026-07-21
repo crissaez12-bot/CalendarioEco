@@ -5,6 +5,7 @@ import logo from '../assets/logo.png'
 const NAV_LINKS = [
   { label: 'General', to: '/general' },
   { label: 'Monte Carlo', to: '/monte-carlo' },
+  { label: 'Operaciones', to: '/operaciones' },
   { label: 'News', to: '/news' },
   { label: 'Calendario', to: '/calendario' },
   { label: 'Earnings', to: '/earnings' },
