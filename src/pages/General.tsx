@@ -6,9 +6,25 @@ import { useMcLive } from '../data/mcLive'
 import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
 import { FEAR_GREED } from '../data/generalData'
 import newsData from '../data/newsData.json'
-import etfFlowsData from '../data/etfFlowsData.json'
+import etfFlowsDataRaw from '../data/etfFlowsData.json'
 import earningsData from '../data/earningsData.json'
 import { isMag7 } from '../data/mag7'
+
+// Tipado explicito en vez de confiar en la inferencia de tipos del JSON: si en
+// el momento del build todos los pctChangeWeek son literalmente `null` (recien
+// arranco el historial semanal), TS infiere el campo como `null` fijo en vez
+// de `number | null` y rompe el build con cualquier .toFixed() sobre el valor.
+interface EtfFlowEntry {
+  asset: string
+  netFlow: number
+  days: number
+  through: string | null
+  marketCap: number | null
+  athMarketCap: number | null
+  capRatio: number | null
+  pctChangeWeek: number | null
+}
+const etfFlowsData = etfFlowsDataRaw as { updatedAt: string; windowDays: number; flows: EtfFlowEntry[] }
 
 const TICKER_NAME = new Map([...DATA['1h'], ...DATA['15m']].map((r) => [r.ticker, r.name]))
 
