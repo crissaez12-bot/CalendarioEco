@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageShell from '../components/PageShell'
-import { ASSET_ICON, DATA, isReady } from '../data/monteCarloData'
+import { ASSET_ICON, DATA } from '../data/monteCarloData'
+import { useMcLive } from '../data/mcLive'
 import { CALENDAR_SOURCE, CALENDAR_WEEK } from '../data/calendarData'
 import { FEAR_GREED } from '../data/generalData'
 import newsData from '../data/newsData.json'
 import etfFlowsData from '../data/etfFlowsData.json'
 import earningsData from '../data/earningsData.json'
 import { isMag7 } from '../data/mag7'
+
+const TICKER_NAME = new Map([...DATA['1h'], ...DATA['15m']].map((r) => [r.ticker, r.name]))
 
 const GOLD = '#D4AF37'
 
@@ -165,11 +168,11 @@ export default function General() {
 
   const { data: cryptoFng, live: cryptoLive } = useCryptoFearGreed(FEAR_GREED.crypto)
   const { data: wsSentiment, live: wsLive } = useWallStreetSentiment(FEAR_GREED.traditional)
+  const mcLive = useMcLive()
 
-  const activeSignals = DATA['1h']
-    .filter((r) => r.signal !== 'none')
-    .sort((a, b) => Number(isReady(b)) - Number(isReady(a)))
-    .slice(0, 5)
+  // Historial real de las ultimas 5 confluencias LISTO (signal-desk las agrega en
+  // el momento en que se disparan) -- mas reciente primero, FIFO de 5.
+  const activeSignals = [...(mcLive?.history ?? [])].reverse()
 
   const todayChile = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(now)
 
@@ -282,14 +285,13 @@ export default function General() {
             <p className="py-6 text-center text-sm text-beige/50">Sin señales activas en este momento.</p>
           ) : (
             <div className="flex flex-col gap-1">
-              {activeSignals.map((row) => {
-                const ready = isReady(row)
+              {activeSignals.map((row, i) => {
                 const dotColor = row.signal === 'bull' ? '#5FE6AE' : '#FF6B6B'
                 const sigLabel = row.signal === 'bull' ? 'TouchBull' : 'TouchBear'
                 return (
                   <div
-                    key={row.ticker}
-                    className={`flex items-center justify-between gap-3 rounded-lg px-2.5 py-2 ${ready ? 'bg-moss/[0.08]' : 'bg-bgCard'}`}
+                    key={`${row.ticker}-${row.tf}-${row.ts}-${i}`}
+                    className="flex items-center justify-between gap-3 rounded-lg bg-moss/[0.08] px-2.5 py-2"
                   >
                     <div className="flex items-center gap-2.5">
                       <img
@@ -298,15 +300,16 @@ export default function General() {
                         loading="lazy"
                         className="h-6 w-6 flex-shrink-0 rounded-full bg-beige/5 object-cover"
                       />
-                      <span className="text-sm font-semibold text-ivory">{row.name}</span>
+                      <span className="text-sm font-semibold text-ivory">{TICKER_NAME.get(row.ticker) ?? row.ticker}</span>
                       <span className="font-mono text-[11px] text-beige/40">{row.ticker}</span>
+                      <span className="rounded border border-beige/20 px-1.5 py-px font-mono text-[9px] font-bold uppercase text-beige/50">
+                        {row.tf}
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
-                      {ready && (
-                        <span className="rounded border border-moss/40 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-moss">
-                          Listo
-                        </span>
-                      )}
+                      <span className="rounded border border-moss/40 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-moss">
+                        Listo
+                      </span>
                       <span
                         className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-semibold"
                         style={{

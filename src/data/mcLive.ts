@@ -12,7 +12,14 @@ export interface McLiveRow {
   updated: number | null
 }
 
-export type McLiveData = Record<Timeframe, Record<string, McLiveRow>>
+export interface McHistoryEntry {
+  ticker: string
+  tf: Timeframe
+  signal: Signal
+  ts: number
+}
+
+export type McLiveData = Record<Timeframe, Record<string, McLiveRow>> & { history?: McHistoryEntry[] }
 
 const API_URL = 'https://signal-desk-j209.onrender.com/mc-data'
 
