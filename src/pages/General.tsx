@@ -12,6 +12,14 @@ import { isMag7 } from '../data/mag7'
 
 const TICKER_NAME = new Map([...DATA['1h'], ...DATA['15m']].map((r) => [r.ticker, r.name]))
 
+function formatSignalTime(ts: number) {
+  return new Date(ts * 1000).toLocaleTimeString('es-CL', {
+    timeZone: 'America/Santiago',
+    hour: '2-digit',
+    minute: '2-digit',
+  })
+}
+
 const GOLD = '#D4AF37'
 
 interface SessionDef {
@@ -307,6 +315,7 @@ export default function General() {
                       </span>
                     </div>
                     <div className="flex items-center gap-3">
+                      <span className="font-mono text-[11px] text-beige/40">{formatSignalTime(row.ts)}</span>
                       <span className="rounded border border-moss/40 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-moss">
                         Listo
                       </span>
