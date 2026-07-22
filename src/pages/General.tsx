@@ -203,7 +203,7 @@ export default function General() {
 
   // Historial real de las ultimas 5 confluencias LISTO (signal-desk las agrega en
   // el momento en que se disparan) -- mas reciente primero, FIFO de 5.
-  const activeSignals = [...(mcLive?.history ?? [])].reverse()
+  const activeSignals = [...(mcLive?.history ?? [])].reverse().slice(0, 5)
 
   const todayChile = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(now)
 
@@ -307,7 +307,10 @@ export default function General() {
             <h2 className="font-logo text-sm uppercase text-ivory" style={{ letterSpacing: '0.12em' }}>
               Monte Carlo &middot; Señales activas
             </h2>
-            <Link to="/monte-carlo" className="text-xs font-medium text-beige/60 transition-colors hover:text-ivory">
+            <Link
+              to="/monte-carlo-historial"
+              className="text-xs font-medium text-beige/60 transition-colors hover:text-ivory"
+            >
               Ver dashboard completo &rarr;
             </Link>
           </div>
