@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import type { SyntheticEvent } from 'react'
 import PageShell from '../components/PageShell'
 import earningsData from '../data/earningsData.json'
 import tokenUnlocksData from '../data/tokenUnlocksData.json'
@@ -20,6 +21,12 @@ const tokenCount = (n: number) => {
   if (n >= 1e6) return `${(n / 1e6).toFixed(1)}M`
   if (n >= 1e3) return `${(n / 1e3).toFixed(0)}K`
   return n.toFixed(0)
+}
+
+const stockLogo = (ticker: string) => `https://images.financialmodelingprep.com/symbol/${ticker}.png`
+
+function hideOnError(e: SyntheticEvent<HTMLImageElement>) {
+  e.currentTarget.style.visibility = 'hidden'
 }
 
 const UNLOCK_TYPE_STYLES: Record<UnlockType, string> = {
@@ -150,20 +157,31 @@ export default function Earnings() {
                               </span>
                             </td>
                             <td className="px-4 py-3">
-                              <div className="flex items-center gap-2">
-                                <span className="text-sm font-semibold" style={{ color: mag7 ? GOLD : '#F2FBF7' }}>
-                                  {e.name}
-                                </span>
-                                {mag7 && (
-                                  <span
-                                    className="rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide"
-                                    style={{ background: 'rgba(212,175,55,0.18)', color: GOLD }}
-                                  >
-                                    Mag 7
-                                  </span>
-                                )}
+                              <div className="flex items-center gap-2.5">
+                                <img
+                                  src={stockLogo(e.ticker)}
+                                  alt=""
+                                  loading="lazy"
+                                  onError={hideOnError}
+                                  className="h-7 w-7 flex-shrink-0 rounded-full bg-beige/5 object-contain p-0.5"
+                                />
+                                <div>
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-sm font-semibold" style={{ color: mag7 ? GOLD : '#F2FBF7' }}>
+                                      {e.name}
+                                    </span>
+                                    {mag7 && (
+                                      <span
+                                        className="rounded px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide"
+                                        style={{ background: 'rgba(212,175,55,0.18)', color: GOLD }}
+                                      >
+                                        Mag 7
+                                      </span>
+                                    )}
+                                  </div>
+                                  <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
+                                </div>
                               </div>
-                              <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
                             </td>
                             <td className="px-4 py-3 text-right font-mono text-sm tabular-nums text-beige/60">
                               {money(e.marketCap)}
@@ -239,8 +257,21 @@ export default function Earnings() {
                       {day.events.map((e, i) => (
                         <tr key={i} className="border-b border-borderSubtle last:border-b-0 hover:bg-beige/5">
                           <td className="px-4 py-3">
-                            <div className="text-sm font-semibold text-ivory">{e.name}</div>
-                            <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
+                            <div className="flex items-center gap-2.5">
+                              {e.logo && (
+                                <img
+                                  src={e.logo}
+                                  alt=""
+                                  loading="lazy"
+                                  onError={hideOnError}
+                                  className="h-7 w-7 flex-shrink-0 rounded-full bg-beige/5 object-cover"
+                                />
+                              )}
+                              <div>
+                                <div className="text-sm font-semibold text-ivory">{e.name}</div>
+                                <div className="font-mono text-[11px] text-beige/50">{e.ticker}</div>
+                              </div>
+                            </div>
                           </td>
                           <td className="px-4 py-3">
                             <span

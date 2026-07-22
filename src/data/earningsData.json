@@ -9,7 +9,7 @@
         {
           "ticker": "NVS",
           "name": "Novartis AG",
-          "marketCap": 293397402163,
+          "marketCap": 285383165111,
           "time": "BMO",
           "epsEst": "2.20",
           "epsLastYear": "2.42"
@@ -17,7 +17,7 @@
         {
           "ticker": "SCHW",
           "name": "The Charles Schwab Corporation",
-          "marketCap": 176626602091,
+          "marketCap": 178330954888,
           "time": "BMO",
           "epsEst": "1.53",
           "epsLastYear": "1.14"
@@ -25,7 +25,7 @@
         {
           "ticker": "IBKR",
           "name": "Interactive Brokers Group, Inc.",
-          "marketCap": 153570904263,
+          "marketCap": 155521711067,
           "time": "AMC",
           "epsEst": "0.63",
           "epsLastYear": "0.51"
@@ -33,7 +33,7 @@
         {
           "ticker": "DHR",
           "name": "Danaher Corporation",
-          "marketCap": 144264886901,
+          "marketCap": 142339750796,
           "time": "BMO",
           "epsEst": "1.84",
           "epsLastYear": "1.80"
@@ -41,7 +41,7 @@
         {
           "ticker": "CB",
           "name": "Chubb Limited",
-          "marketCap": 136588814929,
+          "marketCap": 136732323168,
           "time": "AMC",
           "epsEst": "6.63",
           "epsLastYear": "6.14"
@@ -49,7 +49,7 @@
         {
           "ticker": "COF",
           "name": "Capital One Financial Corporation",
-          "marketCap": 128150532632,
+          "marketCap": 127374348086,
           "time": "AMC",
           "epsEst": "4.85",
           "epsLastYear": "5.48"
@@ -57,7 +57,7 @@
         {
           "ticker": "MRSH",
           "name": "Marsh",
-          "marketCap": 87773322192,
+          "marketCap": 87734778632,
           "time": "BMO",
           "epsEst": "2.88",
           "epsLastYear": "2.72"
@@ -65,7 +65,7 @@
         {
           "ticker": "MMM",
           "name": "3M Company",
-          "marketCap": 83367310998,
+          "marketCap": 82986566898,
           "time": "BMO",
           "epsEst": "2.27",
           "epsLastYear": "2.16"

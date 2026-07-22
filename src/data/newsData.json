@@ -1,6 +1,6 @@
 {
   "date": "2026-07-21",
-  "updatedAt": "16:00",
+  "updatedAt": "20:56",
   "categories": {
     "finanzas": [
       {
@@ -123,6 +123,36 @@
     ],
     "tecnologia": [
       {
+        "title": "Las acciones de Super Micro aumentan en la divulgación de nuevos pedidos después del anuncio de SpaceX",
+        "url": "https://www.cnbc.com/2026/07/21/super-micro-stock-spacex-announcement.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "OpenAI nombra dos nuevos miembros para la junta directiva",
+        "url": "https://www.cnbc.com/2026/07/21/openai-appoints-two-new-members-to-board-of-directors.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La Fed dio la voz de alarma sobre el modelo de IA Mythos de Anthropic, pero tuvo que prescindir de él",
+        "url": "https://www.cnbc.com/2026/07/21/fed-mythos-ai-cybersecurity-banks-project-glasswing.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Cramer dice que este concepto de inversión de la vieja escuela sigue ganando, incluso en el auge de la IA",
+        "url": "https://www.cnbc.com/2026/07/21/jim-cramer-investing-concept-wins-ai-boom.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Wall Street puede esperar: por qué una empresa de biotecnología estadounidense cotiza primero en Hong Kong",
+        "url": "https://www.cnbc.com/2026/07/22/axiom-aiosciences-ipo-listing-hong-kong.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La \"irónica\" decisión de Sony sobre los discos PlayStation amenaza un mercado de reventa de $ 7 mil millones",
+        "url": "https://www.cnbc.com/2026/07/22/sonys-playstation-disc-decision-threatens-a-7-billion-resale-market-.html",
+        "source": "CNBC"
+      },
+      {
         "title": "OpenAI, cabildeo de impulso antrópico a medida que se desliza el gasto en tecnología y defensa heredado",
         "url": "https://www.cnbc.com/2026/07/21/openai-anthropic-ai-lobbying-spending-q2-2026.html",
         "source": "CNBC"
@@ -211,14 +241,19 @@
         "title": "Jim Cramer dice que es hora de mirar más allá de la tecnología mientras la incertidumbre de la IA sacude el mercado",
         "url": "https://www.cnbc.com/2026/07/20/jim-cramer-look-beyond-tech-ai-uncertainty.html",
         "source": "CNBC"
-      },
-      {
-        "title": "Las acciones de Nebius suben a medida que Nvidia revela una participación del 9,3% en neocloud",
-        "url": "https://www.cnbc.com/2026/07/21/nebius-stock-nvidia-stake-neocloud.html",
-        "source": "CNBC"
       }
     ],
     "politica": [
+      {
+        "title": "La Fed dio la voz de alarma sobre el modelo de IA Mythos de Anthropic, pero tuvo que prescindir de él",
+        "url": "https://www.cnbc.com/2026/07/21/fed-mythos-ai-cybersecurity-banks-project-glasswing.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los mercados de predicción y sus oponentes están gastando más para influir en el Congreso en 2026",
+        "url": "https://www.cnbc.com/2026/07/21/prediction-market-kalshi-polymarket-casino-gaming-lobby-congress.html",
+        "source": "CNBC"
+      },
       {
         "title": "El jefe del IRS, Frank Bisignano, rechaza las acusaciones de espionaje de JPMorgan",
         "url": "https://www.cnbc.com/2026/07/21/irs-chief-frank-bisignano-laughs-off-jpmorgan-spying-allegations.html",
@@ -291,6 +326,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Movement Labs se declara en bancarrota del Capítulo 11 después de meses de agitación de fichas de MOVE",
+        "url": "https://cointelegraph.com/news/movement-labs-files-chapter-11-bankruptcy-move-token-turmoil",
+        "source": "Cointelegraph"
+      },
       {
         "title": "EL BIS advierte que las monedas estables podrían debilitar los controles de capital en los mercados emergentes",
         "url": "https://cointelegraph.com/news/bis-study-says-stablecoins-bypass-capital-controls-more-easily-than-bank-deposits",

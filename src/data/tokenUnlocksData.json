@@ -3,30 +3,17 @@
   "capturedAt": "2026-07-21",
   "days": [
     {
-      "date": "2026-07-21",
-      "label": "Martes, 21 de julio de 2026",
+      "date": "2026-07-22",
+      "label": "Miércoles, 22 de julio de 2026",
       "events": [
         {
           "ticker": "TIA",
           "name": "Celestia",
           "type": "Cliff",
           "unlockTokens": 183562,
-          "unlockUsd": 67179,
-          "pctSupply": 0.019
-        }
-      ]
-    },
-    {
-      "date": "2026-07-22",
-      "label": "Miércoles, 22 de julio de 2026",
-      "events": [
-        {
-          "ticker": "-",
-          "name": "IOTA",
-          "type": "Cliff",
-          "unlockTokens": 4760677,
-          "unlockUsd": 0,
-          "pctSupply": 0.105
+          "unlockUsd": 67131,
+          "pctSupply": 0.019,
+          "logo": "https://coin-images.coingecko.com/coins/images/31967/large/tia.jpg?1696530772"
         }
       ]
     },
@@ -39,16 +26,18 @@
           "name": "TON",
           "type": "Cliff",
           "unlockTokens": 36583333,
-          "unlockUsd": 53045833,
-          "pctSupply": 1.34
+          "unlockUsd": 56338333,
+          "pctSupply": 1.339,
+          "logo": "https://coin-images.coingecko.com/coins/images/17980/large/Gram_Circular_Badge.png?1781524778"
         },
         {
           "ticker": "WLD",
           "name": "Worldcoin",
           "type": "Lineal",
           "unlockTokens": 11180000,
-          "unlockUsd": 4273242,
-          "pctSupply": 0.315
+          "unlockUsd": 4223580,
+          "pctSupply": 0.315,
+          "logo": "https://coin-images.coingecko.com/coins/images/31069/large/worldcoin.jpeg?1696529903"
         }
       ]
     },
@@ -61,8 +50,9 @@
           "name": "Humanity",
           "type": "Cliff",
           "unlockTokens": 105555556,
-          "unlockUsd": 6272006,
-          "pctSupply": 5.3
+          "unlockUsd": 6281294,
+          "pctSupply": 5.3,
+          "logo": "https://coin-images.coingecko.com/coins/images/66811/large/H_tokenLogo_original.png?1750581252"
         }
       ]
     },
@@ -75,8 +65,9 @@
           "name": "Avalanche",
           "type": "Cliff",
           "unlockTokens": 1667000,
-          "unlockUsd": 11035540,
-          "pctSupply": 0.386
+          "unlockUsd": 10918850,
+          "pctSupply": 0.386,
+          "logo": "https://coin-images.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png?1696512369"
         }
       ]
     },
@@ -89,24 +80,18 @@
           "name": "Plasma",
           "type": "Cliff",
           "unlockTokens": 88888889,
-          "unlockUsd": 7577511,
-          "pctSupply": 3.419
+          "unlockUsd": 7476800,
+          "pctSupply": 3.418,
+          "logo": "https://coin-images.coingecko.com/coins/images/66489/large/Plasma-symbol-green-1.png?1755142558"
         },
         {
           "ticker": "SOSO",
           "name": "SoSoValue",
           "type": "Lineal",
           "unlockTokens": 2108000,
-          "unlockUsd": 601212,
-          "pctSupply": 0.616
-        },
-        {
-          "ticker": "WAL",
-          "name": "Walrus Protocol",
-          "type": "Cliff",
-          "unlockTokens": 7500000,
-          "unlockUsd": 224620,
-          "pctSupply": 0.305
+          "unlockUsd": 594315,
+          "pctSupply": 0.616,
+          "logo": "https://coin-images.coingecko.com/coins/images/53919/large/soso.jpg?1737717378"
         }
       ]
     },
@@ -119,8 +104,9 @@
           "name": "Grass",
           "type": "Cliff",
           "unlockTokens": 10500000,
-          "unlockUsd": 3852986,
-          "pctSupply": 1.66
+          "unlockUsd": 3883730,
+          "pctSupply": 1.661,
+          "logo": "https://coin-images.coingecko.com/coins/images/40094/large/Grass.jpg?1725697048"
         }
       ]
     },
@@ -133,16 +119,33 @@
           "name": "Aster",
           "type": "Staking rewards",
           "unlockTokens": 2250000,
-          "unlockUsd": 1416418,
-          "pctSupply": 0.084
+          "unlockUsd": 1408736,
+          "pctSupply": 0.084,
+          "logo": "https://coin-images.coingecko.com/coins/images/69040/large/_ASTER.png?1757326782"
         },
         {
           "ticker": "FF",
           "name": "Falcon Finance",
           "type": "Cliff",
           "unlockTokens": 75000000,
-          "unlockUsd": 4516275,
-          "pctSupply": 2.525
+          "unlockUsd": 4528500,
+          "pctSupply": 2.525,
+          "logo": "https://coin-images.coingecko.com/coins/images/69121/large/ff.png?1757573403"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-31",
+      "label": "Viernes, 31 de julio de 2026",
+      "events": [
+        {
+          "ticker": "SUI",
+          "name": "Sui Foundation",
+          "type": "Cliff",
+          "unlockTokens": 2069367,
+          "unlockUsd": 1588806,
+          "pctSupply": 0.051,
+          "logo": "https://coin-images.coingecko.com/coins/images/26375/large/sui-ocean-square.png?1727791290"
         }
       ]
     }

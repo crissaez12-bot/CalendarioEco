@@ -15,15 +15,19 @@ import { execSync } from 'node:child_process'
 import { existsSync, readFileSync, writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
+import { translate, decodeEntities } from './translate.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'newsData.json')
 const ETF_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'etfFlowsData.json')
+const ETF_HISTORY_PATH = join(__dirname, '..', 'src', 'data', 'etfFlowsHistory.json')
 const EARNINGS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'earningsData.json')
 const UNLOCKS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tokenUnlocksData.json')
 const TICKER_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tickerData.json')
 const ETF_FLOW_HOUR = 8
 const ETF_WINDOW_DAYS = 5
+const ETF_HISTORY_MAX = 40 // suficiente colchon para buscar "hace 7 dias" aunque falte algun dia
+const ETF_HISTORY_TOLERANCE_DAYS = 2 // si no hay dato exacto de hace 7 dias, acepta +-2 dias
 const EARNINGS_BUSINESS_DAYS = 5
 const EARNINGS_MIN_MARKETCAP = 5_000_000_000 // solo empresas grandes/mid-cap, no toda la lista de NASDAQ
 const EARNINGS_MAX_PER_DAY = 8
@@ -34,28 +38,12 @@ const UNLOCKS_MAX_EVENTS = 30
 const TARGET_HOURS = [8, 12, 16]
 const MAX_ITEMS_PER_CATEGORY = 24
 const ITEMS_PER_FETCH = 10
-const TRANSLATE_EMAIL = 'cris.saez12@gmail.com' // sube el limite gratis de MyMemory
-
 const UA =
   'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36'
 const FETCH_HEADERS = {
   'User-Agent': UA,
   Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
   'Accept-Language': 'en-US,en;q=0.9',
-}
-
-function decodeEntities(str) {
-  return str
-    .replace(/&amp;/g, '&')
-    .replace(/&#x27;/g, "'")
-    .replace(/&#39;/g, "'")
-    .replace(/&quot;/g, '"')
-    .replace(/&#x2019;/g, '’')
-    .replace(/&#8217;/g, '’')
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&nbsp;/g, ' ')
-    .trim()
 }
 
 function parseCnbc(html) {
@@ -98,19 +86,6 @@ const CATEGORY_CONFIG = [
   { key: 'politica', label: 'Política', source: 'CNBC', url: 'https://www.cnbc.com/politics/', parse: parseCnbc },
   { key: 'crypto', label: 'Crypto', source: 'Cointelegraph', url: 'https://cointelegraph.com/', parse: parseCointelegraph },
 ]
-
-async function translate(text) {
-  try {
-    const q = encodeURIComponent(text)
-    const res = await fetch(`https://api.mymemory.translated.net/get?q=${q}&langpair=en|es&de=${TRANSLATE_EMAIL}`)
-    const json = await res.json()
-    const translated = json?.responseData?.translatedText
-    if (!translated || json?.responseStatus !== 200) return text
-    return decodeEntities(translated)
-  } catch {
-    return text
-  }
-}
 
 // Farside solo trackea ETF spot de BTC, ETH y SOL por ahora — es la lista
 // completa de "top 10 crypto" con ETF spot aprobado que tienen datos reales
@@ -180,6 +155,67 @@ function loadExistingEtfFlows() {
   }
 }
 
+// Market cap + ATH de BTC/ETH/SOL (CoinGecko, un solo request para los 3) --
+// permite ubicar la barra de ETF Flows segun que tan cerca esta cada activo de
+// su maximo historico de capitalizacion. athMarketCap es una aproximacion
+// (marketCap actual * ath_price/precio_actual, asume supply circulante estable
+// -- razonable para BTC/ETH/SOL, no exacto pero suficiente para la zona visual).
+async function fetchCryptoMarketCaps() {
+  const ids = 'bitcoin,ethereum,solana'
+  const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}`, {
+    headers: FETCH_HEADERS,
+  })
+  if (!res.ok) throw new Error(`HTTP ${res.status}`)
+  const json = await res.json()
+  const map = {}
+  for (const c of json) {
+    const athMarketCap = c.ath > 0 && c.current_price > 0 ? c.market_cap * (c.ath / c.current_price) : null
+    map[c.symbol.toUpperCase()] = {
+      marketCap: c.market_cap,
+      athMarketCap,
+      capRatio: athMarketCap ? c.market_cap / athMarketCap : null,
+    }
+  }
+  return map
+}
+
+function loadEtfHistory() {
+  if (!existsSync(ETF_HISTORY_PATH)) return { entries: [] }
+  try {
+    return JSON.parse(readFileSync(ETF_HISTORY_PATH, 'utf8'))
+  } catch {
+    return { entries: [] }
+  }
+}
+
+// Busca en el historial el netFlow de hace ~7 dias para calcular el % de
+// variacion semanal. Tolera +-ETF_HISTORY_TOLERANCE_DAYS si justo no hay dato
+// de exactamente hace 7 dias (cron que fallo un dia puntual, etc.).
+function findWeekAgoFlow(history, asset, todayDateStr) {
+  const target = new Date(`${todayDateStr}T00:00:00Z`)
+  target.setUTCDate(target.getUTCDate() - 7)
+  let best = null
+  let bestDiffMs = Infinity
+  for (const entry of history.entries) {
+    if (typeof entry.flows?.[asset] !== 'number') continue
+    const diffMs = Math.abs(new Date(`${entry.date}T00:00:00Z`) - target)
+    if (diffMs < bestDiffMs) {
+      bestDiffMs = diffMs
+      best = entry.flows[asset]
+    }
+  }
+  if (best === null || bestDiffMs > ETF_HISTORY_TOLERANCE_DAYS * 86_400_000) return null
+  return best
+}
+
+function saveEtfHistory(history, now, flows) {
+  const todaySnapshot = { date: now.date, flows: Object.fromEntries(flows.map((f) => [f.asset, f.netFlow])) }
+  const entries = [...history.entries.filter((e) => e.date !== now.date), todaySnapshot]
+  entries.sort((a, b) => a.date.localeCompare(b.date))
+  const trimmed = entries.slice(-ETF_HISTORY_MAX)
+  writeFileSync(ETF_HISTORY_PATH, JSON.stringify({ entries: trimmed }, null, 2) + '\n', 'utf8')
+}
+
 async function updateEtfFlows(now) {
   const existing = loadExistingEtfFlows()
   const previousByAsset = new Map((existing?.flows ?? []).map((f) => [f.asset, f]))
@@ -204,9 +240,34 @@ async function updateEtfFlows(now) {
     console.log('No se pudo obtener ningun ETF flow nuevo — se mantiene el archivo anterior tal cual.')
     return
   }
+
+  let mcaps = {}
+  try {
+    mcaps = await fetchCryptoMarketCaps()
+  } catch (err) {
+    console.log(`  Fallo market cap/ATH (CoinGecko): ${err.message} — se mantiene el ultimo valor conocido por activo.`)
+  }
+
+  const history = loadEtfHistory()
+  for (const f of flows) {
+    const mc = mcaps[f.asset] ?? previousByAsset.get(f.asset)
+    f.marketCap = mc?.marketCap ?? null
+    f.athMarketCap = mc?.athMarketCap ?? null
+    f.capRatio = mc?.capRatio ?? null
+    f.pctChangeWeek = findWeekAgoFlow(history, f.asset, now.date) !== null
+      ? computePctChange(f.netFlow, findWeekAgoFlow(history, f.asset, now.date))
+      : null
+  }
+  saveEtfHistory(history, now, flows)
+
   const output = { updatedAt: now.date, windowDays: ETF_WINDOW_DAYS, flows }
   writeFileSync(ETF_OUTPUT_PATH, JSON.stringify(output, null, 2) + '\n', 'utf8')
   console.log('Escrito:', ETF_OUTPUT_PATH)
+}
+
+function computePctChange(current, past) {
+  if (past === 0) return null // evita division por cero (semana pasada sin flujo)
+  return ((current - past) / Math.abs(past)) * 100
 }
 
 // Ticker de portada: indices (via ETF proxy) + acciones. SPCX = SpaceX (lista en
@@ -335,6 +396,25 @@ async function updateEarnings(now) {
   console.log('Escrito:', EARNINGS_OUTPUT_PATH)
 }
 
+// Logos de los tokens del top 100 (CoinGecko, en tandas de 50 ids por request
+// para no pasarnos de largo de URL ni pegarle muy fuerte al rate limit gratis).
+async function fetchTokenLogos(geckoIds) {
+  const map = {}
+  const CHUNK = 50
+  for (let i = 0; i < geckoIds.length; i += CHUNK) {
+    const chunk = geckoIds.slice(i, i + CHUNK)
+    const res = await fetch(
+      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${chunk.join(',')}&per_page=${CHUNK}`,
+      { headers: FETCH_HEADERS },
+    )
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
+    const json = await res.json()
+    for (const c of json) map[c.id] = c.image
+    if (i + CHUNK < geckoIds.length) await new Promise((r) => setTimeout(r, 500))
+  }
+  return map
+}
+
 function mapUnlockType(ev) {
   const cat = (ev?.category ?? '').toLowerCase()
   if (cat.includes('team') || cat.includes('investor')) return 'Team / Investors'
@@ -370,6 +450,7 @@ async function updateTokenUnlocks(now) {
       date: new Date(ev.date * 1000).toISOString().slice(0, 10),
       ticker: t.tSymbol || '-',
       name: t.name,
+      geckoId: t.gecko_id || null,
       type: mapUnlockType(t.upcomingEvent?.[0]),
       unlockTokens: Math.round(tokens),
       unlockUsd: Math.round(tokens * (t.tPrice || 0)),
@@ -378,8 +459,17 @@ async function updateTokenUnlocks(now) {
   }
   events.sort((a, b) => a.date.localeCompare(b.date))
 
+  const kept = events.slice(0, UNLOCKS_MAX_EVENTS)
+  let logoByGeckoId = {}
+  try {
+    logoByGeckoId = await fetchTokenLogos([...new Set(kept.map((e) => e.geckoId).filter(Boolean))])
+  } catch (err) {
+    console.log(`  Fallo logos de tokens (CoinGecko): ${err.message} — quedan sin logo.`)
+  }
+
   const byDay = new Map()
-  for (const { date, ...e } of events.slice(0, UNLOCKS_MAX_EVENTS)) {
+  for (const { date, geckoId, ...e } of kept) {
+    e.logo = logoByGeckoId[geckoId] ?? null
     if (!byDay.has(date)) byDay.set(date, [])
     byDay.get(date).push(e)
   }
@@ -487,7 +577,7 @@ async function main() {
     if (existsSync(TICKER_OUTPUT_PATH)) execSync(`git add "${TICKER_OUTPUT_PATH}"`, { stdio: 'inherit' })
     if (updatingNews) execSync(`git add src/data/newsData.json`, { stdio: 'inherit' })
     if (updatingDaily) {
-      for (const p of [ETF_OUTPUT_PATH, EARNINGS_OUTPUT_PATH, UNLOCKS_OUTPUT_PATH]) {
+      for (const p of [ETF_OUTPUT_PATH, ETF_HISTORY_PATH, EARNINGS_OUTPUT_PATH, UNLOCKS_OUTPUT_PATH]) {
         if (existsSync(p)) execSync(`git add "${p}"`, { stdio: 'inherit' })
       }
     }

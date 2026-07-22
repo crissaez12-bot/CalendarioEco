@@ -6,7 +6,7 @@
 export interface MacroEvent {
   time: string
   countryCode: string
-  countryFlag: string
+  countryFlagCode: string
   countryLabel: string
   name: string
   actual: string
@@ -23,7 +23,7 @@ export interface MacroDay {
 export const CALENDAR_SOURCE = {
   provider: 'ForexFactory',
   weekLabel: 'Semana actual',
-  capturedAt: '2026-07-20',
+  capturedAt: '2026-07-22',
   impactFilter: 'Alto',
   countries: ['Estados Unidos', 'China', 'Eurozona / Alemania', 'Reino Unido', 'Japón'],
 }
@@ -36,11 +36,11 @@ export const CALENDAR_WEEK: MacroDay[] = [
       {
         time: '06:00',
         countryCode: 'GBR',
-        countryFlag: '🇬🇧',
+        countryFlagCode: 'gb',
         countryLabel: 'Reino Unido',
-        name: 'Claimant Count Change',
+        name: 'Variación del desempleo (AGO.)',
         actual: '-',
-        forecast: '28.3K',
+        forecast: '29.4K',
         previous: '31.2K',
       },
     ],
@@ -52,9 +52,9 @@ export const CALENDAR_WEEK: MacroDay[] = [
       {
         time: '06:00',
         countryCode: 'GBR',
-        countryFlag: '🇬🇧',
+        countryFlagCode: 'gb',
         countryLabel: 'Reino Unido',
-        name: 'CPI y/y',
+        name: 'IPC a/a',
         actual: '-',
         forecast: '2.7%',
         previous: '2.8%',
@@ -68,9 +68,9 @@ export const CALENDAR_WEEK: MacroDay[] = [
       {
         time: '12:15',
         countryCode: 'EUR',
-        countryFlag: '🇪🇺',
+        countryFlagCode: 'eu',
         countryLabel: 'Eurozona / Alemania',
-        name: 'Main Refinancing Rate',
+        name: 'Operación principal de financiación',
         actual: '-',
         forecast: '2.40%',
         previous: '2.40%',
@@ -78,9 +78,9 @@ export const CALENDAR_WEEK: MacroDay[] = [
       {
         time: '12:15',
         countryCode: 'EUR',
-        countryFlag: '🇪🇺',
+        countryFlagCode: 'eu',
         countryLabel: 'Eurozona / Alemania',
-        name: 'Monetary Policy Statement',
+        name: 'Declaración de política monetaria',
         actual: '-',
         forecast: '-',
         previous: '-',
@@ -88,9 +88,9 @@ export const CALENDAR_WEEK: MacroDay[] = [
       {
         time: '12:45',
         countryCode: 'EUR',
-        countryFlag: '🇪🇺',
+        countryFlagCode: 'eu',
         countryLabel: 'Eurozona / Alemania',
-        name: 'ECB Press Conference',
+        name: 'ECB press conference',
         actual: '-',
         forecast: '-',
         previous: '-',

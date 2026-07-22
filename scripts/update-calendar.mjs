@@ -8,6 +8,7 @@ import { execSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 import { dirname, join } from 'node:path'
+import { translate } from './translate.mjs'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'calendarData.ts')
@@ -15,13 +16,14 @@ const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'calendarData.ts')
 const FEED_URL = 'https://nfs.faireconomy.media/ff_calendar_thisweek.json'
 
 // Moneda -> pais que mostramos. Chile queda afuera a proposito: ningun feed
-// de forex trackea CLP, se sigue cargando manual aparte.
+// de forex trackea CLP, se sigue cargando manual aparte. flagCode = codigo de
+// 2 letras para flagcdn.com (mismo servicio que ya usan Navbar/General).
 const COUNTRY_MAP = {
-  USD: { code: 'USA', flag: '🇺🇸', label: 'Estados Unidos' },
-  EUR: { code: 'EUR', flag: '🇪🇺', label: 'Eurozona / Alemania' },
-  GBP: { code: 'GBR', flag: '🇬🇧', label: 'Reino Unido' },
-  JPY: { code: 'JPN', flag: '🇯🇵', label: 'Japón' },
-  CNY: { code: 'CHN', flag: '🇨🇳', label: 'China' },
+  USD: { code: 'USA', flagCode: 'us', label: 'Estados Unidos' },
+  EUR: { code: 'EUR', flagCode: 'eu', label: 'Eurozona / Alemania' },
+  GBP: { code: 'GBR', flagCode: 'gb', label: 'Reino Unido' },
+  JPY: { code: 'JPN', flagCode: 'jp', label: 'Japón' },
+  CNY: { code: 'CHN', flagCode: 'cn', label: 'China' },
 }
 
 const WEEKDAY_LABEL = new Intl.DateTimeFormat('es-AR', {
@@ -58,6 +60,16 @@ async function main() {
     (e) => e.impact === 'High' && COUNTRY_MAP[e.country] && e.date,
   )
 
+  // Traduce cada titulo unico una sola vez (muchos eventos se repiten semana a
+  // semana, ej. "CPI y/y" en varios paises) para no pedirle a MyMemory lo mismo
+  // varias veces en la misma corrida.
+  const uniqueTitles = [...new Set(filtered.map((e) => e.title))]
+  const titleEs = new Map()
+  for (const title of uniqueTitles) {
+    titleEs.set(title, await translate(title))
+    await new Promise((r) => setTimeout(r, 250))
+  }
+
   const byDay = new Map()
   for (const e of filtered) {
     const dayKey = e.date.slice(0, 10)
@@ -66,9 +78,9 @@ async function main() {
     byDay.get(dayKey).push({
       time: fmtTime(e.date),
       countryCode: c.code,
-      countryFlag: c.flag,
+      countryFlagCode: c.flagCode,
       countryLabel: c.label,
-      name: e.title,
+      name: titleEs.get(e.title) ?? e.title,
       actual: e.actual || '-',
       forecast: e.forecast || '-',
       previous: e.previous || '-',
@@ -93,7 +105,7 @@ async function main() {
         (e) => `      {
         time: '${esc(e.time)}',
         countryCode: '${esc(e.countryCode)}',
-        countryFlag: '${e.countryFlag}',
+        countryFlagCode: '${esc(e.countryFlagCode)}',
         countryLabel: '${esc(e.countryLabel)}',
         name: '${esc(e.name)}',
         actual: '${esc(e.actual)}',
@@ -125,7 +137,7 @@ ${eventsTs(d.events)}
 export interface MacroEvent {
   time: string
   countryCode: string
-  countryFlag: string
+  countryFlagCode: string
   countryLabel: string
   name: string
   actual: string

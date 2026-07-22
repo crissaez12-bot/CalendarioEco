@@ -92,7 +92,11 @@ export default function Calendario() {
                         <td className="px-4 py-3 font-mono text-xs text-beige/60">{event.time}</td>
                         <td className="px-4 py-3">
                           <span className="inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium text-beige">
-                            <span>{event.countryFlag}</span>
+                            <img
+                              src={`https://flagcdn.com/w40/${event.countryFlagCode}.png`}
+                              alt=""
+                              className="h-3.5 w-5 flex-shrink-0 rounded-[2px] object-cover"
+                            />
                             {event.countryCode}
                           </span>
                         </td>

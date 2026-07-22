@@ -4,21 +4,33 @@
   "flows": [
     {
       "asset": "BTC",
-      "netFlow": 545900000,
+      "netFlow": 562100000,
       "days": 5,
-      "through": "21 Jul 2026"
+      "through": "21 Jul 2026",
+      "marketCap": 1336030085577,
+      "athMarketCap": 2529191351324.277,
+      "capRatio": 0.5282439720812183,
+      "pctChangeWeek": null
     },
     {
       "asset": "ETH",
       "netFlow": 100600000,
       "days": 5,
-      "through": "21 Jul 2026"
+      "through": "21 Jul 2026",
+      "marketCap": 233881062991,
+      "athMarketCap": 596872900812.4719,
+      "capRatio": 0.3918439967246591,
+      "pctChangeWeek": null
     },
     {
       "asset": "SOL",
-      "netFlow": 3600000,
+      "netFlow": 9400000,
       "days": 5,
-      "through": "21 Jul 2026"
+      "through": "21 Jul 2026",
+      "marketCap": 45694406606,
+      "athMarketCap": 170930065063.20444,
+      "capRatio": 0.2673280829156865,
+      "pctChangeWeek": null
     }
   ]
 }

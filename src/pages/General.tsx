@@ -344,27 +344,39 @@ export default function General() {
           <div className="flex flex-col gap-4">
             {etfFlowsData.flows.map((f) => {
               const positive = f.netFlow >= 0
-              const width = Math.min(100, (Math.abs(f.netFlow) / 1_000_000_000) * 100)
+              const capRatio = f.capRatio ?? null
+              const barWidth = capRatio !== null ? Math.min(100, Math.max(0, capRatio * 100)) : 0
+              const pct = f.pctChangeWeek ?? null
               return (
                 <div key={f.asset}>
                   <div className="mb-1.5 flex items-center justify-between">
                     <span className="text-sm font-semibold text-ivory">{f.asset}</span>
                     <span className={`font-mono text-sm font-semibold tabular-nums ${positive ? 'text-moss' : 'text-clay'}`}>
                       {moneyShort(f.netFlow)}
+                      {pct !== null && (
+                        <span className="ml-1.5 text-beige/50">
+                          ({pct >= 0 ? '+' : ''}
+                          {pct.toFixed(1)}%)
+                        </span>
+                      )}
                     </span>
                   </div>
-                  <div className="h-1.5 rounded-full bg-beige/10">
+                  <div className="h-1.5 rounded-full bg-beige/10" title="Capitalización de mercado actual vs. máximo histórico">
                     <div
                       className="h-1.5 rounded-full"
-                      style={{ width: `${width}%`, background: positive ? '#5FE6AE' : '#FF6B6B' }}
+                      style={{ width: `${barWidth}%`, background: positive ? '#5FE6AE' : '#FF6B6B' }}
                     />
                   </div>
+                  {capRatio !== null && (
+                    <p className="mt-1 text-[10px] text-beige/40">Cap. vs. máx. histórico: {(capRatio * 100).toFixed(0)}%</p>
+                  )}
                 </div>
               )
             })}
           </div>
           <p className="mt-4 text-[11px] text-beige/40">
-            Flujo neto de los últimos {etfFlowsData.windowDays} días hábiles &middot; actualizado {etfFlowsData.updatedAt}
+            Flujo neto de los últimos {etfFlowsData.windowDays} días hábiles (variación % vs. hace 7 días) &middot;
+            barra = capitalización actual sobre el máximo histórico &middot; actualizado {etfFlowsData.updatedAt}
           </p>
         </div>
       </div>
@@ -425,7 +437,11 @@ export default function General() {
                         <div className="flex items-start gap-2">
                           <span className="mt-0.5 font-mono text-[11px] text-beige/50">{event.time}</span>
                           <span className="flex items-center gap-1.5 text-xs font-medium text-ivory">
-                            <span>{event.countryFlag}</span>
+                            <img
+                              src={`https://flagcdn.com/w40/${event.countryFlagCode}.png`}
+                              alt=""
+                              className="h-3.5 w-5 flex-shrink-0 rounded-[2px] object-cover"
+                            />
                             {event.name}
                           </span>
                         </div>
