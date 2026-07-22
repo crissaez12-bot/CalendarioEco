@@ -1,6 +1,6 @@
 {
   "date": "2026-07-22",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -56,6 +56,11 @@
     ],
     "economia": [
       {
+        "title": "Kevin Warsh se ha centrado en tres frases clave. Cómo los interpretan los observadores de la Fed",
+        "url": "https://www.cnbc.com/2026/07/22/kevin-warsh-has-homed-in-on-three-key-phrases-how-fed-watchers-interpret-them.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Los precios al consumidor de China se debilitan mientras la inflación del productor se acel",
         "url": "https://www.cnbc.com/2026/07/09/china-cpi-ppi-june-inflation-iran-war-.html",
         "source": "CNBC"
@@ -107,6 +112,31 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "SpaceX pone fin a su racha perdedora, los precios del petróleo suben y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/22/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Samsung detalla las características de sus gafas inteligentes mientras se enfrenta a Meta",
+        "url": "https://www.cnbc.com/2026/07/22/samsung-smart-glasses-features-specs-price-meta.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Samsung sube los precios con el lanzamiento de nuevos smartphones plegables antes del esperado debut de Apple",
+        "url": "https://www.cnbc.com/2026/07/22/samsung-galaxy-z-fold8-ultra-z-fold8-z-flip8-launch.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "AMD invertirá hasta $ 5 mil millones en Anthropic como parte del acuerdo de potencia informática",
+        "url": "https://www.cnbc.com/2026/07/22/amd-anthropic-ai-chip-investment.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones de Reddit se hunden al informar que es posible que no renueve el acuerdo de contenido de Google AI",
+        "url": "https://www.cnbc.com/2026/07/22/reddit-stock-google-ai-content-deal.html",
+        "source": "CNBC"
+      },
       {
         "title": "Listo para despegar: la próxima pista de crecimiento de esta acción es asegurar la identidad en una era de IA",
         "url": "https://www.cnbc.com/2026/07/21/ready-for-takeoff-this-stocks-next-growth-runway-is-securing-identity-in-an-ai-age.html",
@@ -160,6 +190,16 @@
     ],
     "politica": [
       {
+        "title": "El senador Wyden presenta un proyecto de ley para frenar los poderes arancelarios de Trump",
+        "url": "https://www.cnbc.com/2026/07/22/trump-tariffs-wyden-bill-congress.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La restricción del comercio de acciones en el Congreso obtendrá el voto de la Cámara en medio del apoyo público a una prohibición",
+        "url": "https://www.cnbc.com/2026/07/22/house-congressional-stock-trading.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Estados Unidos y China mantendrán conversaciones sobre IA en septiembre, según fuentes de Reuters",
         "url": "https://www.cnbc.com/2026/07/21/us-china-ai-talks-bessent.html",
         "source": "CNBC"
@@ -211,6 +251,16 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Franklin Templeton llama a la IA auténtica el próximo caso de uso \"asesino\" para blockchain",
+        "url": "https://cointelegraph.com/news/agentic-ai-killer-use-case-blockchain-franklin-templeton",
+        "source": "Cointelegraph"
+      },
       {
         "title": "SecondFi se desacelera después del robo de $ 2.6 MILLONES de ADA vinculado a una falla en la billetera",
         "url": "https://cointelegraph.com/news/secondfi-shutdown-ada-theft-wallet-flaw",
