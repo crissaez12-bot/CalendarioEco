@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import type { SyntheticEvent } from 'react'
 import { Link } from 'react-router-dom'
 import PageShell from '../components/PageShell'
 import { ASSET_ICON, DATA } from '../data/monteCarloData'
@@ -25,6 +26,12 @@ interface EtfFlowEntry {
   pctChangeWeek: number | null
 }
 const etfFlowsData = etfFlowsDataRaw as { updatedAt: string; windowDays: number; flows: EtfFlowEntry[] }
+
+const stockLogo = (ticker: string) => `https://images.financialmodelingprep.com/symbol/${ticker}.png`
+
+function hideOnError(e: SyntheticEvent<HTMLImageElement>) {
+  e.currentTarget.style.visibility = 'hidden'
+}
 
 const TICKER_NAME = new Map([...DATA['1h'], ...DATA['15m']].map((r) => [r.ticker, r.name]))
 
@@ -477,6 +484,13 @@ export default function General() {
                           >
                             {e.time}
                           </span>
+                          <img
+                            src={stockLogo(e.ticker)}
+                            alt=""
+                            loading="lazy"
+                            onError={hideOnError}
+                            className="mt-px h-4 w-4 flex-shrink-0 rounded-full bg-beige/5 object-contain"
+                          />
                           <span className="flex items-center gap-1.5 text-xs font-semibold" style={{ color: GOLD }}>
                             {e.name}
                             <span className="font-mono text-[10px] text-beige/50">{e.ticker}</span>
