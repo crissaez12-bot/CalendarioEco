@@ -1,77 +1,7 @@
 {
   "source": "NASDAQ",
-  "capturedAt": "2026-07-21",
+  "capturedAt": "2026-07-22",
   "days": [
-    {
-      "date": "2026-07-21",
-      "label": "Martes, 21 de julio de 2026",
-      "events": [
-        {
-          "ticker": "NVS",
-          "name": "Novartis AG",
-          "marketCap": 285383165111,
-          "time": "BMO",
-          "epsEst": "2.20",
-          "epsLastYear": "2.42"
-        },
-        {
-          "ticker": "SCHW",
-          "name": "The Charles Schwab Corporation",
-          "marketCap": 178330954888,
-          "time": "BMO",
-          "epsEst": "1.53",
-          "epsLastYear": "1.14"
-        },
-        {
-          "ticker": "IBKR",
-          "name": "Interactive Brokers Group, Inc.",
-          "marketCap": 155521711067,
-          "time": "AMC",
-          "epsEst": "0.63",
-          "epsLastYear": "0.51"
-        },
-        {
-          "ticker": "DHR",
-          "name": "Danaher Corporation",
-          "marketCap": 142339750796,
-          "time": "BMO",
-          "epsEst": "1.84",
-          "epsLastYear": "1.80"
-        },
-        {
-          "ticker": "CB",
-          "name": "Chubb Limited",
-          "marketCap": 136732323168,
-          "time": "AMC",
-          "epsEst": "6.63",
-          "epsLastYear": "6.14"
-        },
-        {
-          "ticker": "COF",
-          "name": "Capital One Financial Corporation",
-          "marketCap": 127374348086,
-          "time": "AMC",
-          "epsEst": "4.85",
-          "epsLastYear": "5.48"
-        },
-        {
-          "ticker": "MRSH",
-          "name": "Marsh",
-          "marketCap": 87734778632,
-          "time": "BMO",
-          "epsEst": "2.88",
-          "epsLastYear": "2.72"
-        },
-        {
-          "ticker": "MMM",
-          "name": "3M Company",
-          "marketCap": 82986566898,
-          "time": "BMO",
-          "epsEst": "2.27",
-          "epsLastYear": "2.16"
-        }
-      ]
-    },
     {
       "date": "2026-07-22",
       "label": "Miércoles, 22 de julio de 2026",
@@ -129,7 +59,7 @@
           "name": "International Business Machines Corporation",
           "marketCap": 200195564640,
           "time": "AMC",
-          "epsEst": "2.97",
+          "epsEst": "2.93",
           "epsLastYear": "2.80"
         },
         {
@@ -289,7 +219,7 @@
         {
           "ticker": "AZN",
           "name": "AstraZeneca PLC",
-          "marketCap": 262567002329,
+          "marketCap": 257853912830,
           "time": "BMO",
           "epsEst": "2.50",
           "epsLastYear": "2.18"
@@ -297,7 +227,7 @@
         {
           "ticker": "WELL",
           "name": "Welltower Inc.",
-          "marketCap": 172836093938,
+          "marketCap": 173916143047,
           "time": "AMC",
           "epsEst": "1.55",
           "epsLastYear": "1.28"
@@ -305,7 +235,7 @@
         {
           "ticker": "CDNS",
           "name": "Cadence Design Systems, Inc.",
-          "marketCap": 90999972880,
+          "marketCap": 95057226240,
           "time": "AMC",
           "epsEst": "1.62",
           "epsLastYear": "1.22"
@@ -313,31 +243,31 @@
         {
           "ticker": "NUE",
           "name": "Nucor Corporation",
-          "marketCap": 52548946803,
+          "marketCap": 53109189540,
           "time": "AMC",
-          "epsEst": "4.63",
+          "epsEst": "4.57",
           "epsLastYear": "2.60"
-        },
-        {
-          "ticker": "VOD",
-          "name": "Vodafone Group Plc",
-          "marketCap": 37628337125,
-          "time": "BMO",
-          "epsEst": "-",
-          "epsLastYear": "N/A"
         },
         {
           "ticker": "CLS",
           "name": "Celestica, Inc.",
-          "marketCap": 35414244720,
+          "marketCap": 39208410756,
           "time": "AMC",
           "epsEst": "2.12",
           "epsLastYear": "1.26"
         },
         {
+          "ticker": "VOD",
+          "name": "Vodafone Group Plc",
+          "marketCap": 36761975338,
+          "time": "BMO",
+          "epsEst": "-",
+          "epsLastYear": "N/A"
+        },
+        {
           "ticker": "CINF",
           "name": "Cincinnati Financial Corporation",
-          "marketCap": 27899300787,
+          "marketCap": 27922503798,
           "time": "AMC",
           "epsEst": "1.82",
           "epsLastYear": "1.97"
@@ -345,10 +275,80 @@
         {
           "ticker": "PFG",
           "name": "Principal Financial Group Inc",
-          "marketCap": 24206347751,
+          "marketCap": 23668476915,
           "time": "AMC",
           "epsEst": "2.32",
           "epsLastYear": "2.16"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-28",
+      "label": "Martes, 28 de julio de 2026",
+      "events": [
+        {
+          "ticker": "V",
+          "name": "Visa Inc.",
+          "marketCap": 683088311255,
+          "time": "AMC",
+          "epsEst": "3.23",
+          "epsLastYear": "2.98"
+        },
+        {
+          "ticker": "KO",
+          "name": "Coca-Cola Company (The)",
+          "marketCap": 353457034259,
+          "time": "BMO",
+          "epsEst": "0.92",
+          "epsLastYear": "0.87"
+        },
+        {
+          "ticker": "KLAC",
+          "name": "KLA Corporation ",
+          "marketCap": 271182733596,
+          "time": "AMC",
+          "epsEst": "1",
+          "epsLastYear": "0.94"
+        },
+        {
+          "ticker": "STX",
+          "name": "Seagate Technology Holdings PLC",
+          "marketCap": 179932554630,
+          "time": "AMC",
+          "epsEst": "4.89",
+          "epsLastYear": "2.34"
+        },
+        {
+          "ticker": "BA",
+          "name": "Boeing Company (The)",
+          "marketCap": 165133572298,
+          "time": "BMO",
+          "epsEst": "(0.34)",
+          "epsLastYear": "(1.24)"
+        },
+        {
+          "ticker": "SPGI",
+          "name": "S&P Global Inc.",
+          "marketCap": 132711600000,
+          "time": "BMO",
+          "epsEst": "4.49",
+          "epsLastYear": "4.43"
+        },
+        {
+          "ticker": "GLW",
+          "name": "Corning Incorporated",
+          "marketCap": 131763651008,
+          "time": "BMO",
+          "epsEst": "0.76",
+          "epsLastYear": "0.60"
+        },
+        {
+          "ticker": "GSK",
+          "name": "GSK plc",
+          "marketCap": 104359678958,
+          "time": "BMO",
+          "epsEst": "1.27",
+          "epsLastYear": "1.23"
         }
       ]
     }
