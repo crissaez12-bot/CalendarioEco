@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22 21:00",
+  "updatedAt": "2026-07-22 22:00",
   "items": [
     {
       "symbol": "SPY",
@@ -10,8 +10,8 @@
     {
       "symbol": "QQQ",
       "label": "Nasdaq 100",
-      "price": 708.97,
-      "changePct": 1.85
+      "price": 705.35,
+      "changePct": -0.51
     },
     {
       "symbol": "DIA",
