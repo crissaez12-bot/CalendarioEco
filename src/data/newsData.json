@@ -1,8 +1,23 @@
 {
   "date": "2026-07-23",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "El mercado de valores ya no puede ignorar la guerra: \"Es demasiado difícil ignorar el petróleo de 100 $\"",
+        "url": "https://www.cnbc.com/2026/07/23/short-sighted-stock-market-can-no-longer-brush-off-war-investors-say.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El informe de JPMorgan encuentra un salto dramático en los ETF con temas de IA, a pesar del trimestre difícil",
+        "url": "https://www.cnbc.com/2026/07/23/jpmorgan-dramatic-jump-in-ai-etfs-despite-rough-quarter.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las probabilidades de un aumento de las tasas de la Reserva Federal aumentan a medida que los precios del petróleo suben",
+        "url": "https://www.cnbc.com/2026/07/23/fed-interest-rate-odds-oil-jobless-claims.html",
+        "source": "CNBC"
+      },
       {
         "title": "Las acciones hacen grandes movimientos antes del mercado: General Motors, 3M, Novartis, Nebius y más",
         "url": "https://www.cnbc.com/2026/07/21/stocks-making-the-biggest-moves-premarket-gm-mmm-nvs-nbis.html",
@@ -108,6 +123,31 @@
     ],
     "tecnologia": [
       {
+        "title": "Amazon y Microsoft pivotan las estrategias de juego en la nube para dirigirse a diferentes jugadores",
+        "url": "https://www.cnbc.com/2026/07/23/amazon-microsoft-cloud-gaming.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Jim Cramer dice que está \"luchando por tener razones para comprar\" en este mercado",
+        "url": "https://www.cnbc.com/2026/07/23/jim-cramer-says-he-iss-struggling-to-have-reasons-to-buy-in-this-market.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El informe de JPMorgan encuentra un salto dramático en los ETF con temas de IA, a pesar del trimestre difícil",
+        "url": "https://www.cnbc.com/2026/07/23/jpmorgan-dramatic-jump-in-ai-etfs-despite-rough-quarter.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Ganancias de acciones de Cerebras en la asociación con AMD",
+        "url": "https://www.cnbc.com/2026/07/23/cerebras-stock-gains-on-amd-partnership.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Krishna de IBM intenta tranquilizar a los inversores de que la IA no interrumpirá la unidad de software de la empresa",
+        "url": "https://www.cnbc.com/2026/07/23/ibms-krishna-argues-that-ai-wont-disrupt-software-unit.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Ingresos de Tesla, despidos en Amazon y más: Morning Squawk",
         "url": "https://www.cnbc.com/2026/07/23/5-things-to-know-before-the-stock-market-opens.html",
         "source": "CNBC"
@@ -175,6 +215,16 @@
     ],
     "politica": [
       {
+        "title": "El Congreso se divide sobre las resoluciones de poderes de guerra para obligar a Trump a abandonar la guerra de Irán",
+        "url": "https://www.cnbc.com/2026/07/23/congress-pushes-war-powers-resolutions-tells-trump-to-abandon-iran-war.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El Departamento de Justicia retira las citaciones a los periodistas del NY Times en la investigación del avión de Trump",
+        "url": "https://www.cnbc.com/2026/07/23/doj-subpoenas-new-york-times-trump-plane.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Legisladores de la Cámara de Representantes interrogan al ex ejecutivo de JPMorgan Jes Staley sobre los lazos con Epstein",
         "url": "https://www.cnbc.com/2026/07/23/comer-jes-staley-jpmorgan-jeffrey-epstein-red-flags.html",
         "source": "CNBC"
@@ -231,6 +281,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "El CEO de Goldman Sachs respalda la Ley CLARITY \"no perfecta\" como se espera que se vote pronto",
+        "url": "https://cointelegraph.com/news/goldman-sachs-ceo-clarity-act-stablecoin-vote",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "La cuenta X del CEO de Robinhood fue hackeada en una aparente estafa de memecoin",
+        "url": "https://cointelegraph.com/news/robinhood-ceo-x-account-hacked-in-apparent-memecoin-scam",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "A medida que BitMEX sale, los analistas advierten que la consolidación de criptomonedas se está acelerando",
+        "url": "https://cointelegraph.com/news/as-bitmex-exits-analysts-warn-crypto-consolidation-is-accelerating",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "La criptoindustria contribuirá con 55 mil millones de $ a la economía de EE. UU. en 2026: estudio de la NCA",
+        "url": "https://cointelegraph.com/news/crypto-industry-contributed-us-economy-2026-nca",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Bitget obtiene una licencia para la expansión de Nueva Zelanda",
         "url": "https://cointelegraph.com/news/bitget-secures-license-new-zealand-expansion",
