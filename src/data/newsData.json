@@ -1,6 +1,6 @@
 {
   "date": "2026-07-23",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -108,6 +108,21 @@
     ],
     "tecnologia": [
       {
+        "title": "Ingresos de Tesla, despidos en Amazon y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/23/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Kurian de Google dice que los clientes de la nube están gastando un 50% más",
+        "url": "https://www.cnbc.com/2026/07/23/google-cloud-kurian-revenue-earnings.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones de Intel han bajado un 27% desde los máximos históricos de junio. Cómo el fabricante de chips puede revertir la diapositiva",
+        "url": "https://www.cnbc.com/2026/07/23/intel-is-down-27percent-from-june-record-highs-how-it-can-reverse-the-slide.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Esta es la acción a comprar después de que el agente de IA de OpenAI se vuelva deshonesto en una prueba de ciberseguridad",
         "url": "https://www.cnbc.com/2026/07/22/this-is-the-stock-to-buy-after-openais-ai-agent-goes-rogue-in-a-cybersecurity-test.html",
         "source": "CNBC"
@@ -160,6 +175,11 @@
     ],
     "politica": [
       {
+        "title": "Legisladores de la Cámara de Representantes interrogan al ex ejecutivo de JPMorgan Jes Staley sobre los lazos con Epstein",
+        "url": "https://www.cnbc.com/2026/07/23/comer-jes-staley-jpmorgan-jeffrey-epstein-red-flags.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Montaña Pickaxe: Lo que hay que saber sobre la instalación nuclear de Irán que Trump puede atacar",
         "url": "https://www.cnbc.com/2026/07/22/pickaxe-mountain-location-nuclear-iran-trump.html",
         "source": "CNBC"
@@ -211,6 +231,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Bitget obtiene una licencia para la expansión de Nueva Zelanda",
+        "url": "https://cointelegraph.com/news/bitget-secures-license-new-zealand-expansion",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Binance se une a STOP THE TRAFFIK en el esfuerzo contra la trata de personas",
+        "url": "https://cointelegraph.com/news/binance-stop-the-traffik-anti-human-trafficking",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Coinbase ampliará el personal de las oficinas de Singapur en un 25%: informe",
         "url": "https://cointelegraph.com/news/coinbase-expand-singapore-headcount-25",
