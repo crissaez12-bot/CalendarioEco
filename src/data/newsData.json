@@ -1,6 +1,6 @@
 {
   "date": "2026-07-24",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -54,8 +54,69 @@
         "source": "CNBC"
       }
     ],
-    "economia": [],
+    "economia": [
+      {
+        "title": "La inflación de India se acelera hasta el 4,38% en junio, superando las previsiones",
+        "url": "https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios al consumidor aumentaron un 3,5% anual en junio, menos de lo esperado a medida que disminuyeron los precios de la energía",
+        "url": "https://www.cnbc.com/2026/07/14/consumer-price-index-inflation-report-june-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "China registra el crecimiento del PIB más lento desde 2022, avivando las llamadas de estímulo",
+        "url": "https://www.cnbc.com/2026/07/15/china-gdp-retail-sales-investment-june-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La reanudación de las hostilidades en Ormuz hace que los tipos del BCE se replanteen en medio de unas perspectivas \"extremadamente volátiles\"",
+        "url": "https://www.cnbc.com/2026/07/15/ecb-interest-rates-outlook-iran-war-hormuz.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Se esperaba que el índice de precios al productor se mantuviera sin cambios en junio, según el pronóstico de consenso del Dow Jones.",
+        "url": "https://www.cnbc.com/2026/07/15/wholesale-inflation-june-2026-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las fiestas de vigilancia de la Copa Mundial dieron a los bares y restaurantes un impulso necesario, dice la Fed",
+        "url": "https://www.cnbc.com/2026/07/15/world-cup-economy-spending-alcohol-hotels-fed.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios de las importaciones suben por sorpresa, ya que los costes de los productos procedentes de China son los más altos desde",
+        "url": "https://www.cnbc.com/2026/07/17/import-prices-post-surprise-gain-as-costs-of-goods-from-china-hit-highest-since-2008.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump planea elevar los aranceles a los medicamentos genéricos en 2028 para estimular la producción en Estados Unidos",
+        "url": "https://www.cnbc.com/2026/07/22/trump-generic-drugs-tariffs-medicine-trade-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Kevin Warsh se ha centrado en tres frases clave. Cómo los interpretan los observadores de la Fed",
+        "url": "https://www.cnbc.com/2026/07/22/kevin-warsh-has-homed-in-on-three-key-phrases-how-fed-watchers-interpret-them.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El nuevo arancel global de Trump genera reprimendas de los socios comerciales por la justificación del trabajo forzoso",
+        "url": "https://www.cnbc.com/2026/07/24/trump-global-tariffs-trade-imbalance-forced-labor.html",
+        "source": "CNBC"
+      }
+    ],
     "tecnologia": [
+      {
+        "title": "El petróleo provoca una ola de ventas, los nuevos aranceles de Trump y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/24/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Nvidia, Microsoft y Meta advierten contra las \"restricciones prematuras\" de los modelos de peso abierto",
+        "url": "https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html",
+        "source": "CNBC"
+      },
       {
         "title": "Jim Cramer dice que está \"luchando por tener razones para comprar\" en este mercado",
         "url": "https://www.cnbc.com/2026/07/23/jim-cramer-says-he-iss-struggling-to-have-reasons-to-buy-in-this-market.html",
@@ -160,6 +221,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Protocolo de odos para cerrar, da a los usuarios hasta el 30 de julio para retirar activos",
+        "url": "https://cointelegraph.com/news/odos-protocol-shut-down-4-years",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "World Foundation recauda 52,5 millones de $ en fondos liderados por Pantera para expandir la infraestructura de World ID",
+        "url": "https://cointelegraph.com/news/world-foundation-funding-led-by-pantera-world-id-infrastructure",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Crypto Biz: ¿Está en marcha la rotación de IA a cripto?",
+        "url": "https://cointelegraph.com/news/crypto-biz-ai-to-crypto-rotation-bitcoin-etf-inflows-clarity-act",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Korbit de Corea del Sur se renombrará como Digital X bajo Mirae: Informe",
         "url": "https://cointelegraph.com/news/korbit-rebrand-digital-x-mirae-asset",
