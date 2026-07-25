@@ -1,6 +1,6 @@
 {
   "date": "2026-07-25",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
       {
@@ -226,6 +226,16 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Sabio volver a enviar la solicitud de fletamento de EE. UU. en virtud de la Ley GENIUS",
+        "url": "https://cointelegraph.com/news/wise-resubmit-occ-charter-application-genius-stablecoins",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Un grupo de defensa de Bitcoin se unirá al programa de \"libertad digital\" del Departamento de Estado de EE. UU.",
+        "url": "https://cointelegraph.com/news/bitcoin-policy-institute-state-department-program",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Corea del Norte arresta a una red de piratería bancaria vinculada al lavado de criptomonedas: Informe",
         "url": "https://cointelegraph.com/news/north-korea-bank-hacking-ring-crypto-laundering-report",
