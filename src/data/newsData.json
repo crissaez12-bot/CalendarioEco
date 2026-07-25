@@ -1,6 +1,6 @@
 {
   "date": "2026-07-25",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -108,6 +108,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Desde Silicon Valley hasta DC, el mundo de la tecnología está repentinamente obsesionado con un concepto en IA: la destilación",
+        "url": "https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El nuevo modelo de IA de Anthropic rivaliza con Fable 5 y es más barato ya que las empresas se preocupan por los costes",
         "url": "https://www.cnbc.com/2026/07/24/anthropic-claude-opus-5-ai-fable-5-cost.html",
         "source": "CNBC"
@@ -160,6 +165,16 @@
     ],
     "politica": [
       {
+        "title": "Análisis: Una poderosa coalición de escépticos de la IA se está uniendo en el punto ciego de Trump",
+        "url": "https://www.cnbc.com/2026/07/25/trump-ai-data-center-backlash.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los delegados demócratas de Maine eligen a Troy Jackson como nuevo candidato para enfrentarse a la senadora estadounidense Susan Collins",
+        "url": "https://www.cnbc.com/2026/07/25/maine-democrats-are-meeting-to-pick-a-new-senate-nominee.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El Congreso se divide sobre las resoluciones de poderes de guerra para obligar a Trump a abandonar la guerra de Irán",
         "url": "https://www.cnbc.com/2026/07/23/congress-pushes-war-powers-resolutions-tells-trump-to-abandon-iran-war.html",
         "source": "CNBC"
@@ -211,6 +226,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Corea del Norte arresta a una red de piratería bancaria vinculada al lavado de criptomonedas: Informe",
+        "url": "https://cointelegraph.com/news/north-korea-bank-hacking-ring-crypto-laundering-report",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
