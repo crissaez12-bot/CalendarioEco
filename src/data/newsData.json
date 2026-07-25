@@ -1,18 +1,8 @@
 {
-  "date": "2026-07-24",
-  "updatedAt": "16:00",
+  "date": "2026-07-25",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
-      {
-        "title": "Moody's dice que el gasto 'sin precedentes' en IA amenaza la calidad crediticia de Amazon, Meta, Alphabet y otros",
-        "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Acciones que hacen grandes movimientos al mediodía: Super Micro Computer, EQT, Chubb, Pegasystems",
-        "url": "https://www.cnbc.com/2026/07/22/stocks-making-the-biggest-moves-midday-smci-eqt-air-cb-pega.html",
-        "source": "CNBC"
-      },
       {
         "title": "John Paulson dice que estamos en las primeras etapas de un mercado alcista a largo plazo para el oro",
         "url": "https://www.cnbc.com/2026/07/22/john-paulson-says-we-are-in-early-stages-of-a-long-term-bull-market-for-gold.html",
@@ -54,8 +44,13 @@
         "source": "CNBC"
       },
       {
-        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Intel, Oracle, American Express y más",
+        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Intel, Oracle, American Express",
         "url": "https://www.cnbc.com/2026/07/24/stocks-making-the-biggest-moves-premarket-intc-orcl-axp.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Moody's dice que el gasto 'sin precedentes' en IA amenaza la calidad crediticia de Amazon, Meta, Alphabet y otros",
+        "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
         "source": "CNBC"
       }
     ],
@@ -133,97 +128,37 @@
         "source": "CNBC"
       },
       {
-        "title": "El petróleo provoca una ola de ventas, los nuevos aranceles de Trump y más: Morning Squawk",
-        "url": "https://www.cnbc.com/2026/07/24/5-things-to-know-before-the-stock-market-opens.html",
+        "title": "La ansiedad del mercado de bonos está creciendo por los presupuestos de gastos de capital de la IA",
+        "url": "https://www.cnbc.com/2026/07/24/bond-market-anxiety-ai-capex-spending.html",
         "source": "CNBC"
       },
       {
-        "title": "Nvidia, Microsoft y Meta advierten contra las \"restricciones prematuras\" de los modelos de peso abierto",
-        "url": "https://www.cnbc.com/2026/07/24/nvidia-microsoft-meta-open-weight-ai-models.html",
+        "title": "La mala semana de Musk: la peor caída de Tesla desde 2022, SpaceX cae antes de la prueba de Starship",
+        "url": "https://www.cnbc.com/2026/07/24/tesla-tsla-spacex-spcx-stock-starship-test-flight-musk-bad-week.html",
         "source": "CNBC"
       },
       {
-        "title": "Jim Cramer dice que está \"luchando por tener razones para comprar\" en este mercado",
-        "url": "https://www.cnbc.com/2026/07/23/jim-cramer-says-he-iss-struggling-to-have-reasons-to-buy-in-this-market.html",
+        "title": "Uber y Waymo pondrán fin al acuerdo de exclusividad en Atlanta y Austin",
+        "url": "https://www.cnbc.com/2026/07/24/uber-and-waymo-to-end-exclusivity-arrangement-in-atlanta-and-austin.html",
         "source": "CNBC"
       },
       {
-        "title": "El informe de JPMorgan encuentra un salto dramático en los ETF con temas de IA, a pesar del trimestre difícil",
-        "url": "https://www.cnbc.com/2026/07/23/jpmorgan-dramatic-jump-in-ai-etfs-despite-rough-quarter.html",
+        "title": "SpaceX lanza un enorme cohete Starship en su primer vuelo de prueba desde su salida a bolsa",
+        "url": "https://www.cnbc.com/2026/07/24/spacex-launches-massive-starship-rocket-in-first-test-flight-since-ipo.html",
         "source": "CNBC"
       },
       {
-        "title": "Ganancias de acciones de Cerebras en la asociación con AMD",
-        "url": "https://www.cnbc.com/2026/07/23/cerebras-stock-gains-on-amd-partnership.html",
+        "title": "Nvidia bloquea el suministro de memoria de SK Hynix como parte de un acuerdo de IA de $ 500 mil millones",
+        "url": "https://www.cnbc.com/2026/07/25/nvidia-locks-down-memory-from-sk-hynix-as-part-of-500-billion-ai-deal.html",
         "source": "CNBC"
       },
       {
-        "title": "Krishna de IBM argumenta que la IA no interrumpirá la unidad de software de la empresa",
-        "url": "https://www.cnbc.com/2026/07/23/ibms-krishna-argues-that-ai-wont-disrupt-software-unit.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El hackeo de Hugging Face de OpenAI desencadena el proyecto de ley 'AI Kill Switch' en el Congreso",
-        "url": "https://www.cnbc.com/2026/07/23/open-ai-hugging-face-hack-kill-switch-bill-congress.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Las acciones de Intel suben a medida que el fabricante de chips impulsa el auge de la IA al crecimiento más rápido en casi 15 años",
-        "url": "https://www.cnbc.com/2026/07/23/intel-intc-earnings-report-q2-2026.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Oracle firma un contrato de software de 10 años con el Pentágono por un valor de hasta $ 7 mil millones",
-        "url": "https://www.cnbc.com/2026/07/23/oracle-wins-10-year-pentagon-software-contract-worth-up-to-7-billion.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Amazon hace que los vendedores etiqueten a los humanos generados por IA en imágenes después de la ley de Nueva York",
-        "url": "https://www.cnbc.com/2026/07/23/amazon-makes-sellers-label-ai-generated-people-in-images-after-ny-law.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El mayor fabricante de chips de memoria de China despierta temores de una fuga de efectivo mientras se prepara para su debut público",
-        "url": "https://www.cnbc.com/2026/07/24/cxmt-china-ipo-listing-chip-memory.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Estados Unidos y otras naciones respaldan la IA de código abierto con \"fuerte seguridad\" en la cumbre de China",
-        "url": "https://www.cnbc.com/2026/07/24/china-ai-open-source-apec.html",
+        "title": "La respuesta radical de Finlandia al mayor dolor de cabeza de las energías renovables: la mayor batería de arena del mundo",
+        "url": "https://www.cnbc.com/2026/07/25/finland-sand-battery-renewable-energy-storage.html",
         "source": "CNBC"
       }
     ],
     "politica": [
-      {
-        "title": "Trump amenaza a la UE con un \"ARANCEL sustancial\" por \"ROBAR\" A los gigantes tecnológicos estadounidenses",
-        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-eu-trade-google-apple-tech.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump defiende las citaciones del Departamento de Justicia a los reporteros del NY Times; Google también fue blanco",
-        "url": "https://www.cnbc.com/2026/07/24/trump-doj-subpoenas-new-york-times-google.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump dice que Estados Unidos responsabilizará a Irán por los ataques hutíes",
-        "url": "https://www.cnbc.com/2026/07/23/iran-war-us-trump-houthis-red-sea-oil.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El gigante minorista ruso al estilo de Amazon está ahora en el punto de mira de Ucrania. He aquí por qué",
-        "url": "https://www.cnbc.com/2026/07/23/ukraine-russia-war-wildberries-drones-amazon.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El jefe del IRS, Frank Bisignano, puede haber engañado al Congreso, dicen los demócratas",
-        "url": "https://www.cnbc.com/2026/07/23/frank-bisignano-irs-misled-congress-warren-democrats.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Legisladores de la Cámara de Representantes interrogan al ex ejecutivo de JPMorgan Jes Staley sobre los lazos con Epstein",
-        "url": "https://www.cnbc.com/2026/07/23/comer-jes-staley-jpmorgan-jeffrey-epstein-red-flags.html",
-        "source": "CNBC"
-      },
       {
         "title": "El Congreso se divide sobre las resoluciones de poderes de guerra para obligar a Trump a abandonar la guerra de Irán",
         "url": "https://www.cnbc.com/2026/07/23/congress-pushes-war-powers-resolutions-tells-trump-to-abandon-iran-war.html",
@@ -235,7 +170,7 @@
         "source": "CNBC"
       },
       {
-        "title": "Trump impondrá nuevos aranceles \"radicales\" a 60 socios comerciales a medida que expiren los aranceles globales",
+        "title": "Trump impone nuevos aranceles \"radicales\" a 60 socios comerciales a medida que expiran los aranceles globales",
         "url": "https://www.cnbc.com/2026/07/23/trump-tariffs-trade-deadline.html",
         "source": "CNBC"
       },
@@ -245,70 +180,65 @@
         "source": "CNBC"
       },
       {
-        "title": "Trump considera un \"ataque masivo\" contra Irán después de la 13ª noche de ataques estadounidenses",
+        "title": "Trump sopesa un ataque masivo contra Irán, Pakistán busca reiniciar las estancadas conversaciones de paz",
         "url": "https://www.cnbc.com/2026/07/24/us-iran-war-trump-hormuz-houthis.html",
         "source": "CNBC"
       },
       {
-        "title": "Ataque ruso corta el suministro eléctrico a unas 150.000 personas en el norte de Ucrania cuando Kiev golpea instalaciones petroleras y de misiles",
+        "title": "Ataque ruso corta el suministro eléctrico a unas 150.000 personas en el norte de Ucrania",
         "url": "https://www.cnbc.com/2026/07/24/russia-ukraine-war-zelenskyy-putin-oil.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump amenaza a la UE con un \"ARANCEL sustancial\" por \"ROBAR\" A los gigantes tecnológicos estadounidenses",
+        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-eu-trade-google-apple-tech.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump defiende las citaciones del Departamento de Justicia a los reporteros del NY Times; Google también fue blanco",
+        "url": "https://www.cnbc.com/2026/07/24/trump-doj-subpoenas-new-york-times-google.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump demandó por nuevos aranceles, los expertos dicen que los tribunales pueden desecharlos",
+        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-lawsuit-301-ieepa.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump mezcla bromas con barbas en la cena por la libertad de prensa",
+        "url": "https://www.cnbc.com/2026/07/25/trump-mixes-jokes-with-barbs-at-white-house-correspondents-dinner.html",
         "source": "CNBC"
       }
     ],
     "crypto": [
-      {
-        "title": "Internet Freedom Foundation califica de \"inconstitucional\" la orden de eliminación de GitHub de BitChat en India",
-        "url": "https://cointelegraph.com/news/internet-freedom-foundation-calls-indias-bitchat-github-takedown-order-unconstitutional",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Los grupos de defensa de las criptomonedas apoyan la aprobación de LA CLARIDAD a medida que las reglas de ética se enfrentan a un",
-        "url": "https://cointelegraph.com/news/crypto-advocacy-groups-support-clarity-act-pushback-ethics-rules",
-        "source": "Cointelegraph"
-      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
         "source": "Cointelegraph"
       },
       {
-        "title": "Protocolo de odos para cerrar, da a los usuarios hasta el 30 de julio para retirar activos",
-        "url": "https://cointelegraph.com/news/odos-protocol-shut-down-4-years",
+        "title": "La Cámara de Representantes aprueba un proyecto de ley sobre los legisladores que utilizan información privilegiada para el comercio de acciones",
+        "url": "https://cointelegraph.com/news/house-bill-lawmakers-insider-information-stock-trading",
         "source": "Cointelegraph"
       },
       {
-        "title": "World Foundation recauda 52,5 millones de $ en fondos liderados por Pantera para expandir la infraestructura de World ID",
-        "url": "https://cointelegraph.com/news/world-foundation-funding-led-by-pantera-world-id-infrastructure",
+        "title": "SATA de Strive recupera la mayor parte de la caída de junio, opera dentro del 3% de la par",
+        "url": "https://cointelegraph.com/news/strives-sata-recovers-most-of-june-decline-trades-within-3-of-par",
         "source": "Cointelegraph"
       },
       {
-        "title": "Crypto Biz: ¿Está en marcha la rotación de IA a cripto?",
-        "url": "https://cointelegraph.com/news/crypto-biz-ai-to-crypto-rotation-bitcoin-etf-inflows-clarity-act",
+        "title": "Las autoridades de la UE incluyen el intercambio HTX en las sanciones rusas",
+        "url": "https://cointelegraph.com/news/htx-exchange-european-union-russia-sanctions",
         "source": "Cointelegraph"
       },
       {
-        "title": "Korbit de Corea del Sur se renombrará como Digital X bajo Mirae: Informe",
-        "url": "https://cointelegraph.com/news/korbit-rebrand-digital-x-mirae-asset",
+        "title": "Dango's perp DEX se retira casi 4 meses después del lanzamiento",
+        "url": "https://cointelegraph.com/news/dangos-perp-dex-taps-nearly-months-launch",
         "source": "Cointelegraph"
       },
       {
-        "title": "El banco filipino BPI planea un piloto de pagos con stablecoin",
-        "url": "https://cointelegraph.com/news/philippine-bank-bpi-plans-stablecoin-payments-pilot",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Samsung Wallet planea soporte de stablecoin en la expansión de pagos digitales",
-        "url": "https://cointelegraph.com/news/samsung-wallet-stablecoin-support-galaxy-unpacked",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Brasil pone a trabajar vacas tokenizadas como garantía de préstamos: Informe",
-        "url": "https://cointelegraph.com/news/brazils-b3-rwa-credit-tokenized-cows-collateral",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Los RWA se convierten en la categoría de trading más grande de Hyperliquid",
-        "url": "https://cointelegraph.com/news/hyperliquid-rwa-volume-crypto-trading-first-time",
+        "title": "Fidelity se une a la presión para que el Senado apruebe la Ley CLARITY",
+        "url": "https://cointelegraph.com/news/fidelity-push-senate-passage-of-clarity-act",
         "source": "Cointelegraph"
       }
     ]
