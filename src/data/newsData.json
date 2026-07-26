@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-25",
-  "updatedAt": "16:00",
+  "date": "2026-07-26",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
       {
@@ -108,21 +108,6 @@
     ],
     "tecnologia": [
       {
-        "title": "Desde Silicon Valley hasta DC, el mundo de la tecnología está repentinamente obsesionado con un concepto en IA: la destilación",
-        "url": "https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El nuevo modelo de IA de Anthropic rivaliza con Fable 5 y es más barato ya que las empresas se preocupan por los costes",
-        "url": "https://www.cnbc.com/2026/07/24/anthropic-claude-opus-5-ai-fable-5-cost.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump amenaza a la UE con un \"ARANCEL sustancial\" por \"ROBAR\" A los gigantes tecnológicos estadounidenses",
-        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-eu-trade-google-apple-tech.html",
-        "source": "CNBC"
-      },
-      {
         "title": "Moody's dice que el gasto en IA amenaza la calidad crediticia de Amazon, Meta y Alphabet",
         "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
         "source": "CNBC"
@@ -158,37 +143,22 @@
         "source": "CNBC"
       },
       {
-        "title": "La respuesta radical de Finlandia al mayor dolor de cabeza de las energías renovables: la mayor batería de arena del mundo",
+        "title": "La respuesta radical de Finlandia para transformar la energía limpia: una batería de arena gigante",
         "url": "https://www.cnbc.com/2026/07/25/finland-sand-battery-renewable-energy-storage.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Desde Silicon Valley hasta DC, todo el mundo en la tecnología está obsesionado de repente con la destilación",
+        "url": "https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Aquí hay 4 fuerzas que impulsaron una semana difícil para las acciones",
+        "url": "https://www.cnbc.com/2026/07/25/here-are-4-forces-that-drove-a-tough-week-for-stocks.html",
         "source": "CNBC"
       }
     ],
     "politica": [
-      {
-        "title": "Análisis: Una poderosa coalición de escépticos de la IA se está uniendo en el punto ciego de Trump",
-        "url": "https://www.cnbc.com/2026/07/25/trump-ai-data-center-backlash.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Los delegados demócratas de Maine eligen a Troy Jackson como nuevo candidato para enfrentarse a la senadora estadounidense Susan Collins",
-        "url": "https://www.cnbc.com/2026/07/25/maine-democrats-are-meeting-to-pick-a-new-senate-nominee.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El Congreso se divide sobre las resoluciones de poderes de guerra para obligar a Trump a abandonar la guerra de Irán",
-        "url": "https://www.cnbc.com/2026/07/23/congress-pushes-war-powers-resolutions-tells-trump-to-abandon-iran-war.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El Departamento de Justicia retira las citaciones a los periodistas del NY Times en la investigación del avión de Trump",
-        "url": "https://www.cnbc.com/2026/07/23/doj-subpoenas-new-york-times-trump-plane.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump impone nuevos aranceles \"radicales\" a 60 socios comerciales a medida que expiran los aranceles globales",
-        "url": "https://www.cnbc.com/2026/07/23/trump-tariffs-trade-deadline.html",
-        "source": "CNBC"
-      },
       {
         "title": "El Pentágono excluyó cuatro muertes recientes del recuento oficial de la guerra de Irán",
         "url": "https://www.cnbc.com/2026/07/24/pentagon-removed-four-official-iran-war-death-toll.html",
@@ -197,11 +167,6 @@
       {
         "title": "Trump sopesa un ataque masivo contra Irán, Pakistán busca reiniciar las estancadas conversaciones de paz",
         "url": "https://www.cnbc.com/2026/07/24/us-iran-war-trump-hormuz-houthis.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Ataque ruso corta el suministro eléctrico a unas 150.000 personas en el norte de Ucrania",
-        "url": "https://www.cnbc.com/2026/07/24/russia-ukraine-war-zelenskyy-putin-oil.html",
         "source": "CNBC"
       },
       {
@@ -223,9 +188,44 @@
         "title": "Trump mezcla bromas con barbas en la cena por la libertad de prensa",
         "url": "https://www.cnbc.com/2026/07/25/trump-mixes-jokes-with-barbs-at-white-house-correspondents-dinner.html",
         "source": "CNBC"
+      },
+      {
+        "title": "Análisis: Una poderosa coalición de escépticos de la IA se está uniendo en el punto ciego de Trump",
+        "url": "https://www.cnbc.com/2026/07/25/trump-ai-data-center-backlash.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los delegados demócratas de Maine eligen a Troy Jackson como nuevo candidato para el Senado de los Estados Unidos",
+        "url": "https://www.cnbc.com/2026/07/25/maine-democrats-are-meeting-to-pick-a-new-senate-nominee.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La corte de apelaciones de EE. UU. dictamina que Trump no puede implementar la orden de votación",
+        "url": "https://www.cnbc.com/2026/07/25/us-appeals-court-rules-trump-cannot-implement-mail-in-voting-order.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Ucrania ataca a buques iraníes en el mar Caspio, Teherán acusa a Kiev de \"acto hostil y criminal\"",
+        "url": "https://www.cnbc.com/2026/07/26/ukraine-strikes-iranian-vessels-tehran-accuses-kyiv-of-hostile-act.html",
+        "source": "CNBC"
       }
     ],
     "crypto": [
+      {
+        "title": "Fidelity se une a la presión para que el Senado apruebe la Ley CLARITY",
+        "url": "https://cointelegraph.com/news/fidelity-push-senate-passage-of-clarity-act",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Corea del Norte arresta a una red de piratería bancaria vinculada al lavado de criptomonedas: Informe",
+        "url": "https://cointelegraph.com/news/north-korea-bank-hacking-ring-crypto-laundering-report",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Sabio volver a enviar la solicitud de fletamento de EE. UU. en virtud de la Ley GENIUS",
         "url": "https://cointelegraph.com/news/wise-resubmit-occ-charter-application-genius-stablecoins",
@@ -237,38 +237,8 @@
         "source": "Cointelegraph"
       },
       {
-        "title": "Corea del Norte arresta a una red de piratería bancaria vinculada al lavado de criptomonedas: Informe",
-        "url": "https://cointelegraph.com/news/north-korea-bank-hacking-ring-crypto-laundering-report",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
-        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "La Cámara de Representantes aprueba un proyecto de ley sobre los legisladores que utilizan información privilegiada para el comercio de acciones",
-        "url": "https://cointelegraph.com/news/house-bill-lawmakers-insider-information-stock-trading",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "SATA de Strive recupera la mayor parte de la caída de junio, opera dentro del 3% de la par",
-        "url": "https://cointelegraph.com/news/strives-sata-recovers-most-of-june-decline-trades-within-3-of-par",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Las autoridades de la UE incluyen el intercambio HTX en las sanciones rusas",
-        "url": "https://cointelegraph.com/news/htx-exchange-european-union-russia-sanctions",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Dango's perp DEX se retira casi 4 meses después del lanzamiento",
-        "url": "https://cointelegraph.com/news/dangos-perp-dex-taps-nearly-months-launch",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Fidelity se une a la presión para que el Senado apruebe la Ley CLARITY",
-        "url": "https://cointelegraph.com/news/fidelity-push-senate-passage-of-clarity-act",
+        "title": "El banco más grande de Corea del Sur lanzará un servicio de pago en Kinexys de JPMorgan",
+        "url": "https://cointelegraph.com/news/south-korea-bank-payment-jpmorgans-kinexys",
         "source": "Cointelegraph"
       }
     ]
