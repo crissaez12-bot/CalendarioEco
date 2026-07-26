@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26 10:00",
+  "updatedAt": "2026-07-26 11:00",
   "items": [
     {
       "symbol": "SPY",
@@ -24,6 +24,12 @@
       "label": "Apple",
       "price": 333.02,
       "changePct": 3.53
+    },
+    {
+      "symbol": "MSFT",
+      "label": "Microsoft",
+      "price": 381.7,
+      "changePct": 0.03
     },
     {
       "symbol": "GOOGL",
