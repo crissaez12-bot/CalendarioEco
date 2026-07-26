@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-26 06:00",
+  "updatedAt": "2026-07-26 07:00",
   "items": [
     {
       "symbol": "SPY",
@@ -90,12 +90,6 @@
       "label": "Strategy",
       "price": 91.67,
       "changePct": -2.09
-    },
-    {
-      "symbol": "COIN",
-      "label": "Coinbase",
-      "price": 158.29,
-      "changePct": -1.78
     },
     {
       "symbol": "CRCL",
