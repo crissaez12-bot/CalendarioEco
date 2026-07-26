@@ -1,6 +1,6 @@
 {
   "date": "2026-07-26",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -159,6 +159,16 @@
       }
     ],
     "politica": [
+      {
+        "title": "A 100 días de las elecciones intermedias: DelBene del DCCC dice que los demócratas tienen el impulso",
+        "url": "https://www.cnbc.com/2026/07/26/election-midterms-dccc-chair-delbene-democrats.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El nuevo primer ministro del Reino Unido, Burnham, dice que estaría preparado para criticar a Trump",
+        "url": "https://www.cnbc.com/2026/07/26/new-uk-prime-minister-burnham-says-he-would-be-prepared-to-call-out-trump.html",
+        "source": "CNBC"
+      },
       {
         "title": "El Pentágono excluyó cuatro muertes recientes del recuento oficial de la guerra de Irán",
         "url": "https://www.cnbc.com/2026/07/24/pentagon-removed-four-official-iran-war-death-toll.html",
