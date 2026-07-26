@@ -1,6 +1,6 @@
 {
   "date": "2026-07-26",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
       {
@@ -221,6 +221,16 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Robinhood en conversaciones con Crypto.com sobre mercados de predicción: WSJ",
+        "url": "https://cointelegraph.com/news/robinhood-cryptocom-prediction-markets",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "La CFTC emite una segunda advertencia a los mercados de predicción sobre las autocertificaciones de corte de galletas",
+        "url": "https://cointelegraph.com/news/cftc-issues-second-warning-to-prediction-markets-on-cookie-cutter-self-certifications",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Fidelity se une a la presión para que el Senado apruebe la Ley CLARITY",
         "url": "https://cointelegraph.com/news/fidelity-push-senate-passage-of-clarity-act",
