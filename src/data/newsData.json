@@ -1,8 +1,13 @@
 {
   "date": "2026-07-27",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Acciones que hacen los movimientos más grandes al mediodía: ASML, SK Hynix, SAP, Forte Bio, Brown-Forman y más",
+        "url": "https://www.cnbc.com/2026/07/27/stocks-making-the-biggest-moves-midday-asml-skhy-sap-fbrx-bfb.html",
+        "source": "CNBC"
+      },
       {
         "title": "Las acciones hacen grandes movimientos antes del mercado: Micron, Forte Biosciences, ExxonMobil y más",
         "url": "https://www.cnbc.com/2026/07/27/stocks-making-the-biggest-moves-premarket-mu-fbrx-xom-bkr.html",
@@ -123,6 +128,21 @@
     ],
     "tecnologia": [
       {
+        "title": "Op-ed: Más de 2000 propuestas se dirigen a la IA. Ninguno aborda las necesidades regulatorias a largo plazo",
+        "url": "https://www.cnbc.com/2026/07/27/ai-industry-risk-future-regulation.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Nvidia y OpenAI en conversaciones para un respaldo de hasta $ 250 mil millones de dólares para financiar la construcción de IA",
+        "url": "https://www.cnbc.com/2026/07/27/nvidia-and-openai-in-talks-for-up-to-250-billion-dollar-ai-backstop.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones de criptomonedas se recuperan gracias a la rotación de la infraestructura de IA; los mineros de bitcoin están rezagados",
+        "url": "https://www.cnbc.com/2026/07/27/crypto-stocks-rally-thanks-to-rotation-from-ai-infrastructure-bitcoin-miners-lag.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Los precios del petróleo se enfrían, el debate sobre la \"destilación\" de la IA y más: Morning Squawk",
         "url": "https://www.cnbc.com/2026/07/27/5-things-to-know-before-the-stock-market-opens.html",
         "source": "CNBC"
@@ -195,6 +215,26 @@
     ],
     "politica": [
       {
+        "title": "Netanyahu y Zelenskyy llegan a Washington para asistir al funeral de Graham y reunirse con Trump",
+        "url": "https://www.cnbc.com/2026/07/27/trump-netanyahu-zelenskyy-iran-war-lindsey-graham-funeral.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "McConnell aún no tiene autorización para volver al trabajo mientras se recupera de una caída: médicos",
+        "url": "https://www.cnbc.com/2026/07/27/mcconnell-fall-hospital-senate-recovery.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump respalda al \"fantástico\" Warsh mientras pide tasas de interés más bajas",
+        "url": "https://www.cnbc.com/2026/07/27/trump-warsh-interest-rates.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El gobierno de Trump pide a la Corte Suprema que intervenga para permitir restricciones de votación por correo",
+        "url": "https://www.cnbc.com/2026/07/27/trump-supreme-court-mail-in-voting-restrictions.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Comey pide al juez que desestime el caso de las \"conchas marinas\" de Trump por falta de una \"verdadera amenaza\"",
         "url": "https://www.cnbc.com/2026/07/27/james-comey-trump-seashells-threat.html",
         "source": "CNBC"
@@ -251,6 +291,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Payward, matriz de Kraken, adquiere el negocio de billeteras de Magic Labs",
+        "url": "https://cointelegraph.com/news/kraken-parent-payward-acquires-magic-labs-wallet-business",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "El token de oro XAUt de Tether recibe la certificación Sharia para ampliar el acceso a las finanzas islámicas",
+        "url": "https://cointelegraph.com/news/tether-xaut-gold-token-receives-shariah-certification-islamic-finance-access",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Securitize Capital se convierte en asesor de inversiones registrado en la SEC",
+        "url": "https://cointelegraph.com/news/securitize-becomes-sec-registered-investment-adviser-through-capital-unit",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Bitmine sigue comprando Ether a medida que ETH supera a Bitcoin",
+        "url": "https://cointelegraph.com/news/bitmine-keeps-buying-ether-as-eth-outperforms-bitcoin",
+        "source": "Cointelegraph"
+      },
       {
         "title": "El emisor de USDC Circle adquirirá cerca de 1.000 patentes de la cadena de bloques de IBM",
         "url": "https://cointelegraph.com/news/circle-to-acquire-nearly-1000-ibm-blockchain-patents",
