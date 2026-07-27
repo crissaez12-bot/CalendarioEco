@@ -1,113 +1,53 @@
 {
-  "updatedAt": "2026-07-27 09:00",
+  "updatedAt": "2026-07-27 10:00",
   "items": [
     {
       "symbol": "SPY",
       "label": "S&P 500",
-      "price": 745.47,
-      "changePct": 0.89
-    },
-    {
-      "symbol": "QQQ",
-      "label": "Nasdaq 100",
-      "price": 694.101,
-      "changePct": 1.44
+      "price": 744.44,
+      "changePct": 0.75
     },
     {
       "symbol": "DIA",
       "label": "Dow Jones",
-      "price": 524.85,
-      "changePct": 1.17
+      "price": 524.54,
+      "changePct": 1.11
     },
     {
       "symbol": "AAPL",
       "label": "Apple",
-      "price": 333.98,
-      "changePct": 0.29
+      "price": 335.265,
+      "changePct": 0.67
     },
     {
       "symbol": "MSFT",
       "label": "Microsoft",
-      "price": 388,
-      "changePct": 1.65
-    },
-    {
-      "symbol": "GOOGL",
-      "label": "Alphabet",
-      "price": 325,
-      "changePct": 1.65
-    },
-    {
-      "symbol": "AMZN",
-      "label": "Amazon",
-      "price": 235.32,
-      "changePct": 1.38
+      "price": 388.11,
+      "changePct": 1.68
     },
     {
       "symbol": "NVDA",
       "label": "Nvidia",
-      "price": 208.2617,
-      "changePct": 0.69
-    },
-    {
-      "symbol": "META",
-      "label": "Meta",
-      "price": 606.37,
-      "changePct": 1.88
-    },
-    {
-      "symbol": "TSLA",
-      "label": "Tesla",
-      "price": 316.6017,
-      "changePct": 1.14
-    },
-    {
-      "symbol": "SPCX",
-      "label": "SpaceX",
-      "price": 113.1482,
-      "changePct": -1.67
+      "price": 201.745,
+      "changePct": -2.46
     },
     {
       "symbol": "ORCL",
       "label": "Oracle",
-      "price": 117.91,
-      "changePct": 2.54
+      "price": 121.4,
+      "changePct": 5.57
     },
     {
       "symbol": "PLTR",
       "label": "Palantir",
-      "price": 125.2548,
-      "changePct": 1.9
-    },
-    {
-      "symbol": "IBM",
-      "label": "IBM",
-      "price": 218.08,
-      "changePct": 1.82
-    },
-    {
-      "symbol": "MSTR",
-      "label": "Strategy",
-      "price": 94.13,
-      "changePct": 2.68
-    },
-    {
-      "symbol": "COIN",
-      "label": "Coinbase",
-      "price": 162.34,
-      "changePct": 2.56
+      "price": 128.13,
+      "changePct": 4.24
     },
     {
       "symbol": "CRCL",
       "label": "Circle",
-      "price": 63.96,
-      "changePct": 2.57
-    },
-    {
-      "symbol": "HOOD",
-      "label": "Robinhood",
-      "price": 97.19,
-      "changePct": 2.4
+      "price": 65.575,
+      "changePct": 5.16
     }
   ]
 }
