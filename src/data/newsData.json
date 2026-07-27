@@ -1,6 +1,6 @@
 {
-  "date": "2026-07-26",
-  "updatedAt": "16:00",
+  "date": "2026-07-27",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
       {
@@ -56,11 +56,6 @@
     ],
     "economia": [
       {
-        "title": "La inflación de India se acelera hasta el 4,38% en junio, superando las previsiones",
-        "url": "https://www.cnbc.com/2026/07/13/india-june-inflation-oil-food-iran-war.html",
-        "source": "CNBC"
-      },
-      {
         "title": "Los precios al consumidor aumentaron un 3,5% anual en junio, menos de lo esperado a medida que disminuyeron los precios de la energía",
         "url": "https://www.cnbc.com/2026/07/14/consumer-price-index-inflation-report-june-2026.html",
         "source": "CNBC"
@@ -101,22 +96,17 @@
         "source": "CNBC"
       },
       {
-        "title": "El nuevo arancel global de Trump genera reprimendas de los socios comerciales por la justificación del trabajo forzoso",
+        "title": "El nuevo arancel global de Trump recibe reprimendas de sus socios comerciales",
         "url": "https://www.cnbc.com/2026/07/24/trump-global-tariffs-trade-imbalance-forced-labor.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Singapur endurece la política monetaria en un movimiento sorpresivo a medida que el aumento de los precios del petróleo reaviva el riesgo de inflación",
+        "url": "https://www.cnbc.com/2026/07/27/singapore-mas-july-monetary-policy-middle-east-oil-prices-inflation-.html",
         "source": "CNBC"
       }
     ],
     "tecnologia": [
-      {
-        "title": "Moody's dice que el gasto en IA amenaza la calidad crediticia de Amazon, Meta y Alphabet",
-        "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "1 megacap de hiperescalador hacia abajo, faltan 3. Alphabet aumenta las apuestas sobre el gasto en IA",
-        "url": "https://www.cnbc.com/2026/07/24/1-hyperscaler-megacap-down-3-to-go-alphabet-raises-the-stakes-on-ai-spending.html",
-        "source": "CNBC"
-      },
       {
         "title": "La ansiedad del mercado de bonos está creciendo por los presupuestos de gastos de capital de la IA",
         "url": "https://www.cnbc.com/2026/07/24/bond-market-anxiety-ai-capex-spending.html",
@@ -156,39 +146,19 @@
         "title": "Aquí hay 4 fuerzas que impulsaron una semana difícil para las acciones",
         "url": "https://www.cnbc.com/2026/07/25/here-are-4-forces-that-drove-a-tough-week-for-stocks.html",
         "source": "CNBC"
+      },
+      {
+        "title": "El aumento del 466% en el debut en el mercado del fabricante de chips CXMT lo convierte en la empresa más valiosa que cotiza en China",
+        "url": "https://www.cnbc.com/2026/07/27/cxmt-china-market-debut-chipmaker-ipo.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Nvidia, SpaceX y Microsoft lanzan una iniciativa de seguridad de IA a medida que continúan las consecuencias de los ciberataques de OpenAI",
+        "url": "https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html",
+        "source": "CNBC"
       }
     ],
     "politica": [
-      {
-        "title": "A 100 días de las elecciones intermedias: DelBene del DCCC dice que los demócratas tienen el impulso",
-        "url": "https://www.cnbc.com/2026/07/26/election-midterms-dccc-chair-delbene-democrats.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El nuevo primer ministro del Reino Unido, Burnham, dice que estaría preparado para criticar a Trump",
-        "url": "https://www.cnbc.com/2026/07/26/new-uk-prime-minister-burnham-says-he-would-be-prepared-to-call-out-trump.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El Pentágono excluyó cuatro muertes recientes del recuento oficial de la guerra de Irán",
-        "url": "https://www.cnbc.com/2026/07/24/pentagon-removed-four-official-iran-war-death-toll.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump sopesa un ataque masivo contra Irán, Pakistán busca reiniciar las estancadas conversaciones de paz",
-        "url": "https://www.cnbc.com/2026/07/24/us-iran-war-trump-hormuz-houthis.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump amenaza a la UE con un \"ARANCEL sustancial\" por \"ROBAR\" A los gigantes tecnológicos estadounidenses",
-        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-eu-trade-google-apple-tech.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump defiende las citaciones del Departamento de Justicia a los reporteros del NY Times; Google también fue blanco",
-        "url": "https://www.cnbc.com/2026/07/24/trump-doj-subpoenas-new-york-times-google.html",
-        "source": "CNBC"
-      },
       {
         "title": "Trump demandó por nuevos aranceles, los expertos dicen que los tribunales pueden desecharlos",
         "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-lawsuit-301-ieepa.html",
@@ -215,50 +185,60 @@
         "source": "CNBC"
       },
       {
-        "title": "Ucrania ataca a buques iraníes en el mar Caspio, Teherán acusa a Kiev de \"acto hostil y criminal\"",
+        "title": "Ucrania ataca buques iraníes, Teherán acusa a Kiev de \"acto hostil y criminal\"",
         "url": "https://www.cnbc.com/2026/07/26/ukraine-strikes-iranian-vessels-tehran-accuses-kyiv-of-hostile-act.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "A 100 días de las elecciones intermedias: DelBene del DCCC dice que los demócratas tienen el impulso",
+        "url": "https://www.cnbc.com/2026/07/26/election-midterms-dccc-chair-delbene-democrats.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El nuevo primer ministro del Reino Unido, Burnham, dice que estaría preparado para criticar a Trump",
+        "url": "https://www.cnbc.com/2026/07/26/new-uk-prime-minister-burnham-says-he-would-be-prepared-to-call-out-trump.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Por qué el nuevo bombardeo arancelario de Trump es muy diferente esta vez",
+        "url": "https://www.cnbc.com/2026/07/27/donald-trump-tariffs-trade-war-iran.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Estados Unidos e Irán dejan de luchar para dar espacio a las conversaciones de paz.' Aquí es donde están las negociaciones",
+        "url": "https://www.cnbc.com/2026/07/27/us-iran-war-trump-hormuz.html",
         "source": "CNBC"
       }
     ],
     "crypto": [
-      {
-        "title": "Robinhood en conversaciones con Crypto.com sobre mercados de predicción: WSJ",
-        "url": "https://cointelegraph.com/news/robinhood-cryptocom-prediction-markets",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "La CFTC emite una segunda advertencia a los mercados de predicción sobre las autocertificaciones de corte de galletas",
-        "url": "https://cointelegraph.com/news/cftc-issues-second-warning-to-prediction-markets-on-cookie-cutter-self-certifications",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Fidelity se une a la presión para que el Senado apruebe la Ley CLARITY",
-        "url": "https://cointelegraph.com/news/fidelity-push-senate-passage-of-clarity-act",
-        "source": "Cointelegraph"
-      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
         "source": "Cointelegraph"
       },
       {
-        "title": "Corea del Norte arresta a una red de piratería bancaria vinculada al lavado de criptomonedas: Informe",
-        "url": "https://cointelegraph.com/news/north-korea-bank-hacking-ring-crypto-laundering-report",
+        "title": "WEMIX dice que el atacante movió alrededor de $ 724.000 después del incumplimiento del contrato",
+        "url": "https://cointelegraph.com/news/wemix-attacker-moves-724k-contract-breach",
         "source": "Cointelegraph"
       },
       {
-        "title": "Sabio volver a enviar la solicitud de fletamento de EE. UU. en virtud de la Ley GENIUS",
-        "url": "https://cointelegraph.com/news/wise-resubmit-occ-charter-application-genius-stablecoins",
+        "title": "Garden Finance deshabilita la aplicación ya que Blockaid informa un exploit de $ 450,000",
+        "url": "https://cointelegraph.com/news/garden-finance-app-offline-450k-htlc-exploit",
         "source": "Cointelegraph"
       },
       {
-        "title": "Un grupo de defensa de Bitcoin se unirá al programa de \"libertad digital\" del Departamento de Estado de EE. UU.",
-        "url": "https://cointelegraph.com/news/bitcoin-policy-institute-state-department-program",
+        "title": "El CEO de Coinbase promociona las finanzas ágiles como la Base que supera los 100 MILLONES de pagos de IA",
+        "url": "https://cointelegraph.com/news/coinbase-ceo-agentic-finance-base-100-million-aifi-transactions",
         "source": "Cointelegraph"
       },
       {
-        "title": "El banco más grande de Corea del Sur lanzará un servicio de pago en Kinexys de JPMorgan",
-        "url": "https://cointelegraph.com/news/south-korea-bank-payment-jpmorgans-kinexys",
+        "title": "La policía brasileña arresta a traficantes de cocaína en una investigación transnacional vinculada a las criptomonedas",
+        "url": "https://cointelegraph.com/news/brazilian-police-cracks-down-on-crypto-fueled-international-drug-traffickers-suspected-of-moving-billions",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "La unidad de BNY Mellon se une al registro de MiCA a medida que la ESMA añade 15 proveedores",
+        "url": "https://cointelegraph.com/news/mica-register-expands-third-post-deadline-update",
         "source": "Cointelegraph"
       }
     ]
