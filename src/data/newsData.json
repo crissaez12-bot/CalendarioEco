@@ -1,8 +1,13 @@
 {
   "date": "2026-07-28",
-  "updatedAt": "12:23",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "44 estados están alineados en una cosa en la lucha contra los mercados de predicción. Se trata de apuestas deportivas",
+        "url": "https://www.cnbc.com/2026/07/28/44-states-say-cftc-has-no-authority-over-sports-prediction-markets.html",
+        "source": "CNBC"
+      },
       {
         "title": "Visa está recortando el 7% de los empleados en el impulso de la eficiencia a medida que la IA remodela el trabajo",
         "url": "https://www.cnbc.com/2026/07/28/visa-is-cutting-7percent-of-employees-in-efficiency-push-as-ai-reshapes-work.html",
@@ -123,6 +128,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Apple alcanza la capitalización de mercado de $ 5 billones por primera vez",
+        "url": "https://www.cnbc.com/2026/07/28/apple-touches-5-trillion-market-cap-for-first-time-.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Jim Cramer dice que compre estas 2 acciones, pero manténgase cauteloso en un par de otras",
         "url": "https://www.cnbc.com/2026/07/28/jim-cramer-says-buy-these-2-stocks-but-remain-cautious-a-couple-of-others.html",
         "source": "CNBC"
@@ -205,6 +215,16 @@
     ],
     "politica": [
       {
+        "title": "El Senado establecerá una votación clave sobre las sanciones a Rusia",
+        "url": "https://www.cnbc.com/2026/07/28/russia-sanctions-congress-key-vote-lindsey-graham-ukraine.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El gobernador de Kentucky, Beshear, pide a Mitch McConnell que demuestre que puede servir o renunciar",
+        "url": "https://www.cnbc.com/2026/07/28/beshear-mcconnell-health-resign-senate-vacancy.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Trump: Los nuevos aranceles 'hacen lo mismo' que los derogados por el Tribunal Supremo",
         "url": "https://www.cnbc.com/2026/07/28/trump-usmca-canada-mexico-trade-deal.html",
         "source": "CNBC"
@@ -261,6 +281,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Kraken abre la salida a bolsa de Jersey Mike a inversores minoristas a través de acciones tokenizadas y asignaciones directas",
+        "url": "https://cointelegraph.com/news/kraken-opens-jersey-mikes-ipo-to-retail-investors-through-tokenized-shares-and-direct-allocations",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Galaxy y MARA Holdings profundizan la expansión de Texas con la adquisición de tierras",
+        "url": "https://cointelegraph.com/news/galaxy-mara-texas-land-deals-ai-bitcoin-data-centers",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "AmericanFortress propone una protección de monedero criptográfico segura desde el punto de vista cuántico sin migración de fondos",
+        "url": "https://cointelegraph.com/news/americanfortress-proposes-quantum-safe-crypto-wallet-protection-without-fund-migration",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
