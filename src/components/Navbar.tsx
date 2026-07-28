@@ -88,9 +88,9 @@ const VOL_STYLES: Record<VolLevel, { text: string; bg: string }> = {
   High: { text: '#FF6B6B', bg: 'rgba(255,107,107,0.14)' },
 }
 
-function classifyAtrPct(atrPct: number): VolLevel {
-  if (atrPct < 0.5) return 'Low'
-  if (atrPct < 1.2) return 'Mid'
+function classifyDvol(dvol: number): VolLevel {
+  if (dvol < 45) return 'Low'
+  if (dvol < 85) return 'Mid'
   return 'High'
 }
 
@@ -102,13 +102,13 @@ function MarketVolBadge() {
 
     async function load() {
       try {
-        // Alerta de TradingView en CRYPTOCAP:TOTAL (1h, indicador ATR) -> webhook a
-        // signal-desk (/total-atr), que guarda el ultimo valor. Se actualiza sola
-        // cada vez que cierra una vela de 1h (via el cron de la alerta en TV).
-        const res = await fetch('https://signal-desk-j209.onrender.com/total-atr')
+        // Alerta de TradingView en DERIBIT:DVOL (1h) -> webhook a signal-desk (/dvol),
+        // que guarda el ultimo valor. DVOL es el indice de volatilidad implicita de BTC
+        // (el "VIX cripto") -- reacciona a estres real del mercado, no solo a ATR crudo.
+        const res = await fetch('https://signal-desk-j209.onrender.com/dvol')
         const data = await res.json()
-        if (!cancelled && typeof data?.atr_pct === 'number') {
-          setLevel(classifyAtrPct(data.atr_pct))
+        if (!cancelled && typeof data?.dvol === 'number') {
+          setLevel(classifyDvol(data.dvol))
         }
       } catch {
         // se mantiene el ultimo valor conocido (sin badge si nunca cargó)
@@ -130,7 +130,7 @@ function MarketVolBadge() {
     <span
       className="whitespace-nowrap rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide"
       style={{ background: style.bg, color: style.text }}
-      title="Volatilidad del mercado crypto — ATR(14) real de CRYPTOCAP:TOTAL, 1h, via alerta de TradingView"
+      title="Volatilidad del mercado crypto — DVOL (indice de volatilidad implicita de BTC en Deribit), via alerta de TradingView"
     >
       Vol {level}
     </span>
