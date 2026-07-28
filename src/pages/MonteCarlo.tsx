@@ -5,7 +5,7 @@ import { ASSET_ICON, ATR_THRESHOLD, DATA, isReady, pctB, type AssetRow, type Tim
 import { useBtcTrend, formatUpdated } from '../data/btcTrend'
 import { useMcLive, formatMcUpdated } from '../data/mcLive'
 
-type SortKey = 'name' | 'signal' | 'osc' | 'atr'
+type SortKey = 'name' | 'signal' | 'atr'
 type TierFilter = 'all' | '1' | '2' | '3'
 
 const money = (n: number) => (n >= 100 ? n.toFixed(0) : n.toFixed(4))
@@ -18,8 +18,13 @@ const TIER_STYLES: Record<AssetRow['tier'], string> = {
 
 type RowWithTf = AssetRow & { tf: Timeframe }
 
+// El monitoreo en vivo quedo en 1H unicamente (2026-07-28): 15M dejo de tener
+// senal automatica del lado de signal-desk (ver mc_feed._ATENTO_TFS), asi que se
+// saco el toggle de esta pagina. Las fichas de 15M que ya existian siguen
+// disponibles como referencia de backtest, solo no se monitorean en vivo aca.
+const LIVE_TF: Timeframe = '1h'
+
 export default function MonteCarlo() {
-  const [tf, setTf] = useState<Timeframe>('1h')
   const [tier, setTier] = useState<TierFilter>('all')
   const [operableOnly, setOperableOnly] = useState(false)
   const [sortKey, setSortKey] = useState<SortKey>('name')
@@ -42,7 +47,7 @@ export default function MonteCarlo() {
               atr: live.atr_pct,
               signal: live.signal,
               oscConfirm: live.oscConfirm,
-              osc: NaN, // PunkAlgo Oscillator solo expone eventos de cruce, no el valor continuo de oscMain
+              osc: NaN,
               updated: formatMcUpdated(live.updated),
             }
           : r
@@ -50,17 +55,9 @@ export default function MonteCarlo() {
       })
     }
 
-    let list: RowWithTf[]
+    let list: RowWithTf[] = mergeLive(DATA[LIVE_TF].filter((r) => tier === 'all' || String(r.tier) === tier), LIVE_TF)
     if (operableOnly) {
-      // combina 1H y 15M: un mismo activo puede aparecer listo en las dos a la vez
-      list = (['1h', '15m'] as Timeframe[]).flatMap((t) =>
-        mergeLive(
-          DATA[t].filter((r) => tier === 'all' || String(r.tier) === tier),
-          t,
-        ).filter(isReady),
-      )
-    } else {
-      list = mergeLive(DATA[tf].filter((r) => tier === 'all' || String(r.tier) === tier), tf)
+      list = list.filter(isReady)
     }
 
     list = [...list].sort((a, b) => {
@@ -69,9 +66,6 @@ export default function MonteCarlo() {
       if (sortKey === 'signal') {
         av = a.signal
         bv = b.signal
-      } else if (sortKey === 'osc') {
-        av = a.osc
-        bv = b.osc
       } else if (sortKey === 'atr') {
         av = a.atr
         bv = b.atr
@@ -81,7 +75,7 @@ export default function MonteCarlo() {
       return 0
     })
     return list
-  }, [tf, tier, operableOnly, sortKey, sortDir, mcLive])
+  }, [tier, operableOnly, sortKey, sortDir, mcLive])
 
   const readyRows = rows.filter(isReady)
   const signalOnly = rows.filter((r) => r.signal !== 'none' && !isReady(r))
@@ -103,10 +97,10 @@ export default function MonteCarlo() {
           Monte Carlo Strategy V2
         </h1>
         <p className="mt-1 text-sm text-beige/70">
-          BB + PunkAlgo + Oscilador + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
-          activos con win rate &ge;70% (distinto en 1H y 15M, cada uno con su propia ficha) &middot; los
-          activos marcados "En vivo" ya corren con datos reales (Bollinger/ATR + alertas de TradingView) en
-          1H y 15M, el resto sigue ilustrativo por ahora &middot; fichas basadas en backtest real.
+          BB + PunkAlgo Signals + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
+          activos con win rate &ge;70% &middot; monitoreo en vivo solo en 1H (borde de banda tocado + Touch
+          real de Signals) &middot; los activos marcados "En vivo" corren con datos reales (Bollinger/ATR +
+          alerta de TradingView), el resto sigue ilustrativo por ahora &middot; fichas basadas en backtest real.
         </p>
       </div>
 
@@ -151,7 +145,7 @@ export default function MonteCarlo() {
           <button
             type="button"
             onClick={() => setOperableOnly((v) => !v)}
-            title="Muestra, entre 1H y 15M juntos, solo los activos con confluencia completa (LISTO) ahora mismo"
+            title="Muestra solo los activos con confluencia completa (borde de banda + Touch de Signals + ATR) ahora mismo"
             className={`rounded-lg border px-4 py-1.5 text-sm font-semibold transition-colors ${
               operableOnly
                 ? 'border-moss/50 bg-moss/20 text-moss'
@@ -161,23 +155,8 @@ export default function MonteCarlo() {
             Operable
           </button>
 
-          <div
-            className={`liquid-glass flex rounded-lg p-1 transition-opacity ${
-              operableOnly ? 'pointer-events-none opacity-40' : ''
-            }`}
-          >
-            {(['1h', '15m'] as Timeframe[]).map((t) => (
-              <button
-                key={t}
-                type="button"
-                onClick={() => setTf(t)}
-                className={`rounded-md px-4 py-1.5 text-sm font-medium transition-colors ${
-                  tf === t ? 'bg-ivory text-navy' : 'text-beige/60 hover:text-ivory'
-                }`}
-              >
-                {t.toUpperCase()}
-              </button>
-            ))}
+          <div className="liquid-glass rounded-lg px-4 py-1.5 text-sm font-medium text-beige/60" title="Monitoreo en vivo: solo 1H">
+            1H
           </div>
 
           <div className="flex gap-2">
@@ -227,7 +206,6 @@ export default function MonteCarlo() {
                 Bollinger Bands
               </th>
               <Th label="Señal PunkAlgo" sortKey="signal" active={sortKey === 'signal'} dir={sortDir} onClick={toggleSort} />
-              <Th label="Oscilador" sortKey="osc" active={sortKey === 'osc'} dir={sortDir} onClick={toggleSort} />
               <Th label="ATR" sortKey="atr" active={sortKey === 'atr'} dir={sortDir} onClick={toggleSort} />
               <th className="whitespace-nowrap px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-beige/50">
                 Actualizado
@@ -240,7 +218,7 @@ export default function MonteCarlo() {
               const p = Math.max(0, Math.min(1, pctB(row)))
               const atrOk = row.atr >= ATR_THRESHOLD
               const dotColor = row.signal === 'bull' ? '#5FE6AE' : row.signal === 'bear' ? '#FF6B6B' : '#7FA396'
-              const sigLabel = row.signal === 'bull' ? 'TouchBull' : row.signal === 'bear' ? 'TouchBear' : 'Sin señal'
+              const sigLabel = row.signal === 'bull' ? 'LONG' : row.signal === 'bear' ? 'SHORT' : 'Sin señal'
 
               return (
                 <tr
@@ -332,18 +310,6 @@ export default function MonteCarlo() {
                     </span>
                   </td>
                   <td className="px-4 py-3">
-                    <div className="flex min-w-[108px] flex-col gap-0.5">
-                      {!Number.isNaN(row.osc) && (
-                        <span className="font-mono text-sm font-semibold tabular-nums text-ivory">
-                          {row.osc.toFixed(1)}
-                        </span>
-                      )}
-                      <span className={`text-[11px] ${row.oscConfirm ? 'text-moss' : 'text-ivory'}`}>
-                        {row.oscConfirm ? '✓ confirma cruce' : 'sin confirmar'}
-                      </span>
-                    </div>
-                  </td>
-                  <td className="px-4 py-3">
                     <div className="flex min-w-[96px] flex-col gap-1.5">
                       <span className="font-mono text-sm font-semibold tabular-nums text-ivory">{row.atr.toFixed(2)}%</span>
                       <span
@@ -364,11 +330,11 @@ export default function MonteCarlo() {
       </div>
 
       <p className="mt-4 text-[11px] text-beige/40">
-        Umbral de operabilidad: ATR(14)/precio &ge; 0.3&ndash;0.5% &middot; fila resaltada = confluencia (señal +
-        confirmación de oscilador + ATR suficiente) &middot; click en un activo para ver la ficha
+        Umbral de operabilidad: ATR(14)/precio &ge; 0.3&ndash;0.5% &middot; fila resaltada = confluencia (borde de
+        banda tocado + Touch de Signals + ATR suficiente) &middot; click en un activo para ver la ficha
       </p>
 
-      <AssetDrawer ticker={selected?.ticker ?? null} timeframe={selected?.tf ?? tf} onClose={() => setSelected(null)} />
+      <AssetDrawer ticker={selected?.ticker ?? null} timeframe={selected?.tf ?? LIVE_TF} onClose={() => setSelected(null)} />
     </PageShell>
   )
 }

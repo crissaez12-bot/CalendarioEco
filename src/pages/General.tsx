@@ -202,8 +202,9 @@ export default function General() {
   const { data: wsSentiment, live: wsLive } = useWallStreetSentiment(FEAR_GREED.traditional)
   const mcLive = useMcLive()
 
-  // Historial real de las ultimas 5 confluencias LISTO (signal-desk las agrega en
-  // el momento en que se disparan) -- mas reciente primero, FIFO de 5.
+  // Historial real de las ultimas 5 señales LONG/SHORT (borde de banda + Touch real
+  // de Signals, solo 1H -- signal-desk las agrega en el momento en que se disparan)
+  // -- mas reciente primero, FIFO de 5.
   const activeSignals = [...(mcLive?.history ?? [])].reverse().slice(0, 5)
 
   const todayChile = new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Santiago' }).format(now)
@@ -322,7 +323,7 @@ export default function General() {
             <div className="flex flex-col gap-1">
               {activeSignals.map((row, i) => {
                 const dotColor = row.signal === 'bull' ? '#5FE6AE' : '#FF6B6B'
-                const sigLabel = row.signal === 'bull' ? 'TouchBull' : 'TouchBear'
+                const sigLabel = row.signal === 'bull' ? 'LONG' : 'SHORT'
                 return (
                   <div
                     key={`${row.ticker}-${row.tf}-${row.ts}-${i}`}
@@ -343,9 +344,6 @@ export default function General() {
                     </div>
                     <div className="flex items-center gap-3">
                       <span className="font-mono text-[11px] text-beige/40">{formatSignalTime(row.ts)}</span>
-                      <span className="rounded border border-moss/40 px-1.5 py-0.5 text-[9px] font-bold uppercase tracking-wide text-moss">
-                        Listo
-                      </span>
                       <span
                         className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-md px-2.5 py-1 text-xs font-semibold"
                         style={{

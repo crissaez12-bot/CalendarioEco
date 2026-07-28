@@ -24,7 +24,9 @@ export default function MonteCarloHistorial() {
   const [signal, setSignal] = useState<SignalFilter>('all')
   const [tf, setTf] = useState<TfFilter>('all')
 
-  const history = useMemo(() => [...(mcLive?.history ?? [])].reverse(), [mcLive])
+  // Filtra 15m: ya no genera señales nuevas (solo 1H desde 2026-07-28), pero pueden
+  // quedar entradas viejas colgando hasta que salgan de la ventana de 7 dias.
+  const history = useMemo(() => [...(mcLive?.history ?? [])].reverse().filter((h) => h.tf === '1h'), [mcLive])
 
   const tickers = useMemo(() => [...new Set(history.map((h) => h.ticker))].sort(), [history])
 
@@ -39,8 +41,9 @@ export default function MonteCarloHistorial() {
           Historial Monte Carlo
         </h1>
         <p className="mt-1 text-sm text-beige/70">
-          Todas las confluencias LISTO reales de los últimos 7 días &middot; se arma solo con eventos de las alertas
-          conectadas, sin límite de cantidad dentro de la ventana.
+          Todas las señales LONG/SHORT reales de los últimos 7 días (borde de banda + Touch real de Signals,
+          solo 1H) &middot; se arma solo con eventos de las alertas conectadas, sin límite de cantidad dentro
+          de la ventana.
         </p>
       </div>
 
@@ -68,13 +71,13 @@ export default function MonteCarloHistorial() {
                 signal === s ? 'bg-ivory text-navy' : 'text-beige/60 hover:text-ivory'
               }`}
             >
-              {s === 'all' ? 'Todas' : s === 'bull' ? 'TouchBull' : 'TouchBear'}
+              {s === 'all' ? 'Todas' : s === 'bull' ? 'LONG' : 'SHORT'}
             </button>
           ))}
         </div>
 
         <div className="liquid-glass flex rounded-lg p-1">
-          {(['all', '1h', '15m'] as TfFilter[]).map((t) => (
+          {(['all', '1h'] as TfFilter[]).map((t) => (
             <button
               key={t}
               type="button"

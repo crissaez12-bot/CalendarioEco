@@ -66,6 +66,11 @@ export const ASSET_ICON: Record<string, string> = {
 
 export const ATR_THRESHOLD = 0.35
 
+// Margen de "borde real de la banda" (%B<=EDGE_MARGIN o >=1-EDGE_MARGIN) -- debe
+// coincidir con mc_feed.EDGE_MARGIN en signal-desk (2026-07-28: la senal real ya
+// no depende del Oscillator, ver isReady() mas abajo).
+export const EDGE_MARGIN = 0.05
+
 export const DATA: Record<Timeframe, AssetRow[]> = {
   '1h': [
     { name: 'Hyperliquid', ticker: 'HYPE', tier: 1, price: 41.86, basis: 41.2, upper: 43.55, lower: 38.85, signal: 'bull', osc: 61.4, oscConfirm: true, atr: 0.71, updated: '08:14:02' },
@@ -910,8 +915,15 @@ export function estimateRR(stats: AssetDetail['stats']) {
   return { ratio, avgTrade }
 }
 
+// Confluencia real (2026-07-28): borde de banda tocado (mismo lado que la señal) +
+// TouchBull/TouchBear real de Signals + ATR suficiente. Ya NO depende del
+// Oscillator -- esa alerta se dio de baja del lado de signal-desk (ver
+// mc_feed.maybe_notify_atento), asi que oscConfirm queda sin uso aca.
 export function isReady(row: AssetRow): boolean {
-  return row.signal !== 'none' && row.oscConfirm && row.atr >= ATR_THRESHOLD
+  if (row.signal === 'none') return false
+  const p = pctB(row)
+  const edgeTouch = row.signal === 'bull' ? p <= EDGE_MARGIN : p >= 1 - EDGE_MARGIN
+  return edgeTouch && row.atr >= ATR_THRESHOLD
 }
 
 export function pctB(row: AssetRow): number {
