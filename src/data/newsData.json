@@ -1,6 +1,6 @@
 {
   "date": "2026-07-28",
-  "updatedAt": "12:00",
+  "updatedAt": "12:23",
   "categories": {
     "finanzas": [
       {
@@ -122,6 +122,11 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "Jim Cramer dice que compre estas 2 acciones, pero manténgase cauteloso en un par de otras",
+        "url": "https://www.cnbc.com/2026/07/28/jim-cramer-says-buy-these-2-stocks-but-remain-cautious-a-couple-of-others.html",
+        "source": "CNBC"
+      },
       {
         "title": "Amazon, Meta y Microsoft se enfrentan a inversores escépticos después de que el informe de Google provocara una venta masiva",
         "url": "https://www.cnbc.com/2026/07/28/hyperscalers-face-higher-capex-scrutiny-after-alphabet-report-panned.html",

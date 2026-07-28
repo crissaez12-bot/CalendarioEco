@@ -2,12 +2,31 @@ import { useMemo, useState } from 'react'
 import type { SyntheticEvent } from 'react'
 import PageShell from '../components/PageShell'
 import earningsData from '../data/earningsData.json'
-import tokenUnlocksData from '../data/tokenUnlocksData.json'
+import tokenUnlocksDataRaw from '../data/tokenUnlocksData.json'
 import { isMag7 } from '../data/mag7'
 
 type Tab = 'earnings' | 'unlocks'
 type UnlockType = 'Cliff' | 'Lineal' | 'Team / Investors' | 'Staking rewards'
 const GOLD = '#D4AF37'
+
+// Tipado explicito en vez de confiar en la inferencia de tipos del JSON: si
+// en el momento del build algun token no tiene logo (`logo: null`), TS infiere
+// un union de shapes de array en vez de `logo: string | null` y rompe el build
+// (mismo problema que pctChangeWeek en General.tsx).
+interface UnlockEvent {
+  ticker: string
+  name: string
+  type: string
+  unlockTokens: number
+  unlockUsd: number
+  pctSupply: number
+  logo: string | null
+}
+const tokenUnlocksData = tokenUnlocksDataRaw as {
+  source: string
+  capturedAt: string
+  days: { date: string; label: string; events: UnlockEvent[] }[]
+}
 
 const money = (n: number) => {
   const abs = Math.abs(n)

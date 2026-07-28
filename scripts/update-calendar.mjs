@@ -1,8 +1,12 @@
-// Corre semanalmente como Render Cron Job. Trae el calendario economico
-// desde el feed publico no-oficial de ForexFactory, filtra por impacto Alto
-// y por los paises "potencia" configurados, y sobreescribe
-// src/data/calendarData.ts con los resultados. Si GITHUB_TOKEN esta seteado,
-// commitea y pushea el cambio para que Render redespliegue el sitio estatico.
+// Corre cada hora (mismo Render Cron Job que update-news), pero solo hace
+// trabajo real los lunes a las 9am hora Chile — el chequeo de hora vive en
+// este script (no en el cron de Render) para no desfasarse con el cambio de
+// horario de verano de Chile, igual que ETF_FLOW_HOUR en update-news.mjs.
+// Trae el calendario economico desde el feed publico no-oficial de
+// ForexFactory, filtra por impacto Alto y por los paises "potencia"
+// configurados, y sobreescribe src/data/calendarData.ts con los resultados.
+// Si GITHUB_TOKEN esta seteado, commitea y pushea el cambio para que Render
+// redespliegue el sitio estatico.
 
 import { execSync } from 'node:child_process'
 import { writeFileSync } from 'node:fs'
@@ -14,6 +18,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'calendarData.ts')
 
 const FEED_URL = 'https://nfs.faireconomy.media/ff_calendar_thisweek.json'
+const TARGET_WEEKDAY = 1 // lunes (0 = domingo)
+const TARGET_HOUR = 9
 
 // Moneda -> pais que mostramos. Chile queda afuera a proposito: ningun feed
 // de forex trackea CLP, se sigue cargando manual aparte. flagCode = codigo de
@@ -49,7 +55,33 @@ function esc(str) {
   return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'")
 }
 
+function chileNow() {
+  const parts = new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'America/Santiago',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    hour12: false,
+  }).formatToParts(new Date())
+  const get = (t) => parts.find((p) => p.type === t)?.value
+  const date = `${get('year')}-${get('month')}-${get('day')}`
+  // fecha (ya calculada en hora Chile) interpretada al mediodia UTC solo para
+  // sacar el dia de la semana sin que ningun otro huso horario la corra un dia.
+  const weekday = new Date(`${date}T12:00:00Z`).getUTCDay()
+  return { date, hour: Number(get('hour')), weekday }
+}
+
 async function main() {
+  const now = chileNow()
+  const forced = process.env.FORCE_RUN === '1'
+  if (!forced && (now.weekday !== TARGET_WEEKDAY || now.hour !== TARGET_HOUR)) {
+    console.log(`Hora Chile: ${now.date} ${now.hour}h (weekday ${now.weekday}) — no es lunes ${TARGET_HOUR}h, no corresponde actualizar todavia.`)
+    return
+  }
+  console.log(`Hora Chile: ${now.date} ${now.hour}h — actualizando calendario semanal.`)
+
   const res = await fetch(FEED_URL, { headers: { Accept: 'application/json' } })
   if (!res.ok) {
     throw new Error(`Feed respondio ${res.status} — probablemente rate limit. No se actualiza esta corrida.`)
@@ -127,7 +159,7 @@ ${eventsTs(d.events)}
     )
     .join('\n')
 
-  const today = new Date().toISOString().slice(0, 10)
+  const today = now.date
 
   const fileContent = `// Archivo generado automaticamente por scripts/update-calendar.mjs
 // No editar a mano — se sobreescribe en cada corrida del cron job semanal.

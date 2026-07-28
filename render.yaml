@@ -10,11 +10,15 @@ services:
         destination: /index.html
     autoDeploy: true
 
+  # Corre cada hora; el script decide internamente si corresponde actualizar
+  # segun la hora Chile (solo lunes 9am — ver comentario en
+  # scripts/update-calendar.mjs). Evita el desfase de un cron.yaml fijo en UTC
+  # contra el cambio de horario de verano de Chile.
   - type: cron
     name: update-calendar
     runtime: node
     plan: starter
-    schedule: "0 9 * * 1"
+    schedule: "0 * * * *"
     buildCommand: npm install
     startCommand: npm run update-calendar
     envVars:
@@ -26,7 +30,7 @@ services:
   # Corre cada hora (el script decide internamente que actualizar segun la
   # hora Chile — ver comentario en scripts/update-news.mjs). El ticker de
   # precios se actualiza en TODAS las corridas; noticias solo a las 8/12/16;
-  # etf flows/earnings/unlocks solo a las 8am.
+  # etf flows/earnings/unlocks solo a las 11am.
   - type: cron
     name: update-news
     runtime: node

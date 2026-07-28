@@ -24,6 +24,7 @@ interface EtfFlowEntry {
   athMarketCap: number | null
   capRatio: number | null
   pctChangeWeek: number | null
+  marketCapChangePct24h: number | null
 }
 const etfFlowsData = etfFlowsDataRaw as { updatedAt: string; windowDays: number; flows: EtfFlowEntry[] }
 
@@ -373,6 +374,7 @@ export default function General() {
               const capRatio = f.capRatio ?? null
               const barWidth = capRatio !== null ? Math.min(100, Math.max(0, capRatio * 100)) : 0
               const pct = f.pctChangeWeek ?? null
+              const capChange24h = f.marketCapChangePct24h ?? null
               return (
                 <div key={f.asset}>
                   <div className="mb-1.5 flex items-center justify-between">
@@ -393,8 +395,17 @@ export default function General() {
                       style={{ width: `${barWidth}%`, background: positive ? '#5FE6AE' : '#FF6B6B' }}
                     />
                   </div>
-                  {capRatio !== null && (
-                    <p className="mt-1 text-[10px] text-beige/40">Cap. vs. máx. histórico: {(capRatio * 100).toFixed(0)}%</p>
+                  {(capRatio !== null || capChange24h !== null) && (
+                    <p className="mt-1 text-[10px] text-beige/40">
+                      {capRatio !== null && <>Cap. vs. máx. histórico: {(capRatio * 100).toFixed(0)}%</>}
+                      {capChange24h !== null && (
+                        <span className={capChange24h >= 0 ? 'text-moss/70' : 'text-clay/70'}>
+                          {capRatio !== null ? ' · ' : ''}
+                          24h: {capChange24h >= 0 ? '+' : ''}
+                          {capChange24h.toFixed(1)}%
+                        </span>
+                      )}
+                    </p>
                   )}
                 </div>
               )

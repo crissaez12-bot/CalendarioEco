@@ -1,36 +1,39 @@
 {
-  "updatedAt": "2026-07-21",
+  "updatedAt": "2026-07-28",
   "windowDays": 5,
   "flows": [
     {
       "asset": "BTC",
-      "netFlow": 562100000,
+      "netFlow": -407700000,
       "days": 5,
-      "through": "21 Jul 2026",
-      "marketCap": 1336030085577,
-      "athMarketCap": 2529191351324.277,
-      "capRatio": 0.5282439720812183,
-      "pctChangeWeek": null
+      "through": "28 Jul 2026",
+      "marketCap": 1280884999340,
+      "athMarketCap": 2529390272319.564,
+      "capRatio": 0.5064006979695431,
+      "marketCapChangePct24h": -1.75,
+      "pctChangeWeek": -172.53157801103006
     },
     {
       "asset": "ETH",
-      "netFlow": 100600000,
+      "netFlow": 40000000,
       "days": 5,
-      "through": "21 Jul 2026",
-      "marketCap": 233881062991,
-      "athMarketCap": 596872900812.4719,
-      "capRatio": 0.3918439967246591,
-      "pctChangeWeek": null
+      "through": "28 Jul 2026",
+      "marketCap": 231654716351,
+      "athMarketCap": 596870147427.5717,
+      "capRatio": 0.38811576914911894,
+      "marketCapChangePct24h": -1.20743,
+      "pctChangeWeek": -60.238568588469185
     },
     {
       "asset": "SOL",
-      "netFlow": 9400000,
+      "netFlow": -300000,
       "days": 5,
-      "through": "21 Jul 2026",
-      "marketCap": 45694406606,
-      "athMarketCap": 170930065063.20444,
-      "capRatio": 0.2673280829156865,
-      "pctChangeWeek": null
+      "through": "28 Jul 2026",
+      "marketCap": 43265983459,
+      "athMarketCap": 171005869941.50778,
+      "capRatio": 0.2530087620606184,
+      "marketCapChangePct24h": -2.45802,
+      "pctChangeWeek": -103.19148936170212
     }
   ]
 }

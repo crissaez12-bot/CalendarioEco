@@ -9,7 +9,7 @@
         {
           "ticker": "V",
           "name": "Visa Inc.",
-          "marketCap": 673938031023,
+          "marketCap": 686801468451,
           "time": "AMC",
           "epsEst": "3.23",
           "epsLastYear": "2.98"
@@ -17,7 +17,7 @@
         {
           "ticker": "KO",
           "name": "Coca-Cola Company (The)",
-          "marketCap": 354016574133,
+          "marketCap": 361850132369,
           "time": "BMO",
           "epsEst": "0.92",
           "epsLastYear": "0.87"
@@ -25,7 +25,7 @@
         {
           "ticker": "KLAC",
           "name": "KLA Corporation ",
-          "marketCap": 274997057209,
+          "marketCap": 265644126706,
           "time": "AMC",
           "epsEst": "1",
           "epsLastYear": "0.94"
@@ -33,7 +33,7 @@
         {
           "ticker": "STX",
           "name": "Seagate Technology Holdings PLC",
-          "marketCap": 190973590196,
+          "marketCap": 183192844174,
           "time": "AMC",
           "epsEst": "4.89",
           "epsLastYear": "2.34"
@@ -41,7 +41,7 @@
         {
           "ticker": "BA",
           "name": "Boeing Company (The)",
-          "marketCap": 165165104391,
+          "marketCap": 166725943007,
           "time": "BMO",
           "epsEst": "(0.34)",
           "epsLastYear": "(1.24)"
@@ -49,7 +49,7 @@
         {
           "ticker": "SPGI",
           "name": "S&P Global Inc.",
-          "marketCap": 126214400000,
+          "marketCap": 130189680000,
           "time": "BMO",
           "epsEst": "4.49",
           "epsLastYear": "4.43"
@@ -57,7 +57,7 @@
         {
           "ticker": "GLW",
           "name": "Corning Incorporated",
-          "marketCap": 126212537036,
+          "marketCap": 123381038592,
           "time": "BMO",
           "epsEst": "0.76",
           "epsLastYear": "0.60"
@@ -65,7 +65,7 @@
         {
           "ticker": "GSK",
           "name": "GSK plc",
-          "marketCap": 103563669569,
+          "marketCap": 103794571227,
           "time": "BMO",
           "epsEst": "1.27",
           "epsLastYear": "1.23"

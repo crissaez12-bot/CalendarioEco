@@ -4,7 +4,7 @@
 //   - Solo a las 8/12/16: scrapea titulares de CNBC/Cointelegraph, los traduce
 //     al espanol y los acumula en src/data/newsData.json durante el dia (se
 //     vacia solo al detectar un dia nuevo, asi nunca crece sin limite).
-//   - Solo a las 8am: ademas actualiza (reusando este mismo cron, sin pagar
+//   - Solo a las 11am: ademas actualiza (reusando este mismo cron, sin pagar
 //     servicios extra en Render):
 //       - src/data/etfFlowsData.json  — flujo neto semanal ETF spot BTC/ETH/SOL (Farside)
 //       - src/data/earningsData.json  — calendario de resultados corporativos (NASDAQ)
@@ -24,7 +24,7 @@ const ETF_HISTORY_PATH = join(__dirname, '..', 'src', 'data', 'etfFlowsHistory.j
 const EARNINGS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'earningsData.json')
 const UNLOCKS_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tokenUnlocksData.json')
 const TICKER_OUTPUT_PATH = join(__dirname, '..', 'src', 'data', 'tickerData.json')
-const ETF_FLOW_HOUR = 8
+const ETF_FLOW_HOUR = 11
 const ETF_WINDOW_DAYS = 5
 const ETF_HISTORY_MAX = 40 // suficiente colchon para buscar "hace 7 dias" aunque falte algun dia
 const ETF_HISTORY_TOLERANCE_DAYS = 2 // si no hay dato exacto de hace 7 dias, acepta +-2 dias
@@ -174,6 +174,9 @@ async function fetchCryptoMarketCaps() {
       marketCap: c.market_cap,
       athMarketCap,
       capRatio: athMarketCap ? c.market_cap / athMarketCap : null,
+      marketCapChangePct24h: typeof c.market_cap_change_percentage_24h === 'number'
+        ? c.market_cap_change_percentage_24h
+        : null,
     }
   }
   return map
@@ -254,6 +257,7 @@ async function updateEtfFlows(now) {
     f.marketCap = mc?.marketCap ?? null
     f.athMarketCap = mc?.athMarketCap ?? null
     f.capRatio = mc?.capRatio ?? null
+    f.marketCapChangePct24h = mc?.marketCapChangePct24h ?? null
     f.pctChangeWeek = findWeekAgoFlow(history, f.asset, now.date) !== null
       ? computePctChange(f.netFlow, findWeekAgoFlow(history, f.asset, now.date))
       : null
