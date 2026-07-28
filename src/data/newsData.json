@@ -1,11 +1,26 @@
 {
-  "date": "2026-07-27",
-  "updatedAt": "16:00",
+  "date": "2026-07-28",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
       {
-        "title": "Acciones que hacen los movimientos más grandes al mediodía: ASML, SK Hynix, SAP, Forte Bio, Brown-Forman y más",
-        "url": "https://www.cnbc.com/2026/07/27/stocks-making-the-biggest-moves-midday-asml-skhy-sap-fbrx-bfb.html",
+        "title": "Acciones que hacen los mayores movimientos fuera de horario: Intel, AMD, Boston Beer, Deckers",
+        "url": "https://www.cnbc.com/2026/07/23/stocks-making-the-biggest-moves-after-hours-intc-amd-sam-deck.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Estados Unidos y otras naciones respaldan la IA de código abierto con \"fuerte seguridad\" en la cumbre de China",
+        "url": "https://www.cnbc.com/2026/07/24/china-ai-open-source-apec.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Intel, Oracle, American Express",
+        "url": "https://www.cnbc.com/2026/07/24/stocks-making-the-biggest-moves-premarket-intc-orcl-axp.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Moody's dice que el gasto en IA amenaza la calidad crediticia de Amazon, Meta y Alphabet",
+        "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
         "source": "CNBC"
       },
       {
@@ -24,53 +39,18 @@
         "source": "CNBC"
       },
       {
-        "title": "John Paulson dice que estamos en las primeras etapas de un mercado alcista a largo plazo para el oro",
-        "url": "https://www.cnbc.com/2026/07/22/john-paulson-says-we-are-in-early-stages-of-a-long-term-bull-market-for-gold.html",
+        "title": "Acciones que hacen los movimientos más grandes al mediodía: ASML, SK Hynix, SAP, Forte Bio y más",
+        "url": "https://www.cnbc.com/2026/07/27/stocks-making-the-biggest-moves-midday-asml-skhy-sap-fbrx-bfb.html",
         "source": "CNBC"
       },
       {
-        "title": "Las acciones hacen los movimientos más grandes fuera de horario: Tesla, IBM, ServiceNow y más",
-        "url": "https://www.cnbc.com/2026/07/22/stocks-making-the-biggest-moves-after-hours-googl-tsla-ibm-lvs.html",
+        "title": "Las acciones hacen los movimientos más grandes fuera de horario: Cadence Design, Rambus y más",
+        "url": "https://www.cnbc.com/2026/07/27/stocks-making-the-biggest-moves-after-hours-cdns-rmbs-well.html",
         "source": "CNBC"
       },
       {
-        "title": "Las acciones que hacen los movimientos más grandes antes del mercado: Lockheed Martin, Tesla, Alphabet",
-        "url": "https://www.cnbc.com/2026/07/23/stocks-making-the-biggest-moves-premarket-lmt-tsla-googl.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El mercado de valores ya no puede ignorar la guerra: \"Es demasiado difícil ignorar el petróleo de 100 $\"",
-        "url": "https://www.cnbc.com/2026/07/23/short-sighted-stock-market-can-no-longer-brush-off-war-investors-say.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El informe de JPMorgan encuentra un salto dramático en los ETF con temas de IA, a pesar del trimestre difícil",
-        "url": "https://www.cnbc.com/2026/07/23/jpmorgan-dramatic-jump-in-ai-etfs-despite-rough-quarter.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Las probabilidades de un aumento de las tasas de la Reserva Federal aumentan a medida que los precios del petróleo suben",
-        "url": "https://www.cnbc.com/2026/07/23/fed-interest-rate-odds-oil-jobless-claims.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Acciones que hacen los mayores movimientos fuera de horario: Intel, AMD, Boston Beer, Deckers",
-        "url": "https://www.cnbc.com/2026/07/23/stocks-making-the-biggest-moves-after-hours-intc-amd-sam-deck.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Estados Unidos y otras naciones respaldan la IA de código abierto con \"fuerte seguridad\" en la cumbre de China",
-        "url": "https://www.cnbc.com/2026/07/24/china-ai-open-source-apec.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Intel, Oracle, American Express",
-        "url": "https://www.cnbc.com/2026/07/24/stocks-making-the-biggest-moves-premarket-intc-orcl-axp.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Moody's dice que el gasto 'sin precedentes' en IA amenaza la calidad crediticia de Amazon, Meta, Alphabet y otros",
-        "url": "https://www.cnbc.com/2026/07/24/moodys-ai-spending-credit-quality-amazon-meta-alphabet.html",
+        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Coca-Cola, Sherwin-Williams, Johnson & Johnson y más",
+        "url": "https://www.cnbc.com/2026/07/28/stocks-making-the-biggest-moves-premarket-ko-shw-jnj.html",
         "source": "CNBC"
       }
     ],
@@ -128,12 +108,7 @@
     ],
     "tecnologia": [
       {
-        "title": "Op-ed: Más de 2000 propuestas se dirigen a la IA. Ninguno aborda las necesidades regulatorias a largo plazo",
-        "url": "https://www.cnbc.com/2026/07/27/ai-industry-risk-future-regulation.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Nvidia y OpenAI en conversaciones para un respaldo de hasta $ 250 mil millones de dólares para financiar la construcción de IA",
+        "title": "Nvidia y OpenAI en conversaciones para un respaldo de hasta $ 250 mil millones para financiar la construcción de IA",
         "url": "https://www.cnbc.com/2026/07/27/nvidia-and-openai-in-talks-for-up-to-250-billion-dollar-ai-backstop.html",
         "source": "CNBC"
       },
@@ -143,73 +118,43 @@
         "source": "CNBC"
       },
       {
-        "title": "Los precios del petróleo se enfrían, el debate sobre la \"destilación\" de la IA y más: Morning Squawk",
-        "url": "https://www.cnbc.com/2026/07/27/5-things-to-know-before-the-stock-market-opens.html",
+        "title": "Apple termina el día como la empresa más valiosa del mundo, superando a Nvidia",
+        "url": "https://www.cnbc.com/2026/07/27/apple-most-valuable-company-nvidia.html",
         "source": "CNBC"
       },
       {
-        "title": "Altman se reunirá con los responsables políticos en DC esta semana. Esto es lo que planea decir",
-        "url": "https://www.cnbc.com/2026/07/27/altman-trump-china-open-weight-ai.html",
+        "title": "Jim Cramer advierte que el frenesí de financiación circular de AI se hace eco de la burbuja de las punto com",
+        "url": "https://www.cnbc.com/2026/07/27/jim-cramer-warns-ai-circular-financing-echoes-dot-com-bubble.html",
         "source": "CNBC"
       },
       {
-        "title": "NBCUniversal y YouTube Ink llegan a un acuerdo para integrar Peacock en la plataforma de vídeo",
-        "url": "https://www.cnbc.com/2026/07/27/nbcuniversal-youtube-peacock-premium-subscribers.html",
+        "title": "Jim Cramer emite una advertencia a los inversores que operan con dinero prestado",
+        "url": "https://www.cnbc.com/2026/07/27/jim-cramer-warning-investors-trading-with-borrowed-money.html",
         "source": "CNBC"
       },
       {
-        "title": "Amazon busca la aprobación federal para lanzar 5.105 satélites para la red directa al dispositivo",
-        "url": "https://www.cnbc.com/2026/07/27/amazon-satellite-internet-network.html",
+        "title": "El CEO de Anthropic, Amodei, dice que la compañía de IA no aboga por la prohibición de los modelos de peso abierto",
+        "url": "https://www.cnbc.com/2026/07/27/anthropic-ceo-dario-amodei-isnt-advocating-open-weight-model-ban.html",
         "source": "CNBC"
       },
       {
-        "title": "La ansiedad del mercado de bonos está creciendo por los presupuestos de gastos de capital de la IA",
-        "url": "https://www.cnbc.com/2026/07/24/bond-market-anxiety-ai-capex-spending.html",
+        "title": "Microsoft promociona el modelo de IA de ahorro de costes para la ciberseguridad",
+        "url": "https://www.cnbc.com/2026/07/27/microsoft-touts-cost-saving-ai-model-for-cybersecurity.html",
         "source": "CNBC"
       },
       {
-        "title": "La mala semana de Musk: la peor caída de Tesla desde 2022, SpaceX cae antes de la prueba de Starship",
-        "url": "https://www.cnbc.com/2026/07/24/tesla-tsla-spacex-spcx-stock-starship-test-flight-musk-bad-week.html",
+        "title": "Las acciones tecnológicas estadounidenses y coreanas ahora están estrechamente vinculadas, y eso podría ser una preocupación para los inversores",
+        "url": "https://www.cnbc.com/2026/07/28/nasdaq-kospi-wall-street-korea-markets-skhynox-samsung.html",
         "source": "CNBC"
       },
       {
-        "title": "Uber y Waymo pondrán fin al acuerdo de exclusividad en Atlanta y Austin",
-        "url": "https://www.cnbc.com/2026/07/24/uber-and-waymo-to-end-exclusivity-arrangement-in-atlanta-and-austin.html",
+        "title": "El avance de los chips reportado en China viene con algunas grandes advertencias",
+        "url": "https://www.cnbc.com/2026/07/28/china-chipmaking-duv-tool-asml-explained.html",
         "source": "CNBC"
       },
       {
-        "title": "SpaceX lanza un enorme cohete Starship en su primer vuelo de prueba desde su salida a bolsa",
-        "url": "https://www.cnbc.com/2026/07/24/spacex-launches-massive-starship-rocket-in-first-test-flight-since-ipo.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Nvidia bloquea el suministro de memoria de SK Hynix como parte de un acuerdo de IA de $ 500 mil millones",
-        "url": "https://www.cnbc.com/2026/07/25/nvidia-locks-down-memory-from-sk-hynix-as-part-of-500-billion-ai-deal.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La respuesta radical de Finlandia para transformar la energía limpia: una batería de arena gigante",
-        "url": "https://www.cnbc.com/2026/07/25/finland-sand-battery-renewable-energy-storage.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Desde Silicon Valley hasta DC, todo el mundo en la tecnología está obsesionado de repente con la destilación",
-        "url": "https://www.cnbc.com/2026/07/25/hat-is-distillation-and-why-is-everyone-so-obsessed-with-it-this-week.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Aquí hay 4 fuerzas que impulsaron una semana difícil para las acciones",
-        "url": "https://www.cnbc.com/2026/07/25/here-are-4-forces-that-drove-a-tough-week-for-stocks.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El aumento del 466% en el debut en el mercado del fabricante de chips CXMT lo convierte en la empresa más valiosa que cotiza en China",
-        "url": "https://www.cnbc.com/2026/07/27/cxmt-china-market-debut-chipmaker-ipo.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Nvidia, SpaceX y Microsoft lanzan una iniciativa de seguridad de IA a medida que continúan las consecuencias de los ciberataques de OpenAI",
-        "url": "https://www.cnbc.com/2026/07/27/nvidia-ai-initiative-openai-cyber-attack.html",
+        "title": "La compra de acciones de SpaceX por parte de los miembros del Congreso alimenta las preocupaciones de conflicto",
+        "url": "https://www.cnbc.com/2026/07/28/spacex-stock-congress-lawmakers-ipo-conflict-of-interest.html",
         "source": "CNBC"
       }
     ],
@@ -230,130 +175,70 @@
         "source": "CNBC"
       },
       {
-        "title": "El gobierno de Trump pide a la Corte Suprema que intervenga para permitir restricciones de votación por correo",
+        "title": "El gobierno de Trump pide a la Corte Suprema que intervenga para permitir la lucha electoral por correo",
         "url": "https://www.cnbc.com/2026/07/27/trump-supreme-court-mail-in-voting-restrictions.html",
         "source": "CNBC"
       },
       {
-        "title": "Comey pide al juez que desestime el caso de las \"conchas marinas\" de Trump por falta de una \"verdadera amenaza\"",
-        "url": "https://www.cnbc.com/2026/07/27/james-comey-trump-seashells-threat.html",
+        "title": "Irán recibe llamadas de Ormuz con Arabia Saudita y Omán mientras Trump elogia las \"buenas conversaciones\"",
+        "url": "https://www.cnbc.com/2026/07/28/us-iran-war-trump-hormuz.html",
         "source": "CNBC"
       },
       {
-        "title": "Trump demandó por nuevos aranceles, los expertos dicen que los tribunales pueden desecharlos",
-        "url": "https://www.cnbc.com/2026/07/24/trump-tariffs-lawsuit-301-ieepa.html",
+        "title": "La tasa de aprobación de la Corte Suprema alcanza un mínimo histórico, con menos republicanos contentos",
+        "url": "https://www.cnbc.com/2026/07/28/supreme-court-approval-poll-gallup-republicans-trump.html",
         "source": "CNBC"
       },
       {
-        "title": "Trump mezcla bromas con barbas en la cena por la libertad de prensa",
-        "url": "https://www.cnbc.com/2026/07/25/trump-mixes-jokes-with-barbs-at-white-house-correspondents-dinner.html",
+        "title": "Fronteras borrosas: Trump se reunirá con Zelenskyy mientras las guerras de Ucrania e Irán chocan",
+        "url": "https://www.cnbc.com/2026/07/28/trump-zelenskyy-ukraine-russia-iran-war.html",
         "source": "CNBC"
       },
       {
-        "title": "Análisis: Una poderosa coalición de escépticos de la IA se está uniendo en el punto ciego de Trump",
-        "url": "https://www.cnbc.com/2026/07/25/trump-ai-data-center-backlash.html",
+        "title": "La compra de acciones de SpaceX por parte de los miembros del Congreso alimenta las preocupaciones de conflicto",
+        "url": "https://www.cnbc.com/2026/07/28/spacex-stock-congress-lawmakers-ipo-conflict-of-interest.html",
         "source": "CNBC"
       },
       {
-        "title": "Los delegados demócratas de Maine eligen a Troy Jackson como nuevo candidato para el Senado de los Estados Unidos",
-        "url": "https://www.cnbc.com/2026/07/25/maine-democrats-are-meeting-to-pick-a-new-senate-nominee.html",
+        "title": "Análisis: La conferencia de prensa de la Fed de Warsh será reveladora incluso sin una subida de tipos",
+        "url": "https://www.cnbc.com/2026/07/28/warsh-fed-rate-decision-trump-powell-analysis.html",
         "source": "CNBC"
       },
       {
-        "title": "La corte de apelaciones de EE. UU. dictamina que Trump no puede implementar la orden de votación",
-        "url": "https://www.cnbc.com/2026/07/25/us-appeals-court-rules-trump-cannot-implement-mail-in-voting-order.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Ucrania ataca buques iraníes, Teherán acusa a Kiev de \"acto hostil y criminal\"",
-        "url": "https://www.cnbc.com/2026/07/26/ukraine-strikes-iranian-vessels-tehran-accuses-kyiv-of-hostile-act.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "A 100 días de las elecciones intermedias: DelBene del DCCC dice que los demócratas tienen el impulso",
-        "url": "https://www.cnbc.com/2026/07/26/election-midterms-dccc-chair-delbene-democrats.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El nuevo primer ministro del Reino Unido, Burnham, dice que estaría preparado para criticar a Trump",
-        "url": "https://www.cnbc.com/2026/07/26/new-uk-prime-minister-burnham-says-he-would-be-prepared-to-call-out-trump.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Por qué el nuevo bombardeo arancelario de Trump es muy diferente esta vez",
-        "url": "https://www.cnbc.com/2026/07/27/donald-trump-tariffs-trade-war-iran.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Estados Unidos e Irán dejan de luchar para dar espacio a las conversaciones de paz.' Aquí es donde están las negociaciones",
-        "url": "https://www.cnbc.com/2026/07/27/us-iran-war-trump-hormuz.html",
+        "title": "Nuevos anuncios republicanos critican a los demócratas que se oponen a los aranceles de Trump",
+        "url": "https://www.cnbc.com/2026/07/28/trump-tariffs-trade-election-advertising.html",
         "source": "CNBC"
       }
     ],
     "crypto": [
       {
-        "title": "Payward, matriz de Kraken, adquiere el negocio de billeteras de Magic Labs",
-        "url": "https://cointelegraph.com/news/kraken-parent-payward-acquires-magic-labs-wallet-business",
+        "title": "Zimbabue admite 7 proyectos fintech a la caja de arena regulatoria",
+        "url": "https://cointelegraph.com/news/zimbabwe-seven-fintech-projects-regulatory-sandbox",
         "source": "Cointelegraph"
       },
       {
-        "title": "El token de oro XAUt de Tether recibe la certificación Sharia para ampliar el acceso a las finanzas islámicas",
-        "url": "https://cointelegraph.com/news/tether-xaut-gold-token-receives-shariah-certification-islamic-finance-access",
+        "title": "Juez de EE. UU. bloquea temporalmente la prohibición del mercado de predicción",
+        "url": "https://cointelegraph.com/news/us-judge-blocks-minnesota-prediction-market-ban",
         "source": "Cointelegraph"
       },
       {
-        "title": "Securitize Capital se convierte en asesor de inversiones registrado en la SEC",
-        "url": "https://cointelegraph.com/news/securitize-becomes-sec-registered-investment-adviser-through-capital-unit",
+        "title": "Apple se enfrenta a una demanda por supuestas pérdidas de 1,8 MILLONES de $ en la aplicación de billetera Bitcoin",
+        "url": "https://cointelegraph.com/news/apple-lawsuit-alleged-1-8-million-loss-fake-bitcoin-wallet",
         "source": "Cointelegraph"
       },
       {
-        "title": "Bitmine sigue comprando Ether a medida que ETH supera a Bitcoin",
-        "url": "https://cointelegraph.com/news/bitmine-keeps-buying-ether-as-eth-outperforms-bitcoin",
+        "title": "Ondo pasa del plan de cadena de bloques de capa 1 a la red de ejecución fuera de cadena",
+        "url": "https://cointelegraph.com/news/ondo-shifts-from-layer-1-blockchain-plan-to-offchain-execution-network",
         "source": "Cointelegraph"
       },
       {
-        "title": "El emisor de USDC Circle adquirirá cerca de 1.000 patentes de la cadena de bloques de IBM",
-        "url": "https://cointelegraph.com/news/circle-to-acquire-nearly-1000-ibm-blockchain-patents",
+        "title": "La actualización de Lido tiene como objetivo reducir el recuento de validadores de Ethereum en un tercio",
+        "url": "https://cointelegraph.com/news/lido-upgrade-ethereum-validator-count-one-third-slash",
         "source": "Cointelegraph"
       },
       {
-        "title": "Binance desaparece de Google Play en algunos países de la UE",
-        "url": "https://cointelegraph.com/news/binance-disappears-android-google-play-certain-eu-countries",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "El criptogigante de Hong Kong HashKey fusiona la bolsa regional en una sola",
-        "url": "https://cointelegraph.com/news/hong-kong-crypto-giant-hashkey-merges-its-exchanges-into-one",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
-        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "WEMIX dice que el atacante movió alrededor de $ 724.000 después del incumplimiento del contrato",
-        "url": "https://cointelegraph.com/news/wemix-attacker-moves-724k-contract-breach",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Garden Finance deshabilita la aplicación ya que Blockaid informa un exploit de $ 450,000",
-        "url": "https://cointelegraph.com/news/garden-finance-app-offline-450k-htlc-exploit",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "El CEO de Coinbase promociona las finanzas ágiles como la Base que supera los 100 MILLONES de pagos de IA",
-        "url": "https://cointelegraph.com/news/coinbase-ceo-agentic-finance-base-100-million-aifi-transactions",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "La policía brasileña arresta a traficantes de cocaína en una investigación transnacional vinculada a las criptomonedas",
-        "url": "https://cointelegraph.com/news/brazilian-police-cracks-down-on-crypto-fueled-international-drug-traffickers-suspected-of-moving-billions",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "La unidad de BNY Mellon se une al registro de MiCA a medida que la ESMA añade 15 proveedores",
-        "url": "https://cointelegraph.com/news/mica-register-expands-third-post-deadline-update",
+        "title": "El FMI advierte que la actividad de las monedas estables de Brasil supera los flujos de capital tradicionales",
+        "url": "https://cointelegraph.com/news/imf-brazil-stablecoin-activity-outpaces-traditional-capital-flows",
         "source": "Cointelegraph"
       }
     ]
