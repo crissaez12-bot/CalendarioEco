@@ -1,113 +1,113 @@
 {
-  "updatedAt": "2026-07-29 05:01",
+  "updatedAt": "2026-07-29 06:00",
   "items": [
     {
       "symbol": "SPY",
       "label": "S&P 500",
-      "price": 742.39,
-      "changePct": 0.21
+      "price": 742.76,
+      "changePct": 0.26
     },
     {
       "symbol": "QQQ",
       "label": "Nasdaq 100",
-      "price": 675.56,
-      "changePct": 0.01
+      "price": 678.11,
+      "changePct": 0.39
     },
     {
       "symbol": "DIA",
       "label": "Dow Jones",
-      "price": 527.3985,
-      "changePct": 0.1
+      "price": 526.32,
+      "changePct": -0.11
     },
     {
       "symbol": "AAPL",
       "label": "Apple",
-      "price": 341.5,
-      "changePct": 0.42
+      "price": 339.6497,
+      "changePct": -0.13
     },
     {
       "symbol": "MSFT",
       "label": "Microsoft",
-      "price": 396.2,
-      "changePct": 0.72
+      "price": 393,
+      "changePct": -0.09
     },
     {
       "symbol": "GOOGL",
       "label": "Alphabet",
-      "price": 334.93,
-      "changePct": 0.37
+      "price": 333.91,
+      "changePct": 0.06
     },
     {
       "symbol": "AMZN",
       "label": "Amazon",
-      "price": 231.9,
-      "changePct": 0.45
+      "price": 231.2948,
+      "changePct": 0.19
     },
     {
       "symbol": "NVDA",
       "label": "Nvidia",
-      "price": 196.9001,
-      "changePct": -0.06
+      "price": 198.01,
+      "changePct": 0.51
     },
     {
       "symbol": "META",
       "label": "Meta",
-      "price": 597.74,
-      "changePct": 0.73
+      "price": 595.5123,
+      "changePct": 0.35
     },
     {
       "symbol": "TSLA",
       "label": "Tesla",
-      "price": 305.77,
-      "changePct": -0.54
+      "price": 307.07,
+      "changePct": -0.12
     },
     {
       "symbol": "SPCX",
       "label": "SpaceX",
-      "price": 115.9458,
-      "changePct": -0.4
+      "price": 116.2925,
+      "changePct": -0.1
     },
     {
       "symbol": "ORCL",
       "label": "Oracle",
-      "price": 120.39,
-      "changePct": 0.36
+      "price": 119.82,
+      "changePct": -0.12
     },
     {
       "symbol": "PLTR",
       "label": "Palantir",
-      "price": 124.0112,
-      "changePct": 0.39
+      "price": 123.15,
+      "changePct": -0.31
     },
     {
       "symbol": "IBM",
       "label": "IBM",
-      "price": 229.01,
-      "changePct": 0.64
+      "price": 225.7088,
+      "changePct": -0.81
     },
     {
       "symbol": "MSTR",
       "label": "Strategy",
-      "price": 97.44,
-      "changePct": 1.33
+      "price": 98.24,
+      "changePct": 2.16
     },
     {
       "symbol": "COIN",
       "label": "Coinbase",
-      "price": 168,
-      "changePct": 0.06
+      "price": 168.5,
+      "changePct": 0.36
     },
     {
       "symbol": "CRCL",
       "label": "Circle",
-      "price": 64.38,
-      "changePct": 0.09
+      "price": 64.839,
+      "changePct": 0.81
     },
     {
       "symbol": "HOOD",
       "label": "Robinhood",
-      "price": 93.43,
-      "changePct": 0.72
+      "price": 94.1,
+      "changePct": 1.44
     }
   ]
 }
