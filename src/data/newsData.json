@@ -1,6 +1,6 @@
 {
   "date": "2026-07-29",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -108,6 +108,21 @@
     ],
     "tecnologia": [
       {
+        "title": "La última llamada de ganancias de Tim Cook llega en un momento trascendental para Apple con existencias récord",
+        "url": "https://www.cnbc.com/2026/07/29/tim-cooks-last-earnings-call-comes-at-momentous-time-for-apple-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La reunión de la Fed, las ganancias de Ford y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/29/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Jim Cramer dice que Seagate es la \"clave de este mercado\" después de la explosión de ganancias",
+        "url": "https://www.cnbc.com/2026/07/29/jim-cramer-says-seagate-is-the-key-to-this-market-after-blowout-earnings.html",
+        "source": "CNBC"
+      },
+      {
         "title": "EBay, exejecutivos pagarán $ 56 millones en caso de acoso y acoso a blogueros",
         "url": "https://www.cnbc.com/2026/07/28/ebay-blogger-harassment-stalking-steiner.html",
         "source": "CNBC"
@@ -160,6 +175,21 @@
     ],
     "politica": [
       {
+        "title": "El plan de Warsh para una Fed más opaca será puesto a prueba por los mercados al límite",
+        "url": "https://www.cnbc.com/2026/07/29/fed-kevin-warsh-markets.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El Servicio Secreto vigiló 'ilegalmente' a Comey en el caso de amenaza ’8647’ de Trump: presentación",
+        "url": "https://www.cnbc.com/2026/07/29/james-comey-trump-8647-seashells-threat-secret-service.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Warren y Schiff instan a la SEC a investigar el servicio de medios de Trump para dar un acceso más rápido a las publicaciones de Trump",
+        "url": "https://www.cnbc.com/2026/07/29/trump-media-djt-warren-schiff-wall-street-api.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El Senado establece votos para sancionar a Rusia por la guerra de Ucrania",
         "url": "https://www.cnbc.com/2026/07/28/russia-sanctions-congress-key-vote-lindsey-graham-ukraine.html",
         "source": "CNBC"
@@ -211,6 +241,16 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Emirates permite a los residentes de los EAU pagar los vuelos a través de Crypto.com",
+        "url": "https://cointelegraph.com/news/emirates-starts-letting-uae-residents-pay-for-flights-through-cryptocom",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
       {
         "title": "El operador de teleprompter de Trump acusado por las apuestas de Kalshi abandona el gobierno: AP",
         "url": "https://cointelegraph.com/news/trump-teleprompter-kalshi-bets-government-ap",
