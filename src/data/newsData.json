@@ -1,8 +1,23 @@
 {
   "date": "2026-07-29",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Los vendedores en corto no pierden el tiempo saltando sobre las acciones estadounidenses de SK Hynix",
+        "url": "https://www.cnbc.com/2026/07/29/short-sellers-are-wasting-no-time-pouncing-on-sk-hynix-us-shares-after-their-debut-this-month.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La Fed dividida mantiene las tasas de interés estables, pero tres miembros votaron a favor de subirlas",
+        "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Esto es lo que cambió en la segunda declaración de la Fed bajo Warsh",
+        "url": "https://www.cnbc.com/2026/07/29/fed-decision-redline-heres-what-changed-in-the-second-statement-under-warsh.html",
+        "source": "CNBC"
+      },
       {
         "title": "CME ofrece operaciones de futuros de 23 horas a SpaceX, Micron y otros",
         "url": "https://www.cnbc.com/2026/07/27/cme-launches-single-stock-futures-enabling-investors-to-trade-spacex-micron-23-hours-a-day.html",
@@ -108,6 +123,21 @@
     ],
     "tecnologia": [
       {
+        "title": "Meta informa los resultados del segundo trimestre después del cierre",
+        "url": "https://www.cnbc.com/2026/07/29/meta-q2-earnings-report-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Microsoft informará las ganancias después de la campana y todos los ojos están puestos en sus gastos",
+        "url": "https://www.cnbc.com/2026/07/29/microsoft-msft-q4-earnings-report-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Sam Altman se reunirá con los Wiles de la Casa Blanca esta semana antes de la fecha límite del marco de IA",
+        "url": "https://www.cnbc.com/2026/07/29/altman-white-house-wiles-ai-framework.html",
+        "source": "CNBC"
+      },
+      {
         "title": "La última llamada de ganancias de Tim Cook llega en un momento trascendental para Apple con existencias récord",
         "url": "https://www.cnbc.com/2026/07/29/tim-cooks-last-earnings-call-comes-at-momentous-time-for-apple-.html",
         "source": "CNBC"
@@ -175,6 +205,11 @@
     ],
     "politica": [
       {
+        "title": "La nominación del fiscal general Todd Blanche está al límite mientras Cornyn cuestiona el acuerdo Trump-IRS",
+        "url": "https://www.cnbc.com/2026/07/29/todd-blanche-attorney-general-trump-irs-audit-cornyn.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El plan de Warsh para una Fed más opaca será puesto a prueba por los mercados al límite",
         "url": "https://www.cnbc.com/2026/07/29/fed-kevin-warsh-markets.html",
         "source": "CNBC"
@@ -241,6 +276,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "MoonPay vault permite a los usuarios de ChatGPT y Claude autorizar transacciones criptográficas",
+        "url": "https://cointelegraph.com/news/moonpay-launches-ai-payment-vault-for-chatgpt-and-claude-with-crypto-transaction-support",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Binance lanza opciones reguladas de oro y plata a través del intercambio ADGM",
+        "url": "https://cointelegraph.com/news/binance-launches-regulated-gold-silver-options-through-adgm-exchange",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Fiscales de EE. UU. proponen cambios en la CLARIDAD a medida que se reduce la ventana de votación: Informe",
+        "url": "https://cointelegraph.com/news/clarity-act-changes-law-enforcement-voting-narrows",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Emirates permite a los residentes de los EAU pagar los vuelos a través de Crypto.com",
         "url": "https://cointelegraph.com/news/emirates-starts-letting-uae-residents-pay-for-flights-through-cryptocom",
