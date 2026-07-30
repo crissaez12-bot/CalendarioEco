@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import General from './pages/General'
 import MonteCarlo from './pages/MonteCarlo'
 import MonteCarloHistorial from './pages/MonteCarloHistorial'
+import MarketCap from './pages/MarketCap'
 import Operaciones from './pages/Operaciones'
 import News from './pages/News'
 import Calendario from './pages/Calendario'
@@ -16,6 +17,7 @@ function App() {
         <Route path="/general" element={<General />} />
         <Route path="/monte-carlo" element={<MonteCarlo />} />
         <Route path="/monte-carlo-historial" element={<MonteCarloHistorial />} />
+        <Route path="/market-cap" element={<MarketCap />} />
         <Route path="/operaciones" element={<Operaciones />} />
         <Route path="/news" element={<News />} />
         <Route path="/calendario" element={<Calendario />} />
