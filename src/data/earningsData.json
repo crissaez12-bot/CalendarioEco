@@ -1,77 +1,7 @@
 {
   "source": "NASDAQ",
-  "capturedAt": "2026-07-29",
+  "capturedAt": "2026-07-30",
   "days": [
-    {
-      "date": "2026-07-29",
-      "label": "Miércoles, 29 de julio de 2026",
-      "events": [
-        {
-          "ticker": "MSFT",
-          "name": "Microsoft Corporation",
-          "marketCap": 2921974790818,
-          "time": "AMC",
-          "epsEst": "4.21",
-          "epsLastYear": "3.65"
-        },
-        {
-          "ticker": "META",
-          "name": "Meta Platforms, Inc.",
-          "marketCap": 1506325772827,
-          "time": "AMC",
-          "epsEst": "7.10",
-          "epsLastYear": "7.14"
-        },
-        {
-          "ticker": "HSBC",
-          "name": "HSBC Holdings plc",
-          "marketCap": 354240203053,
-          "time": "N/D",
-          "epsEst": "2.24",
-          "epsLastYear": "1.95"
-        },
-        {
-          "ticker": "PG",
-          "name": "Procter & Gamble Company (The)",
-          "marketCap": 346681815845,
-          "time": "BMO",
-          "epsEst": "1.41",
-          "epsLastYear": "1.48"
-        },
-        {
-          "ticker": "LRCX",
-          "name": "Lam Research Corporation",
-          "marketCap": 337166447310,
-          "time": "AMC",
-          "epsEst": "1.69",
-          "epsLastYear": "1.33"
-        },
-        {
-          "ticker": "ARM",
-          "name": "Arm Holdings plc",
-          "marketCap": 260416882374,
-          "time": "AMC",
-          "epsEst": "0.18",
-          "epsLastYear": "0.16"
-        },
-        {
-          "ticker": "APH",
-          "name": "Amphenol Corporation",
-          "marketCap": 176969224913,
-          "time": "BMO",
-          "epsEst": "1.19",
-          "epsLastYear": "0.81"
-        },
-        {
-          "ticker": "QCOM",
-          "name": "QUALCOMM Incorporated",
-          "marketCap": 171675520000,
-          "time": "AMC",
-          "epsEst": "1.54",
-          "epsLastYear": "2.29"
-        }
-      ]
-    },
     {
       "date": "2026-07-30",
       "label": "Jueves, 30 de julio de 2026",
@@ -79,7 +9,7 @@
         {
           "ticker": "AAPL",
           "name": "Apple Inc.",
-          "marketCap": 4994876028480,
+          "marketCap": 4967116925640,
           "time": "AMC",
           "epsEst": "1.88",
           "epsLastYear": "1.57"
@@ -87,15 +17,15 @@
         {
           "ticker": "AMZN",
           "name": "Amazon.com, Inc.",
-          "marketCap": 2483386284395,
+          "marketCap": 2438098853669,
           "time": "AMC",
-          "epsEst": "1.82",
+          "epsEst": "1.83",
           "epsLastYear": "1.68"
         },
         {
           "ticker": "MA",
           "name": "Mastercard Incorporated",
-          "marketCap": 497236814401,
+          "marketCap": 497740457199,
           "time": "BMO",
           "epsEst": "4.77",
           "epsLastYear": "4.15"
@@ -103,7 +33,7 @@
         {
           "ticker": "SHEL",
           "name": "Shell PLC",
-          "marketCap": 247797688341,
+          "marketCap": 244514940903,
           "time": "BMO",
           "epsEst": "3.23",
           "epsLastYear": "1.42"
@@ -111,7 +41,7 @@
         {
           "ticker": "BUD",
           "name": "Anheuser-Busch Inbev SA",
-          "marketCap": 164081470093,
+          "marketCap": 167374932293,
           "time": "BMO",
           "epsEst": "1.09",
           "epsLastYear": "0.98"
@@ -119,7 +49,7 @@
         {
           "ticker": "SYK",
           "name": "Stryker Corporation",
-          "marketCap": 132872840109,
+          "marketCap": 135038828415,
           "time": "AMC",
           "epsEst": "3.46",
           "epsLastYear": "3.13"
@@ -127,18 +57,18 @@
         {
           "ticker": "BMY",
           "name": "Bristol-Myers Squibb Company",
-          "marketCap": 129875731309,
+          "marketCap": 128854695686,
           "time": "BMO",
           "epsEst": "1.59",
           "epsLastYear": "1.46"
         },
         {
-          "ticker": "MFG",
-          "name": "Mizuho Financial Group, Inc.",
-          "marketCap": 125612861567,
-          "time": "N/D",
-          "epsEst": "0.17",
-          "epsLastYear": "0.15"
+          "ticker": "MO",
+          "name": "Altria Group",
+          "marketCap": 125108251326,
+          "time": "BMO",
+          "epsEst": "1.50",
+          "epsLastYear": "1.44"
         }
       ]
     },
@@ -149,15 +79,15 @@
         {
           "ticker": "XOM",
           "name": "ExxonMobil Holdings Corporation",
-          "marketCap": 634342713672,
+          "marketCap": 649720467644,
           "time": "BMO",
-          "epsEst": "3.84",
+          "epsEst": "3.80",
           "epsLastYear": "1.64"
         },
         {
           "ticker": "ABBV",
           "name": "AbbVie Inc.",
-          "marketCap": 465019870487,
+          "marketCap": 465196549769,
           "time": "BMO",
           "epsEst": "3.64",
           "epsLastYear": "2.97"
@@ -165,7 +95,7 @@
         {
           "ticker": "CVX",
           "name": "Chevron Corporation",
-          "marketCap": 373583902569,
+          "marketCap": 382107940862,
           "time": "BMO",
           "epsEst": "5.80",
           "epsLastYear": "1.77"
@@ -173,7 +103,7 @@
         {
           "ticker": "LIN",
           "name": "Linde plc",
-          "marketCap": 236471632346,
+          "marketCap": 236467006351,
           "time": "BMO",
           "epsEst": "4.49",
           "epsLastYear": "4.09"
@@ -181,23 +111,15 @@
         {
           "ticker": "SMFG",
           "name": "Sumitomo Mitsui Financial Group Inc",
-          "marketCap": 163242795680,
+          "marketCap": 159223922632,
           "time": "BMO",
           "epsEst": "0.44",
           "epsLastYear": "0.40"
         },
         {
-          "ticker": "UBS",
-          "name": "UBS AG",
-          "marketCap": 161471736526,
-          "time": "BMO",
-          "epsEst": "0.90",
-          "epsLastYear": "0.72"
-        },
-        {
           "ticker": "ETN",
           "name": "Eaton Corporation, PLC",
-          "marketCap": 149984758000,
+          "marketCap": 140518004000,
           "time": "BMO",
           "epsEst": "3.08",
           "epsLastYear": "2.95"
@@ -205,10 +127,18 @@
         {
           "ticker": "ENB",
           "name": "Enbridge Inc",
-          "marketCap": 120627358324,
+          "marketCap": 120055050508,
           "time": "BMO",
           "epsEst": "0.43",
           "epsLastYear": "0.47"
+        },
+        {
+          "ticker": "ITUB",
+          "name": "Itau Unibanco Banco Holding SA",
+          "marketCap": 89866174920,
+          "time": "BMO",
+          "epsEst": "0.22",
+          "epsLastYear": "0.17"
         }
       ]
     },
@@ -219,7 +149,7 @@
         {
           "ticker": "PLTR",
           "name": "Palantir Technologies Inc.",
-          "marketCap": 296139948519,
+          "marketCap": 294869373171,
           "time": "AMC",
           "epsEst": "0.28",
           "epsLastYear": "0.13"
@@ -227,7 +157,7 @@
         {
           "ticker": "MUFG",
           "name": "Mitsubishi UFJ Financial Group Inc",
-          "marketCap": 266192755936,
+          "marketCap": 260377577585,
           "time": "N/D",
           "epsEst": "0.34",
           "epsLastYear": "0.32"
@@ -235,7 +165,7 @@
         {
           "ticker": "VRTX",
           "name": "Vertex Pharmaceuticals Incorporated",
-          "marketCap": 124463638443,
+          "marketCap": 122671772199,
           "time": "AMC",
           "epsEst": "4.30",
           "epsLastYear": "4"
@@ -243,7 +173,7 @@
         {
           "ticker": "MAR",
           "name": "Marriott International",
-          "marketCap": 101129860693,
+          "marketCap": 100497007998,
           "time": "BMO",
           "epsEst": "3.06",
           "epsLastYear": "2.65"
@@ -251,7 +181,7 @@
         {
           "ticker": "MELI",
           "name": "MercadoLibre, Inc.",
-          "marketCap": 94424515419,
+          "marketCap": 94464566192,
           "time": "N/D",
           "epsEst": "8.69",
           "epsLastYear": "10.31"
@@ -259,7 +189,7 @@
         {
           "ticker": "WMB",
           "name": "Williams Companies, Inc. (The)",
-          "marketCap": 85805558272,
+          "marketCap": 85768868324,
           "time": "AMC",
           "epsEst": "0.52",
           "epsLastYear": "0.46"
@@ -267,15 +197,15 @@
         {
           "ticker": "OKE",
           "name": "ONEOK, Inc.",
-          "marketCap": 55957092850,
+          "marketCap": 56713269780,
           "time": "AMC",
-          "epsEst": "1.41",
+          "epsEst": "1.39",
           "epsLastYear": "1.34"
         },
         {
           "ticker": "FANG",
           "name": "Diamondback Energy, Inc.",
-          "marketCap": 53535326986,
+          "marketCap": 56017916832,
           "time": "AMC",
           "epsEst": "6.08",
           "epsLastYear": "2.67"
@@ -289,7 +219,7 @@
         {
           "ticker": "SPCX",
           "name": "Space Exploration Technologies Corp.",
-          "marketCap": 1523906310066,
+          "marketCap": 1473375613761,
           "time": "AMC",
           "epsEst": "(0.26)",
           "epsLastYear": "N/A"
@@ -297,7 +227,7 @@
         {
           "ticker": "AMD",
           "name": "Advanced Micro Devices, Inc.",
-          "marketCap": 741303662502,
+          "marketCap": 700440810489,
           "time": "AMC",
           "epsEst": "1.35",
           "epsLastYear": "0.27"
@@ -305,7 +235,7 @@
         {
           "ticker": "CAT",
           "name": "Caterpillar, Inc.",
-          "marketCap": 387326643312,
+          "marketCap": 360545206620,
           "time": "BMO",
           "epsEst": "6.25",
           "epsLastYear": "4.72"
@@ -313,31 +243,31 @@
         {
           "ticker": "MRK",
           "name": "Merck & Company, Inc.",
-          "marketCap": 325572254385,
+          "marketCap": 321966310739,
           "time": "BMO",
           "epsEst": "(0.26)",
           "epsLastYear": "2.13"
         },
         {
-          "ticker": "ANET",
-          "name": "Arista Networks, Inc.",
-          "marketCap": 213699272058,
-          "time": "AMC",
-          "epsEst": "0.80",
-          "epsLastYear": "0.67"
-        },
-        {
           "ticker": "AMGN",
           "name": "Amgen Inc.",
-          "marketCap": 212159322509,
+          "marketCap": 209212515333,
           "time": "AMC",
           "epsEst": "5.60",
           "epsLastYear": "6.02"
         },
         {
+          "ticker": "ANET",
+          "name": "Arista Networks, Inc.",
+          "marketCap": 198916233616,
+          "time": "AMC",
+          "epsEst": "0.80",
+          "epsLastYear": "0.67"
+        },
+        {
           "ticker": "MCD",
           "name": "McDonald's Corporation",
-          "marketCap": 193982309624,
+          "marketCap": 192916550836,
           "time": "BMO",
           "epsEst": "3.32",
           "epsLastYear": "3.19"
@@ -345,10 +275,80 @@
         {
           "ticker": "GILD",
           "name": "Gilead Sciences, Inc.",
-          "marketCap": 166767665476,
+          "marketCap": 164793569376,
           "time": "AMC",
           "epsEst": "(7.07)",
           "epsLastYear": "2.01"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "label": "Miércoles, 5 de agosto de 2026",
+      "events": [
+        {
+          "ticker": "LLY",
+          "name": "Eli Lilly and Company",
+          "marketCap": 1139525936088,
+          "time": "BMO",
+          "epsEst": "6.71",
+          "epsLastYear": "6.31"
+        },
+        {
+          "ticker": "NVO",
+          "name": "Novo Nordisk A/S",
+          "marketCap": 228392656222,
+          "time": "N/D",
+          "epsEst": "0.81",
+          "epsLastYear": "0.97"
+        },
+        {
+          "ticker": "DIS",
+          "name": "Walt Disney Company (The)",
+          "marketCap": 171011645036,
+          "time": "BMO",
+          "epsEst": "1.89",
+          "epsLastYear": "1.61"
+        },
+        {
+          "ticker": "SHOP",
+          "name": "Shopify Inc.",
+          "marketCap": 166931487716,
+          "time": "BMO",
+          "epsEst": "0.28",
+          "epsLastYear": "0.25"
+        },
+        {
+          "ticker": "WDC",
+          "name": "Western Digital Corporation",
+          "marketCap": 159256931807,
+          "time": "AMC",
+          "epsEst": "3.24",
+          "epsLastYear": "1.51"
+        },
+        {
+          "ticker": "SNDK",
+          "name": "Sandisk Corporation",
+          "marketCap": 150442904255,
+          "time": "AMC",
+          "epsEst": "33.28",
+          "epsLastYear": "0.02"
+        },
+        {
+          "ticker": "UBER",
+          "name": "Uber Technologies, Inc.",
+          "marketCap": 144934649726,
+          "time": "BMO",
+          "epsEst": "0.83",
+          "epsLastYear": "0.63"
+        },
+        {
+          "ticker": "CVS",
+          "name": "CVS Health Corporation",
+          "marketCap": 135146220357,
+          "time": "BMO",
+          "epsEst": "1.87",
+          "epsLastYear": "1.81"
         }
       ]
     }
