@@ -1,6 +1,6 @@
 {
   "date": "2026-07-30",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -56,6 +56,11 @@
     ],
     "economia": [
       {
+        "title": "La economía estadounidense se desaceleró a una tasa de crecimiento del 1,5% en el segundo trimestre; la inflación subyacente de junio se situó en el 3,3%",
+        "url": "https://www.cnbc.com/2026/07/30/us-economy-slowed-to-1point5percent-growth-rate-in-q2-june-core-inflation-at-3point3percent.html",
+        "source": "CNBC"
+      },
+      {
         "title": "China registra el crecimiento del PIB más lento desde 2022, avivando las llamadas de estímulo",
         "url": "https://www.cnbc.com/2026/07/15/china-gdp-retail-sales-investment-june-.html",
         "source": "CNBC"
@@ -107,6 +112,31 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "El problema de la inflación de Warsh, la débil orientación de Meta y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/07/30/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los nuevos detalles en el hack OpenAI Hugging Face muestran hasta dónde llegarán los agentes",
+        "url": "https://www.cnbc.com/2026/07/30/open-ai-hugging-face-hack-latest.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Zoox de Amazon comenzará a cobrar por los viajes en Las Vegas el próximo mes",
+        "url": "https://www.cnbc.com/2026/07/30/amazon-zoox-robotaxi-rides-las-vegas.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "\"Este es un evento de compensación\": Cramer dice que la venta forzada puede indicar un fondo para el comercio de IA",
+        "url": "https://www.cnbc.com/2026/07/30/this-is-a-clearing-event-cramer-says-forced-selling-may-signal-a-bottom-for-ai-trade.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Aumento de AMD y Micron, Lam Research sube un 20% a medida que las existencias de chips aumentan",
+        "url": "https://www.cnbc.com/2026/07/30/chip-stock-rally-lam-research-micron-amd.html",
+        "source": "CNBC"
+      },
       {
         "title": "Jim Cramer dice que el regreso del software podría ser el modelo para el próximo rally de las acciones de IA",
         "url": "https://www.cnbc.com/2026/07/29/jim-cramer-softwares-comeback-blueprint-ai-stocks-rally.html",
@@ -160,6 +190,11 @@
     ],
     "politica": [
       {
+        "title": "Trump flota retirando la nominación de Blanche como fiscal general hasta después de que los partidarios del Partido Republicano dejen el cargo",
+        "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
+        "source": "CNBC"
+      },
+      {
         "title": "JPMorgan, Schwab y UBS vinculados a la cartera de inversiones de $ 858 millones de Trump",
         "url": "https://www.cnbc.com/2026/07/29/trump-banking-investments-jpmorgan-schwab-ubs-financial-disclosure.html",
         "source": "CNBC"
@@ -211,6 +246,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "El oro tokenizado pasa la prueba de estrés DeFi, pero menos del 2% se utiliza como garantía",
+        "url": "https://cointelegraph.com/news/tokenized-gold-defi-stress-test-collateral-adoption-redstone",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Hyperscale Data vende 100 BTC para financiar el centro de datos de IA de Michigan",
+        "url": "https://cointelegraph.com/news/hyperscale-data-taps-bitcoin-treasury-btc-backed-credit-to-fund-ai-data-center",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Informe de Corea del Sur propone reglas de stablecoin antes que la ley de criptomonedas",
         "url": "https://cointelegraph.com/news/south-korea-report-stablecoin-rules-crypto-law",
