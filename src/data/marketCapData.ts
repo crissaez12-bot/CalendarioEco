@@ -2,8 +2,14 @@
 // real (CoinGecko, 2026-07-30). BTC excluido (outlier de cap que distorsiona
 // cualquier grupo), XAU excluido (no es cripto, sin market cap comparable).
 // Datos generados en signal-desk (ver skill Monte Carlo) corriendo el motor v2
-// (entrada tuneada por activo, SL banda+ATR, proteccion a mitad de banda, TP
-// unico sin split) por separado en cada grupo sobre datos reales 1h (~18.5 meses).
+// (entrada tuneada por activo, SL banda+ATR, proteccion a mitad de banda) por
+// separado en cada grupo sobre datos reales 1h (~18.5 meses).
+//
+// El TP dejo de ser un numero unico por grupo (2026-07-30): ahora es optimo
+// por ACTIVO y por DIRECCION (long/short) -- ver LONG_SHORT_TP mas abajo, que
+// es la fuente real usada en el mensaje de Telegram (mc_feed.ASSET_TP). Los
+// n/wr/avg/total/dd/streak de GROUPS ya reflejan ese TP por direccion (no el
+// TP unico viejo) -- son los numeros vigentes.
 
 export type CapKey = 'large' | 'mid' | 'small'
 
@@ -26,7 +32,6 @@ export interface GroupStats {
   slMean: number
   slP25: number
   slP75: number
-  tp: number
   assets: GroupAsset[]
 }
 
@@ -36,16 +41,15 @@ export const GROUPS: GroupStats[] = [
     label: 'Large-cap',
     range: '≥ $10B',
     n: 681,
-    wr: 84.6,
-    avg: 0.553,
-    total: 376.7,
-    dd: 10.6,
-    streak: 8,
+    wr: 89.0,
+    avg: 0.571,
+    total: 388.9,
+    dd: 10.8,
+    streak: 7,
     slMedian: 0.98,
     slMean: 1.26,
     slP25: 0.58,
     slP75: 1.56,
-    tp: 0.9,
     assets: [
       { ticker: 'ETH', mcap: '$232B' },
       { ticker: 'BNB', mcap: '$79B' },
@@ -61,16 +65,15 @@ export const GROUPS: GroupStats[] = [
     label: 'Mid-cap',
     range: '$1B – $10B',
     n: 1331,
-    wr: 88.1,
-    avg: 0.7,
-    total: 931.3,
-    dd: 8.8,
+    wr: 90.5,
+    avg: 0.733,
+    total: 975.7,
+    dd: 17.4,
     streak: 5,
     slMedian: 1.24,
     slMean: 1.53,
     slP25: 0.76,
     slP75: 1.98,
-    tp: 0.8,
     assets: [
       { ticker: 'ADA', mcap: '$6.4B' },
       { ticker: 'LINK', mcap: '$6.3B' },
@@ -91,16 +94,15 @@ export const GROUPS: GroupStats[] = [
     label: 'Small-cap',
     range: '< $1B',
     n: 2136,
-    wr: 85.7,
-    avg: 0.774,
-    total: 1653.0,
-    dd: 18.9,
+    wr: 91.3,
+    avg: 0.815,
+    total: 1741.8,
+    dd: 23.4,
     streak: 8,
     slMedian: 1.29,
     slMean: 1.64,
     slP25: 0.78,
     slP75: 2.14,
-    tp: 1.0,
     assets: [
       { ticker: 'ENA', mcap: '$782M' },
       { ticker: 'POL', mcap: '$764M' },
@@ -124,77 +126,74 @@ export const GROUPS: GroupStats[] = [
   },
 ]
 
-// Backtest de 3 tipos de SL fijo (P25 / punto medio / P75 del rango de cada
-// grupo) cruzado con el TP optimo de ese grupo, corrido activo por activo.
-export interface SlTypeResult {
+// TP optimo POR ACTIVO y POR DIRECCION (long/short) -- reemplaza al TP unico
+// por grupo (2026-07-30). Barrido real 0.6%-4.0%, SL fijo del grupo (sin
+// cambios), maximizando la rentabilidad TOTAL de cada lado por separado -- no
+// el win rate. Es la misma fuente que usa el mensaje de Telegram
+// (mc_feed.ASSET_TP). totalOld = el mismo activo con el TP unico anterior,
+// para poder mostrar la mejora real que trajo separar por direccion.
+export interface DirectionResult {
+  tp: number
   n: number
   wr: number
   total: number
 }
 
-export interface AssetSlRow {
+export interface AssetDirectionRow {
   ticker: string
-  sl1: SlTypeResult
-  sl2: SlTypeResult
-  sl3: SlTypeResult
+  sl: number
+  totalOld: number
+  long: DirectionResult
+  short: DirectionResult
+  totalNew: number
+  delta: number
+  deltaPct: number
 }
 
-export const SL_TYPE_LABELS: Record<CapKey, [string, string, string]> = {
-  large: ['SL1 · 0.6%', 'SL2 · 1.0%', 'SL3 · 1.5%'],
-  mid: ['SL1 · 0.8%', 'SL2 · 1.4%', 'SL3 · 2.0%'],
-  small: ['SL1 · 0.8%', 'SL2 · 1.5%', 'SL3 · 2.2%'],
-}
-
-export const SL_TYPE_ROWS: Record<CapKey, AssetSlRow[]> = {
+export const LONG_SHORT_TP: Record<CapKey, AssetDirectionRow[]> = {
   large: [
-    { ticker: 'ETH', sl1: { n: 204, wr: 73.5, total: 60.8 }, sl2: { n: 204, wr: 80.9, total: 65.6 }, sl3: { n: 204, wr: 85.3, total: 65.0 } },
-    { ticker: 'BNB', sl1: { n: 42, wr: 78.6, total: 20.0 }, sl2: { n: 42, wr: 92.9, total: 26.8 }, sl3: { n: 42, wr: 95.2, total: 30.2 } },
-    { ticker: 'XRP', sl1: { n: 43, wr: 72.1, total: 18.5 }, sl2: { n: 43, wr: 90.7, total: 28.9 }, sl3: { n: 43, wr: 93.0, total: 28.7 } },
-    { ticker: 'SOL', sl1: { n: 119, wr: 66.4, total: 42.4 }, sl2: { n: 119, wr: 85.7, total: 69.6 }, sl3: { n: 119, wr: 87.4, total: 65.2 } },
-    { ticker: 'TRX', sl1: { n: 93, wr: 71.0, total: 23.1 }, sl2: { n: 93, wr: 78.5, total: 24.0 }, sl3: { n: 93, wr: 82.8, total: 22.0 } },
-    { ticker: 'HYPE', sl1: { n: 78, wr: 65.4, total: 36.9 }, sl2: { n: 78, wr: 80.8, total: 47.5 }, sl3: { n: 78, wr: 88.5, total: 57.9 } },
-    { ticker: 'DOGE', sl1: { n: 102, wr: 66.7, total: 48.8 }, sl2: { n: 102, wr: 85.3, total: 75.4 }, sl3: { n: 102, wr: 92.2, total: 87.3 } },
+    { ticker: 'HYPE', sl: 1.5, totalOld: 57.9, long: { tp: 1.5, n: 60, wr: 80.0, total: 43.6 }, short: { tp: 1.5, n: 18, wr: 100.0, total: 28.0 }, totalNew: 71.6, delta: 13.7, deltaPct: 23.7 },
+    { ticker: 'TRX', sl: 1.5, totalOld: 22.0, long: { tp: 0.8, n: 82, wr: 85.4, total: 19.9 }, short: { tp: 0.6, n: 11, wr: 90.9, total: 5.4 }, totalNew: 25.3, delta: 3.3, deltaPct: 15.0 },
+    { ticker: 'ETH', sl: 1.5, totalOld: 65.0, long: { tp: 0.8, n: 161, wr: 88.2, total: 58.7 }, short: { tp: 0.8, n: 43, wr: 86.0, total: 13.8 }, totalNew: 72.5, delta: 7.5, deltaPct: 11.5 },
+    { ticker: 'SOL', sl: 1.5, totalOld: 65.2, long: { tp: 0.6, n: 94, wr: 92.6, total: 52.3 }, short: { tp: 1.25, n: 25, wr: 84.0, total: 17.7 }, totalNew: 70.0, delta: 4.8, deltaPct: 7.4 },
+    { ticker: 'BNB', sl: 1.5, totalOld: 30.2, long: { tp: 1.5, n: 25, wr: 96.0, total: 20.4 }, short: { tp: 0.9, n: 17, wr: 94.1, total: 11.6 }, totalNew: 32.0, delta: 1.8, deltaPct: 6.0 },
+    { ticker: 'DOGE', sl: 1.5, totalOld: 87.3, long: { tp: 0.9, n: 81, wr: 92.6, total: 68.8 }, short: { tp: 1.25, n: 21, wr: 85.7, total: 19.8 }, totalNew: 88.6, delta: 1.3, deltaPct: 1.5 },
+    { ticker: 'XRP', sl: 1.5, totalOld: 28.8, long: { tp: 0.9, n: 36, wr: 91.7, total: 20.5 }, short: { tp: 0.9, n: 7, wr: 100.0, total: 8.3 }, totalNew: 28.8, delta: 0.0, deltaPct: 0.0 },
   ],
   mid: [
-    { ticker: 'ADA', sl1: { n: 78, wr: 75.6, total: 41.8 }, sl2: { n: 78, wr: 80.8, total: 38.5 }, sl3: { n: 78, wr: 83.3, total: 37.0 } },
-    { ticker: 'LINK', sl1: { n: 106, wr: 74.5, total: 53.2 }, sl2: { n: 106, wr: 89.6, total: 78.5 }, sl3: { n: 106, wr: 90.6, total: 76.1 } },
-    { ticker: 'XLM', sl1: { n: 88, wr: 79.5, total: 50.2 }, sl2: { n: 88, wr: 89.8, total: 62.9 }, sl3: { n: 88, wr: 93.2, total: 66.1 } },
-    { ticker: 'TON', sl1: { n: 66, wr: 63.6, total: 18.6 }, sl2: { n: 66, wr: 78.8, total: 28.5 }, sl3: { n: 66, wr: 84.8, total: 33.6 } },
-    { ticker: 'AVAX', sl1: { n: 90, wr: 67.8, total: 40.2 }, sl2: { n: 90, wr: 83.3, total: 57.8 }, sl3: { n: 90, wr: 87.8, total: 59.6 } },
-    { ticker: 'UNI', sl1: { n: 120, wr: 74.2, total: 70.2 }, sl2: { n: 120, wr: 90.0, total: 96.2 }, sl3: { n: 120, wr: 95.8, total: 107.4 } },
-    { ticker: 'ONDO', sl1: { n: 136, wr: 69.9, total: 57.9 }, sl2: { n: 136, wr: 89.0, total: 96.1 }, sl3: { n: 136, wr: 91.2, total: 97.1 } },
-    { ticker: 'TAO', sl1: { n: 80, wr: 71.2, total: 40.2 }, sl2: { n: 80, wr: 90.0, total: 65.3 }, sl3: { n: 80, wr: 92.5, total: 67.5 } },
-    { ticker: 'AAVE', sl1: { n: 143, wr: 69.9, total: 57.2 }, sl2: { n: 143, wr: 92.3, total: 109.5 }, sl3: { n: 143, wr: 95.8, total: 118.9 } },
-    { ticker: 'DOT', sl1: { n: 81, wr: 71.6, total: 40.7 }, sl2: { n: 81, wr: 85.2, total: 54.6 }, sl3: { n: 81, wr: 86.4, total: 50.2 } },
-    { ticker: 'PEPE', sl1: { n: 159, wr: 76.1, total: 78.6 }, sl2: { n: 159, wr: 88.7, total: 104.5 }, sl3: { n: 159, wr: 94.3, total: 120.9 } },
-    { ticker: 'ETC', sl1: { n: 184, wr: 75.5, total: 61.1 }, sl2: { n: 184, wr: 85.3, total: 73.0 }, sl3: { n: 184, wr: 87.0, total: 68.9 } },
+    { ticker: 'ADA', sl: 2.0, totalOld: 37.0, long: { tp: 0.6, n: 55, wr: 96.4, total: 40.5 }, short: { tp: 0.6, n: 23, wr: 82.6, total: 8.2 }, totalNew: 48.7, delta: 11.7, deltaPct: 31.6 },
+    { ticker: 'TON', sl: 2.0, totalOld: 33.7, long: { tp: 2.5, n: 41, wr: 80.5, total: 25.1 }, short: { tp: 2.0, n: 25, wr: 84.0, total: 16.7 }, totalNew: 41.8, delta: 8.1, deltaPct: 24.0 },
+    { ticker: 'ETC', sl: 2.0, totalOld: 68.9, long: { tp: 0.9, n: 145, wr: 86.9, total: 50.2 }, short: { tp: 0.6, n: 39, wr: 97.4, total: 29.2 }, totalNew: 79.4, delta: 10.5, deltaPct: 15.2 },
+    { ticker: 'ONDO', sl: 2.0, totalOld: 97.1, long: { tp: 1.25, n: 91, wr: 86.8, total: 70.5 }, short: { tp: 1.5, n: 45, wr: 88.9, total: 39.5 }, totalNew: 110.0, delta: 12.9, deltaPct: 13.3 },
+    { ticker: 'TAO', sl: 2.0, totalOld: 67.5, long: { tp: 0.9, n: 42, wr: 92.9, total: 36.3 }, short: { tp: 1.1, n: 38, wr: 92.1, total: 38.5 }, totalNew: 74.8, delta: 7.3, deltaPct: 10.8 },
+    { ticker: 'XLM', sl: 2.0, totalOld: 66.1, long: { tp: 0.8, n: 67, wr: 95.5, total: 53.3 }, short: { tp: 1.5, n: 21, wr: 85.7, total: 18.2 }, totalNew: 71.5, delta: 5.4, deltaPct: 8.2 },
+    { ticker: 'AVAX', sl: 2.0, totalOld: 59.6, long: { tp: 1.0, n: 63, wr: 85.7, total: 38.4 }, short: { tp: 0.7, n: 27, wr: 92.6, total: 25.9 }, totalNew: 64.3, delta: 4.7, deltaPct: 7.9 },
+    { ticker: 'AAVE', sl: 2.0, totalOld: 118.9, long: { tp: 1.1, n: 102, wr: 92.2, total: 82.9 }, short: { tp: 1.1, n: 41, wr: 92.7, total: 42.6 }, totalNew: 125.5, delta: 6.6, deltaPct: 5.6 },
+    { ticker: 'LINK', sl: 2.0, totalOld: 76.1, long: { tp: 1.0, n: 76, wr: 86.8, total: 53.5 }, short: { tp: 1.0, n: 30, wr: 90.0, total: 24.4 }, totalNew: 77.9, delta: 1.8, deltaPct: 2.4 },
+    { ticker: 'DOT', sl: 2.0, totalOld: 50.2, long: { tp: 0.8, n: 65, wr: 87.7, total: 38.4 }, short: { tp: 2.0, n: 16, wr: 81.2, total: 13.0 }, totalNew: 51.4, delta: 1.2, deltaPct: 2.4 },
+    { ticker: 'PEPE', sl: 2.0, totalOld: 120.8, long: { tp: 0.8, n: 126, wr: 93.7, total: 82.8 }, short: { tp: 1.0, n: 33, wr: 97.0, total: 40.1 }, totalNew: 122.9, delta: 2.1, deltaPct: 1.7 },
+    { ticker: 'UNI', sl: 2.0, totalOld: 107.4, long: { tp: 0.8, n: 81, wr: 98.8, total: 77.9 }, short: { tp: 0.8, n: 39, wr: 89.7, total: 29.5 }, totalNew: 107.4, delta: 0.0, deltaPct: 0.0 },
   ],
   small: [
-    { ticker: 'ENA', sl1: { n: 96, wr: 68.8, total: 60.1 }, sl2: { n: 96, wr: 85.4, total: 83.7 }, sl3: { n: 96, wr: 88.5, total: 87.3 } },
-    { ticker: 'POL', sl1: { n: 151, wr: 70.9, total: 64.0 }, sl2: { n: 151, wr: 82.8, total: 77.1 }, sl3: { n: 151, wr: 87.4, total: 84.5 } },
-    { ticker: 'KAS', sl1: { n: 131, wr: 77.1, total: 88.0 }, sl2: { n: 131, wr: 88.5, total: 106.6 }, sl3: { n: 131, wr: 90.8, total: 111.8 } },
-    { ticker: 'RENDER', sl1: { n: 161, wr: 72.7, total: 91.0 }, sl2: { n: 161, wr: 87.6, total: 122.0 }, sl3: { n: 161, wr: 90.1, total: 119.0 } },
-    { ticker: 'ALGO', sl1: { n: 111, wr: 72.1, total: 70.1 }, sl2: { n: 111, wr: 85.6, total: 85.0 }, sl3: { n: 111, wr: 91.0, total: 97.7 } },
-    { ticker: 'ATOM', sl1: { n: 81, wr: 75.3, total: 53.9 }, sl2: { n: 81, wr: 87.7, total: 63.5 }, sl3: { n: 81, wr: 88.9, total: 61.1 } },
-    { ticker: 'JUP', sl1: { n: 116, wr: 71.6, total: 69.4 }, sl2: { n: 116, wr: 86.2, total: 92.0 }, sl3: { n: 116, wr: 92.2, total: 102.3 } },
-    { ticker: 'FIL', sl1: { n: 114, wr: 64.0, total: 46.7 }, sl2: { n: 114, wr: 80.7, total: 67.5 }, sl3: { n: 114, wr: 86.0, total: 71.1 } },
-    { ticker: 'ARB', sl1: { n: 102, wr: 71.6, total: 53.5 }, sl2: { n: 102, wr: 88.2, total: 77.9 }, sl3: { n: 102, wr: 89.2, total: 73.2 } },
-    { ticker: 'APT', sl1: { n: 110, wr: 70.9, total: 57.1 }, sl2: { n: 110, wr: 81.8, total: 67.9 }, sl3: { n: 110, wr: 86.4, total: 72.1 } },
-    { ticker: 'CAKE', sl1: { n: 53, wr: 71.7, total: 25.8 }, sl2: { n: 53, wr: 92.5, total: 44.8 }, sl3: { n: 53, wr: 92.5, total: 42.0 } },
-    { ticker: 'AERO', sl1: { n: 147, wr: 63.9, total: 62.4 }, sl2: { n: 147, wr: 81.0, total: 93.0 }, sl3: { n: 147, wr: 87.1, total: 100.7 } },
-    { ticker: 'VET', sl1: { n: 87, wr: 71.3, total: 55.2 }, sl2: { n: 87, wr: 86.2, total: 68.5 }, sl3: { n: 87, wr: 88.5, total: 65.2 } },
-    { ticker: 'DASH', sl1: { n: 103, wr: 70.9, total: 51.4 }, sl2: { n: 103, wr: 85.4, total: 66.8 }, sl3: { n: 103, wr: 94.2, total: 85.4 } },
-    { ticker: 'PENGU', sl1: { n: 183, wr: 62.3, total: 79.9 }, sl2: { n: 183, wr: 84.2, total: 136.5 }, sl3: { n: 183, wr: 88.0, total: 138.0 } },
-    { ticker: 'LDO', sl1: { n: 159, wr: 73.0, total: 92.4 }, sl2: { n: 159, wr: 87.4, total: 122.5 }, sl3: { n: 159, wr: 91.2, total: 127.4 } },
-    { ticker: 'TIA', sl1: { n: 96, wr: 66.7, total: 46.5 }, sl2: { n: 96, wr: 86.5, total: 74.4 }, sl3: { n: 96, wr: 91.7, total: 83.0 } },
-    { ticker: 'SEI', sl1: { n: 135, wr: 72.6, total: 71.0 }, sl2: { n: 135, wr: 83.7, total: 85.4 }, sl3: { n: 135, wr: 89.6, total: 98.2 } },
+    { ticker: 'APT', sl: 2.2, totalOld: 72.1, long: { tp: 0.6, n: 71, wr: 98.6, total: 58.5 }, short: { tp: 1.1, n: 39, wr: 87.2, total: 30.5 }, totalNew: 89.0, delta: 16.9, deltaPct: 23.4 },
+    { ticker: 'JUP', sl: 2.2, totalOld: 102.2, long: { tp: 2.0, n: 80, wr: 87.5, total: 81.4 }, short: { tp: 1.5, n: 36, wr: 88.9, total: 35.1 }, totalNew: 116.5, delta: 14.3, deltaPct: 14.0 },
+    { ticker: 'PENGU', sl: 2.2, totalOld: 138.0, long: { tp: 0.7, n: 117, wr: 95.7, total: 90.0 }, short: { tp: 0.8, n: 66, wr: 95.5, total: 63.4 }, totalNew: 153.4, delta: 15.4, deltaPct: 11.2 },
+    { ticker: 'ALGO', sl: 2.2, totalOld: 97.7, long: { tp: 1.25, n: 78, wr: 91.0, total: 69.3 }, short: { tp: 1.25, n: 33, wr: 90.9, total: 38.7 }, totalNew: 108.0, delta: 10.3, deltaPct: 10.5 },
+    { ticker: 'ATOM', sl: 2.2, totalOld: 61.1, long: { tp: 0.8, n: 53, wr: 90.6, total: 35.0 }, short: { tp: 1.1, n: 28, wr: 100.0, total: 31.4 }, totalNew: 66.4, delta: 5.3, deltaPct: 8.7 },
+    { ticker: 'SEI', sl: 2.2, totalOld: 98.3, long: { tp: 0.7, n: 105, wr: 96.2, total: 80.6 }, short: { tp: 0.7, n: 30, wr: 96.7, total: 25.8 }, totalNew: 106.4, delta: 8.1, deltaPct: 8.2 },
+    { ticker: 'LDO', sl: 2.2, totalOld: 127.4, long: { tp: 1.25, n: 108, wr: 88.9, total: 89.8 }, short: { tp: 1.5, n: 51, wr: 86.3, total: 47.1 }, totalNew: 136.9, delta: 9.5, deltaPct: 7.5 },
+    { ticker: 'AERO', sl: 2.2, totalOld: 100.7, long: { tp: 0.7, n: 87, wr: 90.8, total: 51.1 }, short: { tp: 1.1, n: 60, wr: 90.0, total: 57.0 }, totalNew: 108.1, delta: 7.4, deltaPct: 7.3 },
+    { ticker: 'DASH', sl: 2.2, totalOld: 85.4, long: { tp: 1.1, n: 70, wr: 91.4, total: 47.9 }, short: { tp: 1.5, n: 33, wr: 97.0, total: 43.6 }, totalNew: 91.5, delta: 6.1, deltaPct: 7.1 },
+    { ticker: 'FIL', sl: 2.2, totalOld: 71.0, long: { tp: 0.9, n: 85, wr: 85.9, total: 45.9 }, short: { tp: 1.25, n: 29, wr: 89.7, total: 29.1 }, totalNew: 75.0, delta: 4.0, deltaPct: 5.6 },
+    { ticker: 'TIA', sl: 2.2, totalOld: 83.1, long: { tp: 1.25, n: 65, wr: 87.7, total: 53.0 }, short: { tp: 1.1, n: 31, wr: 93.5, total: 34.4 }, totalNew: 87.4, delta: 4.3, deltaPct: 5.2 },
+    { ticker: 'ENA', sl: 2.2, totalOld: 87.2, long: { tp: 1.25, n: 66, wr: 86.4, total: 58.9 }, short: { tp: 1.75, n: 30, wr: 80.0, total: 32.5 }, totalNew: 91.4, delta: 4.2, deltaPct: 4.8 },
+    { ticker: 'VET', sl: 2.2, totalOld: 65.2, long: { tp: 0.9, n: 62, wr: 88.7, total: 40.0 }, short: { tp: 1.5, n: 25, wr: 88.0, total: 27.9 }, totalNew: 67.9, delta: 2.7, deltaPct: 4.1 },
+    { ticker: 'KAS', sl: 2.2, totalOld: 111.8, long: { tp: 0.8, n: 92, wr: 93.5, total: 77.0 }, short: { tp: 1.0, n: 39, wr: 94.9, total: 39.1 }, totalNew: 116.1, delta: 4.3, deltaPct: 3.8 },
+    { ticker: 'RENDER', sl: 2.2, totalOld: 118.9, long: { tp: 0.9, n: 133, wr: 91.0, total: 93.8 }, short: { tp: 1.25, n: 28, wr: 92.9, total: 29.3 }, totalNew: 123.1, delta: 4.2, deltaPct: 3.5 },
+    { ticker: 'ARB', sl: 2.2, totalOld: 73.2, long: { tp: 0.9, n: 73, wr: 91.8, total: 54.5 }, short: { tp: 0.9, n: 29, wr: 89.7, total: 21.2 }, totalNew: 75.7, delta: 2.5, deltaPct: 3.4 },
+    { ticker: 'POL', sl: 2.2, totalOld: 84.5, long: { tp: 0.6, n: 105, wr: 91.4, total: 47.3 }, short: { tp: 1.25, n: 46, wr: 91.3, total: 39.4 }, totalNew: 86.7, delta: 2.2, deltaPct: 2.6 },
+    { ticker: 'CAKE', sl: 2.2, totalOld: 41.9, long: { tp: 1.0, n: 36, wr: 94.4, total: 29.8 }, short: { tp: 1.0, n: 17, wr: 88.2, total: 12.1 }, totalNew: 41.9, delta: 0.0, deltaPct: 0.0 },
   ],
-}
-
-export function bestSlIndex(row: AssetSlRow): 0 | 1 | 2 {
-  const totals = [row.sl1.total, row.sl2.total, row.sl3.total]
-  const best = Math.max(...totals)
-  return totals.indexOf(best) as 0 | 1 | 2
 }
 
 // BTC evaluado SOLO (no se agrupa con Large-cap): ademas de distorsionar
