@@ -196,3 +196,36 @@ export function bestSlIndex(row: AssetSlRow): 0 | 1 | 2 {
   const best = Math.max(...totals)
   return totals.indexOf(best) as 0 | 1 | 2
 }
+
+// BTC evaluado SOLO (no se agrupa con Large-cap): ademas de distorsionar
+// cualquier promedio por su tamano, genera muchisimas menos senales que el
+// resto (n=38 en ~18.5 meses vs 681 pooled de los otros 7 large-caps juntos) --
+// mezclarlo hubiera diluido el analisis Y su propia muestra es chica para
+// sacar una conclusion firme aparte. Misma metodologia (entrada tuneada, motor
+// v2, proteccion a mitad de banda).
+export interface BtcSoloCombo {
+  sl: number
+  tp: number
+  wr: number
+  avg: number
+  total: number
+  note: string
+}
+
+export const BTC_SOLO = {
+  n: 38,
+  slMedian: 0.89,
+  slMean: 1.07,
+  slP25: 0.6,
+  slP75: 1.17,
+  slMax: 4.85,
+  recommended: { sl: 1.5, tp: 1.5, wr: 81.6, avg: 0.496, total: 18.8 },
+  combos: [
+    { sl: 0.6, tp: 0.9, wr: 63.2, avg: 0.27, total: 10.2, note: 'El más flojo probado' },
+    { sl: 1.0, tp: 0.9, wr: 76.3, avg: 0.369, total: 14.0, note: 'TP del grupo Large-cap' },
+    { sl: 1.5, tp: 0.9, wr: 84.2, avg: 0.423, total: 16.1, note: '' },
+    { sl: 1.0, tp: 1.0, wr: 76.3, avg: 0.415, total: 15.8, note: 'Redondo, fácil de operar' },
+    { sl: 1.5, tp: 1.5, wr: 81.6, avg: 0.496, total: 18.8, note: 'Recomendado' },
+    { sl: 2.0, tp: 2.0, wr: 84.2, avg: 0.563, total: 21.4, note: 'Óptimo técnico — borde de la grilla probada, sospechoso de sobreajuste con n=38' },
+  ] as BtcSoloCombo[],
+}

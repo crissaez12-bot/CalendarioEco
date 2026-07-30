@@ -1,7 +1,7 @@
 import { Fragment } from 'react'
 import PageShell from '../components/PageShell'
 import GroupBarChart from '../components/GroupBarChart'
-import { GROUPS, SL_TYPE_LABELS, SL_TYPE_ROWS, bestSlIndex, type CapKey } from '../data/marketCapData'
+import { GROUPS, SL_TYPE_LABELS, SL_TYPE_ROWS, BTC_SOLO, bestSlIndex, type CapKey } from '../data/marketCapData'
 
 const GROUP_COLOR: Record<CapKey, string> = {
   large: 'rgba(95,230,174,0.45)', // moss/45
@@ -82,6 +82,83 @@ export default function MarketCap() {
             </div>
           </div>
         ))}
+      </div>
+
+      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-beige/50">
+        BTC — por qué queda fuera de los grupos
+      </h2>
+      <div className="liquid-glass mb-8 rounded-xl px-5 py-4">
+        <p className="mb-4 max-w-3xl text-[12px] leading-relaxed text-beige/60">
+          No es solo su capitalización — BTC genera muchas menos señales que el resto: solo{' '}
+          <span className="font-mono font-semibold text-ivory">{BTC_SOLO.n}</span> entradas en ~18.5 meses,
+          contra 681 de los otros 7 large-cap juntos. Mezclarlo hubiera diluido el análisis del grupo, y su
+          propia muestra es chica para sacar una conclusión firme aparte — igual se evaluó por separado con
+          la misma metodología (entrada tuneada, motor v2, protección a mitad de banda).
+        </p>
+
+        <div className="mb-4 grid grid-cols-2 gap-3 md:grid-cols-5">
+          <div className="rounded-lg border border-beige/10 bg-beige/5 px-3 py-2.5">
+            <div className="text-[10px] uppercase tracking-wider text-beige/50">Trades</div>
+            <div className="font-mono text-lg font-semibold tabular-nums text-ivory">{BTC_SOLO.n}</div>
+          </div>
+          <div className="rounded-lg border border-beige/10 bg-beige/5 px-3 py-2.5">
+            <div className="text-[10px] uppercase tracking-wider text-beige/50">SL mediana</div>
+            <div className="font-mono text-lg font-semibold tabular-nums text-ivory">{BTC_SOLO.slMedian}%</div>
+          </div>
+          <div className="rounded-lg border border-beige/10 bg-beige/5 px-3 py-2.5">
+            <div className="text-[10px] uppercase tracking-wider text-beige/50">SL P25–P75</div>
+            <div className="font-mono text-sm font-semibold tabular-nums text-ivory">
+              {BTC_SOLO.slP25}% – {BTC_SOLO.slP75}%
+            </div>
+          </div>
+          <div className="rounded-lg border border-beige/10 bg-beige/5 px-3 py-2.5">
+            <div className="text-[10px] uppercase tracking-wider text-beige/50">SL máximo visto</div>
+            <div className="font-mono text-lg font-semibold tabular-nums text-ivory">{BTC_SOLO.slMax}%</div>
+          </div>
+          <div className="rounded-lg border border-moss/30 bg-moss/10 px-3 py-2.5">
+            <div className="text-[10px] uppercase tracking-wider text-moss/80">Recomendado</div>
+            <div className="font-mono text-lg font-semibold tabular-nums text-moss">
+              SL {BTC_SOLO.recommended.sl}% / TP {BTC_SOLO.recommended.tp}%
+            </div>
+          </div>
+        </div>
+
+        <div className="overflow-x-auto rounded-lg border border-beige/10">
+          <table className="w-full min-w-[560px] border-collapse text-sm">
+            <thead>
+              <tr className="border-b border-beige/10 bg-beige/5 text-left text-[10px] uppercase tracking-wider text-beige/50">
+                <th className="px-3 py-2">SL</th>
+                <th className="px-3 py-2">TP</th>
+                <th className="px-3 py-2 text-right">Win rate</th>
+                <th className="px-3 py-2 text-right">Prom/trade</th>
+                <th className="px-3 py-2 text-right">Suma total</th>
+                <th className="px-3 py-2">Nota</th>
+              </tr>
+            </thead>
+            <tbody>
+              {BTC_SOLO.combos.map((c) => {
+                const isRecommended = c.note === 'Recomendado'
+                return (
+                  <tr
+                    key={`${c.sl}-${c.tp}`}
+                    className={`border-b border-beige/5 last:border-b-0 ${isRecommended ? 'bg-moss/[0.08]' : ''}`}
+                  >
+                    <td className="px-3 py-2 font-mono tabular-nums text-ivory">{c.sl.toFixed(1)}%</td>
+                    <td className="px-3 py-2 font-mono tabular-nums text-ivory">{c.tp.toFixed(1)}%</td>
+                    <td className="px-3 py-2 text-right font-mono tabular-nums text-beige/70">{c.wr.toFixed(1)}%</td>
+                    <td className="px-3 py-2 text-right font-mono tabular-nums text-beige/70">+{c.avg.toFixed(3)}%</td>
+                    <td
+                      className={`px-3 py-2 text-right font-mono font-semibold tabular-nums ${isRecommended ? 'text-moss' : 'text-ivory'}`}
+                    >
+                      +{c.total.toFixed(1)}%
+                    </td>
+                    <td className="px-3 py-2 text-[11px] text-beige/50">{c.note}</td>
+                  </tr>
+                )
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-beige/50">Win rate y SL por grupo</h2>
