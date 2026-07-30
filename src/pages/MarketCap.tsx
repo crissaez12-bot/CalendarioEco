@@ -171,18 +171,19 @@ export default function MarketCap() {
         Backtest de 3 tipos de SL, activo por activo
       </h2>
       <p className="mb-3 max-w-3xl text-[11.5px] text-beige/50">
-        Para cada grupo, 3 niveles de SL fijo tomados del rango P25–P75 (SL1 = P25, SL2 = punto medio, SL3 =
-        P75), cruzados con el TP óptimo del grupo. Corrido activo por activo — todos los 37 activos son
-        rentables en los 3 niveles, sin excepción.
+        Para cada grupo, 3 niveles de SL fijo, redondos y pensados para ejecución manual (Large 0.6% / 1.0% /
+        1.5% · Mid 0.8% / 1.4% / 2.0% · Small 0.8% / 1.5% / 2.2%), cruzados con el TP óptimo del grupo.
+        Corrido activo por activo — todos los 37 activos son rentables en los 3 niveles, sin excepción, y
+        estos números redondos rinden igual o mejor que el rango estadístico P25–P75 del que salieron.
       </p>
       <div className="liquid-glass mb-8 overflow-x-auto rounded-xl">
         <table className="w-full min-w-[760px] border-collapse text-sm">
           <thead>
             <tr className="border-b border-beige/10 bg-beige/5 text-left text-[10px] uppercase tracking-wider text-beige/50">
               <th className="px-4 py-2.5">Activo</th>
-              <th className="px-4 py-2.5 text-right">SL1 (P25)</th>
-              <th className="px-4 py-2.5 text-right">SL2 (medio)</th>
-              <th className="px-4 py-2.5 text-right">SL3 (P75)</th>
+              <th className="px-4 py-2.5 text-right">SL1</th>
+              <th className="px-4 py-2.5 text-right">SL2</th>
+              <th className="px-4 py-2.5 text-right">SL3</th>
               <th className="px-4 py-2.5 text-right">Mejor SL</th>
             </tr>
           </thead>
