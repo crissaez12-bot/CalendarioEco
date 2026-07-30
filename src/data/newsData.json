@@ -1,8 +1,13 @@
 {
   "date": "2026-07-30",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Las acciones hacen los movimientos más grandes al mediodía: Meta, Microsoft, MarketAxess, Crocs y más",
+        "url": "https://www.cnbc.com/2026/07/30/stocks-making-the-biggest-moves-midday-meta-msft-mktx-crox.html",
+        "source": "CNBC"
+      },
       {
         "title": "Los vendedores en corto no pierden el tiempo saltando sobre las acciones estadounidenses de SK Hynix",
         "url": "https://www.cnbc.com/2026/07/29/short-sellers-are-wasting-no-time-pouncing-on-sk-hynix-us-shares-after-their-debut-this-month.html",
@@ -113,6 +118,26 @@
     ],
     "tecnologia": [
       {
+        "title": "Amazon en la cubierta para informar las ganancias después de la campana con la nube, el gasto de capital en el foco",
+        "url": "https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "OpenAI reduce los precios de dos de sus modelos de IA a medida que las empresas se vuelven sensibles a los costes",
+        "url": "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El liderazgo del modelo de peso abierto de China expone el punto ciego de la IA de Estados Unidos",
+        "url": "https://www.cnbc.com/2026/07/30/china-open-source-trump-ai.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Ganancias de Apple en vivo: iPhone, IA y la última llamada de Tim Cook",
+        "url": "https://www.cnbc.com/2026/07/30/apple-earnings-live-updates.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El problema de la inflación de Warsh, la débil orientación de Meta y más: Morning Squawk",
         "url": "https://www.cnbc.com/2026/07/30/5-things-to-know-before-the-stock-market-opens.html",
         "source": "CNBC"
@@ -190,6 +215,11 @@
     ],
     "politica": [
       {
+        "title": "Trump dice que el proyecto de ley de sanciones debería incluir aranceles a Irán, a pesar del comercio 'trivial' con Estados Unidos",
+        "url": "https://www.cnbc.com/2026/07/30/trump-iran-tariffs-sanctions-bill.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Trump flota retirando la nominación de Blanche como fiscal general hasta después de que los partidarios del Partido Republicano dejen el cargo",
         "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
         "source": "CNBC"
@@ -246,6 +276,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "La propiedad de criptomonedas en Canadá aumenta al 25%: encuesta de Ontario",
+        "url": "https://cointelegraph.com/news/canadians-ownership-crypto-osc-survey",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Aviva Investors lanza un fondo tokenizado tras la aprobación del Banco Central de Irlanda",
+        "url": "https://cointelegraph.com/news/aviva-investors-tokenized-fund-central-bank-ireland-xrp-ledger",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "El senador Schumer propone una agencia para abordar la corrupción, incluidas las criptoempresas de Trump",
+        "url": "https://cointelegraph.com/news/senate-government-agency-donald-trump-cryptocurrency-ventures",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Pavel Durov de Telegram responde a la designación de terrorismo de Rusia",
+        "url": "https://cointelegraph.com/news/pavel-durov-responds-russia-terrorism-designation-cites-mass-surveillance-censorship",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
