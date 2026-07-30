@@ -94,10 +94,11 @@ export default function MonteCarlo() {
     <PageShell>
       <div className="mb-6">
         <h1 className="text-2xl font-normal md:text-3xl" style={{ letterSpacing: '-0.03em' }}>
-          Monte Carlo Strategy V2
+          Monte Carlo Strategy V4
         </h1>
         <p className="mt-1 text-sm text-beige/70">
-          BB + PunkAlgo Signals + ATR &middot; v2: salida con protección a mitad de banda &middot; solo
+          BB + PunkAlgo Signals + ATR &middot; v4: SL/TP fijo por grupo de capitalización
+          (large/mid/small-cap, con % apalancado) + protección a mitad de banda &middot; solo
           activos con win rate &ge;70% &middot; monitoreo en vivo solo en 1H (borde de banda tocado + Touch
           real de Signals) &middot; los activos marcados "En vivo" corren con datos reales (Bollinger/ATR +
           alerta de TradingView), el resto sigue ilustrativo por ahora &middot; fichas basadas en backtest real.
