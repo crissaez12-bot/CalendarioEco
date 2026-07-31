@@ -1,8 +1,28 @@
 {
   "date": "2026-07-31",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Por qué implosionó el fondo de cobertura Situational Awareness, incluso en un mercado de valores domesticado",
+        "url": "https://www.cnbc.com/2026/07/31/why-leopold-aschenbrenner-situational-awareness-hedge-fund-imploded.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Acciones que hacen los movimientos más grandes al mediodía: Apple, Amazon, Reddit, GoDaddy, IES",
+        "url": "https://www.cnbc.com/2026/07/31/stocks-making-the-biggest-moves-midday-aapl-amzn-rddt-gddy-iesc.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El bróker fintech Clear Street ofrece acceso previo a la OPI al gigante de la IA Databricks",
+        "url": "https://www.cnbc.com/2026/07/31/clear-street-pre-ipo-platform-databricks.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Es posible que los inversores quieran centrarse en la parte delantera de la curva de rendimiento, ya que Street anticipa las próximas reuniones de la Fed",
+        "url": "https://www.cnbc.com/2026/07/31/top-investment-ideas-as-interest-rate-uncertainty-grips-market-.html",
+        "source": "CNBC"
+      },
       {
         "title": "Los funcionarios de la Fed que votaron a favor de subir las tasas dicen que es necesario actuar ahora contra la inflación",
         "url": "https://www.cnbc.com/2026/07/31/fed-officials-who-voted-to-hike-rates-say-action-is-needed-now-against-inflation.html",
@@ -71,6 +91,11 @@
     ],
     "economia": [
       {
+        "title": "A medida que la Fed de Warsh se enfrenta a la presión para actuar sobre la inflación, estos indicadores muestran que está en su nivel más bajo en años",
+        "url": "https://www.cnbc.com/2026/07/31/these-fed-alternative-indicators-show-inflation-is-at-lowest-in-years.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Se esperaba que el índice de precios al productor se mantuviera sin cambios en junio, según el pronóstico de consenso del Dow Jones.",
         "url": "https://www.cnbc.com/2026/07/15/wholesale-inflation-june-2026-.html",
         "source": "CNBC"
@@ -122,6 +147,11 @@
       }
     ],
     "tecnologia": [
+      {
+        "title": "El bróker fintech Clear Street ofrece a los inversores acceso previo a la OPI al gigante de IA Databricks de $ 188 mil millones",
+        "url": "https://www.cnbc.com/2026/07/31/clear-street-pre-ipo-platform-databricks.html",
+        "source": "CNBC"
+      },
       {
         "title": "El último baile de Tim Cook, cómo evitar la salida a bolsa y más: Morning Squawk",
         "url": "https://www.cnbc.com/2026/07/31/5-things-to-know-before-the-stock-market-opens.html",
@@ -195,6 +225,16 @@
     ],
     "politica": [
       {
+        "title": "Trump dice que Estados Unidos \"no ha acordado\" otorgar licencias de misiles Patriot a Ucrania",
+        "url": "https://www.cnbc.com/2026/07/31/trump-ukraine-patriot-missile-license-russia.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Análisis: Los mercados escucharon un tono moderado de Kevin Warsh. Las propias palabras del presidente de la Fed sugieren una subida de tipos",
+        "url": "https://www.cnbc.com/2026/07/31/kevin-warsh-fed-inflation-rate-hike-markets.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Warren y Schiff instan a la SEC a investigar el servicio API de Trump Media",
         "url": "https://www.cnbc.com/2026/07/29/trump-media-djt-warren-schiff-wall-street-api.html",
         "source": "CNBC"
@@ -246,6 +286,26 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Bybit añade acciones tokenizadas de Nvidia, Apple y Tesla como garantía de préstamo",
+        "url": "https://cointelegraph.com/news/bybit-tokenized-stocks-collateral-margin-loans",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Tether gana 1.500 millones de $ en el segundo trimestre a medida que las tenencias del Tesoro de EE. UU. impulsan las ganancias",
+        "url": "https://cointelegraph.com/news/tether-q2-profit-us-treasury-holdings-usdt-supply",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Ex usuarios de FTX informan que se liberaron fondos en una ronda de distribución de $ 900 MILLONES",
+        "url": "https://cointelegraph.com/news/ftx-users-funds-released-fifth-distribution-round",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Pump.fun despidió a trabajadores antes de que recibieran millones en tokens DE BOMBEO: Informe",
+        "url": "https://cointelegraph.com/news/pump-fun-employees-fired-tokens-vest",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Circle recibe carta fiduciaria de Nueva York para subsidiaria",
         "url": "https://cointelegraph.com/news/circle-receives-new-york-trust-charter-for-subsidiary",
