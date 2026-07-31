@@ -1,38 +1,8 @@
 {
-  "date": "2026-07-30",
-  "updatedAt": "16:00",
+  "date": "2026-07-31",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
-      {
-        "title": "Las acciones hacen los movimientos más grandes al mediodía: Meta, Microsoft, MarketAxess, Crocs y más",
-        "url": "https://www.cnbc.com/2026/07/30/stocks-making-the-biggest-moves-midday-meta-msft-mktx-crox.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Los vendedores en corto no pierden el tiempo saltando sobre las acciones estadounidenses de SK Hynix",
-        "url": "https://www.cnbc.com/2026/07/29/short-sellers-are-wasting-no-time-pouncing-on-sk-hynix-us-shares-after-their-debut-this-month.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La Fed dividida mantiene las tasas de interés estables, pero tres miembros votaron a favor de subirlas",
-        "url": "https://www.cnbc.com/2026/07/29/fed-rate-decision-july-2026.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Esto es lo que cambió en la segunda declaración de la Fed bajo Warsh",
-        "url": "https://www.cnbc.com/2026/07/29/fed-decision-redline-heres-what-changed-in-the-second-statement-under-warsh.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Jeff Gundlach dice que el mercado de bonos está indicando que la Fed tiene que actuar sobre la inflación",
-        "url": "https://www.cnbc.com/2026/07/29/gundlach-says-the-bond-market-is-signaling-the-fed-has-to-act-on-inflation.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Estas son las cinco grandes conclusiones de la reunión de la Fed de esta semana",
-        "url": "https://www.cnbc.com/2026/07/29/here-are-the-five-big-takeaways-from-this-weeks-fed-meeting.html",
-        "source": "CNBC"
-      },
       {
         "title": "Las acciones hacen los movimientos más grandes fuera de horario: Microsoft, Meta, Starbucks y más",
         "url": "https://www.cnbc.com/2026/07/29/stocks-making-the-biggest-moves-after-hours-msft-meta-sbux-cvna.html",
@@ -54,27 +24,37 @@
         "source": "CNBC"
       },
       {
-        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Meta, Microsoft, Teladoc, Norwegian Cruise Line y más",
+        "title": "Las acciones hacen los movimientos más grandes antes del mercado: Meta, Microsoft, Teladoc y más",
         "url": "https://www.cnbc.com/2026/07/30/stocks-making-the-biggest-moves-premarket-meta-msft-tdoc-nclh.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones hacen los movimientos más grandes al mediodía: Meta, Microsoft, Teladoc y más",
+        "url": "https://www.cnbc.com/2026/07/30/stocks-making-the-biggest-moves-midday-meta-msft-mktx-crox.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones hacen los movimientos más grandes fuera de horario: Apple, Amazon, Reddit y más",
+        "url": "https://www.cnbc.com/2026/07/30/stocks-making-the-biggest-moves-after-hours-aapl-amzn-rivn-rddt-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los envíos de China a Estados Unidos caen en julio tras una breve recuperación, según un sondeo",
+        "url": "https://www.cnbc.com/2026/07/30/china-us-exports-drop.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Más empresas de consumo se mantienen privadas por más tiempo, evitando el camino de la salida a bolsa",
+        "url": "https://www.cnbc.com/2026/07/31/private-consumer-companies-ipo.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones que realizan los movimientos más grandes antes del mercado: Replimune, Chevron, Apple, Amazon, Moderna y más",
+        "url": "https://www.cnbc.com/2026/07/31/stocks-making-the-biggest-moves-premarket-repl-cvx-aapl-amzn-mrna.html",
         "source": "CNBC"
       }
     ],
     "economia": [
-      {
-        "title": "La economía estadounidense se desaceleró a una tasa de crecimiento del 1,5% en el segundo trimestre; la inflación subyacente de junio se situó en el 3,3%",
-        "url": "https://www.cnbc.com/2026/07/30/us-economy-slowed-to-1point5percent-growth-rate-in-q2-june-core-inflation-at-3point3percent.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "China registra el crecimiento del PIB más lento desde 2022, avivando las llamadas de estímulo",
-        "url": "https://www.cnbc.com/2026/07/15/china-gdp-retail-sales-investment-june-.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La reanudación de las hostilidades en Ormuz hace que los tipos del BCE se replanteen en medio de unas perspectivas \"extremadamente volátiles\"",
-        "url": "https://www.cnbc.com/2026/07/15/ecb-interest-rates-outlook-iran-war-hormuz.html",
-        "source": "CNBC"
-      },
       {
         "title": "Se esperaba que el índice de precios al productor se mantuviera sin cambios en junio, según el pronóstico de consenso del Dow Jones.",
         "url": "https://www.cnbc.com/2026/07/15/wholesale-inflation-june-2026-.html",
@@ -114,143 +94,78 @@
         "title": "Lo que una Fed dividida significa para los inversores",
         "url": "https://www.cnbc.com/2026/07/29/fed-meeting-interest-rates-warsh-stocks-bonds.html",
         "source": "CNBC"
+      },
+      {
+        "title": "La economía estadounidense se desaceleró a una tasa de crecimiento del 1,5% en el segundo trimestre; la inflación subyacente de junio se situó en el 3,3%",
+        "url": "https://www.cnbc.com/2026/07/30/us-economy-slowed-to-1point5percent-growth-rate-in-q2-june-core-inflation-at-3point3percent.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La actividad fabril de China se contrae inesperadamente en julio por la caída de la demanda y los tifones",
+        "url": "https://www.cnbc.com/2026/07/31/china-pmi-factory-activity-economic-growth-exports-.html",
+        "source": "CNBC"
       }
     ],
     "tecnologia": [
       {
-        "title": "Amazon en la cubierta para informar las ganancias después de la campana con la nube, el gasto de capital en el foco",
-        "url": "https://www.cnbc.com/2026/07/30/amazon-amzn-q2-earnings-report-2026.html",
+        "title": "Amazon recibió 600 millones de $ en reembolsos de tarifas de Trump; algunos clientes recibirán pagos",
+        "url": "https://www.cnbc.com/2026/07/30/amazon-trump-tariff-refunds.html",
         "source": "CNBC"
       },
       {
-        "title": "OpenAI reduce los precios de dos de sus modelos de IA a medida que las empresas se vuelven sensibles a los costes",
-        "url": "https://www.cnbc.com/2026/07/30/open-ai-price-cut-gpt.html",
+        "title": "El CEO de Reddit dice que las descripciones generales de IA de Google no pueden reemplazar los \"10 enlaces azules\" para el tráfico",
+        "url": "https://www.cnbc.com/2026/07/30/reddit-ceo-says-googles-ai-overviews-cant-replace-10-blue-links-.html",
         "source": "CNBC"
       },
       {
-        "title": "El liderazgo del modelo de peso abierto de China expone el punto ciego de la IA de Estados Unidos",
-        "url": "https://www.cnbc.com/2026/07/30/china-open-source-trump-ai.html",
+        "title": "Anthropic dice que sus modelos Claude 'obtuvieron acceso no autorizado' a otros sistemas",
+        "url": "https://www.cnbc.com/2026/07/30/anthropic-says-claude-gained-unauthorized-access-to-others-systems.html",
         "source": "CNBC"
       },
       {
-        "title": "Ganancias de Apple en vivo: iPhone, IA y la última llamada de Tim Cook",
+        "title": "Las acciones de SK Hynix y Samsung se disparan para marcar los mejores días mientras el rally de IA vuelve a rugir",
+        "url": "https://www.cnbc.com/2026/07/31/sk-hynix-samsung-ai-rally-chipmakers.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Tim Cook ve la estrategia híbrida de IA de Apple como un \"arma competitiva\"",
+        "url": "https://www.cnbc.com/2026/07/30/tim-cook-sees-apples-hybrid-ai-strategy-as-a-competitive-weapon-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Estamos elevando nuestro precio objetivo de Apple, viendo mucho bien a pesar de la crisis de memoria",
+        "url": "https://www.cnbc.com/2026/07/30/were-raising-our-apple-price-target-seeing-plenty-of-good-despite-memory-crunch.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El mercado de valores \"bipolar\" de Corea pasó de la crisis a un repunte récord. ¿Cuál es el siguiente paso?",
+        "url": "https://www.cnbc.com/2026/07/31/south-korea-kospi-samsung-sk-hynix-meltdown-record-rebound.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Apple cae un 7%, Amazon aumenta un 12% a medida que los inversores eligen a los ganadores de IA después de las ganancias",
+        "url": "https://www.cnbc.com/2026/07/31/apple-aapl-amazon-amzn-stock-today.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El CEO de Anduril, Brian Schimpf, habla sobre la IA en la guerra y el empuje de fabricación",
+        "url": "https://www.cnbc.com/2026/07/31/the-tech-download-anduril-ceo-brian-schimpf.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Conclusiones sobre las ganancias de Apple: pronóstico débil, las preocupaciones sobre la oferta eclipsan las ventas en el último informe de Cook",
         "url": "https://www.cnbc.com/2026/07/30/apple-earnings-live-updates.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El problema de la inflación de Warsh, la débil orientación de Meta y más: Morning Squawk",
-        "url": "https://www.cnbc.com/2026/07/30/5-things-to-know-before-the-stock-market-opens.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Los nuevos detalles en el hack OpenAI Hugging Face muestran hasta dónde llegarán los agentes",
-        "url": "https://www.cnbc.com/2026/07/30/open-ai-hugging-face-hack-latest.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Zoox de Amazon comenzará a cobrar por los viajes en Las Vegas el próximo mes",
-        "url": "https://www.cnbc.com/2026/07/30/amazon-zoox-robotaxi-rides-las-vegas.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "\"Este es un evento de compensación\": Cramer dice que la venta forzada puede indicar un fondo para el comercio de IA",
-        "url": "https://www.cnbc.com/2026/07/30/this-is-a-clearing-event-cramer-says-forced-selling-may-signal-a-bottom-for-ai-trade.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Aumento de AMD y Micron, Lam Research sube un 20% a medida que las existencias de chips aumentan",
-        "url": "https://www.cnbc.com/2026/07/30/chip-stock-rally-lam-research-micron-amd.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Jim Cramer dice que el regreso del software podría ser el modelo para el próximo rally de las acciones de IA",
-        "url": "https://www.cnbc.com/2026/07/29/jim-cramer-softwares-comeback-blueprint-ai-stocks-rally.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La directora financiera de OpenAI, Sarah Friar, dice a los empleados que los ingresos anualizados en julio superaron todos los del segundo trimestre",
-        "url": "https://www.cnbc.com/2026/07/29/openai-cfo-sarah-friar-tells-employees-arr-in-july-topped-all-of-q2.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Estados Unidos quiere que Asia use su IA, pero China domina los modelos más baratos",
-        "url": "https://www.cnbc.com/2026/07/30/us-wants-asia-to-use-its-ai-but-china-dominates-cheaper-models.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "SpaceX se enfrenta a la demanda del Comité de Energía de la Cámara de Representantes de visitar sus centros de datos de IA en Memphis",
-        "url": "https://www.cnbc.com/2026/07/29/spacex-memphis-ai-data-centers-face-house-energy-committee-demands.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Boletín Inside India: Las protestas de la Generación Z convierten a Instagram en la nueva arena política de la India",
-        "url": "https://www.cnbc.com/2026/07/30/india-meta-democracy-protest-boost-instagram-meta.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La guía de gastos de IA de Microsoft es música para nuestros oídos, calmando a los osos, por ahora",
-        "url": "https://www.cnbc.com/2026/07/29/microsofts-ai-spending-guide-is-music-to-our-ears-quieting-the-bears-for-now.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Zuckerberg expone el dilema de la capacidad de IA de Meta: qué vender vs. qué conservar",
-        "url": "https://www.cnbc.com/2026/07/29/zuckerberg-metas-ai-capacity-dilemma-what-to-sell-vs-what-to-keep.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "China amenaza con represalias contra la prohibición de robots humanoides de Estados Unidos, dice que \"daña gravemente\" las relaciones",
-        "url": "https://www.cnbc.com/2026/07/30/china-us-robot-humanoid-ban-trump-visit.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Rolls-Royce dice que un importante acuerdo nuclear a gran escala es inminente a medida que la demanda de centros de datos se dispara",
-        "url": "https://www.cnbc.com/2026/07/30/rolls-royce-earnings-q2-stock-defense-ai.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Meta se hunde casi un 9%, Microsoft salta un 9% a medida que el comercio de IA divide a las grandes tecnológicas",
-        "url": "https://www.cnbc.com/2026/07/30/microsoft-msft-meta-stock-today-earnings.html",
         "source": "CNBC"
       }
     ],
     "politica": [
-      {
-        "title": "Trump dice que el proyecto de ley de sanciones debería incluir aranceles a Irán, a pesar del comercio 'trivial' con Estados Unidos",
-        "url": "https://www.cnbc.com/2026/07/30/trump-iran-tariffs-sanctions-bill.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump flota retirando la nominación de Blanche como fiscal general hasta después de que los partidarios del Partido Republicano dejen el cargo",
-        "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "JPMorgan, Schwab y UBS vinculados a la cartera de inversiones de $ 858 millones de Trump",
-        "url": "https://www.cnbc.com/2026/07/29/trump-banking-investments-jpmorgan-schwab-ubs-financial-disclosure.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "La vivienda y la atención médica necesitan menos burocracia para reducir los costos: Hickenlooper",
-        "url": "https://www.cnbc.com/2026/07/29/housing-hickenlooper-healthcare.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El plan de Warsh para una Fed más opaca será puesto a prueba por los mercados al límite",
-        "url": "https://www.cnbc.com/2026/07/29/fed-kevin-warsh-markets.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El Servicio Secreto vigiló 'ilegalmente' a Comey en el caso de amenaza ’8647’ de Trump: presentación",
-        "url": "https://www.cnbc.com/2026/07/29/james-comey-trump-8647-seashells-threat-secret-service.html",
-        "source": "CNBC"
-      },
       {
         "title": "Warren y Schiff instan a la SEC a investigar el servicio API de Trump Media",
         "url": "https://www.cnbc.com/2026/07/29/trump-media-djt-warren-schiff-wall-street-api.html",
         "source": "CNBC"
       },
       {
-        "title": "La nominación de Todd Blanche AG está al límite mientras el senador Cornyn cuestiona el acuerdo Trump-IRS",
+        "title": "La judicatura del Senado pospone la votación de la nominación de Blanche AG por las preocupaciones del acuerdo Trump-IRS",
         "url": "https://www.cnbc.com/2026/07/29/todd-blanche-attorney-general-trump-irs-audit-cornyn.html",
         "source": "CNBC"
       },
@@ -270,65 +185,45 @@
         "source": "CNBC"
       },
       {
-        "title": "La revelación financiera de Loeffler revela los lazos de su marido con el exclusivo club privado respaldado por Trump Jr.",
+        "title": "El esposo de Loeffler, Sprecher, vinculado al club de la rama ejecutiva de Trump Jr.",
         "url": "https://www.cnbc.com/2026/07/30/kelly-loeffler-husband-jeffrey-sprecher-executive-branch-club-donald-trump-jr.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump flota retirando la nominación de Blanche AG hasta después de que los holdouts del Partido Republicano se vayan",
+        "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump dice que el proyecto de ley de sanciones de Rusia debería añadir aranceles a Irán",
+        "url": "https://www.cnbc.com/2026/07/30/trump-iran-tariffs-sanctions-bill.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Irán ataca los activos estadounidenses en Kuwait después de que Egipto sufriera el primer ataque con aviones no tripulados",
+        "url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump dice que se alcanzó el acuerdo de desarme de Hamas, pero el grupo dice que Israel debe cumplir con las condiciones",
+        "url": "https://www.cnbc.com/2026/07/31/trump-hamas-disarmament-conditions.html",
         "source": "CNBC"
       }
     ],
     "crypto": [
       {
-        "title": "La propiedad de criptomonedas en Canadá aumenta al 25%: encuesta de Ontario",
-        "url": "https://cointelegraph.com/news/canadians-ownership-crypto-osc-survey",
+        "title": "Aave sopesa cerrar 6 mercados de blockchain V3, eliminando 50 reservas de bajo uso",
+        "url": "https://cointelegraph.com/news/aave-weighs-closing-6-v3-blockchain-markets-offboarding-50-low-use-reserves",
         "source": "Cointelegraph"
       },
       {
-        "title": "Aviva Investors lanza un fondo tokenizado tras la aprobación del Banco Central de Irlanda",
-        "url": "https://cointelegraph.com/news/aviva-investors-tokenized-fund-central-bank-ireland-xrp-ledger",
+        "title": "Nueva York demanda a Kalshi por una supuesta operación de juego ilegal",
+        "url": "https://cointelegraph.com/news/new-york-sues-kalshi-gambling-operation",
         "source": "Cointelegraph"
       },
       {
-        "title": "El senador Schumer propone una agencia para abordar la corrupción, incluidas las criptoempresas de Trump",
-        "url": "https://cointelegraph.com/news/senate-government-agency-donald-trump-cryptocurrency-ventures",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Pavel Durov de Telegram responde a la designación de terrorismo de Rusia",
-        "url": "https://cointelegraph.com/news/pavel-durov-responds-russia-terrorism-designation-cites-mass-surveillance-censorship",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
-        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "El oro tokenizado pasa la prueba de estrés DeFi, pero menos del 2% se utiliza como garantía",
-        "url": "https://cointelegraph.com/news/tokenized-gold-defi-stress-test-collateral-adoption-redstone",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Hyperscale Data vende 100 BTC para financiar el centro de datos de IA de Michigan",
-        "url": "https://cointelegraph.com/news/hyperscale-data-taps-bitcoin-treasury-btc-backed-credit-to-fund-ai-data-center",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Informe de Corea del Sur propone reglas de stablecoin antes que la ley de criptomonedas",
-        "url": "https://cointelegraph.com/news/south-korea-report-stablecoin-rules-crypto-law",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Periódico chino advierte de estafa de extorsión de Bitcoin usando su nombre",
-        "url": "https://cointelegraph.com/news/chinese-newspaper-bitcoin-extortion-scam-name",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Australia demanda a Telegram por presuntos fallos en la eliminación de contenido terrorista",
-        "url": "https://cointelegraph.com/news/australia-telegram-alleged-failures-terror-content",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Unidad de Samsung explora la infraestructura de stablecoins con el operador de Upbit",
-        "url": "https://cointelegraph.com/news/samsung-sds-stablecoin-infrastructure-dunamu",
+        "title": "BIS Project Agorá liquida $ 1 millón en juicios de pagos transfronterizos tokenizados",
+        "url": "https://cointelegraph.com/news/bis-project-agor-tokenized-cross-border-payment-trials",
         "source": "Cointelegraph"
       }
     ]
