@@ -1,77 +1,7 @@
 {
   "source": "NASDAQ",
-  "capturedAt": "2026-07-31",
+  "capturedAt": "2026-08-01",
   "days": [
-    {
-      "date": "2026-07-31",
-      "label": "Viernes, 31 de julio de 2026",
-      "events": [
-        {
-          "ticker": "XOM",
-          "name": "ExxonMobil Holdings Corporation",
-          "marketCap": 650632356019,
-          "time": "BMO",
-          "epsEst": "3.68",
-          "epsLastYear": "1.64"
-        },
-        {
-          "ticker": "ABBV",
-          "name": "AbbVie Inc.",
-          "marketCap": 454790140054,
-          "time": "BMO",
-          "epsEst": "3.64",
-          "epsLastYear": "2.97"
-        },
-        {
-          "ticker": "CVX",
-          "name": "Chevron Corporation",
-          "marketCap": 383004159841,
-          "time": "BMO",
-          "epsEst": "5.80",
-          "epsLastYear": "1.77"
-        },
-        {
-          "ticker": "LIN",
-          "name": "Linde plc",
-          "marketCap": 235296629517,
-          "time": "BMO",
-          "epsEst": "4.49",
-          "epsLastYear": "4.09"
-        },
-        {
-          "ticker": "SMFG",
-          "name": "Sumitomo Mitsui Financial Group Inc",
-          "marketCap": 164454836757,
-          "time": "BMO",
-          "epsEst": "0.44",
-          "epsLastYear": "0.40"
-        },
-        {
-          "ticker": "ETN",
-          "name": "Eaton Corporation, PLC",
-          "marketCap": 150229387000,
-          "time": "BMO",
-          "epsEst": "3.08",
-          "epsLastYear": "2.95"
-        },
-        {
-          "ticker": "ENB",
-          "name": "Enbridge Inc",
-          "marketCap": 120844720153,
-          "time": "BMO",
-          "epsEst": "0.43",
-          "epsLastYear": "0.47"
-        },
-        {
-          "ticker": "ITUB",
-          "name": "Itau Unibanco Banco Holding SA",
-          "marketCap": 93063867033,
-          "time": "BMO",
-          "epsEst": "0.22",
-          "epsLastYear": "0.17"
-        }
-      ]
-    },
     {
       "date": "2026-08-03",
       "label": "Lunes, 3 de agosto de 2026",
@@ -349,6 +279,76 @@
           "time": "AMC",
           "epsEst": "(0.03)",
           "epsLastYear": "(0.13)"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-07",
+      "label": "Viernes, 7 de agosto de 2026",
+      "events": [
+        {
+          "ticker": "BRK.A",
+          "name": "Berkshire Hathaway Inc.",
+          "marketCap": 1100150493141,
+          "time": "N/D",
+          "epsEst": "-",
+          "epsLastYear": "N/A"
+        },
+        {
+          "ticker": "BRK.B",
+          "name": "Berkshire Hathaway Inc.",
+          "marketCap": 1100150493141,
+          "time": "N/D",
+          "epsEst": "5.24",
+          "epsLastYear": "5.17"
+        },
+        {
+          "ticker": "VST",
+          "name": "Vistra Corp.",
+          "marketCap": 50112058394,
+          "time": "BMO",
+          "epsEst": "2.02",
+          "epsLastYear": "1.01"
+        },
+        {
+          "ticker": "TTWO",
+          "name": "Take-Two Interactive Software, Inc.",
+          "marketCap": 45939502426,
+          "time": "BMO",
+          "epsEst": "0.08",
+          "epsLastYear": "0.43"
+        },
+        {
+          "ticker": "AU",
+          "name": "AngloGold Ashanti PLC",
+          "marketCap": 41455382191,
+          "time": "N/D",
+          "epsEst": "2.04",
+          "epsLastYear": "1.25"
+        },
+        {
+          "ticker": "PPL",
+          "name": "PPL Corporation",
+          "marketCap": 26753578873,
+          "time": "BMO",
+          "epsEst": "0.35",
+          "epsLastYear": "0.32"
+        },
+        {
+          "ticker": "PAA",
+          "name": "Plains All American Pipeline, L.P.",
+          "marketCap": 17511296372,
+          "time": "BMO",
+          "epsEst": "0.41",
+          "epsLastYear": "0.36"
+        },
+        {
+          "ticker": "TU",
+          "name": "TELUS Corporation",
+          "marketCap": 16774618776,
+          "time": "N/D",
+          "epsEst": "0.16",
+          "epsLastYear": "0.16"
         }
       ]
     }
