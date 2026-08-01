@@ -1,6 +1,6 @@
 {
   "date": "2026-08-01",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -160,6 +160,11 @@
     ],
     "politica": [
       {
+        "title": "El nuevo servicio de datos de pago de Trump Media se pone en marcha, dando a los clientes un acceso más rápido a las publicaciones de Trump",
+        "url": "https://www.cnbc.com/2026/08/01/trump-medias-new-data-service-gives-faster-access-to-trumps-posts.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Trump flota retirando la nominación de Blanche AG hasta después de que los holdouts del Partido Republicano se vayan",
         "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
         "source": "CNBC"
@@ -211,6 +216,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Crypto PAC invierte otro millón de $ en la carrera de la Cámara de Representantes de Michigan",
+        "url": "https://cointelegraph.com/news/crypto-pac-michigan-thanedar-mckinney",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Ex usuarios de FTX informan que se liberaron fondos en una ronda de distribución de $ 900 MILLONES",
         "url": "https://cointelegraph.com/news/ftx-users-funds-released-fifth-distribution-round",
