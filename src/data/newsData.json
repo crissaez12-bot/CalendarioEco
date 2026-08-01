@@ -1,6 +1,6 @@
 {
   "date": "2026-08-01",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
       {
@@ -160,6 +160,11 @@
     ],
     "politica": [
       {
+        "title": "La amenaza de Trump de seguir adelante con el fondo de conciliación inyecta nueva incertidumbre en las conversaciones del fiscal general",
+        "url": "https://www.cnbc.com/2026/08/01/trumps-settlement-fund-threat-injects-uncertainty-into-ag-talks.html",
+        "source": "CNBC"
+      },
+      {
         "title": "El nuevo servicio de datos de pago de Trump Media se pone en marcha, dando a los clientes un acceso más rápido a las publicaciones de Trump",
         "url": "https://www.cnbc.com/2026/08/01/trump-medias-new-data-service-gives-faster-access-to-trumps-posts.html",
         "source": "CNBC"
@@ -216,6 +221,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "La prohibición de los cajeros automáticos criptográficos de Minnesota entra en vigor después de las pérdidas reportadas de $ 1M",
+        "url": "https://cointelegraph.com/news/minnesota-crypto-atm-ban-losses-scams",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Crypto PAC invierte otro millón de $ en la carrera de la Cámara de Representantes de Michigan",
         "url": "https://cointelegraph.com/news/crypto-pac-michigan-thanedar-mckinney",
