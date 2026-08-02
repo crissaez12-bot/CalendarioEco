@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
       {
@@ -160,6 +160,11 @@
     ],
     "politica": [
       {
+        "title": "El senador republicano Moreno dice que el representante Max Miller no debería servir en la Cámara de Representantes, necesita 'ayuda psicológica seria'",
+        "url": "https://www.cnbc.com/2026/08/02/bernie-moreno-max-miller-house-psychological-help-emily-moreno.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Hamas responde a la propuesta de desarme de Trump en Gaza",
         "url": "https://www.cnbc.com/2026/07/31/trump-hamas-disarmament-conditions.html",
         "source": "CNBC"
@@ -211,6 +216,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Rusia amplía la prohibición de la criptominería a Moscú hasta 2032",
+        "url": "https://cointelegraph.com/news/russia-expands-crypto-mining-ban-moscow-2032",
+        "source": "Cointelegraph"
+      },
       {
         "title": "La estrategia deja el dividendo preferido de STRC en un 12% ya que el precio sigue por debajo de la paridad",
         "url": "https://cointelegraph.com/news/strategy-leaves-preferred-strc-dividend-at-12-price-still-below-par",
