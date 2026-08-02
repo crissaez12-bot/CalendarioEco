@@ -1,6 +1,6 @@
 {
   "date": "2026-08-02",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
       {
@@ -211,6 +211,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "La estrategia deja el dividendo preferido de STRC en un 12% ya que el precio sigue por debajo de la paridad",
+        "url": "https://cointelegraph.com/news/strategy-leaves-preferred-strc-dividend-at-12-price-still-below-par",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Crypto PAC invierte otro millón de $ en la carrera de la Cámara de Representantes de Michigan",
         "url": "https://cointelegraph.com/news/crypto-pac-michigan-thanedar-mckinney",
