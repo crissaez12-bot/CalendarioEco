@@ -1,13 +1,8 @@
 {
-  "date": "2026-08-01",
-  "updatedAt": "16:00",
+  "date": "2026-08-02",
+  "updatedAt": "08:00",
   "categories": {
     "finanzas": [
-      {
-        "title": "Los envíos de China a Estados Unidos caen en julio tras una breve recuperación, según un sondeo",
-        "url": "https://www.cnbc.com/2026/07/30/china-us-exports-drop.html",
-        "source": "CNBC"
-      },
       {
         "title": "Más empresas de consumo se mantienen privadas por más tiempo, evitando el camino de la salida a bolsa",
         "url": "https://www.cnbc.com/2026/07/31/private-consumer-companies-ipo.html",
@@ -49,8 +44,13 @@
         "source": "CNBC"
       },
       {
-        "title": "Es posible que los inversores quieran centrarse en la parte delantera de la curva de rendimiento, ya que Street anticipa las próximas reuniones de la Fed",
+        "title": "Es posible que los inversores quieran centrarse en la parte delantera de la curva de rendimiento. He aquí por qué.",
         "url": "https://www.cnbc.com/2026/07/31/top-investment-ideas-as-interest-rate-uncertainty-grips-market-.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los traders de Goldman van por buen camino durante un año récord. Una mirada de cerca a cómo lo están haciendo",
+        "url": "https://www.cnbc.com/2026/08/01/goldman-traders-are-on-pace-for-a-record-year-a-close-up-look-at-how-theyre-doing-it.html",
         "source": "CNBC"
       }
     ],
@@ -160,31 +160,6 @@
     ],
     "politica": [
       {
-        "title": "La amenaza de Trump de seguir adelante con el fondo de conciliación inyecta nueva incertidumbre en las conversaciones del fiscal general",
-        "url": "https://www.cnbc.com/2026/08/01/trumps-settlement-fund-threat-injects-uncertainty-into-ag-talks.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "El nuevo servicio de datos de pago de Trump Media se pone en marcha, dando a los clientes un acceso más rápido a las publicaciones de Trump",
-        "url": "https://www.cnbc.com/2026/08/01/trump-medias-new-data-service-gives-faster-access-to-trumps-posts.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump flota retirando la nominación de Blanche AG hasta después de que los holdouts del Partido Republicano se vayan",
-        "url": "https://www.cnbc.com/2026/07/30/trump-blanche-ag-doj-cornyn-tillis.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Trump dice que el proyecto de ley de sanciones de Rusia debería añadir aranceles a Irán",
-        "url": "https://www.cnbc.com/2026/07/30/trump-iran-tariffs-sanctions-bill.html",
-        "source": "CNBC"
-      },
-      {
-        "title": "Irán ataca los activos estadounidenses en Kuwait después de que Egipto sufriera el primer ataque con aviones no tripulados",
-        "url": "https://www.cnbc.com/2026/07/31/us-iran-war-trump-hormuz.html",
-        "source": "CNBC"
-      },
-      {
         "title": "Hamas responde a la propuesta de desarme de Trump en Gaza",
         "url": "https://www.cnbc.com/2026/07/31/trump-hamas-disarmament-conditions.html",
         "source": "CNBC"
@@ -205,7 +180,7 @@
         "source": "CNBC"
       },
       {
-        "title": "Caso de vandalismo en David Hearn Reflecting Pool: Pirro solicita el despido",
+        "title": "Trump critica a Pirro después de que ella abandonara el caso de vandalismo de Reflecting Pool",
         "url": "https://www.cnbc.com/2026/07/31/trump-pirro-reflecting-pool-olympian-david-hearn.html",
         "source": "CNBC"
       },
@@ -215,50 +190,55 @@
         "source": "CNBC"
       },
       {
-        "title": "Los petroleros cerca de Omán son atacados mientras Irán amenaza con cortar las rutas marítimas",
+        "title": "Las embajadas estadounidenses advierten sobre el riesgo de viajar en medio de las crecientes tensiones entre Estados Unidos e Irán",
         "url": "https://www.cnbc.com/2026/08/01/tankers-near-oman-come-under-fire.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El nuevo servicio de datos pagados de Trump Media brinda un acceso más rápido a las publicaciones de Trump",
+        "url": "https://www.cnbc.com/2026/08/01/trump-medias-new-data-service-gives-faster-access-to-trumps-posts.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La amenaza del fondo de liquidación de Trump inyecta incertidumbre en las conversaciones del fiscal general",
+        "url": "https://www.cnbc.com/2026/08/01/trumps-settlement-fund-threat-injects-uncertainty-into-ag-talks.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Capital One dice que cerró las cuentas de la Organización Trump después de una investigación contra el lavado de dinero",
+        "url": "https://www.cnbc.com/2026/08/01/capital-one-closed-trump-organization-accounts-after-investigation.html",
         "source": "CNBC"
       }
     ],
     "crypto": [
-      {
-        "title": "La prohibición de los cajeros automáticos criptográficos de Minnesota entra en vigor después de las pérdidas reportadas de $ 1M",
-        "url": "https://cointelegraph.com/news/minnesota-crypto-atm-ban-losses-scams",
-        "source": "Cointelegraph"
-      },
       {
         "title": "Crypto PAC invierte otro millón de $ en la carrera de la Cámara de Representantes de Michigan",
         "url": "https://cointelegraph.com/news/crypto-pac-michigan-thanedar-mckinney",
         "source": "Cointelegraph"
       },
       {
-        "title": "Ex usuarios de FTX informan que se liberaron fondos en una ronda de distribución de $ 900 MILLONES",
-        "url": "https://cointelegraph.com/news/ftx-users-funds-released-fifth-distribution-round",
+        "title": "La prohibición de los cajeros automáticos criptográficos de Minnesota entra en vigor después de las pérdidas reportadas de $ 1M",
+        "url": "https://cointelegraph.com/news/minnesota-crypto-atm-ban-losses-scams",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Onchain, en la corte: Lo que sucedió en las noticias legales sobre criptomonedas esta semana",
+        "url": "https://cointelegraph.com/news/on-chain-in-court-crypto-legal-news4",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Trump Media vende otros 2.628 BTC, las tenencias caen a 4.261 BTC",
+        "url": "https://cointelegraph.com/news/trump-media-2628-btc-crypto-com-4261-btc-holdings",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "BNB Chain inicia acciones legales después del lanzamiento de memecoin por parte de un exempleado",
+        "url": "https://cointelegraph.com/news/bnb-chain-legal-action-ex-employee-memecoin",
         "source": "Cointelegraph"
       },
       {
         "title": "Esto es lo que ha pasado hoy con las criptomonedas",
         "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Pump.fun despidió a trabajadores antes de que recibieran millones en tokens DE BOMBEO: Informe",
-        "url": "https://cointelegraph.com/news/pump-fun-employees-fired-tokens-vest",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "El Banco de Italia no encuentra una ventaja de coste consistente para las remesas de monedas estables",
-        "url": "https://cointelegraph.com/news/bank-of-italy-study-no-stablecoin-remittance-cost-advantages",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "La estimación de pérdidas de Bitcoin de Coldcard aumenta a $ 70 MILLONES después del análisis de Galaxy",
-        "url": "https://cointelegraph.com/news/coldcard-bitcoin-loss-estimate-70-million-galaxy-analysis",
-        "source": "Cointelegraph"
-      },
-      {
-        "title": "Rusia amplía la prohibición de la criptominería a Moscú hasta 2032",
-        "url": "https://cointelegraph.com/news/russia-expands-crypto-mining-ban-moscow-2032",
         "source": "Cointelegraph"
       }
     ]
