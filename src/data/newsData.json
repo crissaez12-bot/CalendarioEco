@@ -1,8 +1,18 @@
 {
   "date": "2026-08-03",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Visa comprará la empresa de ciberseguridad BioCatch por $ 2.4 mil millones en medio de un aumento en las estafas de IA",
+        "url": "https://www.cnbc.com/2026/08/03/visa-buys-biocatch-fraud-detection.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Los precios del diésel de California se han disparado desde que comenzó la guerra de Irán, con efectos dominó en todo el país",
+        "url": "https://www.cnbc.com/2026/08/03/californias-diesel-prices-have-jumped-since-the-iran-war-started-with-ripple-effects-across-the-country.html",
+        "source": "CNBC"
+      },
       {
         "title": "Los funcionarios de la Fed que votaron a favor de subir las tasas dicen que es necesario actuar ahora contra la inflación",
         "url": "https://www.cnbc.com/2026/07/31/fed-officials-who-voted-to-hike-rates-say-action-is-needed-now-against-inflation.html",
@@ -160,6 +170,11 @@
     ],
     "politica": [
       {
+        "title": "El Senado parece estar listo para avanzar a Todd Blanche para fiscal general después de que Cornyn llegue a un acuerdo",
+        "url": "https://www.cnbc.com/2026/08/03/todd-blanche-doj-ag-senate-cornyn.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Trump critica a Pirro después de que ella abandonara el caso de vandalismo de Reflecting Pool",
         "url": "https://www.cnbc.com/2026/07/31/trump-pirro-reflecting-pool-olympian-david-hearn.html",
         "source": "CNBC"
@@ -211,6 +226,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Bithumb establece el calendario de la salida a bolsa de 2028 a medida que revisa los controles internos",
+        "url": "https://cointelegraph.com/news/bithumb-ipo-timetable-internal-controls",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Hashdex cerrará el ETF de Bitcoin más pequeño después de más de dos años",
+        "url": "https://cointelegraph.com/news/hashdex-to-shut-smallest-bitcoin-etf-after-more-than-two-years",
+        "source": "Cointelegraph"
+      },
       {
         "title": "La criptofirma ZeroStack advierte sobre el riesgo de supervivencia en medio de una pérdida de $ 82.5M",
         "url": "https://cointelegraph.com/news/zerostack-survival-risk-82m-crypto-loss",
