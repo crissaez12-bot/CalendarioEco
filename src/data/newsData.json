@@ -1,8 +1,13 @@
 {
   "date": "2026-08-03",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Los traders de Kalshi creen que el informe de empleos de julio será un poco más frío que las predicciones de los economistas",
+        "url": "https://www.cnbc.com/2026/08/03/kalshi-traders-think-july-jobs-will-come-in-cooler-than-estimates.html",
+        "source": "CNBC"
+      },
       {
         "title": "Visa comprará la empresa de ciberseguridad BioCatch por $ 2.4 mil millones en medio de un aumento en las estafas de IA",
         "url": "https://www.cnbc.com/2026/08/03/visa-buys-biocatch-fraud-detection.html",
@@ -66,6 +71,11 @@
     ],
     "economia": [
       {
+        "title": "La encuesta de manufactura muestra que la inflación se preocupa 'peor que la era de la pandemia', lo que se suma a la presión de la Fed",
+        "url": "https://www.cnbc.com/2026/08/03/manufacturing-survey-shows-inflation-worries-adding-to-pressure-on-fed.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Las fiestas de vigilancia de la Copa Mundial dieron a los bares y restaurantes un impulso necesario, dice la Fed",
         "url": "https://www.cnbc.com/2026/07/15/world-cup-economy-spending-alcohol-hotels-fed.html",
         "source": "CNBC"
@@ -118,6 +128,56 @@
     ],
     "tecnologia": [
       {
+        "title": "Cramer: Mis clasificaciones de poder para los 4 grandes hiperescaladores después de esta temporada de ganancias",
+        "url": "https://www.cnbc.com/2026/08/02/heres-my-power-rankings-for-the-big-4-hyperscalers-after-this-earnings-season.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Las acciones de Alibaba repuntan tras desvelar su modelo de IA 'más potente'",
+        "url": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Antrópico, OpenAI entre las empresas de IA que se enfrentan a nuevos poderes de aplicación de la UE",
+        "url": "https://www.cnbc.com/2026/08/03/eu-ai-act-enforcement-powers.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "ChatGPT domina el gasto inicial en IA en el Congreso mientras los legisladores sopesan la regulación",
+        "url": "https://www.cnbc.com/2026/08/03/openai-chatgpt-anthropic-congress-house-ai-spending.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La caída de SpaceX después de la OPI establece un telón de fondo tenso para el primer informe de ganancias",
+        "url": "https://www.cnbc.com/2026/08/03/spacexs-post-ipo-plunge-sets-tense-backdrop-for-first-earnings-report.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Conversaciones entre Estados Unidos e Irán, el truco Hugging Face de OpenAI y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/08/03/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Visa comprará la empresa de ciberseguridad BioCatch por $ 2.4 mil millones en medio de un aumento en las estafas de IA",
+        "url": "https://www.cnbc.com/2026/08/03/visa-buys-biocatch-fraud-detection.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Amazon supera la capitalización de mercado de $ 3 billones a medida que las acciones continúan aumentando después de las ganancias",
+        "url": "https://www.cnbc.com/2026/08/03/amazon-amzn-stock-market-cap-earnings.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El CEO de Hugging Face dice que China está ganando la carrera de la IA y dominando los modelos abiertos",
+        "url": "https://www.cnbc.com/2026/08/03/hugging-face-china-ai-race-open-models.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "La Casa Blanca acogerá el martes a empresas de IA para revisar el nuevo marco de pruebas de modelos",
+        "url": "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Estamos elevando nuestro precio objetivo de Apple, viendo mucho bien a pesar de la crisis de memoria",
         "url": "https://www.cnbc.com/2026/07/30/were-raising-our-apple-price-target-seeing-plenty-of-good-despite-memory-crunch.html",
         "source": "CNBC"
@@ -169,6 +229,26 @@
       }
     ],
     "politica": [
+      {
+        "title": "La Casa Blanca acogerá el martes a empresas de IA para revisar el nuevo marco de pruebas de modelos",
+        "url": "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Jay Clayton prestó juramento como director de inteligencia nacional de EE. UU.",
+        "url": "https://www.cnbc.com/2026/08/03/jay-clayton-sworn-in-as-us-director-of-national-intelligence.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Trump se enfada con Pirro por el caso Reflecting Pool, no dice que su trabajo sea seguro",
+        "url": "https://www.cnbc.com/2026/08/03/trump-pirro-reflecting-pool-vandalism-case.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Veinticinco estados demandan a la administración Trump por los últimos aranceles globales",
+        "url": "https://www.cnbc.com/2026/08/03/trump-tariffs-25-states-lawsuit-supreme-court.html",
+        "source": "CNBC"
+      },
       {
         "title": "El Senado parece estar listo para avanzar a Todd Blanche para fiscal general después de que Cornyn llegue a un acuerdo",
         "url": "https://www.cnbc.com/2026/08/03/todd-blanche-doj-ag-senate-cornyn.html",
@@ -226,6 +306,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "BlackRock lanza fondos del mercado monetario tokenizados para reservas de monedas estables",
+        "url": "https://cointelegraph.com/news/blackrock-launches-tokenized-money-market-funds-stablecoin-reserves",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Kenia traslada 30 millones de credenciales académicas a la cadena de bloques Avalanche",
+        "url": "https://cointelegraph.com/news/kenya-avalanche-blockchain-academic-credentials-verification",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "FalconX recorta un 10% de su plantilla en medio de una prolongada caída del criptomercado: informe",
+        "url": "https://cointelegraph.com/news/falconx-workforce-reduction-amid-crypto-market-slump-report",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Bithumb establece el calendario de la salida a bolsa de 2028 a medida que revisa los controles internos",
         "url": "https://cointelegraph.com/news/bithumb-ipo-timetable-internal-controls",
