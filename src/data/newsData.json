@@ -1,6 +1,6 @@
 {
   "date": "2026-08-04",
-  "updatedAt": "12:00",
+  "updatedAt": "16:00",
   "categories": {
     "finanzas": [
       {
@@ -128,6 +128,11 @@
     ],
     "tecnologia": [
       {
+        "title": "Jim Cramer sopesa el siguiente movimiento después de los grandes repuntes en dos acciones tecnológicas",
+        "url": "https://www.cnbc.com/2026/08/04/jim-cramer-weighs-next-move-after-massive-rallies-in-two-tech-stocks.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Actualizaciones en vivo de las ganancias de SpaceX: el primer informe desde la salida a bolsa se adelanta al desbloqueo masivo de acciones",
         "url": "https://www.cnbc.com/2026/08/04/spacex-spcx-earnings-live-updates-q2-2026.html",
         "source": "CNBC"
@@ -200,6 +205,11 @@
     ],
     "politica": [
       {
+        "title": "El representante Max Miller pide su propia investigación ética en medio de acusaciones de violencia doméstica",
+        "url": "https://www.cnbc.com/2026/08/04/max-miller-congress-investigation.html",
+        "source": "CNBC"
+      },
+      {
         "title": "Bessent dice que Estados Unidos respaldó la intervención del yen japonés para ayudar a estabilizar Asia",
         "url": "https://www.cnbc.com/2026/08/04/bessent-us-japan-yen-currency-intervention.html",
         "source": "CNBC"
@@ -266,6 +276,11 @@
       }
     ],
     "crypto": [
+      {
+        "title": "BNY ofrecerá criptomonedas institucionales a través de la asociación Galaxy",
+        "url": "https://cointelegraph.com/news/bny-galaxy-institutional-crypto-staking-custody",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Las reservas de oro de Tether suben un 9,5% a medida que el oro registra el peor trimestre en 13 años",
         "url": "https://cointelegraph.com/news/tether-gold-rise-q2-sharpest-quarterly-gold-correction",
