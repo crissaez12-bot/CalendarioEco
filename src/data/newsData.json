@@ -1,8 +1,28 @@
 {
   "date": "2026-08-04",
-  "updatedAt": "08:00",
+  "updatedAt": "12:00",
   "categories": {
     "finanzas": [
+      {
+        "title": "Kalshi establece una asociación para ayudar a las empresas a vigilar el uso de información privilegiada",
+        "url": "https://www.cnbc.com/2026/08/04/kalshi-makes-partnership-with-comply-compliance-tech-company.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Jeff Bezos acaba de presentar una solicitud para vender $ 4 mil millones en Amazon. Las acciones están cayendo",
+        "url": "https://www.cnbc.com/2026/08/04/jeff-bezos-just-filed-to-sell-4-billion-in-amazon-the-shares-are-falling.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "El presidente de la Fed de Filadelfia, Paulson, está contento con las tasas al nivel",
+        "url": "https://www.cnbc.com/2026/08/04/philadelphia-fed-president-paulson-content-with-current-rates-but-keeping-an-open-mind.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Polymarket en conversaciones para una ronda de recaudación de fondos con una valoración de más de $ 20 mil millones",
+        "url": "https://www.cnbc.com/2026/08/04/polymarket-seeks-fundraising-round-at-more-than-20-billion-valuation.html",
+        "source": "CNBC"
+      },
       {
         "title": "El bróker fintech Clear Street ofrece acceso previo a la OPI al gigante de la IA Databricks",
         "url": "https://www.cnbc.com/2026/07/31/clear-street-pre-ipo-platform-databricks.html",
@@ -108,6 +128,26 @@
     ],
     "tecnologia": [
       {
+        "title": "Actualizaciones en vivo de las ganancias de SpaceX: el primer informe desde la salida a bolsa se adelanta al desbloqueo masivo de acciones",
+        "url": "https://www.cnbc.com/2026/08/04/spacex-spcx-earnings-live-updates-q2-2026.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Ganancias de Palantir, nuevo jefe de McDonald's en EE. UU. y más: Morning Squawk",
+        "url": "https://www.cnbc.com/2026/08/04/5-things-to-know-before-the-stock-market-opens.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "China se abalanza tras hackear al proveedor indio de Apple, Tata Electronics",
+        "url": "https://www.cnbc.com/2026/08/04/china-apple-india-tata-electronics.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Nueva Jersey presenta una demanda antimonopolio contra Amazon por el control de los contratistas de entregas",
+        "url": "https://www.cnbc.com/2026/08/04/nj-amazon-antitrust-lawsuit-delivery-contractors.html",
+        "source": "CNBC"
+      },
+      {
         "title": "La Casa Blanca acogerá el martes a empresas de IA para revisar el nuevo marco de pruebas de modelos",
         "url": "https://www.cnbc.com/2026/08/03/white-house-ai-companies-voluntary-framework-meeting.html",
         "source": "CNBC"
@@ -160,6 +200,21 @@
     ],
     "politica": [
       {
+        "title": "Bessent dice que Estados Unidos respaldó la intervención del yen japonés para ayudar a estabilizar Asia",
+        "url": "https://www.cnbc.com/2026/08/04/bessent-us-japan-yen-currency-intervention.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Blanche aprobado por el Comité Judicial, el candidato de AG se dirige a la votación del Senado",
+        "url": "https://www.cnbc.com/2026/08/04/todd-blanche-weaponization-fund-senate-confirmation.html",
+        "source": "CNBC"
+      },
+      {
+        "title": "Abdul El-Sayed y Haley Stevens se enfrentan el martes en las primarias demócratas de Michigan",
+        "url": "https://www.cnbc.com/2026/08/04/abdul-el-sayed-haley-stevens-michigan-primary.html",
+        "source": "CNBC"
+      },
+      {
         "title": "ChatGPT domina el gasto inicial en IA en el Congreso mientras los legisladores sopesan la regulación",
         "url": "https://www.cnbc.com/2026/08/03/openai-chatgpt-anthropic-congress-house-ai-spending.html",
         "source": "CNBC"
@@ -211,6 +266,21 @@
       }
     ],
     "crypto": [
+      {
+        "title": "Las reservas de oro de Tether suben un 9,5% a medida que el oro registra el peor trimestre en 13 años",
+        "url": "https://cointelegraph.com/news/tether-gold-rise-q2-sharpest-quarterly-gold-correction",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Esto es lo que ha pasado hoy con las criptomonedas",
+        "url": "https://cointelegraph.com/news/what-happened-in-crypto-today",
+        "source": "Cointelegraph"
+      },
+      {
+        "title": "Bitdeer amplía la infraestructura de IA con un arrendamiento de centro de datos a largo plazo de $ 4.700 millones",
+        "url": "https://cointelegraph.com/news/bitdeer-ai-data-center-lease-norway",
+        "source": "Cointelegraph"
+      },
       {
         "title": "Juez de Nueva York niega la moción de la CFTC para detener la acción de ejecución contra Kalshi",
         "url": "https://cointelegraph.com/news/ny-judge-denies-cftc-motion-enforcement-kalshi",
